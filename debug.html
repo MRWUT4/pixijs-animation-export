@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, user-scalable=0, minimal-ui" />    
+    <meta name="apple-mobile-web-app-capable" content="no" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+     
+	<title>PixiJS - Template</title>
+
+	<!-- <link rel="stylesheet" href="css/fonts.css"> -->
+
+	<!-- framework -->
+	<script src="../../common/js/framework/pixijs/pixi-3.0.9.min.js"></script>
+
+	<!-- doutils -->
+	<script src="../../common/js/davidochmann/doutils/tools/gamesetup.js"></script>
+	<script src="../../common/js/davidochmann/doutils/tools/eventdispatcher.js"></script>
+	<script src="../../common/js/davidochmann/doutils/tools/easing.js"></script>
+	<script src="../../common/js/davidochmann/doutils/tools/dotween.js"></script>
+	<script src="../../common/js/davidochmann/doutils/tools/tween.js"></script>
+	<script src="../../common/js/davidochmann/doutils/tools/assist.js"></script>
+	<script src="../../common/js/davidochmann/doutils/tools/input.js"></script>
+	<script src="../../common/js/davidochmann/doutils/tools/frametimer.js"></script>
+	<script src="../../common/js/davidochmann/doutils/tools/statemachine.js"></script>
+	<script src="../../common/js/davidochmann/doutils/tools/calculator.js"></script>
+	<script src="../../common/js/davidochmann/doutils/tools/cache.js"></script>
+	<script src="../../common/js/davidochmann/doutils/tools/fluidcontainer.js"></script>
+	<script src="../../common/js/davidochmann/doutils/tools/gallery.js"></script>
+	<script src="../../common/js/davidochmann/doutils/audio/jukebox.js"></script>
+	<script src="../../common/js/davidochmann/doutils/audio/sound.js"></script>
+	<script src="../../common/js/davidochmann/doutils/loader/loader.js"></script>
+	<script src="../../common/js/davidochmann/doutils/loader/urlrequest.js"></script>
+	<script src="../../common/js/davidochmann/doutils/loader/loaditem.js"></script>
+	<script src="../../common/js/davidochmann/doutils/pixijs-3/facade.js"></script>
+	<script src="../../common/js/davidochmann/doutils/pixijs-3/scene.js"></script>
+	<script src="../../common/js/davidochmann/doutils/pixijs-3/atlas.js"></script>
+	<script src="../../common/js/davidochmann/doutils/pixijs-3/sprite.js"></script>
+	<script src="../../common/js/davidochmann/doutils/pixijs-3/movieclip.js"></script>
+	<script src="../../common/js/davidochmann/doutils/pixijs-3/textfield.js"></script>
+	<script src="../../common/js/davidochmann/doutils/pixijs-3/buttonassist.js"></script>
+	<script src="../../common/js/davidochmann/doutils/pixijs-3/displayobjectcontainer.js"></script>
+	<script src="../../common/js/davidochmann/doutils/pixijs-3/fluidbuttonstate.js"></script>
+
+	<script src="../../common/js/davidochmann/module/core/imodule.js"></script>
+	<script src="../../common/js/davidochmann/module/core/modulestate.js"></script>
+	<script src="../../common/js/davidochmann/module/pixijs/graphicsmodule.js"></script>
+	<script src="../../common/js/davidochmann/module/pixijs/fluidmoudle.js"></script>
+	<script src="../../common/js/davidochmann/module/pixijs/buttonmodule.js"></script>
+	<script src="../../common/js/davidochmann/module/pixijs/maskprogressmodule.js"></script>
+
+	<!-- game -->
+	<script src="js/game/main.js"></script>
+	<script src="js/game/settings.js"></script>
+	<script src="js/game/preloaderstate.js"></script>
+	<script src="js/game/gamestate.js"></script>
+	<script src="js/game/proxy.js"></script>
+
+	<script 
+
+		function init()
+		{
+			Jukebox.getInstance().globalVolume = System.getURLParameter( "volume" ) || 0;
+
+			var gameSetup = new GameSetup( 
+			{
+				fps: 60,
+				createCanvas: false,
+				renderer: GameSetup.CANVAS,
+				orientation: GameSetup.LANDSCAPE,
+				fullscreen: System.getURLParameter( "fullscreen" ) == "true" || GameSetup.ALL,
+				orientationImageSRC: "img/orientation.gif",
+				allowUpscale: true,
+				size: { width:960, height:640 },
+				onComplete: function()
+				{ 
+					new Main(); 
+				} 
+			});
+		}
+
+	</script>
+
+	</head>
+	
+	<body onload="init();">
+	</body>
+
+</html>

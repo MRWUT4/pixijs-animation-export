@@ -1,0 +1,4 @@
+{
+	"name": "build command",
+	"shell_cmd": "ls"
+}

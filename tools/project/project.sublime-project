@@ -1,0 +1,21 @@
+{
+	"folders":
+	[
+		{
+			"path": "../../"
+		},
+		{
+			"path": "../../../../common/js/davidochmann"
+		},
+		{
+			"path": "/Users/user/Library/Application Support/Adobe/Animate CC 2015/de_DE/Configuration/Commands"
+		}
+	],
+    "build_systems":
+    [
+        {
+            "name": "Build",
+            "shell_cmd": "../commands/uglify.command"
+        }
+    ]
+}

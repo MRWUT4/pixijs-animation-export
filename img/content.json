@@ -1,0 +1,50 @@
+﻿{
+	"timeline": 
+	{
+		"0": 
+		[
+			{
+				"type": "container",
+				"id": "game",
+				"name": "game",
+				"frames": 
+				{
+					"0": 
+					[
+						{
+							"type": "container",
+							"id": "gameContent",
+							"name": "gameContent",
+							"x": -220,
+							"y": -180,
+							"frames": 
+							{
+								"0": 
+								[
+									{
+										"type": "sprite",
+										"id": "background",
+										"name": "background"
+									}
+								]
+							}
+						}
+					]
+				}
+			}
+		]
+	},
+	"assets": 
+	{
+		"animations": 
+		[
+		],
+		"resources": 
+		[
+			{
+				"img": "img/content-atlas-0.png",
+				"json": "img/content-atlas-0.json"
+			}
+		]
+	}
+}
