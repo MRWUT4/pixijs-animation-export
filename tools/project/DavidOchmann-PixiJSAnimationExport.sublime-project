@@ -14,8 +14,8 @@
     "build_systems":
     [
         {
-            "name": "Build",
-            "shell_cmd": "../commands/uglify.command"
+            "name": "Execute",
+            "shell_cmd": "open  ${project_path}/../../jsfl/pixijs-animation-export.jsfl"
         }
     ]
 }
