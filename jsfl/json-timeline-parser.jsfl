@@ -32,25 +32,23 @@ Execute.file( "json-object.jsfl" );
 
 	prototype.initVariables = function()
 	{
-		this.list = [];
+		this.library = {};
 	};
 
 	prototype.initTimelineRecursion = function()
 	{
-		this.parse( this.timeline );
-		
 		flash.outputPanel.clear();
-
-		for(var i = 0; i < this.list.length; ++i)
-		{
-		    var item = this.list[ i ];
 		
-			var json = JSON.encode( item );
-			flash.trace( json );
-		}
+		this.parse( this.timeline );
+
+		flash.trace("\n\n......");
+		var json = JSON.encode( this.library );
+
+		flash.trace( json );
 	};
 
 
+	/** Parse timeline recursively */
 	prototype.parse = function(item)
 	{
 		var type = Helper.getType( item );
@@ -59,30 +57,45 @@ Execute.file( "json-object.jsfl" );
 		switch( type )
 		{
 			case Helper.TYPE_TIMELINE:
-				object = this.parseTimeline( item );
+				object = this.parseLibrary( item );
 				break;
 
 			case Helper.TYPE_LIBRARY_ITEM:
-				object = this.parseTimeline( item.timeline );
+				object = this.parseLibrary( item.timeline );
 				break;
 
 			case Helper.TYPE_INSTANCE:
-				object = this.parseTimeline( item.libraryItem.timeline );
+				object = this.parseLibrary( item.libraryItem.timeline );
 				break;
 		}
-
-		this.list.push( object );
 
 		return object;
 	};
 
 
-	/** Timeline parsing. */
-	prototype.parseTimeline = function(timeline)
+	prototype.parseLibrary = function(timeline)
 	{
-		var libraryItem = timeline.libraryItem || { name:"root" };
+		var libraryItem = timeline.libraryItem || { name:"" };
+		var name = libraryItem.name;
+		
+		var timelineIsInLibrary = this.library[ name ] !== undefined;
 
-		var object = { name:libraryItem.name, layers:[] };
+		if( timelineIsInLibrary )
+			return name;
+		else
+		{
+			var object = this.parseTimeline( timeline, name );
+			this.library[ name ] = object;
+
+			return object;
+		}
+	};
+
+
+	/** Timeline parsing. */
+	prototype.parseTimeline = function(timeline, name)
+	{
+		var object = { type:Helper.TYPE_TIMELINE, name:name, layers:[] };
 		var layers = timeline.layers;
 
 		for(var i = 0; i < layers.length; ++i)
@@ -124,7 +137,16 @@ Execute.file( "json-object.jsfl" );
 		{
 		    var element = elements[ i ];
 			var item = this.parse( element );
-		
+
+
+			// if item is timeline replace item object with string to avoid
+			// library duplicates.		
+			var itemIsTimeline = item != undefined && item.type == Helper.TYPE_TIMELINE;
+			
+			if( itemIsTimeline )
+				item = item.name;
+			
+
 		    object.push( item );
 		}
 
