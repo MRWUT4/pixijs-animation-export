@@ -25,8 +25,6 @@
 	{
 		var type = null;
 
-		flash.trace( object );
-
 		if( object instanceof Timeline )
 		{
 			var libraryItem = object.libraryItem;

@@ -41,7 +41,6 @@ Execute.file( "json-object.jsfl" );
 		
 		this.parse( this.timeline );
 
-		flash.trace("\n\n......");
 		var json = JSON.encode( this.library );
 
 		flash.trace( json );
@@ -143,9 +142,12 @@ Execute.file( "json-object.jsfl" );
 			// library duplicates.		
 			var itemIsTimeline = item != undefined && item.type == Helper.TYPE_TIMELINE;
 			
+
 			if( itemIsTimeline )
+			{
+			flash.trace( "itemIsTimeline " + itemIsTimeline + " " + item.name );
 				item = item.name;
-			
+			}
 
 		    object.push( item );
 		}
@@ -154,6 +156,37 @@ Execute.file( "json-object.jsfl" );
 			return object;
 		else
 			return null;
+	};
+
+
+	prototype.parseElement = function(element)
+	{
+		var item = this.parse( element );
+	
+		var itemHasPropertys = item != null && typeof item == "object";
+
+		if( itemHasPropertys )
+		{
+			this.addProperty( item, "elementType", element.elementType );
+			this.addProperty( item, "name", element.name );
+			this.addProperty( item, "rotation", element.rotation, 0 );
+			this.addProperty( item, "scaleX", element.scaleX, 1 );
+			this.addProperty( item, "scaleY", element.scaleY,1 );
+			this.addProperty( item, "height", element.height, 0 );
+			this.addProperty( item, "width", element.width, 0 );
+			this.addProperty( item, "x", element.x, 0 );
+			this.addProperty( item, "y", element.y, 0 );
+		}
+
+		return item;
+	};
+
+	prototype.addProperty = function(object, name, value, ignore)
+	{
+		if( value !== ignore )
+			object[ name ] = value;
+
+		return object;
 	};
 
 }(window));
