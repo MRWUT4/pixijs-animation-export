@@ -3,16 +3,15 @@
 	window.Helper = Helper;
 	var prototype = Helper.prototype = new Object();
 
+	Helper.MOVIECLIP = "movieclip";
+	Helper.ELEMENT = "element";
+	Helper.GRAPHIC = "graphic";
+	Helper.TIMELINE = "timeline";
+	Helper.LIBRARY_ITEM = "library item";
+	Helper.SPRITE = "sprite";
+	Helper.INSTANCE = "instance";
+	Helper.TEXT = "text";
 
-	Helper.FLASH_MOVIE_CLIP = "movie clip";
-	Helper.FLASH_GRAPHIC = "graphic";
-	Helper.FLASH_ELEMENT = "element";
-
-	Helper.TYPE_TIMELINE = "timeline";
-	Helper.TYPE_LIBRARY_ITEM = "library item";
-	Helper.TYPE_SPRITE = "sprite";
-	Helper.TYPE_INSTANCE = "instance";
-	Helper.TYPE_TEXT = "text";
 
 	function Helper(){}
 
@@ -21,49 +20,40 @@
 	 * Static interface.
 	 */
 
-	Helper.getType = function(object)
+	Helper.getItemType = function(object)
 	{
 		var type = null;
 
+		if( object.libraryItem && object.libraryItem.itemType == Helper.GRAPHIC )
+			type = Helper.GRAPHIC;
+		else
 		if( object instanceof Timeline )
-		{
-			var libraryItem = object.libraryItem;
-
-			if( libraryItem )
-			{
-				switch( libraryItem.itemType )
-				{
-					case Helper.FLASH_MOVIE_CLIP:
-						type = Helper.TYPE_TIMELINE;
-						break;
-
-					case Helper.FLASH_GRAPHIC:
-						type = Helper.TYPE_SPRITE;
-						break;
-				}
-			}
-			else
-				type = Helper.TYPE_TIMELINE;
-		}
+			type = Helper.TIMELINE;
 		else
 		if( object instanceof Element )
 		{
 			switch( object.elementType )
 			{
-				case Helper.TYPE_INSTANCE:
-					type = Helper.TYPE_INSTANCE;
+				case Helper.INSTANCE:
+					type = Helper.INSTANCE;
 					break;
 
-				case Helper.TYPE_TEXT:
-					type = Helper.TYPE_TEXT;
+				case Helper.TEXT:
+					type = Helper.TEXT;
 					break;
 			}
 		}
 		else
 		if( object instanceof LibraryItem )
-			type = Helper.TYPE_LIBRARY_ITEM;
+			type = Helper.LIBRARY_ITEM;
+		
 
 		return type;
+	};
+
+	Helper.getExportType = function(object)
+	{
+		
 	};
 
 }(window));

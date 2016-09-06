@@ -12,8 +12,10 @@
 }(window));
 
 
-
+Execute.file( "helper.jsfl" );
+Execute.file( "json-object.jsfl" );
 Execute.file( "json-timeline-parser.jsfl" );
+Execute.file( "atlas-exporter.jsfl" );
 
 (function(window){
 
@@ -34,6 +36,7 @@ Execute.file( "json-timeline-parser.jsfl" );
 	prototype.init = function()
 	{
 		this.initJSONTimelineParser();
+		this.initAtlasExporter();
 	};
 
 
@@ -43,6 +46,16 @@ Execute.file( "json-timeline-parser.jsfl" );
 		this.jsonTimelineParser = new JSONTimelineParser(
 		{
 			timeline: document.getTimeline()
+		});
+
+		flash.trace( JSON.encode( this.jsonTimelineParser.data ) );
+	};
+
+	prototype.initAtlasExporter = function()
+	{
+		this.atlasExporter = new AtlasExporter(
+		{
+			assets: this.jsonTimelineParser.assets
 		});
 	};
 

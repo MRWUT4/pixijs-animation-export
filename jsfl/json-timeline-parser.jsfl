@@ -1,7 +1,3 @@
-Execute.file( "helper.jsfl" );
-Execute.file( "json-object.jsfl" );
-
-
 (function(window){
 
 	window.JSONTimelineParser = JSONTimelineParser;
@@ -21,6 +17,16 @@ Execute.file( "json-object.jsfl" );
 
 
 	/**
+	 * Getter / Setter
+	 */
+
+	prototype.getLibraryObject = function(name)
+	{
+		return this.library[ name ];
+	};
+
+
+	/**
 	 * Private interface.
 	 */
 
@@ -32,78 +38,80 @@ Execute.file( "json-object.jsfl" );
 
 	prototype.initVariables = function()
 	{
-		this.library = {};
+		this.data = 
+		{
+			library: {},
+			assets:
+			{
+				animations: [],
+				resources: []
+			}
+		};
+
+		this.assets = [];
+		this.library = this.data.library;
 	};
 
 	prototype.initTimelineRecursion = function()
 	{
 		flash.outputPanel.clear();
-		
 		this.parse( this.timeline );
-
-		var json = JSON.encode( this.library );
-
-		flash.trace( json );
+		
+		// var json = JSON.encode( this.data );
+		// flash.trace( json );
 	};
 
 
 	/** Parse timeline recursively */
 	prototype.parse = function(item)
 	{
-		var type = Helper.getType( item );
+		var type = Helper.getItemType( item );
 		var object = null;
 
 		switch( type )
 		{
-			case Helper.TYPE_TIMELINE:
-				object = this.parseLibrary( item );
+			case Helper.TIMELINE:
+				object = this.parseTimeline( item );
 				break;
 
-			case Helper.TYPE_LIBRARY_ITEM:
-				object = this.parseLibrary( item.timeline );
+			case Helper.LIBRARY_ITEM:
+				object = this.parseTimeline( item.timeline );
 				break;
 
-			case Helper.TYPE_INSTANCE:
-				object = this.parseLibrary( item.libraryItem.timeline );
+			case Helper.INSTANCE:
+				object = this.parseTimeline( item.libraryItem.timeline );
+				break;
+
+			case Helper.GRAPHIC:
+				object = this.parseGraphic( item );
 				break;
 		}
+
+		this.addToLibrary( object );
 
 		return object;
-	};
-
-
-	prototype.parseLibrary = function(timeline)
-	{
-		var libraryItem = timeline.libraryItem || { name:"" };
-		var name = libraryItem.name;
-		
-		var timelineIsInLibrary = this.library[ name ] !== undefined;
-
-		if( timelineIsInLibrary )
-			return name;
-		else
-		{
-			var object = this.parseTimeline( timeline, name );
-			this.library[ name ] = object;
-
-			return object;
-		}
 	};
 
 
 	/** Timeline parsing. */
 	prototype.parseTimeline = function(timeline, name)
 	{
-		var object = { type:Helper.TYPE_TIMELINE, name:name, layers:[] };
+		var object = { name:timeline.libraryItem.name || "root" };
 		var layers = timeline.layers;
+
+		var objectLayers = [];
 
 		for(var i = 0; i < layers.length; ++i)
 		{
 		    var layer = layers[ i ];
 		    var item = this.parseLayer( layer );
 
-		    object.layers.push( item );
+		    if( item != null )
+		    	objectLayers.push( item );
 		}		
+
+		if( objectLayers.length > 0 )
+			object.layers = objectLayers;
 
 		return object;
 	};
@@ -112,6 +120,7 @@ Execute.file( "json-object.jsfl" );
 	{
 		var object = { name:layer.name, frames:{} }
 		var frames = layer.frames;
+		var numFrames = 0;
 
 		for(var i = 0; i < frames.length; ++i)
 		{
@@ -120,11 +129,17 @@ Execute.file( "json-object.jsfl" );
 
 		    var isKeyframe = frame.startFrame == i;
 
-		    if( isKeyframe )
+		    if( isKeyframe && item != null )
+		    {
+		    	numFrames++;
 		    	object.frames[ i ] = item;
+		    }
 		}
 
-		return object;
+		if( numFrames > 0 )
+			return object;
+		else
+			return null;
 	};
 
 	prototype.parseFrame = function(frame)
@@ -137,20 +152,19 @@ Execute.file( "json-object.jsfl" );
 		    var element = elements[ i ];
 			var item = this.parse( element );
 
+			if( item != null )
+			{								
+				var itemIsInLibrary = this.library[ item.name ] != undefined;
 
-			// if item is timeline replace item object with string to avoid
-			// library duplicates.		
-			var itemIsTimeline = item != undefined && item.type == Helper.TYPE_TIMELINE;
-			
+				if( itemIsInLibrary )
+					item = { name:item.name };
+				
+				var item = this.addItemTransformData( item, element );
 
-			if( itemIsTimeline )
-			{
-			flash.trace( "itemIsTimeline " + itemIsTimeline + " " + item.name );
-				item = item.name;
-			}
-
-		    object.push( item );
+			    object.push( item );
+		    }
 		}
+
 
 		if( object.length > 0 )
 			return object;
@@ -159,26 +173,54 @@ Execute.file( "json-object.jsfl" );
 	};
 
 
-	prototype.parseElement = function(element)
+	/** Graphic parsing. */
+	prototype.parseGraphic = function(item)
 	{
-		var item = this.parse( element );
-	
-		var itemHasPropertys = item != null && typeof item == "object";
+		var libraryItem = item.libraryItem;
+		var object = { name:libraryItem.name };
+		
+		var isInLibrary = this.getLibraryObject( object.name );
 
-		if( itemHasPropertys )
+		if( !isInLibrary )
+			this.assets.push( libraryItem );
+
+		return object;
+	};
+
+
+	/** Add object to data library. */
+	prototype.addToLibrary = function(object)
+	{
+		if( object )
 		{
-			this.addProperty( item, "elementType", element.elementType );
-			this.addProperty( item, "name", element.name );
-			this.addProperty( item, "rotation", element.rotation, 0 );
-			this.addProperty( item, "scaleX", element.scaleX, 1 );
-			this.addProperty( item, "scaleY", element.scaleY,1 );
-			this.addProperty( item, "height", element.height, 0 );
-			this.addProperty( item, "width", element.width, 0 );
-			this.addProperty( item, "x", element.x, 0 );
-			this.addProperty( item, "y", element.y, 0 );
+			var isInLibrary = this.getLibraryObject( object.name );
+
+			if( !isInLibrary )
+				this.library[ object.name ] = object;
+		}
+	};
+
+
+	/** Transform data function. Parse item and add values to object. */
+	prototype.addItemTransformData = function(object, item)
+	{
+		var inputIsValid = item !== null && object !== null;
+		var itemHasPropertys = typeof item == "object";
+
+		if( inputIsValid && itemHasPropertys )
+		{
+			this.addProperty( object, "type", Helper.getExportType( item ) );
+			// this.addProperty( object, "elementType", item.elementType );
+			this.addProperty( object, "rotation", item.rotation, 0 );
+			this.addProperty( object, "scaleX", item.scaleX, 1 );
+			this.addProperty( object, "scaleY", item.scaleY,1 );
+			this.addProperty( object, "height", item.height, 0 );
+			this.addProperty( object, "width", item.width, 0 );
+			this.addProperty( object, "x", item.x, 0 );
+			this.addProperty( object, "y", item.y, 0 );
 		}
 
-		return item;
+		return object;
 	};
 
 	prototype.addProperty = function(object, name, value, ignore)
