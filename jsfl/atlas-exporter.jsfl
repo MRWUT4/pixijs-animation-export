@@ -80,8 +80,8 @@
 		{
 		    var asset = this.assets[ i ];
 		
-			flash.trace( asset );
-		    // flash.trace( asset.name + " " + this.getLibraryItemSize( asset ) ); 
+			// flash.trace( asset );
+		    flash.trace( asset.name + " " + this.getLibraryItemSize( asset ) ); 
 		}
 	};
 
