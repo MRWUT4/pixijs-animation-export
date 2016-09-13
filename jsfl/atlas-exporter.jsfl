@@ -6,35 +6,52 @@
 	prototype.constructor = AtlasExporter;
 
 
+	AtlasExporter.allowRotate = false;
+	AtlasExporter.borderPadding = 0;
+	AtlasExporter.shapePadding = 2;
+	AtlasExporter.allowTrimming = true;
+	AtlasExporter.autoSize = true;
+	AtlasExporter.maxSheetWidth = 2048;
+	AtlasExporter.maxSheetHeight = 1024;
+	AtlasExporter.stackDuplicateFrames = true;
+	AtlasExporter.layoutFormat = "JSON";
+	AtlasExporter.algorithm = "maxRects";
+
+	AtlasExporter.exportFormat = { format:"png", bitDepth:32, backgroundColor:"#00000000" };
+	AtlasExporter.imageFolder = "img/";
+
+
 	function AtlasExporter(setup)
 	{
 		Object.call( this );
 
-		this.assets = setup.assets;
+		this.id = setup.id;
+		this.path = setup.path;
+		this.symbols = setup.symbols;
+		this.json = setup.json;
 
 		this.init();
 	}
-
 
 
 	/**
 	 * Getter / Setter.
 	 */
 
-	prototype.getSpriteSheetExporter = function(bounds)
+	prototype.getSpriteSheetExporter = function()
 	{
 		spriteSheetExporter = new SpriteSheetExporter();
 
-		spriteSheetExporter.allowRotate = false;
-		spriteSheetExporter.borderPadding = 0;
-		spriteSheetExporter.shapePadding = 2;
-		spriteSheetExporter.allowTrimming = true;
-		spriteSheetExporter.autoSize = true;
-		spriteSheetExporter.maxSheetWidth = bounds.width;
-		spriteSheetExporter.maxSheetHeight = bounds.height;
-		spriteSheetExporter.stackDuplicateFrames = true;
-		spriteSheetExporter.layoutFormat = "JSON";
-		spriteSheetExporter.algorithm = "maxRects";
+		spriteSheetExporter.allowRotate = AtlasExporter.allowRotate;
+		spriteSheetExporter.borderPadding = AtlasExporter.borderPadding;
+		spriteSheetExporter.shapePadding = AtlasExporter.shapePadding;
+		spriteSheetExporter.allowTrimming = AtlasExporter.allowTrimming;
+		spriteSheetExporter.autoSize = AtlasExporter.autoSize;
+		spriteSheetExporter.maxSheetWidth = AtlasExporter.maxSheetWidth;
+		spriteSheetExporter.maxSheetHeight = AtlasExporter.maxSheetHeight;
+		spriteSheetExporter.stackDuplicateFrames = AtlasExporter.stackDuplicateFrames;
+		spriteSheetExporter.layoutFormat = AtlasExporter.layoutFormat;
+		spriteSheetExporter.algorithm = AtlasExporter.algorithm;
 
 		return spriteSheetExporter;
 	};
@@ -64,6 +81,39 @@
 		return width * height;
 	};
 
+	prototype.getSortedList = function(list)
+	{
+		var self = this;
+
+		list.sort( function( a, b )
+		{
+			var sizeA = self.getLibraryItemSize( a );
+			var sizeB = self.getLibraryItemSize( b );
+
+			if( sizeA > sizeB )
+				return -1;
+
+			if( sizeA < sizeB )
+				return 1;
+			
+			return 0;
+
+		});
+
+		return list;
+	};
+
+	prototype.addSymbolToExporter = function(exporter, symbol)
+	{
+		exporter.addSymbol( symbol );
+		var overflowed = exporter.overflowed;
+
+		if( overflowed )
+			exporter.removeSymbol( symbol );
+
+		return overflowed ? true : false;
+	};
+
 
 	/**
 	 * Private interface.
@@ -71,18 +121,94 @@
 
 	prototype.init = function()
 	{
-		this.parseAssets();
+		this.initParsingByMode();
+		this.initResourceExport();
 	};
 
-	prototype.parseAssets = function()
+
+	/** Construct SpriteSheetObjects according to mode. */
+	prototype.initParsingByMode = function(mode)
 	{
-		for(var i = 0; i < this.assets.length; ++i)
+		this.symbols = this.getSortedList( this.symbols );
+		this.spriteSheetExporters = null;
+
+		switch( mode )
 		{
-		    var asset = this.assets[ i ];
-		
-			// flash.trace( asset );
-		    flash.trace( asset.name + " " + this.getLibraryItemSize( asset ) ); 
+			default:
+				this.spriteSheetExporters = this.parseAssetsCombined( this.symbols );
+				break;
 		}
+	};
+
+	prototype.parseAssetsCombined = function(symbols)
+	{
+		var that = this;
+		var list = [];
+
+		var addToSpriteSheetExporters = function(symbols)
+		{
+			var spriteSheetExporter = that.getSpriteSheetExporter();
+			list.push( spriteSheetExporter );
+
+			var symbolOverflowsExporter = false;
+
+			for(var i = 0; i < symbols.length; ++i)
+			{
+			    var symbol = symbols[ i ];
+				symbolOverflowsExporter = that.addSymbolToExporter( spriteSheetExporter, symbol );
+
+				if( symbolOverflowsExporter )
+				{
+					// avoid infinite recursion with single overflowing symbol.
+					if( symbols.length == 1 )
+						return;
+					else
+					{
+						addToSpriteSheetExporters( symbols.slice( i ) );
+						break;
+					}
+				}
+			}
+		};
+
+		addToSpriteSheetExporters( symbols );
+
+		return list;
+	};
+
+
+	prototype.initResourceExport = function()
+	{
+		this.resources = this.exportSpriteSheets( this.spriteSheetExporters );
+
+		this.json.resources = this.resources;
+	};
+
+
+	/** Export. */
+	prototype.exportSpriteSheets = function(spriteSheetExporters)
+	{
+		var list = [];
+
+		for(var i = 0; i < spriteSheetExporters.length; ++i)
+		{
+		    var spriteSheetExporter = spriteSheetExporters[ i ];
+
+		    var id = this.id + "-" + i;
+		    var name = this.path + id;
+  			var imageFolder = AtlasExporter.imageFolder;
+
+  			spriteSheetExporter.exportSpriteSheet( name, AtlasExporter.exportFormat );
+
+
+			list.push( 
+			{ 
+				img: imageFolder + id + "." + AtlasExporter.exportFormat.format,
+				json: imageFolder + id + ".json"
+			});
+		}
+
+		return list;
 	};
 
 }(window));

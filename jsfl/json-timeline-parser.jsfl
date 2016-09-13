@@ -41,14 +41,11 @@
 		this.data = 
 		{
 			library: {},
-			assets:
-			{
-				animations: [],
-				resources: []
-			}
+			resources: []
 		};
 
-		this.assets = [];
+		this.symbols = [];
+		this.timelines = [];
 		this.library = this.data.library;
 	};
 
@@ -96,7 +93,8 @@
 	/** Timeline parsing. */
 	prototype.parseTimeline = function(timeline, name)
 	{
-		var object = { name:timeline.libraryItem.name || "root" };
+		var libraryItem = timeline.libraryItem || { name:"root" };
+		var object = { name:libraryItem.name };
 		var layers = timeline.layers;
 
 		var objectLayers = [];
@@ -112,6 +110,8 @@
 
 		if( objectLayers.length > 0 )
 			object.layers = objectLayers;
+
+		this.timelines.push( timeline );
 
 		return object;
 	};
@@ -182,7 +182,10 @@
 		var isInLibrary = this.getLibraryObject( object.name );
 
 		if( !isInLibrary )
-			this.assets.push( libraryItem );
+		{
+			this.symbols.push( libraryItem );
+			this.timelines.push( libraryItem.timeline );
+		}
 
 		return object;
 	};
