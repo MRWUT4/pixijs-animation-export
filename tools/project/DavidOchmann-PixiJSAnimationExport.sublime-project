@@ -1,21 +1,24 @@
 {
+	"build_systems":
+	[
+		{
+			"name": "Execute",
+			"shell_cmd": "open  ${project_path}/../../jsfl/pixijs-animation-export.jsfl"
+		}
+	],
 	"folders":
 	[
 		{
-			"path": "../../"
+			"path": "/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export"
 		},
 		{
-			"path": "../../../../common/js/davidochmann"
+			"path": "/Users/user/Documents/application/project/html/common/js/davidochmann"
 		},
 		{
 			"path": "/Users/user/Library/Application Support/Adobe/Animate CC 2015.2/de_DE/Configuration/Commands"
+		},
+		{
+			"path": "/Users/user/Downloads/QuickLookJSON.qlgenerator"
 		}
-	],
-    "build_systems":
-    [
-        {
-            "name": "Execute",
-            "shell_cmd": "open  ${project_path}/../../jsfl/pixijs-animation-export.jsfl"
-        }
-    ]
+	]
 }

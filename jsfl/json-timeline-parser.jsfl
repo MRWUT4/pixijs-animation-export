@@ -125,7 +125,7 @@
 		for(var i = 0; i < frames.length; ++i)
 		{
 		    var frame = frames[ i ];
-		    var item = this.parseFrame( frame );
+		    var item = this.parseFrame( frame, i );
 
 		    var isKeyframe = frame.startFrame == i;
 
@@ -142,10 +142,15 @@
 			return null;
 	};
 
-	prototype.parseFrame = function(frame)
+
+	/** Frame parsing. */
+	prototype.parseFrame = function(frame, index)
 	{
-		var object = [];
+		var object = { elements:[] };
 		var elements = frame.elements;
+
+		object = this.parseAnimation( object, frame );
+		// var object = this.parseLabels( object, frame, index );
 
 		for(var i = 0; i < elements.length; ++i)
 		{
@@ -161,16 +166,52 @@
 				
 				var item = this.addItemTransformData( item, element );
 
-			    object.push( item );
+			    object.elements.push( item );
+			    // object.push( item );
 		    }
 		}
 
 
-		if( object.length > 0 )
+		// if( object.length > 0 )
+		if( object.elements.length > 0 )
 			return object;
 		else
 			return null;
 	};
+
+	prototype.parseAnimation = function(object, frame)
+	{
+		var tweenEasing = frame.tweenEasing;
+
+		// if( ease )
+		// 	flash.trace( JSON.encode( ease ) );
+
+		// TODO: Look into bezier curve easing.
+
+		if( tweenEasing )
+		{
+			var ease = frame.getCustomEase( "all" );
+			object.animation = ease.splice( 1, ease.length - 2 );
+
+			// flash.trace( JSON.encode( ease ) );
+			// flash.trace( "..");
+		}
+
+		return object;
+	};
+
+	// prototype.parseLabels = function(object, frame, index)
+	// {
+	// 	var isKeyframe = frame.startFrame == index;
+
+	// 	if( isKeyframe )
+	// 	{
+	// 		var isComment = frame.labelType == "comment";
+	// 		object[ isComment ? "comment" : "label" ] = frame.name;
+	// 	}
+
+	// 	return object;
+	// };
 
 
 	/** Graphic parsing. */

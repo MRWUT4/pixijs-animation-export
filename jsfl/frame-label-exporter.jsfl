@@ -29,7 +29,6 @@
 		var hasAnimations = null;
 		var frameCount = timeline.frameCount;
 		var durationObject = {};
-		var previous = { name:null, begin:null, end:null };
 
 		for(var i = 0; i < frameCount; ++i)
 		{
@@ -41,21 +40,8 @@
 			
 				hasAnimations = hasAnimations || object.name;
 
-				if( i == 0 || ( object.name && previous.name != object.name ) )
-				{
-					if( previous )
-						previous.end = i - 1;
-
-					duration = { begin:i, end:i + 1};
-					previous = duration;
-
-					if( object.name )
-						durationObject[ object.name ] = duration;
-				}
-
-				if( i != 0 && i == frameCount - 1 )
-					previous.end = i;
-			    
+				if( object.name )
+					durationObject[ object.name ] = i;			    
 			}
 		}
 

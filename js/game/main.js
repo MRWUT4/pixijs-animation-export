@@ -1,87 +1,83 @@
 (function(window){
-	
+
 	window.Main = Main;
 
-	var prototype = Main.prototype = Object.create( pixijs.Facade.prototype );
-	prototype.constructor = Main;
+	var prototype = Main.prototype = Object.create( Object.prototype );
 
 
-	function Main()
-	{	
-		pixijs.Facade.call( this, 
-		{ 
-			proxy: new Proxy(),
-			tweenTime: .3,
-			forceURLImage: true,
-			settings: Settings,
-			// urlAudio: Settings.URL_JSON_AUDIO,
-			urlContent: Settings.URL_JSON_CONTENT,
-			urlPreloader: Settings.URL_JSON_PRELOADER,
-			preloaderState: Settings.ID_STATE_PRELOADER,
-			preloaderManifest: 
-			[ 
-				Settings.URL_JSON_PRELOADER
-			],
-			manifest:
-			[
-				// Settings.URL_JSON_AUDIO,
-				Settings.URL_JSON_CONTENT
-			]
-		});
+	function Main(object)
+	{
+		Object.call( this );
+
+		this.width = object.width;
+		this.height = object.height;
+		this.fps = object.fps || 24;
+
+		this.init();
 	}
 
 
-	/** Tracking functions. */
-	prototype.sendTag = function(tag)
+	/**
+	 * Private interface.
+	 */
+
+	prototype.init = function()
 	{
-		if(top.AssistToggo)
-			top.AssistToggo.sendIVWTag( tag, location );
-		else
-			console.log("sendIVWTag", tag);
+		this.initPixiJS();
+		this.initTick();
+		this.initFiles();
 	};
 
 
-	/** Initializes StateMachine. */
-	prototype.initStateMachine = function()
+	/** PixiJS functions. */
+	prototype.initPixiJS = function(width, height)
 	{
-		this.proxy.loader = this.loader;
+		window.PIXI.utils._saidHello = true;
 
-		this.stateMachine.on( Event.EXIT, this.stateMachineExitHandler, this );
-		this.stateMachine.on( Event.ENTER, this.stateMachineEnterHandler, this );
+	    this.stage = new PIXI.Container();
+	    this.renderer = new PIXI.CanvasRenderer( this.width, this.height, { transparent:true } );
 
-		this.stateMachine.addState( Settings.ID_STATE_PRELOADER, new PreloaderState( this.setup ) );
-		this.stateMachine.addState( Settings.ID_STATE_GAME, new GameState( this.setup ) );
+	    this.canvas = this.renderer.view;
+
+		document.body.appendChild( this.canvas );
 	};
 
-	prototype.stateMachineExitHandler = function(event)
-	{
-		switch( event.currentTarget.id )
+
+	/** Init reqeust animation frame update tick */
+	prototype.initTick = function()
+	{	
+		setInterval( function()
 		{
-			// case Settings.ID_STATE_MENU:
-			// 	this.playMusic();
-			// 	break;
+			this.renderer.render( this.stage );
 
-			case Settings.ID_STATE_GAME:
-				
-				break;
-		}
+		}.bind( this ), 1000 / this.fps );
 	};
 
-	prototype.stateMachineEnterHandler = function(event){};
-	
 
-	/** Audio functions. */
-	prototype.playMusic = function()
+	/** Load files. */
+	prototype.initFiles = function()
 	{
-		// Jukebox.getInstance().play( { id:"music", loop:true, single:true, volume:.3 } );
-	};	
+		this.loader = new doutils.Loader( { recursion:0 } );
 
+		this.loader.addEventListener( Event.COMPLETE, this.loaderCompleteHandler, this );
+		this.loader.load( "img/assets.json" );
+	};
 
-	/** Load complete handler. */
-	prototype.loadCompleteHandler = function()
+	prototype.loaderCompleteHandler = function(event)
 	{
-		this.playMusic();
-		this.setState( System.getURLParameter( Settings.PARAMETER_STATE ) || Settings.ID_STATE_GAME );
+		console.log( "COMPLETE" );
+
+
+		// B(t) = (1 - t)^3
+		console.log( this.quadraticBezier( .5, 0, .2, .3, 1 ) );
+	};
+
+	prototype.quadraticBezier = function(t, p0, p1, p2, p3)
+	{
+		return Math.pow( 1 - t, 3 ) * p0 + 
+		3 * Math.pow( 1 - t, 2 ) * t * p1 + 
+		3 * ( 1 - t ) * Math.pow( t, 2 ) * p2 + 
+		Math.pow( t, 3 ) * p3;
 	};
 
 }(window));

@@ -17,6 +17,7 @@ Execute.file( "json-object.jsfl" );
 Execute.file( "json-timeline-parser.jsfl" );
 Execute.file( "atlas-exporter.jsfl" );
 Execute.file( "frame-label-exporter.jsfl" );
+Execute.file( "json-exporter.jsfl" );
 
 (function(window){
 
@@ -50,8 +51,7 @@ Execute.file( "frame-label-exporter.jsfl" );
 		this.initJSONTimelineParser();
 		this.initAtlasExporter();
 		this.initFrameLabelExporter();
-
-		flash.trace( JSON.encode( this.jsonTimelineParser.data ) );
+		this.initJSONExporter();
 	};
 
 
@@ -75,6 +75,8 @@ Execute.file( "frame-label-exporter.jsfl" );
 		// this.json = this.jsonTimelineParser.data;
 	};
 
+
+	/** Add symbols to atlas files. */
 	prototype.initAtlasExporter = function()
 	{
 		this.atlasExporter = new AtlasExporter(
@@ -86,6 +88,8 @@ Execute.file( "frame-label-exporter.jsfl" );
 		});
 	};
 
+
+	/** Add frame labels and comments to data. */
 	prototype.initFrameLabelExporter = function()
 	{
 		this.frameLabelExporter = new FrameLabelExporter(
@@ -95,6 +99,19 @@ Execute.file( "frame-label-exporter.jsfl" );
 		});
 	};
 
+
+	/** Init File export. */
+	prototype.initJSONExporter = function()
+	{
+		this.jsonExporter = new JSONExporter(
+		{
+			id: this.documentName,
+			path: this.documentPath,
+			json: this.jsonTimelineParser.data
+		});
+	};
+
 }(window));
+
 
 var pixiJSAnimationExport = new PixiJSAnimationExport();
