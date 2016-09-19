@@ -173,6 +173,7 @@
 
 
 		// if( object.length > 0 )
+		
 		if( object.elements.length > 0 )
 			return object;
 		else
