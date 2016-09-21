@@ -36,9 +36,13 @@
 	{
 		var outputPanel = flash.outputPanel;
 
+		/*
 		outputPanel.clear();
 		outputPanel.trace( JSON.encode( this.json ) );
 		outputPanel.save( this.path + this.id + ".json", false, false );
+		/*/
+		outputPanel.trace( JSON.encode( this.json ) );
+		//*/
 	};
 
 

@@ -4,12 +4,104 @@
 		"selected_items":
 		[
 			[
-				"__F",
-				"__for_loop_backwards	Creates a backwards for loop."
+				"timelin",
+				"timelineID"
+			],
+			[
+				"time",
+				"timelineID"
+			],
+			[
+				"docu",
+				"documentName"
+			],
+			[
+				"do",
+				"documentPath"
+			],
+			[
+				"du",
+				"durationObject"
+			],
+			[
+				"fram",
+				"frame"
+			],
+			[
+				"in",
+				"index"
+			],
+			[
+				"elemen",
+				"elements"
+			],
+			[
+				"st",
+				"style	Tag"
+			],
+			[
+				"li",
+				"libraryItem"
+			],
+			[
+				"commentOb",
+				"commmentObject"
+			],
+			[
+				"label",
+				"labelObject"
+			],
+			[
+				"commentO",
+				"commmentObject"
+			],
+			[
+				"tie",
+				"timelines"
+			],
+			[
+				"tim",
+				"timelines"
+			],
+			[
+				"labe",
+				"labelObject"
+			],
+			[
+				"lab",
+				"labelObject"
 			],
 			[
 				"sy",
-				"symboldOverflowsExporter"
+				"symbol"
+			],
+			[
+				"sym",
+				"symbols"
+			],
+			[
+				"pro",
+				"prototype"
+			],
+			[
+				"expo",
+				"exportFormat"
+			],
+			[
+				"a",
+				"atlasExporter"
+			],
+			[
+				"init",
+				"initAssetList"
+			],
+			[
+				"spriteSheet",
+				"spriteSheetExporters"
+			],
+			[
+				"__F",
+				"__for_loop_backwards	Creates a backwards for loop."
 			],
 			[
 				"spri",
@@ -25,10 +117,6 @@
 			],
 			[
 				"lib",
-				"libraryItem"
-			],
-			[
-				"li",
 				"libraryItem"
 			],
 			[
@@ -68,10 +156,6 @@
 				"__getter_extended	GetterExtended"
 			],
 			[
-				"fram",
-				"frames"
-			],
-			[
 				"item",
 				"item"
 			],
@@ -92,24 +176,8 @@
 				"else"
 			],
 			[
-				"time",
-				"timelineIsInLibrary"
-			],
-			[
 				"ini",
 				"initVariables"
-			],
-			[
-				"elemen",
-				"element"
-			],
-			[
-				"init",
-				"initTimelineParsing"
-			],
-			[
-				"tim",
-				"timeline"
 			],
 			[
 				"game",
@@ -126,10 +194,6 @@
 			[
 				"mar",
 				"margin"
-			],
-			[
-				"a",
-				"aButtonBack"
 			],
 			[
 				"text-a",
@@ -230,10 +294,6 @@
 			[
 				"fl",
 				"float"
-			],
-			[
-				"in",
-				"inputInvalid"
 			],
 			[
 				"inputI",
@@ -372,10 +432,6 @@
 				"collisionDistance"
 			],
 			[
-				"pro",
-				"property"
-			],
-			[
 				"prop",
 				"property"
 			],
@@ -458,62 +514,6 @@
 			[
 				"anim",
 				"animations"
-			],
-			[
-				"ID_STA",
-				"ID_STATE_MENU"
-			],
-			[
-				"se",
-				"segment"
-			],
-			[
-				"til",
-				"tiltSpeed"
-			],
-			[
-				"fp",
-				"followSpeed"
-			],
-			[
-				"road",
-				"roadRendererDirection"
-			],
-			[
-				"Even",
-				"Event"
-			],
-			[
-				"ro",
-				"roadRendererGyroControlModule"
-			],
-			[
-				"__com",
-				"__comment-3line	Comment-3Line"
-			],
-			[
-				"stra",
-				"straight-right"
-			],
-			[
-				"change",
-				"changePlayerSprite"
-			],
-			[
-				"initLevel",
-				"initLevelParsing"
-			],
-			[
-				"sort",
-				"sortSegments"
-			],
-			[
-				"dis",
-				"disposition"
-			],
-			[
-				"cal",
-				"callbackSine"
 			]
 		]
 	},
@@ -523,40 +523,40 @@
 			"file": "/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/jsfl/pixijs-animation-export.jsfl",
 			"settings":
 			{
-				"buffer_size": 1639,
+				"buffer_size": 2489,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/jsfl/atlas-exporter.jsfl",
+			"file": "/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/img/content_lang_de.json",
 			"settings":
 			{
-				"buffer_size": 4149,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/jsfl/json-timeline-parser.jsfl",
-			"settings":
-			{
-				"buffer_size": 4554,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/jsfl/helper.jsfl",
-			"settings":
-			{
-				"buffer_size": 1010,
-				"line_ending": "Unix"
+				"buffer_size": 47532,
+				"line_ending": "CR"
 			}
 		},
 		{
 			"file": "/Users/user/Library/Application Support/Adobe/Animate CC 2015.2/de_DE/Configuration/Commands/tools/Export PixiJS Assets.jsfl",
 			"settings":
 			{
-				"buffer_size": 19007,
+				"buffer_size": 19152,
 				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/js/game/main.js",
+			"settings":
+			{
+				"buffer_size": 1584,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/Users/user/Documents/application/project/html/europapark/Italien-PizzaPizza/img/content_lang_de.json",
+			"settings":
+			{
+				"buffer_size": 73937,
+				"line_ending": "CR"
 			}
 		}
 	],
@@ -567,10 +567,14 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 392.0,
-		"last_filter": "edi",
+		"height": 307.0,
+		"last_filter": "close",
 		"selected_items":
 		[
+			[
+				"close",
+				"File: Close All"
+			],
 			[
 				"edi",
 				"Project: Edit Project"
@@ -582,10 +586,6 @@
 			[
 				"ss js",
 				"Set Syntax: JavaScript"
-			],
-			[
-				"close",
-				"File: Close All"
 			],
 			[
 				"pro",
@@ -700,7 +700,7 @@
 				"Package Control: Install Package"
 			]
 		],
-		"width": 376.0
+		"width": 392.0
 	},
 	"console":
 	{
@@ -722,17 +722,36 @@
 	"expanded_folders":
 	[
 		"/Users/user/Library/Application Support/Adobe/Animate CC 2015.2/de_DE/Configuration/Commands",
-		"/Users/user/Library/Application Support/Adobe/Animate CC 2015.2/de_DE/Configuration/Commands/tools"
+		"/Users/user/Library/Application Support/Adobe/Animate CC 2015.2/de_DE/Configuration/Commands/tools",
+		"/Users/user/Downloads/QuickLookJSON.qlgenerator"
 	],
 	"file_history":
 	[
+		"/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/img/container.json",
+		"/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/img/assets.json",
+		"/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/jsfl/json-exporter.jsfl",
+		"/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/jsfl/json-timeline-parser.jsfl",
+		"/Users/user/Library/Application Support/Adobe/Animate CC 2015.2/de_DE/Configuration/Commands/tools/Export PixiJS Assets.jsfl",
+		"/Users/user/Documents/application/project/html/common/js/davidochmann/doutils/loader/loader.js",
+		"/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/img/assets-atlas.json",
+		"/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/jsfl/frame-label-exporter.jsfl",
+		"/Users/user/Library/Caches/Cornerstone/Store/https%3A%2F%2Fdavid.ochmann%40svn.eoa.de%2Fsvn%2Fjs-library/0000010417/trunk/internetabc/Flizzys-Zeichenchaos/js/game/main.js",
+		"/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/jsfl/pixijs-animation-export.jsfl",
+		"/Users/user/Documents/application/project/html/common/js/davidochmann/doutils/pixijs-3/facade.js",
+		"/Users/user/Documents/application/project/html/common/js/davidochmann/doutils/pixijs-3/facade-1.1.0.js",
+		"/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/debug.html",
+		"/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/js/game/main.js",
+		"/Users/user/Documents/application/project/html/common/js/davidochmann/doutils/tools/gamesetup.js",
+		"/Users/user/Library/Application Support/Adobe/Animate CC 2015.2/de_DE/Configuration/Commands/tools/library/Assist.jsfl",
+		"/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/jsfl/atlas-exporter.jsfl",
+		"/Users/user/Documents/application/project/html/common/js/davidochmann/doutils/easeljs/buttonstate.js",
+		"/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/jsfl/helper.jsfl",
 		"/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/img/assets-atlas-0.json",
 		"/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/tools/project/DavidOchmann-PixiJSAnimationExport.sublime-project",
 		"/Users/user/Library/Application Support/Adobe/Animate CC 2015/de_DE/Configuration/Commands/tools/library/JSON Object.jsfl",
 		"/Users/user/Library/Application Support/Adobe/Animate CC 2015/de_DE/Configuration/Commands/tools/Export PixiJS Assets.jsfl",
 		"/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/jsfl/asset-library-parser.jsfl",
 		"/Users/user/Documents/application/project/html/internetabc/Flizzys-Zeichenchaos/img/content.json",
-		"/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/jsfl/helper.jsfl",
 		"/Users/user/Library/Application Support/Adobe/Animate CC 2015/de_DE/Configuration/Commands/tools/library/Helper.jsfl",
 		"/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/jsfl/json-timeline-export.jsfl",
 		"/Users/user/Documents/application/project/html/europapark/App-GameCollection/jsfl/pixijs-animation-export.jsfl",
@@ -835,25 +854,7 @@
 		"/Users/david.ochmann/Documents/application/project/html/JS-Library/swiss/SkyboardSimulator/js/game/settingsstate.js",
 		"/Users/david.ochmann/Documents/application/project/html/JS-Library/swiss/SkyboardSimulator/js/game/resultstate.js",
 		"/Users/david.ochmann/Documents/application/project/html/JS-Library/swiss/SkyboardSimulator/json/level-0.json",
-		"/Users/david.ochmann/Documents/application/project/html/JS-Library/swiss/SkyboardSimulator/js/game/gamestate.js",
-		"/Users/david.ochmann/Documents/application/project/html/JS-Library/swiss/SkyboardSimulator/js/game/roadrendererspritemovementmodule.js",
-		"/Users/david.ochmann/Documents/application/project/html/JS-Library/swiss/SkyboardSimulator/js/game/proxy.js",
-		"/Users/david.ochmann/Documents/application/project/html/JS-Library/swiss/SkyboardSimulator/img/gameplay.json",
-		"/Users/david.ochmann/Documents/application/project/html/JS-Library/swiss/SkyboardSimulator/js/game/roadrendererbirdmovementmodule.js",
-		"/Users/david.ochmann/Documents/application/project/html/JS-Library/common/js/davidochmann/module/generic/autoexitmodule.js",
-		"/Users/david.ochmann/Documents/application/project/html/JS-Library/swiss/SkyboardSimulator/js/game/cameramodule.js",
-		"/Users/david.ochmann/Documents/application/project/html/JS-Library/swiss/SkyboardSimulator/js/game/gameplaymodule.js",
-		"/Users/david.ochmann/Documents/application/project/html/JS-Library/swiss/SkyboardSimulator/img/content.json",
-		"/Users/david.ochmann/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings",
-		"/Users/david.ochmann/Documents/application/project/html/JS-Library/swiss/SkyboardSimulator/js/game/roadrenderer.js",
-		"/Users/david.ochmann/Documents/application/project/html/JS-Library/swiss/SkyboardSimulator/js/game/playeranimationmodule.js",
-		"/Users/david.ochmann/Documents/application/project/html/JS-Library/common/js/davidochmann/doutils/tools/frametimer.js",
-		"/Users/david.ochmann/Documents/application/project/html/JS-Library/swiss/SkyboardSimulator/js/game/settings.js",
-		"/C/Users/localadmin/Desktop/project/swiss/Skyboard/index.html",
-		"/C/Users/localadmin/Desktop/project/swiss/Skyboard/js/nodejs/server.js",
-		"/C/Users/localadmin/Desktop/project/common/js/davidochmann/nodejs/tools/uglifyhtml.js",
-		"/C/Users/localadmin/Desktop/project/swiss/Skyboard/debug.html",
-		"/C/Users/localadmin/Desktop/electron/index.html"
+		"/Users/david.ochmann/Documents/application/project/html/JS-Library/swiss/SkyboardSimulator/js/game/gamestate.js"
 	],
 	"find":
 	{
@@ -873,6 +874,114 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"atlasID",
+			"timelineID",
+			"documentName",
+			"timelineID",
+			"documentID",
+			"true",
+			"null",
+			"LoadItemJSON",
+			"createLoadItem",
+			"recursion",
+			"p4",
+			"p3",
+			"p2",
+			"p1",
+			"( 1 - t )",
+			"d",
+			"c",
+			"b",
+			"a",
+			"load",
+			"initContent",
+			"documentFolder",
+			"jsonString",
+			"FrameLabelExporter",
+			"initFileExporter",
+			"parseMotion",
+			"ease",
+			"all",
+			"frame",
+			"parseMotion",
+			"object",
+			"hasAnimations",
+			"previous",
+			"elements",
+			"name",
+			"height",
+			"getPixiRenderer",
+			"initPixi",
+			"640",
+			"width",
+			"height",
+			"getPixi",
+			"getPixiRenderer",
+			"preserveDrawingBuffer",
+			"initPixi",
+			"initVariables",
+			"initCanvas",
+			"960",
+			"width",
+			"appenChild",
+			"this.canvas",
+			"333333",
+			"111111",
+			"000000",
+			"flash.trace",
+			"assets",
+			"resource",
+			"resources",
+			"labelObject",
+			"commmentObject",
+			"timeline",
+			"trace",
+			"symbol",
+			"symbols",
+			"libraryItedm",
+			"timelines",
+			"labelObject",
+			"timelines",
+			"libraryItem",
+			"symbol",
+			"list",
+			"Assist",
+			"assets",
+			"json",
+			"parseComments",
+			"getFrameObjects",
+			"parseFunction",
+			"Animation",
+			"parseFrameObject",
+			"resources",
+			";\n",
+			"atlas",
+			"frameLabelExporter",
+			"AtlasExporter",
+			"initAnimationExporter",
+			"getFrameObjects",
+			"Animation",
+			"this.imageFolder",
+			"imageFolder",
+			"resorces",
+			"initResourceExport",
+			"initAssetList",
+			"list",
+			"this.spriteSheetExporters",
+			"list",
+			"exportSpriteSheets",
+			"initExport",
+			"getSortedList",
+			"addSymbolToExporter",
+			"symbols",
+			"slice",
+			"list",
+			"getSortedList",
+			"parseAssetsCombined",
+			"symbolOverflowsExporter",
+			"symboldOverflowsExporter",
+			"var",
+			"symboldOverflowsExporter",
 			"		",
 			"getSortedList",
 			"getSymbolOverflowsExporter",
@@ -892,115 +1001,7 @@
 			"spriteSheetExporters",
 			"parseExporters",
 			"beginAtlasExport",
-			"beginExport",
-			"beginAtlasExport",
-			"spriteSheetExporters",
-			"parseAssets",
-			"this",
-			"symbols",
-			"spriteSheetExporters",
-			"addToSpriteSheetExporters",
-			"this",
-			"addToSpriteSheetExporters",
-			"addToSpriteSheetExporter",
-			"parseAssets",
-			"symbols",
-			"this",
-			"this.symbols",
-			"init",
-			"i",
-			"asset",
-			"assets",
-			"symbol",
-			"asset",
-			"addSymbol",
-			"getSymbolOverflowsExporter",
-			"exportSpriteSheet",
-			"getSpriteSheetExporter",
-			"that",
-			"self",
-			"DEFAULT_BOUNDS_MULTIFRAME",
-			"bounds",
-			"getSortedList",
-			"algorithm",
-			" = ",
-			"algorithm",
-			"value",
-			"object",
-			"libraryItem",
-			"getLibraryObject",
-			"getLibraryItem",
-			"addToLibrary",
-			"type",
-			"isInLibrary",
-			"getLibraryItem",
-			"parseTimline",
-			"addToLibrary",
-			"parseLibrary",
-			"timelineIsInLibrary",
-			"isNotInLibrary",
-			"AssetLibraryParser",
-			"asset",
-			"initAssetLibraryParser",
-			"atlasExporter",
-			"AssetLibraryParser",
-			"item.libraryItem",
-			"ame",
-			"object",
-			"libraryItem",
-			"object",
-			"parseGraphic",
-			"library",
-			"parseLibrary",
-			"data",
-			"name",
-			"TYPE_",
-			"graphic",
-			"itemType",
-			"object.libraryItem",
-			"parseGraphic",
-			"parseSprite",
-			"TYPE_",
-			"MOVIECLIP",
-			"ELEMENT",
-			"GRAPHIC",
-			"libraryItem",
-			"itemType",
-			"elementType",
-			"GRAPHIC",
-			"LibraryItem",
-			"elementType",
-			"libraryItem",
-			"LibraryItem",
-			"parseSprite",
-			"itemIsMovieClip",
-			"parseLayer",
-			"itemIsTimeline",
-			"TYPE_TEXT",
-			"ELEMENT",
-			"MOVIECLIP",
-			"ELEMENT",
-			"TYPE_TIMELINE",
-			"Timeline",
-			"type",
-			"getElementType",
-			"element",
-			"FLASH",
-			"element",
-			"getElementType",
-			"getType",
-			"getExportType",
-			"TYPE_TIMELINE",
-			"parseLibrary",
-			"parseSprite",
-			"TYPE_INSTANCE",
-			"libraryItem",
-			"Helper",
-			"trace",
-			"return",
-			"object",
-			"assetLibraryParser",
-			"timeline"
+			"beginExport"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1028,26 +1029,25 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1639,
+						"buffer_size": 2489,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								824,
-								824
+								1028,
+								934
 							]
 						],
 						"settings":
 						{
-							"_anf_new": "",
 							"history_list_is_closing": true,
 							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 658.0,
+						"translation.y": 309.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 2,
@@ -1055,28 +1055,28 @@
 				},
 				{
 					"buffer": 1,
-					"file": "/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/jsfl/atlas-exporter.jsfl",
+					"file": "/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/img/content_lang_de.json",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4149,
+						"buffer_size": 47532,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2827,
-								2827
+								41412,
+								41420
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"syntax": "Packages/JavaScript/JSON.sublime-syntax",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 1579.0,
+						"translation.y": 32395.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -1084,23 +1084,19 @@
 				},
 				{
 					"buffer": 2,
-					"file": "/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/jsfl/json-timeline-parser.jsfl",
+					"file": "/Users/user/Library/Application Support/Adobe/Animate CC 2015.2/de_DE/Configuration/Commands/tools/Export PixiJS Assets.jsfl",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4554,
+						"buffer_size": 19152,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								695,
-								695
-							],
-							[
-								3297,
-								3297
+								3026,
+								3048
 							]
 						],
 						"settings":
@@ -1109,7 +1105,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 2200.0,
+						"translation.y": 1910.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 4,
@@ -1117,19 +1113,19 @@
 				},
 				{
 					"buffer": 3,
-					"file": "/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/jsfl/helper.jsfl",
+					"file": "/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/js/game/main.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1010,
+						"buffer_size": 1584,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								458,
-								458
+								1274,
+								1274
 							]
 						],
 						"settings":
@@ -1138,7 +1134,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 74.0,
+						"translation.y": 614.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 3,
@@ -1152,32 +1148,28 @@
 			[
 				{
 					"buffer": 4,
-					"file": "/Users/user/Library/Application Support/Adobe/Animate CC 2015.2/de_DE/Configuration/Commands/tools/Export PixiJS Assets.jsfl",
+					"file": "/Users/user/Documents/application/project/html/europapark/Italien-PizzaPizza/img/content_lang_de.json",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 19007,
+						"buffer_size": 73937,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								11137,
-								11196
-							],
-							[
-								17783,
-								17783
+								73937,
+								73937
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"syntax": "Packages/JavaScript/JSON.sublime-syntax",
 							"translate_tabs_to_spaces": false
 						},
-						"translation.x": 45.0,
-						"translation.y": 6539.0,
+						"translation.x": -0.0,
+						"translation.y": 43656.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
@@ -1246,15 +1238,95 @@
 		"selected_items":
 		[
 			[
+				"pixijs",
+				"Commands/tools/Export PixiJS Assets.jsfl"
+			],
+			[
+				"pixi",
+				"pixijs-animation-export/jsfl/pixijs-animation-export.jsfl"
+			],
+			[
+				"assets",
+				"pixijs-animation-export/img/assets.json"
+			],
+			[
+				"assets.sj",
+				"pixijs-animation-export/img/assets.json"
+			],
+			[
+				"loader",
+				"davidochmann/doutils/loader/loader.js"
+			],
+			[
+				"main",
+				"pixijs-animation-export/js/game/main.js"
+			],
+			[
+				"label",
+				"pixijs-animation-export/jsfl/frame-label-exporter.jsfl"
+			],
+			[
+				"animation",
+				"pixijs-animation-export/jsfl/pixijs-animation-export.jsfl"
+			],
+			[
+				"jsontim",
+				"pixijs-animation-export/jsfl/json-timeline-parser.jsfl"
+			],
+			[
+				"export-",
+				"pixijs-animation-export/jsfl/json-timeline-parser.jsfl"
+			],
+			[
+				"facade",
+				"davidochmann/doutils/pixijs-3/facade-1.1.0.js"
+			],
+			[
+				"faca",
+				"davidochmann/doutils/pixijs-3/facade.js"
+			],
+			[
+				"game",
+				"davidochmann/doutils/tools/gamesetup.js"
+			],
+			[
+				"gameste",
+				"davidochmann/doutils/tools/gamesetup.js"
+			],
+			[
+				"debug",
+				"pixijs-animation-export/debug.html"
+			],
+			[
+				"debu",
+				"davidochmann/doutils/easeljs/buttonstate.js"
+			],
+			[
+				"jon",
+				"pixijs-animation-export/jsfl/json-timeline-parser.jsfl"
+			],
+			[
+				"atl",
+				"pixijs-animation-export/jsfl/atlas-exporter.jsfl"
+			],
+			[
+				"jsontime",
+				"pixijs-animation-export/jsfl/json-timeline-parser.jsfl"
+			],
+			[
+				"assist",
+				"Commands/tools/library/Assist.jsfl"
+			],
+			[
+				"atlas",
+				"pixijs-animation-export/jsfl/atlas-exporter.jsfl"
+			],
+			[
 				"exportpi",
 				"Commands/tools/Export PixiJS Assets.jsfl"
 			],
 			[
 				"",
-				"Commands/tools/Export PixiJS Assets.jsfl"
-			],
-			[
-				"pixi",
 				"Commands/tools/Export PixiJS Assets.jsfl"
 			],
 			[
@@ -1284,10 +1356,6 @@
 			[
 				"st",
 				"App-GameCollection/www/css/style.css"
-			],
-			[
-				"game",
-				"App-GameCollection/www/game.html"
 			],
 			[
 				"goto",
@@ -1356,10 +1424,6 @@
 			[
 				"lo",
 				"App-GameCollection/www/js/login.js"
-			],
-			[
-				"animation",
-				"App-GameCollection/www/js/animation.js"
 			],
 			[
 				"con",
@@ -1482,10 +1546,6 @@
 				"Skyboard/js/game/proxy.js"
 			],
 			[
-				"debu",
-				"Skyboard/debug.html"
-			],
-			[
 				"uite",
 				"davidochmann/ui/pixijs-3/inputtext.js"
 			],
@@ -1500,10 +1560,6 @@
 			[
 				"deb",
 				"Skyboard/debug.html"
-			],
-			[
-				"main",
-				"Skyboard/js/game/main.js"
 			],
 			[
 				"reus",
@@ -1692,70 +1748,6 @@
 			[
 				"gameplay",
 				"Skyboard/js/game/gameplayaudiomodule.js"
-			],
-			[
-				"audio",
-				"Skyboard/audio/audio.json"
-			],
-			[
-				"audiopl",
-				"davidochmann/module/generic/audioplaybackmodule.js"
-			],
-			[
-				"menustate",
-				"Skyboard/js/game/menustate.js"
-			],
-			[
-				"au",
-				"davidochmann/module/generic/audioplaybackmodule.js"
-			],
-			[
-				"sta",
-				"Skyboard/js/game/staranimationmodule.js"
-			],
-			[
-				"tweene",
-				"davidochmann/module/generic/tweeneventmodule.js"
-			],
-			[
-				"tweeneve",
-				"davidochmann/module/generic/tweeneventmodule.js"
-			],
-			[
-				"tween",
-				"davidochmann/module/generic/tweeneventmodule.js"
-			],
-			[
-				"juk",
-				"davidochmann/doutils/audio/jukebox.js"
-			],
-			[
-				"sound",
-				"davidochmann/doutils/audio/sound.js"
-			],
-			[
-				"jukebo",
-				"davidochmann/doutils/audio/jukebox.js"
-			],
-			[
-				"audipl",
-				"davidochmann/module/generic/audioplaybackmodule.js"
-			],
-			[
-				"jukebomo",
-				"davidochmann/module/generic/jukeboxmodule.js"
-			],
-			[
-				"tweeneven",
-				"davidochmann/module/generic/tweeneventmodule.js"
-			],
-			[
-				"resul",
-				"Skyboard/js/game/resultstate.js"
-			],
-			[
-				"as",
-				"davidochmann/doutils/tools/assist.js"
 			]
 		],
 		"width": 0.0
@@ -1763,9 +1755,13 @@
 	"select_project":
 	{
 		"height": 500.0,
-		"last_filter": "",
+		"last_filter": "tro",
 		"selected_items":
 		[
+			[
+				"tro",
+				"~/Documents/application/project/html/toggo/Trolls-Fotodesigner/tools/project/Trolls-Fotodesigner.sublime-project"
+			],
 			[
 				"ep",
 				"~/Documents/application/project/html/europapark/App-GameCollection/tools/project/Europapark-Spielbox.sublime-project"

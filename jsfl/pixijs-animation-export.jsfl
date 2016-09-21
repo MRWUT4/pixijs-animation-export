@@ -60,7 +60,11 @@ Execute.file( "json-exporter.jsfl" );
 	{
 		this.documentName = document.name.split(".fla")[ 0 ];
 		this.documentPath = this.getUniversalPath( document.pathURI );
+		this.libraryItem = document.getTimeline().libraryItem;
+		this.timelineID = this.libraryItem ? this.libraryItem.name : this.documentName;
 		this.atlasID = this.documentName + "-atlas";
+
+		flash.trace( this.timelineID );
 	};
 
 
@@ -81,7 +85,7 @@ Execute.file( "json-exporter.jsfl" );
 	{
 		this.atlasExporter = new AtlasExporter(
 		{
-			id: this.atlasID,
+			id: this.timelineID,
 			path: this.documentPath,
 			symbols: this.jsonTimelineParser.symbols,
 			json: this.jsonTimelineParser.data
@@ -105,7 +109,7 @@ Execute.file( "json-exporter.jsfl" );
 	{
 		this.jsonExporter = new JSONExporter(
 		{
-			id: this.documentName,
+			id: this.timelineID,
 			path: this.documentPath,
 			json: this.jsonTimelineParser.data
 		});

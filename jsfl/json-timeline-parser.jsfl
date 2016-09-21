@@ -6,6 +6,8 @@
 	prototype.constructor = JSONTimelineParser;
 
 
+	JSONTimelineParser.JOIN_FONTFACE = false;
+
 	function JSONTimelineParser(setup)
 	{
 		Object.call( this );
@@ -53,9 +55,6 @@
 	{
 		flash.outputPanel.clear();
 		this.parse( this.timeline );
-		
-		// var json = JSON.encode( this.data );
-		// flash.trace( json );
 	};
 
 
@@ -82,6 +81,10 @@
 			case Helper.GRAPHIC:
 				object = this.parseGraphic( item );
 				break;
+
+			case Helper.TEXT:
+				object = this.parseText( item );
+				break;
 		}
 
 		this.addToLibrary( object );
@@ -102,10 +105,14 @@
 		for(var i = 0; i < layers.length; ++i)
 		{
 		    var layer = layers[ i ];
-		    var item = this.parseLayer( layer );
+		    
+		    if( layer.layerType == "normal" )
+		    {
+			    var item = this.parseLayer( layer );
 
-		    if( item != null )
-		    	objectLayers.push( item );
+			    if( item != null )
+			    	objectLayers.push( item );
+			}
 		}		
 
 		if( objectLayers.length > 0 )
@@ -125,15 +132,18 @@
 		for(var i = 0; i < frames.length; ++i)
 		{
 		    var frame = frames[ i ];
-		    var item = this.parseFrame( frame, i );
-
 		    var isKeyframe = frame.startFrame == i;
-
-		    if( isKeyframe && item != null )
+		    
+		    if( isKeyframe )
 		    {
-		    	numFrames++;
-		    	object.frames[ i ] = item;
-		    }
+			    var item = this.parseFrame( frame, i );
+
+			    if( item != null )
+			    {
+			    	numFrames++;
+			    	object.frames[ i ] = item;
+			    }
+			}
 		}
 
 		if( numFrames > 0 )
@@ -150,7 +160,6 @@
 		var elements = frame.elements;
 
 		object = this.parseAnimation( object, frame );
-		// var object = this.parseLabels( object, frame, index );
 
 		for(var i = 0; i < elements.length; ++i)
 		{
@@ -167,12 +176,9 @@
 				var item = this.addItemTransformData( item, element );
 
 			    object.elements.push( item );
-			    // object.push( item );
 		    }
 		}
 
-
-		// if( object.length > 0 )
 		
 		if( object.elements.length > 0 )
 			return object;
@@ -184,35 +190,24 @@
 	{
 		var tweenEasing = frame.tweenEasing;
 
-		// if( ease )
-		// 	flash.trace( JSON.encode( ease ) );
-
-		// TODO: Look into bezier curve easing.
-
 		if( tweenEasing )
 		{
 			var ease = frame.getCustomEase( "all" );
-			object.animation = ease.splice( 1, ease.length - 2 );
+			var animation = ease.splice( 1, ease.length - 2 );
 
-			// flash.trace( JSON.encode( ease ) );
-			// flash.trace( "..");
+			for( var property in animation )
+			{
+				var value = animation[ property ];
+
+				value.x = this.getFixedValue( value.x, 4 );
+				value.y = this.getFixedValue( value.y, 4 );
+			}
+
+			object.animation = animation;
 		}
 
 		return object;
 	};
-
-	// prototype.parseLabels = function(object, frame, index)
-	// {
-	// 	var isKeyframe = frame.startFrame == index;
-
-	// 	if( isKeyframe )
-	// 	{
-	// 		var isComment = frame.labelType == "comment";
-	// 		object[ isComment ? "comment" : "label" ] = frame.name;
-	// 	}
-
-	// 	return object;
-	// };
 
 
 	/** Graphic parsing. */
@@ -233,6 +228,47 @@
 	};
 
 
+	/** Text parsing. */
+	prototype.parseText = function(element)
+	{
+		var object = { name:element.name || "text" };
+		var text = element.getTextString().split( "\"" ).join( "\\\"" ).split( /\r\n|\r|\n/g ).join( "\\n" );
+
+		var style = 
+		{
+			font: this.getTextElementStyle( element ),
+			fill: element.getTextAttr( "fillColor" ),
+			align: element.getTextAttr( "alignment" )
+		};
+
+		var margin =
+		{
+			width: element.width,
+			height: element.height
+		};
+
+		this.addProperty( object, "name", object.name, null );
+		this.addProperty( object, "text", text, "" );
+		this.addProperty( object, "lineSpacing", element.getTextAttr( "lineSpacing" ), 0 );
+		this.addProperty( object, "style", style, null );
+		this.addProperty( object, "margin", margin, null );
+
+		return object;
+	};
+
+	prototype.getTextElementStyle = function(element)
+	{
+		var string = "";
+		var bold = element.getTextAttr( "bold" );
+
+		string += bold ? "bold " : "";
+		string += element.getTextAttr( "size" ) + "px ";
+		string += JSONTimelineParser.JOIN_FONTFACE ? element.getTextAttr( "face" ).split( " " ).join( "_" ) : element.getTextAttr( "face" ).split( " " )[ 0 ];
+
+		return string;
+	};
+
+
 	/** Add object to data library. */
 	prototype.addToLibrary = function(object)
 	{
@@ -247,33 +283,46 @@
 
 
 	/** Transform data function. Parse item and add values to object. */
-	prototype.addItemTransformData = function(object, item)
+	prototype.addItemTransformData = function(object, element)
 	{
-		var inputIsValid = item !== null && object !== null;
-		var itemHasPropertys = typeof item == "object";
+		var inputIsValid = element !== null && object !== null;
+		var elementHasPropertys = typeof element == "object";
 
-		if( inputIsValid && itemHasPropertys )
+		if( inputIsValid && elementHasPropertys )
 		{
-			this.addProperty( object, "type", Helper.getExportType( item ) );
-			// this.addProperty( object, "elementType", item.elementType );
-			this.addProperty( object, "rotation", item.rotation, 0 );
-			this.addProperty( object, "scaleX", item.scaleX, 1 );
-			this.addProperty( object, "scaleY", item.scaleY,1 );
-			this.addProperty( object, "height", item.height, 0 );
-			this.addProperty( object, "width", item.width, 0 );
-			this.addProperty( object, "x", item.x, 0 );
-			this.addProperty( object, "y", item.y, 0 );
+			// this.addProperty( object, "elementType", element.elementType );
+			// this.addProperty( object, "height", element.height, 0 );
+			// this.addProperty( object, "width", element.width, 0 );
+			this.addProperty( object, "type", Helper.getExportType( element ) );
+			this.addProperty( object, "rotation", element.rotation, 0 );
+			this.addProperty( object, "scaleX", element.scaleX, 1, 4 );
+			this.addProperty( object, "scaleY", element.scaleY, 1, 4 );
+			this.addProperty( object, "x", element.x, 0 );
+			this.addProperty( object, "y", element.y, 0 );
 		}
 
 		return object;
 	};
 
-	prototype.addProperty = function(object, name, value, ignore)
+	prototype.addProperty = function(object, name, value, ignore, fixed)
 	{
 		if( value !== ignore )
-			object[ name ] = value;
+			object[ name ] = fixed === undefined ? value : this.getFixedValue( value, fixed );
 
 		return object;
+	};
+
+	prototype.getFixedValue = function(value, position)
+	{
+		var object = value.toFixed( position );
+		
+		while( object[ object.length - 1 ] == "0" )
+			object = object.slice( 0, object.length - 1 );
+		
+		if( object[ object.length - 1 ] == "." )
+			object = object.slice( 0, object.length - 1 );
+
+		return Number( object );
 	};
 
 }(window));
