@@ -13,6 +13,8 @@
 		this.height = object.height;
 		this.fps = object.fps || 24;
 
+		this.url = "img/assets.json";
+
 		this.init();
 	}
 
@@ -60,24 +62,39 @@
 		this.loader = new doutils.Loader( { recursion:0 } );
 
 		this.loader.addEventListener( Event.COMPLETE, this.loaderCompleteHandler, this );
-		this.loader.load( "img/assets.json" );
+		this.loader.load( this.url );
+
+		console.log( this.url );
 	};
 
 	prototype.loaderCompleteHandler = function(event)
 	{
-		console.log( "COMPLETE" );
-
-
+		this.createAssetFactory();
 		// B(t) = (1 - t)^3
-		console.log( this.quadraticBezier( .5, 0, .2, .3, 1 ) );
+		// console.log( this.quadraticBezier( .5, 0, .2, .3, 1 ) );
 	};
 
-	prototype.quadraticBezier = function(t, p0, p1, p2, p3)
-	{
-		return Math.pow( 1 - t, 3 ) * p0 + 
-		3 * Math.pow( 1 - t, 2 ) * t * p1 + 
-		3 * ( 1 - t ) * Math.pow( t, 2 ) * p2 + 
-		Math.pow( t, 3 ) * p3;
+
+	/** Scene functions. */
+	prototype.createAssetFactory = function()
+	{	
+		var json = this.loader.getObjectWithID( this.url ).result;
+
+		this.assetFactory = new AssetFactory(
+		{
+			json: json,
+			loader: this.loader
+		});
+
+		var container = this.assetFactory.create( "container" );
 	};
+
+	// prototype.quadraticBezier = function(t, p0, p1, p2, p3)
+	// {
+	// 	return Math.pow( 1 - t, 3 ) * p0 + 
+	// 	3 * Math.pow( 1 - t, 2 ) * t * p1 + 
+	// 	3 * ( 1 - t ) * Math.pow( t, 2 ) * p2 + 
+	// 	Math.pow( t, 3 ) * p3;
+	// };
 
 }(window));

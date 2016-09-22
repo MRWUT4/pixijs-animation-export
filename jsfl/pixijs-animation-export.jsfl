@@ -1,23 +1,23 @@
-(function(window){
+// (function(window){
 
-	window.Execute = Execute;
+// 	window.Execute = Execute;
 
-	function Execute(){}
+// 	function Execute(){}
 
-	Execute.file = function(name)
-	{
-		fl.runScript( fl.scriptURI.split( "/" ).slice( 0, -1 ).join( "/" ) + "/" + name );		
-	};
+// 	Execute.file = function(name)
+// 	{
+// 		fl.runScript( fl.scriptURI.split( "/" ).slice( 0, -1 ).join( "/" ) + "/" + name );		
+// 	};
 
-}(window));
+// }(window));
 
 
-Execute.file( "helper.jsfl" );
-Execute.file( "json-object.jsfl" );
-Execute.file( "json-timeline-parser.jsfl" );
-Execute.file( "atlas-exporter.jsfl" );
-Execute.file( "frame-label-exporter.jsfl" );
-Execute.file( "json-exporter.jsfl" );
+// Execute.file( "helper.jsfl" );
+// Execute.file( "json-object.jsfl" );
+// Execute.file( "json-timeline-parser.jsfl" );
+// Execute.file( "atlas-exporter.jsfl" );
+// Execute.file( "frame-label-exporter.jsfl" );
+// Execute.file( "json-exporter.jsfl" );
 
 (function(window){
 

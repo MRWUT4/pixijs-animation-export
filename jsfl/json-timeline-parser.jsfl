@@ -22,9 +22,9 @@
 	 * Getter / Setter
 	 */
 
-	prototype.getLibraryObject = function(name)
+	prototype.getLibraryObject = function(id)
 	{
-		return this.library[ name ];
+		return this.library[ id ];
 	};
 
 
@@ -49,6 +49,7 @@
 		this.symbols = [];
 		this.timelines = [];
 		this.library = this.data.library;
+		this.numAnonymousTextFields = 0;
 	};
 
 	prototype.initTimelineRecursion = function()
@@ -94,10 +95,10 @@
 
 
 	/** Timeline parsing. */
-	prototype.parseTimeline = function(timeline, name)
+	prototype.parseTimeline = function(timeline, id)
 	{
 		var libraryItem = timeline.libraryItem || { name:"root" };
-		var object = { name:libraryItem.name };
+		var object = { type:Helper.TIMELINE, id:libraryItem.name };
 		var layers = timeline.layers;
 
 		var objectLayers = [];
@@ -168,12 +169,12 @@
 
 			if( item != null )
 			{								
-				var itemIsInLibrary = this.library[ item.name ] != undefined;
+				var itemIsInLibrary = this.getLibraryObject( item.id );
 
 				if( itemIsInLibrary )
-					item = { name:item.name };
+					item = { id:item.id };
 				
-				var item = this.addItemTransformData( item, element );
+				item = this.addItemTransformData( item, element );
 
 			    object.elements.push( item );
 		    }
@@ -214,14 +215,17 @@
 	prototype.parseGraphic = function(item)
 	{
 		var libraryItem = item.libraryItem;
-		var object = { name:libraryItem.name };
+		var timeline = libraryItem.timeline;
+		var isMovieClip = timeline.frameCount > 1;
+		var type = isMovieClip ? Helper.MOVIECLIP : Helper.SPRITE;
+		var object = { type:type, id:libraryItem.name /*,name:item.name*/ };
 		
-		var isInLibrary = this.getLibraryObject( object.name );
+		var isInLibrary = this.getLibraryObject( object.id );
 
 		if( !isInLibrary )
 		{
 			this.symbols.push( libraryItem );
-			this.timelines.push( libraryItem.timeline );
+			this.timelines.push( timeline );
 		}
 
 		return object;
@@ -231,7 +235,8 @@
 	/** Text parsing. */
 	prototype.parseText = function(element)
 	{
-		var object = { name:element.name || "text" };
+		var anonymousID = "text" + ( !element.name ? this.numAnonymousTextFields++ : this.numAnonymousTextFields );
+		var object = { type:Helper.TEXT, id:element.name || anonymousID };
 		var text = element.getTextString().split( "\"" ).join( "\\\"" ).split( /\r\n|\r|\n/g ).join( "\\n" );
 
 		var style = 
@@ -247,7 +252,7 @@
 			height: element.height
 		};
 
-		this.addProperty( object, "name", object.name, null );
+		// this.addProperty( object, "name", object.name, null );
 		this.addProperty( object, "text", text, "" );
 		this.addProperty( object, "lineSpacing", element.getTextAttr( "lineSpacing" ), 0 );
 		this.addProperty( object, "style", style, null );
@@ -274,11 +279,41 @@
 	{
 		if( object )
 		{
-			var isInLibrary = this.getLibraryObject( object.name );
+			var isInLibrary = this.getLibraryObject( object.id );
 
 			if( !isInLibrary )
-				this.library[ object.name ] = object;
+			{
+				var item = this.deepCopyObject( object );
+				delete item.id;
+				
+				this.library[ object.id ] = item;
+			}
 		}
+	};
+
+	prototype.deepCopyObject = function(object)
+	{
+		var parse = function(object, item)
+		{
+			for( var property in object )
+			{
+				var value = object[ property ];
+
+				if( value instanceof Array )
+					item[ property ] = parse( value, [] );
+				else
+				if( typeof value == "object" )
+					item[ property ] = parse( value, {} );
+				else
+					item[ property ] = value;
+			}
+
+			return item;
+		};
+
+		var item = parse( object, {} );
+
+		return item;
 	};
 
 
@@ -293,6 +328,7 @@
 			// this.addProperty( object, "elementType", element.elementType );
 			// this.addProperty( object, "height", element.height, 0 );
 			// this.addProperty( object, "width", element.width, 0 );
+			this.addProperty( object, "name", element.name, "" );
 			this.addProperty( object, "type", Helper.getExportType( element ) );
 			this.addProperty( object, "rotation", element.rotation, 0 );
 			this.addProperty( object, "scaleX", element.scaleX, 1, 4 );

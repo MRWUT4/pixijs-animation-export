@@ -3,10 +3,10 @@
 	window.Helper = Helper;
 	var prototype = Helper.prototype = new Object();
 
+	Helper.TIMELINE = "timeline";
 	Helper.MOVIECLIP = "movieclip";
 	Helper.ELEMENT = "element";
 	Helper.GRAPHIC = "graphic";
-	Helper.TIMELINE = "timeline";
 	Helper.LIBRARY_ITEM = "library item";
 	Helper.SPRITE = "sprite";
 	Helper.INSTANCE = "instance";
