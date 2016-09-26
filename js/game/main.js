@@ -59,7 +59,7 @@
 	/** Load files. */
 	prototype.initFiles = function()
 	{
-		this.loader = new doutils.Loader( { recursion:0 } );
+		this.loader = new doutils.Loader( { static:false } );
 
 		this.loader.addEventListener( Event.COMPLETE, this.loaderCompleteHandler, this );
 		this.loader.load( this.url );
@@ -69,24 +69,26 @@
 
 	prototype.loaderCompleteHandler = function(event)
 	{
-		this.createAssetFactory();
+		this.createTimeline();
 		// B(t) = (1 - t)^3
 		// console.log( this.quadraticBezier( .5, 0, .2, .3, 1 ) );
 	};
 
 
 	/** Scene functions. */
-	prototype.createAssetFactory = function()
+	prototype.createTimeline = function()
 	{	
 		var json = this.loader.getObjectWithID( this.url ).result;
+		var elements = this.loader.results;
 
-		this.assetFactory = new AssetFactory(
+		this.timeline = new pixijs.Timeline(
 		{
-			json: json,
-			loader: this.loader
+			library: json.library,
+			elements: elements,
+			id: "container"
 		});
 
-		var container = this.assetFactory.create( "container" );
+		// var container = this.timeline.create( "container" );
 	};
 
 	// prototype.quadraticBezier = function(t, p0, p1, p2, p3)

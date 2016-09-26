@@ -7,6 +7,10 @@
 
 
 	AssetFactory.TIMELINE = "timeline";
+	AssetFactory.MOVIECLIP = "movieclip";
+	AssetFactory.SPRITE = "sprite";
+	AssetFactory.TEXT = "text";
+
 
 	function AssetFactory(setup)
 	{
@@ -36,21 +40,29 @@
 	prototype.create = function(id)
 	{
 		var template = this.getTemplate( id );
-		var displayObject = this.parse( template );
+		var displayObject = this.parse( id, template );
 
 		return displayObject;
 	};
 
-	prototype.parse = function(template)
+	prototype.parse = function(id, template)
 	{
-		console.log( template.type );
-
 		var object = null;
 
 		switch( template.type )
 		{
 			case AssetFactory.TIMELINE:
-				object = this.getTimeline( template );
+				object = this.getTimeline( id, template );
+				break;
+
+			case AssetFactory.MOVIECLIP:
+				object = this.getMovieClip( id, template );
+				break;
+
+			case AssetFactory.SPRITE:
+				break;
+
+			case AssetFactory.TEXT:
 				break;
 		}
 
@@ -59,42 +71,91 @@
 
 
 	/** Timeline functions. */
-	prototype.getTimeline = function(template)
+	prototype.getTimeline = function(id, template)
 	{
 		var assets = this.getAssets( template );
+
+		// timeline creates its own DisplayObjects to simplify object constuction.
 
 		var timeline = new pixijs.Timeline(
 		{
 			template: template,
-			assets: assets
+			loader: loader
 		});		
 	};
 
-	prototype.getAssets = function(template)
+
+	/** MovieClip functions. */
+	prototype.getMovieClip = function(id, template)
 	{
-		var list = [];
+		// function MovieClip(textures, animations, comments)
 
-		var parse = function(object)
-		{
-			for( var property in object )
-			{
-				var value = object[ property ];
+		console.log( id, template );
 
-				console.log( value );
-				// if( value.name !== undefined )
-			}
-		};
+		// var textures = 
 
-		parse( object );
+		// var movieclip = new pixijs.MovieClip( textures, animations, comments );
 
-		return list;
+		// return movieclip;
 	};
 
-	// prototype.init = function()
+
+	/** Asset parsing. */
+	// prototype.getAssets = function(template)
 	// {
-		
+	// 	var list = [];
+	// 	var ids = this.getAssetIDs( template );
+
+	// 	for(var i = 0; i < ids.length; ++i)
+	// 	{
+	// 	    var id = ids[ i ];
+	// 	    var displayObject = this.create( id );
+
+	// 	    list.push( displayObject );
+	// 	}
+
+	// 	return list;
 	// };
 
+	// prototype.getAssetIDs = function(template)
+	// {
+	// 	var list = [];
+
+	// 	var parse = function(object)
+	// 	{
+	// 		for( var property in object )
+	// 		{
+	// 			var value = object[ property ];
+	// 			var id = value.id;
+
+	// 			if( id !== undefined )
+	// 			{
+	// 				if( !this.getValueIsInList( list, id ) )
+	// 					list.push( id );
+	// 			}
+	// 			else
+	// 			if( typeof value == "object" )
+	// 				parse( value );
+	// 		}
+
+	// 	}.bind(this);
+
+	// 	parse( template );
+
+	// 	return list;
+	// };
+
+
+	// prototype.getValueIsInList = function(list, value)
+	// {
+	// 	for(var i = 0; i < list.length; ++i)
+	// 	{
+	// 	    var object = list[ i ];
+		
+	// 	    if( object == value )
+	// 	    	return object;
+	// 	}
+	// };
 
 
 }(window));
