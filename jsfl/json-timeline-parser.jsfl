@@ -236,7 +236,7 @@
 	prototype.parseText = function(element)
 	{
 		var anonymousID = "text" + ( !element.name ? this.numAnonymousTextFields++ : this.numAnonymousTextFields );
-		var object = { type:Helper.TEXT, id:element.name || anonymousID };
+		var object = { type:Helper.TEXTFIELD, id:element.name || anonymousID };
 		var text = element.getTextString().split( "\"" ).join( "\\\"" ).split( /\r\n|\r|\n/g ).join( "\\n" );
 
 		var style = 

@@ -10,6 +10,7 @@
 	Helper.LIBRARY_ITEM = "library item";
 	Helper.SPRITE = "sprite";
 	Helper.INSTANCE = "instance";
+	Helper.TEXTFIELD = "textfield";
 	Helper.TEXT = "text";
 
 

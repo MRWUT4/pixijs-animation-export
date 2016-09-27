@@ -10,7 +10,7 @@
 	Timeline.TIMELINE = "timeline";
 	Timeline.MOVIECLIP = "movieclip";
 	Timeline.SPRITE = "sprite";
-	Timeline.TEXT = "text";
+	Timeline.TEXTFIELD = "textfield";
 
 
 	function Timeline(setup)
@@ -18,7 +18,7 @@
 		PIXI.Container.call( this );
 
 		this.library = setup.library;
-		this.results = setup.results;
+		this.elements = setup.elements;
 		this.id = setup.id || "root";
 
 		this.setFrame( 0 );
@@ -65,22 +65,22 @@
 		var object = null;
 		var template = this.getTemplate( id );
 
-		console.log( id, template );
-
 		switch( template.type )
 		{
 			case Timeline.TIMELINE:
-				object = this.getTimeline( id, template );
+				object = this.getTimeline( id );
 				break;
 
 			case Timeline.MOVIECLIP:
-				object = this.getMovieClip( id, template );
+				object = this.getMovieClip( id, template, this.elements );
 				break;
 
 			case Timeline.SPRITE:
+				object = this.getSprite( id, template );
 				break;
 
-			case Timeline.TEXT:
+			case Timeline.TEXTFIELD:
+				object = this.getTextField( id, template );
 				break;
 		}
 
@@ -89,13 +89,13 @@
 
 
 	/** Timeline functions. */
-	prototype.getTimeline = function(id, template)
+	prototype.getTimeline = function(id)
 	{
 		// timeline creates its own DisplayObjects to simplify object constuction.
 		var timeline = new pixijs.Timeline(
 		{
 			library: this.library,
-			results: this.results,
+			elements: this.elements,
 			id: id
 		});		
 	};
@@ -149,17 +149,84 @@
 
 
 	/** MovieClip functions. */
-	prototype.getMovieClip = function(id, template)
+	prototype.getMovieClip = function(id, template, elements)
 	{
-		// function MovieClip(textures, animations, comments)
-		// console.log( id, template );
+		var json = this.getAtlasJSONWithID( elements, id )[ 0 ];
+		var textures = this.getTextures( json, id );
 
-		// var textures = 
+		// Invoke( elements ).map( )
 
-		// var movieclip = new pixijs.MovieClip( textures, animations, comments );
-
-		// return movieclip;
+		// var movieClip = new pixijs.MovieClip( textures, animations, comments );
 	};
 
+	prototype.getFrames = function(frames, id)
+	{
+		var list = Invoke( frames ).filter( this.nameIsID( id ).bind(this), true );
+
+		return list;
+	};
+
+	prototype.getTextures = function(json, id)
+	{
+		var frames = this.getFrames( json.frames, id );
+	};
+
+
+
+
+	prototype.getAtlasJSONWithID = function(elements, id)
+	{
+		var json = elements.filter( function(element)
+		{
+			if( this.getIsValidAtlas( element ) )
+			{
+				var frames = element.frames;
+				var hasID = Invoke( frames ).every( this.nameIsID( id ).bind(this) );
+
+				return hasID;
+			}
+			else
+				return false;
+
+		}.bind(this) );
+
+		return json;
+	};
+
+	prototype.getFrameIDWithoutIndex = function(id)
+	{
+		return id.slice( 0, -4 );
+	};
+
+
+	prototype.nameIsID = function(id)
+	{
+		return function( property, value )
+		{
+			var name = this.getFrameIDWithoutIndex( property );
+			return name == id;
+		};
+	};
+
+
+	/** Sprite functions. */
+	prototype.getSprite = function()
+	{
+		
+	};
+
+
+	/** TextFieled functions. */
+	prototype.getTextField = function()
+	{
+		
+	};
+
+
+	/** Assist. */
+	prototype.getIsValidAtlas = function(element)
+	{
+		return element.frames && element.meta;
+	};
 
 }(window));
