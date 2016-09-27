@@ -151,7 +151,7 @@
 	/** MovieClip functions. */
 	prototype.getMovieClip = function(id, template, elements)
 	{
-		var json = this.getAtlasJSONWithID( elements, id )[ 0 ];
+		var json = this.getAtlasJSONWithID( elements, id );
 		var textures = this.getTextures( json, id );
 
 		// Invoke( elements ).map( )
@@ -161,7 +161,7 @@
 
 	prototype.getFrames = function(frames, id)
 	{
-		var list = Invoke( frames ).filter( this.nameIsID( id ).bind(this), true );
+		var list = Invoke( frames ).filter( this.nameIsID( id ).bind(this) );
 
 		return list;
 	};
@@ -169,6 +169,8 @@
 	prototype.getTextures = function(json, id)
 	{
 		var frames = this.getFrames( json.frames, id );
+
+		console.log( frames );
 	};
 
 
@@ -176,7 +178,7 @@
 
 	prototype.getAtlasJSONWithID = function(elements, id)
 	{
-		var json = elements.filter( function(element)
+		var json = elements.find( function(element)
 		{
 			if( this.getIsValidAtlas( element ) )
 			{
