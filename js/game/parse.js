@@ -1,14 +1,14 @@
 (function(window){
 
-	window.Invoke = Invoke;
+	window.Parse = Parse;
 
-	var prototype = Invoke.prototype = Object.create( Object.prototype );
-	prototype.constructor = Invoke;
+	var prototype = Parse.prototype = Object.create( Object.prototype );
+	prototype.constructor = Parse;
 
 
-	function Invoke(object)
+	function Parse(object)
 	{		
-		var core = 
+		Parse.core = Parse.core ||
 		{
 			filter: function(callback, addProperty)
 			{
@@ -55,7 +55,7 @@
 			}
 		}
 
-		return core;
+		return Parse.core;
 	}
 
 }(window));

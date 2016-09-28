@@ -22,6 +22,15 @@
 		this.id = setup.id || "root";
 
 		this.setFrame( 0 );
+
+		/*
+		var graphics = new PIXI.Graphics();
+
+		graphics.beginFill( "#000" );
+		graphics.drawRect( 0, 0, 10, 10 );
+
+		this.addChild( graphics );
+		/*/
 	}
 
 
@@ -42,23 +51,10 @@
 		return this.library[ id ];
 	};
 
-	// prototype.getTemplate = function(id)
-	// {
-	// 	return this.library[ id ];
-	// };
-
 
 	/**
 	 * Public interface.
 	 */
-
-	// prototype.create = function(id)
-	// {
-	// 	var template = this.getTemplate( id );
-	// 	var displayObject = this.parse( id, template );
-
-	// 	return displayObject;
-	// };
 
 	prototype.parse = function(id)
 	{
@@ -126,7 +122,8 @@
 
 		elements.map( function( element )
 		{
-			this.parse( element.id );
+			var displayObject = this.parse( element.id );
+			this.addToDisplayList( displayObject );
 
 		}.bind(this) )
 	};
@@ -146,33 +143,74 @@
 		}
 	};
 
+	prototype.addToDisplayList = function(displayObject)
+	{
+		if( displayObject )
+		{
+			this.addChild( displayObject );
+		}
+	};
+
 
 
 	/** MovieClip functions. */
 	prototype.getMovieClip = function(id, template, elements)
 	{
 		var json = this.getAtlasJSONWithID( elements, id );
-		var textures = this.getTextures( json, id );
+		var textures = this.getTextures( elements, json, id );
 
-		// Invoke( elements ).map( )
+		var movieClip = new pixijs.MovieClip( textures/*, animations, comments*/ );
 
-		// var movieClip = new pixijs.MovieClip( textures, animations, comments );
+		return movieClip;
 	};
 
 	prototype.getFrames = function(frames, id)
 	{
-		var list = Invoke( frames ).filter( this.nameIsID( id ).bind(this) );
+		var list = Parse( frames ).filter( this.nameIsID( id ).bind(this) );
+		return list;
+	};
+
+	prototype.getTextures = function(elements, json, id)
+	{
+		var frames = this.getFrames( json.frames, id );
+		var baseTexture = this.getBaseTexture( elements, json.meta.image );
+
+		var list = frames.map( function(item)
+		{
+			var frame = item.frame;
+			var size = item.spriteSourceSize;
+
+			var rectangle = new PIXI.Rectangle( frame.x, frame.y, frame.w, frame.h );
+			var trim = new PIXI.Rectangle( size.x, size.y, size.w, size.h );
+
+			var texture = new PIXI.Texture( baseTexture, rectangle );
+			texture.trim = trim;
+
+			return texture;
+		});
 
 		return list;
 	};
 
-	prototype.getTextures = function(json, id)
+	prototype.getBaseTexture = function(elements, image)
 	{
-		var frames = this.getFrames( json.frames, id );
+		var source = elements.find( function(element)
+		{
+			var isImage = element instanceof Image;
 
-		console.log( frames );
+			if( isImage )
+			{
+				var path = element.src.split( "/" ).slice( -1 )[ 0 ];
+				var hasURL = path == image;
+
+				return hasURL;
+			}
+		});
+
+		var baseTexture = new PIXI.BaseTexture( source );
+
+		return baseTexture;
 	};
-
 
 
 
@@ -183,7 +221,7 @@
 			if( this.getIsValidAtlas( element ) )
 			{
 				var frames = element.frames;
-				var hasID = Invoke( frames ).every( this.nameIsID( id ).bind(this) );
+				var hasID = Parse( frames ).every( this.nameIsID( id ).bind(this) );
 
 				return hasID;
 			}

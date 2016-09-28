@@ -51,7 +51,7 @@
 		setInterval( function()
 		{
 			this.renderer.render( this.stage );
-
+			
 		}.bind( this ), 1000 / this.fps );
 	};
 
@@ -63,8 +63,6 @@
 
 		this.loader.addEventListener( Event.COMPLETE, this.loaderCompleteHandler, this );
 		this.loader.load( this.url );
-
-		console.log( this.url );
 	};
 
 	prototype.loaderCompleteHandler = function(event)
@@ -81,13 +79,14 @@
 		var json = this.loader.getObjectWithID( this.url ).result;
 		var elements = this.loader.results;
 
-		this.timeline = new pixijs.Timeline(
+		var timeline = new pixijs.Timeline(
 		{
 			library: json.library,
 			elements: elements,
 			id: "container"
 		});
 
+		this.stage.addChild( timeline );
 		// var container = this.timeline.create( "container" );
 	};
 
