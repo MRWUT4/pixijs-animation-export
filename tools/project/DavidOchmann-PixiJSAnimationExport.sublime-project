@@ -3,9 +3,9 @@
 	[
 		{
 			"name": "Execute",
-			"shell_cmd": "open /Applications/Google\\ Chrome.app --args -disable-web-security --user-data-dir"
+			// "shell_cmd": "open /Applications/Google\\ Chrome.app --args -disable-web-security --user-data-dir"
 			
-			// "shell_cmd": "${project_path}/../commands/uglify.command && open ${project_path}/../../jsfl/pixi-export.jsfl"
+			"shell_cmd": "${project_path}/../commands/uglify.command && open ${project_path}/../../jsfl/pixi-export.jsfl"
 			// "shell_cmd": "open ${project_path}/../../debug.html"
 			// "shell_cmd": "open ${project_path}/../../jsfl/pixi-export.jsfl"
 		}

@@ -22,15 +22,6 @@
 		this.id = setup.id || "root";
 
 		this.setFrame( 0 );
-
-		/*
-		var graphics = new PIXI.Graphics();
-
-		graphics.beginFill( "#000" );
-		graphics.drawRect( 0, 0, 10, 10 );
-
-		this.addChild( graphics );
-		/*/
 	}
 
 
@@ -38,13 +29,14 @@
 	 * Getter / Setter
 	 */
 
-	// Object.defineProperty( prototype, "template", 
-	// {
-	// 	get: function() 
-	// 	{	
-	// 		// this._template = this._template !== undefined ? this._template : null;
-	// 	}
-	// });
+	Object.defineProperty( prototype, "layers", 
+	{
+		get: function() 
+		{	
+			this._layers = this._layers !== undefined ? this._layers : {};
+			return this._layers;
+		}
+	});
 
 	prototype.getTemplate = function(id)
 	{
@@ -72,7 +64,7 @@
 				break;
 
 			case Timeline.SPRITE:
-				object = this.getSprite( id, template );
+				object = this.getSprite( id, template, this.elements );
 				break;
 
 			case Timeline.TEXTFIELD:
@@ -82,6 +74,18 @@
 
 		return object;
 	};
+
+	/** Updated transform override function. */
+	//*
+	prototype.updateTransformContainer = prototype.updateTransform;
+	prototype.updateTransform = function()
+	{
+		this.updateTransformContainer();
+		
+		this.index++;
+		this.setFrame( this.index );	
+	};
+	/*/
 
 
 	/** Timeline functions. */
@@ -98,7 +102,7 @@
 
 	prototype.setFrame = function(index)
 	{
-		this.index = index;
+		this.index = this.getValidIndex( index );
 
 		var template = this.getTemplate( this.id );
 		var layers = template.layers;
@@ -106,49 +110,86 @@
 		this.resolveLayers( layers, index );
 	};
 
+	prototype.getValidIndex = function(index)
+	{
+		var totalFrames = this.getTemplate( this.id ).totalFrames;
+		return index % totalFrames;
+	};
+
 	prototype.resolveLayers = function(layers, index)
 	{
 		layers.map( function( layer )
 		{
-			this.resolveFrames( layer.frames, index );
+			var elements = this.resolveFrames( layer, index );
+			this.layers[ layer.name ] = elements;
 
 		}.bind(this) );
 	};
 
-	prototype.resolveFrames = function(frames, index)
+	prototype.resolveFrames = function(layer, index)
 	{
-		var frame = this.resolveKeyFrame( frames, index );
+		var frames = layer.frames;
+		var frame = this.getPrecedingKeyframe( frames, index );
 		var elements = frame.elements;
 
-		elements.map( function( element )
+		var list = elements.map( function( element )
 		{
-			var displayObject = this.parse( element.id );
-			this.addToDisplayList( displayObject );
+			return this.resolveElement( layer.name, frames, element );
 
-		}.bind(this) )
+		}.bind(this) );
+
+
+		return list;
 	};
 
-	prototype.resolveKeyFrame = function(object, index)
+	prototype.getPrecedingKeyframe = function(object, index)
 	{
-		var previous = null;
-
-		for( var property in object )
+		var result = Parse( object ).reduce( function(property, value, item)
 		{
-			var value = object[ property ];
+			var frameIndex = Number( property );
+			item = frameIndex >= item && frameIndex <= index ? frameIndex : item;
 
-			if( Number( property ) >= index )
-				return previous || value;
+			return item;
 
-			previous = value;
-		}
+		}.bind(this), 0 );
+
+
+		var frame = object[ result ];
+		return frame;
 	};
 
-	prototype.addToDisplayList = function(displayObject)
+
+	prototype.resolveElement = function(layerName, frames, element)
 	{
+		// var displayObject = this.getDisplayObjectWithID( )
+
+		var displayObject = this.getDisplayObject( layerName, element.id );
+
 		if( displayObject )
 		{
+			this.addTransformData( displayObject, element, frames );
 			this.addChild( displayObject );
 		}
+
+		return displayObject;
+	};
+
+	prototype.getDisplayObject = function(layerName, id)
+	{
+		var displayObject = null;
+		var layer = this.layers[ layerName ];
+
+		if( layer )
+		{
+			displayObject = layer.find( function(element)
+			{
+				return element && element.id == id;
+			});
+		}
+
+		displayObject = displayObject || this.parse( id );
+
+		return displayObject;
 	};
 
 
@@ -159,9 +200,48 @@
 		var json = this.getAtlasJSONWithID( elements, id );
 		var textures = this.getTextures( elements, json, id );
 
-		var movieClip = new pixijs.MovieClip( textures/*, animations, comments*/ );
+		var animations = this.getBeginEndObject( template, "labels" );
+		var comments = this.getBeginEndObject( template, "comments" );
+
+		var movieClip = new pixijs.MovieClip( textures, animations, comments );
 
 		return movieClip;
+	};
+
+	prototype.getBeginEndObject = function(template, name)
+	{
+		var object = template[ name ];
+
+		if( object )
+		{
+			var compare = this.getFirstBiggerValue;
+			var totalFrames = template.totalFrames;
+
+			var item = Parse( object ).reduce( function(property, begin, result0)
+			{
+				result0[ property ] = result0[ property ] || { begin:begin, end:totalFrames };
+
+				Parse( object ).reduce( function(property, value, result1)
+				{
+					// result1.end = value < result1.end && value > result1.begin ? value : result1.end;
+					result1.end = compare( result1.end, value );
+					return result1;
+
+				}, result0[ property ] );
+
+				return result0;
+
+			}, {} );
+			
+			return item;
+		}
+		else
+			return null;
+	};
+
+	prototype.getFirstBiggerValue = function(value, compare)
+	{
+		return value < compare && compare > value ? compare : value;
 	};
 
 	prototype.getFrames = function(frames, id)
@@ -212,8 +292,6 @@
 		return baseTexture;
 	};
 
-
-
 	prototype.getAtlasJSONWithID = function(elements, id)
 	{
 		var json = elements.find( function(element)
@@ -233,11 +311,11 @@
 		return json;
 	};
 
-	prototype.getFrameIDWithoutIndex = function(id)
-	{
-		return id.slice( 0, -4 );
-	};
 
+	prototype.getIsValidAtlas = function(element)
+	{
+		return element.frames && element.meta;
+	};
 
 	prototype.nameIsID = function(id)
 	{
@@ -248,12 +326,24 @@
 		};
 	};
 
+	prototype.getFrameIDWithoutIndex = function(id)
+	{
+		return id.slice( 0, -4 );
+	};
+
+
 
 	/** Sprite functions. */
-	prototype.getSprite = function()
+	prototype.getSprite = function(id, template, elements)
 	{
-		
+		var json = this.getAtlasJSONWithID( elements, id );
+		var texture = this.getTextures( elements, json, id )[ 0 ];
+
+		var sprite = new pixijs.Sprite( texture );
+
+		return sprite;	
 	};
+
 
 
 	/** TextFieled functions. */
@@ -263,10 +353,68 @@
 	};
 
 
-	/** Assist. */
-	prototype.getIsValidAtlas = function(element)
+
+	/** TransformData functions. */
+	prototype.addTransformData = function(displayObject, element, frames)
 	{
-		return element.frames && element.meta;
+		var clone = Parse( element ).clone();
+		var translated = this.translatePivot( clone );
+
+		// if( element.id == "circle" )
+		// 	console.log( element.scaleX );
+
+		// console.log( translated );
+
+		Parse( translated ).reduce( function( property, value, result ) 
+		{
+			if( value !== undefined )
+				result[ property ] = value;
+
+			// if( element.id == "circle" && property == "scaleX" )
+			// 	console.log( value );
+
+			return result;
+
+		}, displayObject );
+	};
+
+	prototype.translatePivot = function(object)
+	{
+		this.propertyToObjectValue( object, "scaleX", "scale", "x" );
+		this.propertyToObjectValue( object, "scaleY", "scale", "y" );
+
+		if( object.pivot )
+		{
+			object.x += object.pivot.x;
+			object.y += object.pivot.y;
+		}
+
+		return object;
+	};
+
+	prototype.propertyToObjectValue = function(object, property, name, value)
+	{
+		if( object[ property ] )
+		{
+			var item = object[ name ] = object[ name ] || {};
+			item[ value ] = object[ property ];
+
+			delete object[ property ];
+		}
+	};
+
+	prototype.getNextIndex = function(index, frames)
+	{
+		var next = 0;
+
+		Parse( frames ).reduce( function(property, value)
+		{
+			next = this.getFirstBiggerValue( next, property );
+
+
+		}.bind(this), next );
+
+		console.log( next );
 	};
 
 }(window));

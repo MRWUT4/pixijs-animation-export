@@ -98,12 +98,22 @@
 	prototype.parseTimeline = function(timeline, id)
 	{
 		var libraryItem = timeline.libraryItem || { name:"root" };
-		var object = { type:Helper.TIMELINE, id:libraryItem.name };
+		
+		var object = 
+		{ 
+			type: Helper.TIMELINE, 
+			id: libraryItem.name,
+			totalFrames: timeline.frameCount
+		};
+		
 		var layers = timeline.layers;
+
 
 		var objectLayers = [];
 
-		for(var i = 0; i < layers.length; ++i)
+		// for(var i = 0; i < layers.length; ++i)
+		// {
+		for(var i = layers.length - 1; i >= 0; --i)
 		{
 		    var layer = layers[ i ];
 		    
@@ -115,6 +125,7 @@
 			    	objectLayers.push( item );
 			}
 		}		
+
 
 		if( objectLayers.length > 0 )
 			object.layers = objectLayers;
@@ -218,15 +229,29 @@
 		var timeline = libraryItem.timeline;
 		var isMovieClip = timeline.frameCount > 1;
 		var type = isMovieClip ? Helper.MOVIECLIP : Helper.SPRITE;
-		var object = { type:type, id:libraryItem.name /*,name:item.name*/ };
 		
+
+		var object = 
+		{ 
+			type: type, 
+			id: libraryItem.name
+			/*,name:item.name*/
+		};
+		
+
+		if( isMovieClip )
+			object.totalFrames = timeline.frameCount
+		
+
 		var isInLibrary = this.getLibraryObject( object.id );
 
 		if( !isInLibrary )
 		{
+
 			this.symbols.push( libraryItem );
 			this.timelines.push( timeline );
 		}
+
 
 		return object;
 	};
@@ -323,18 +348,22 @@
 		var inputIsValid = element !== null && object !== null;
 		var elementHasPropertys = typeof element == "object";
 
+		var transform = element.getTransformationPoint();
+		var pivot = transform.x || transform.y ? { x:transform.x, y: transform.y } : null;
+
 		if( inputIsValid && elementHasPropertys )
 		{
-			// this.addProperty( object, "elementType", element.elementType );
-			// this.addProperty( object, "height", element.height, 0 );
-			// this.addProperty( object, "width", element.width, 0 );
-			this.addProperty( object, "name", element.name, "" );
+			this.addProperty( object, "elementType", element.elementType );
 			this.addProperty( object, "type", Helper.getExportType( element ) );
+			this.addProperty( object, "name", element.name, "" );
+			this.addProperty( object, "x", element.x, 0 );
+			this.addProperty( object, "y", element.y, 0 );
+			// this.addProperty( object, "width", element.width, 0 );
+			// this.addProperty( object, "height", element.height, 0 );
 			this.addProperty( object, "rotation", element.rotation, 0 );
 			this.addProperty( object, "scaleX", element.scaleX, 1, 4 );
 			this.addProperty( object, "scaleY", element.scaleY, 1, 4 );
-			this.addProperty( object, "x", element.x, 0 );
-			this.addProperty( object, "y", element.y, 0 );
+			this.addProperty( object, "pivot", pivot, null );
 		}
 
 		return object;

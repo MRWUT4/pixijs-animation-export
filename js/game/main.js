@@ -86,6 +86,9 @@
 			id: "container"
 		});
 
+		timeline.setFrame( 10 );
+		timeline.alpha = .5;
+
 		this.stage.addChild( timeline );
 		// var container = this.timeline.create( "container" );
 	};

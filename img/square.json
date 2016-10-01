@@ -1,0 +1,1 @@
+﻿{	"library": 	{		"square": 		{			"type": "movieclip",			"totalFrames": 20,			"labels": 			{				"start": 0,				"center": 9,				"end": 19			}		}	},	"resources": 	[		{			"img": "img/square-0.png",			"json": "img/square-0.json"		}	]}
