@@ -76,7 +76,7 @@
 	};
 
 	/** Updated transform override function. */
-	//*
+	/*
 	prototype.updateTransformContainer = prototype.updateTransform;
 	prototype.updateTransform = function()
 	{
@@ -129,45 +129,29 @@
 	prototype.resolveFrames = function(layer, index)
 	{
 		var frames = layer.frames;
-		var frame = this.getPrecedingKeyframe( frames, index );
+		var previousIndex = this.getPreviousIndex( frames, index );
+		var frame = frames[ previousIndex ];
 		var elements = frame.elements;
 
 		var list = elements.map( function( element )
 		{
-			return this.resolveElement( layer.name, frames, element );
+			return this.resolveElement( layer.name, element, frames, index );
 
 		}.bind(this) );
-
 
 		return list;
 	};
 
-	prototype.getPrecedingKeyframe = function(object, index)
-	{
-		var result = Parse( object ).reduce( function(property, value, item)
-		{
-			var frameIndex = Number( property );
-			item = frameIndex >= item && frameIndex <= index ? frameIndex : item;
-
-			return item;
-
-		}.bind(this), 0 );
-
-
-		var frame = object[ result ];
-		return frame;
-	};
-
-
-	prototype.resolveElement = function(layerName, frames, element)
+	prototype.resolveElement = function(layerName, element, frames, index)
 	{
 		// var displayObject = this.getDisplayObjectWithID( )
 
-		var displayObject = this.getDisplayObject( layerName, element.id );
+		var id = element.id;
+		var displayObject = this.getDisplayObject( layerName, id );
 
 		if( displayObject )
 		{
-			this.addTransformData( displayObject, element, frames );
+			this.addTransformData( id, displayObject, frames, index );
 			this.addChild( displayObject );
 		}
 
@@ -214,7 +198,7 @@
 
 		if( object )
 		{
-			var compare = this.getFirstBiggerValue;
+			// var compare = this.getFirstBiggerValue;
 			var totalFrames = template.totalFrames;
 
 			var item = Parse( object ).reduce( function(property, begin, result0)
@@ -224,7 +208,10 @@
 				Parse( object ).reduce( function(property, value, result1)
 				{
 					// result1.end = value < result1.end && value > result1.begin ? value : result1.end;
-					result1.end = compare( result1.end, value );
+					// return value < compare && compare > value ? compare : value;
+					// result1.end = compare( result1.end, value );
+
+					result1.end = result1.end < value && value > result1.end ? value : result1.end;
 					return result1;
 
 				}, result0[ property ] );
@@ -239,10 +226,10 @@
 			return null;
 	};
 
-	prototype.getFirstBiggerValue = function(value, compare)
-	{
-		return value < compare && compare > value ? compare : value;
-	};
+	// prototype.getFirstBiggerValue = function(value, compare)
+	// {
+	// 	return value < compare && compare > value ? compare : value;
+	// };
 
 	prototype.getFrames = function(frames, id)
 	{
@@ -355,34 +342,105 @@
 
 
 	/** TransformData functions. */
-	prototype.addTransformData = function(displayObject, element, frames)
+	prototype.addTransformData = function(id, displayObject, frames, index)
 	{
-		var clone = Parse( element ).clone();
-		var translated = this.translatePivot( clone );
+		var previousIndex = this.getPreviousIndex( frames, index );
+		var previousKeyframe = frames[ previousIndex ];
 
-		// if( element.id == "circle" )
-		// 	console.log( element.scaleX );
+		var nextIndex = this.getNextKeyframe( frames, index );
+		var nextKeyframe = frames[ nextIndex ];
 
-		// console.log( translated );
+		var percent = this.getPercent( previousIndex, nextIndex, index );
+		var transform = this.getTransform( frames, previousKeyframe, nextKeyframe, percent );
+		// console.log( "layerName", layerName ); 
+		// console.log( "displayObject", displayObject );
+		// console.log( "frames", frames );
+		// console.log( "index", index );
 
-		Parse( translated ).reduce( function( property, value, result ) 
-		{
-			if( value !== undefined )
-				result[ property ] = value;
+		// var clone = Parse( element ).clone();
+		// var translated = this.translatePivot( this.translateScale( clone ) );
+		
+		// var tweened = this.getTweenValues( translated, frames, index );		
 
-			// if( element.id == "circle" && property == "scaleX" )
-			// 	console.log( value );
+		// Parse( translated ).reduce( function( property, value, result ) 
+		// {
+		// 	if( value !== undefined )
+		// 		result[ property ] = value;
 
-			return result;
+		// 	return result;
 
-		}, displayObject );
+		// }, displayObject );
 	};
 
-	prototype.translatePivot = function(object)
+	prototype.getPercent = function(previous, next, index )
+	{
+		var n0 = ( index - previous );
+		var n1 = ( next - previous );
+		var result = n1 !== 0 ? ( n0 / n1 ) : 0;
+
+		return result;
+	};
+
+	prototype.getTransform = function(frames, previous, next, percent)
+	{
+		var animation = previous.animation;
+
+		if( animation )
+		{
+			var bezierPoints = this.getBezierPoints( animation );
+			
+			console.log( bezierPoints );
+		}
+
+
+		// var previousTransform = this.getFrameTransform( previous, id );
+		// var nextTransform = this.getFrameTransform( next, id );
+		
+	};
+
+	// prototype.quadraticBezier = function(t, p0, p1, p2, p3)
+	// {
+	// 	return Math.pow( 1 - t, 3 ) * p0 + 
+	// 	3 * Math.pow( 1 - t, 2 ) * t * p1 + 
+	// 	3 * ( 1 - t ) * Math.pow( t, 2 ) * p2 + 
+	// 	Math.pow( t, 3 ) * p3;
+	// };
+
+	prototype.getBezierPoints = function(animation)
+	{
+		if( animation )
+		{
+			var points = animation.concat();
+
+			points.unshift( { x:0, y:0 } );
+			points.push( { x:1, y:1 } );
+		}
+
+		return points;
+	};
+
+	prototype.getFrameTransform = function(keyframe, id)
+	{
+		var elements = keyframe.elements;
+
+		var result = elements.find( function(element)
+		{
+			return element.id == id;
+		});
+
+		return result;
+	};
+
+	prototype.translateScale = function(object)
 	{
 		this.propertyToObjectValue( object, "scaleX", "scale", "x" );
 		this.propertyToObjectValue( object, "scaleY", "scale", "y" );
 
+		return object;
+	};
+
+	prototype.translatePivot = function(object)
+	{
 		if( object.pivot )
 		{
 			object.x += object.pivot.x;
@@ -403,18 +461,57 @@
 		}
 	};
 
-	prototype.getNextIndex = function(index, frames)
+
+	// prototype.getTweenValues = function(element, frames, index)
+	// {
+	// 	var next = this.getNextKeyframe( frames, index );
+
+	// 	console.log( element, next );
+
+	// };
+
+
+
+	prototype.getPreviousIndex = function(object, index)
 	{
-		var next = 0;
-
-		Parse( frames ).reduce( function(property, value)
+		var result = Parse( object ).reduce( function(property, value, item)
 		{
-			next = this.getFirstBiggerValue( next, property );
+			var frameIndex = Number( property );
+			item = frameIndex >= item && frameIndex <= index ? frameIndex : item;
+
+			return item;
+
+		}.bind(this), 0 );
+
+		return result;
+		// var frame = object[ result ];
+		// return frame;
+	};
+
+	prototype.getNextKeyframe = function(object, index)
+	{
+		var biggestValue = Parse( object ).reduce( function( property, value, item )
+		{
+			var frameIndex = Number( property );
+			return frameIndex > item ? frameIndex : item;
+
+		}, 0 );
 
 
-		}.bind(this), next );
+		var result = Parse( object ).reduce( function(property, value, item)
+		{
+			var frameIndex = Number( property );
+			item = frameIndex <= item && frameIndex >= index ? frameIndex : item;
 
-		console.log( next );
+			return item;
+
+		}.bind(this), biggestValue );
+
+
+		return result;
+
+		// var frame = object[ result ];
+		// return frame;
 	};
 
 }(window));

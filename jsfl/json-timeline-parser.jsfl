@@ -353,16 +353,16 @@
 
 		if( inputIsValid && elementHasPropertys )
 		{
-			this.addProperty( object, "elementType", element.elementType );
+			// this.addProperty( object, "elementType", element.elementType );
 			this.addProperty( object, "type", Helper.getExportType( element ) );
 			this.addProperty( object, "name", element.name, "" );
-			this.addProperty( object, "x", element.x, 0 );
-			this.addProperty( object, "y", element.y, 0 );
+			this.addProperty( object, "x", element.x, null );
+			this.addProperty( object, "y", element.y, null );
 			// this.addProperty( object, "width", element.width, 0 );
 			// this.addProperty( object, "height", element.height, 0 );
-			this.addProperty( object, "rotation", element.rotation, 0 );
-			this.addProperty( object, "scaleX", element.scaleX, 1, 4 );
-			this.addProperty( object, "scaleY", element.scaleY, 1, 4 );
+			this.addProperty( object, "rotation", element.rotation, null );
+			this.addProperty( object, "scaleX", element.scaleX, null, 4 );
+			this.addProperty( object, "scaleY", element.scaleY, null, 4 );
 			this.addProperty( object, "pivot", pivot, null );
 		}
 
