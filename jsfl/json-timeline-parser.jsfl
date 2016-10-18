@@ -191,11 +191,7 @@
 		    }
 		}
 
-		
-		if( object.elements.length > 0 )
-			return object;
-		else
-			return null;
+		return object;
 	};
 
 	prototype.parseAnimation = function(object, frame)
@@ -350,6 +346,7 @@
 
 		var transform = element.getTransformationPoint();
 		var pivot = transform.x || transform.y ? { x:transform.x, y: transform.y } : null;
+		var alpha = isNaN( element.colorAlphaPercent) ? 1 : element.colorAlphaPercent / 100;
 
 		if( inputIsValid && elementHasPropertys )
 		{
@@ -358,6 +355,7 @@
 			this.addProperty( object, "name", element.name, "" );
 			this.addProperty( object, "x", element.x, null );
 			this.addProperty( object, "y", element.y, null );
+			this.addProperty( object, "alpha", alpha, 1 );
 			// this.addProperty( object, "width", element.width, 0 );
 			// this.addProperty( object, "height", element.height, 0 );
 			this.addProperty( object, "rotation", element.rotation, null );

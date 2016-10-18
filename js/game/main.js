@@ -75,7 +75,36 @@
 
 	/** Scene functions. */
 	prototype.createTimeline = function()
-	{	
+	{
+		// var p0 = 
+		// {
+		// 	x: 0.1532,
+		// 	y: 0.3064
+		// };
+
+		// var p1 = 
+		// {
+		// 	x: 0.0528,
+		// 	y: 0.2232
+		// };
+
+		// var p2 = 
+		// {
+		// 	x: 0.16,
+		// 	y: 0.471
+		// };
+
+		// var p3 = 
+		// {
+		// 	x: 0.229,
+		// 	y: 0.6304
+		// };
+
+
+		// var result = Bezier.getY( , p0, p1, p2, p3 );
+
+		// console.log( result );
+
 		var json = this.loader.getObjectWithID( this.url ).result;
 		var elements = this.loader.results;
 
@@ -86,7 +115,19 @@
 			id: "container"
 		});
 
-		timeline.setFrame( 6 );
+		// setInterval( function()
+		// {
+		// 	timeline.setFrame( timeline.index + 1 );
+
+		// }, 100 )
+
+		timeline.setFrame( 0 );
+		// timeline.setFrame( 0 );
+		timeline.setFrame( 47 );
+		timeline.setFrame( 50 );
+		// timeline.setFrame( 60 );
+
+		console.log( timeline.children.length );
 
 		this.stage.addChild( timeline );
 		// var container = this.timeline.create( "container" );

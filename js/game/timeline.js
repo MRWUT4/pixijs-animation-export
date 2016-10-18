@@ -76,14 +76,14 @@
 	};
 
 	/** Updated transform override function. */
-	/*
+	//*
 	prototype.updateTransformContainer = prototype.updateTransform;
 	prototype.updateTransform = function()
 	{
+		this.setFrame( this.index + 1 );
 		this.updateTransformContainer();
-		
-		this.index++;
-		this.setFrame( this.index );	
+
+		// console.log( this.children.length );
 	};
 	/*/
 
@@ -132,26 +132,46 @@
 		var previousIndex = this.getPreviousIndex( frames, index );
 		var frame = frames[ previousIndex ];
 		var elements = frame.elements;
+		var layerName = layer.name;
+
+		this.removeMissingReferences( layerName, elements );
 
 		var list = elements.map( function( element )
 		{
-			return this.resolveElement( layer.name, element, frames, index );
+			return this.resolveElement( layerName, element, frames, index );
 
 		}.bind(this) );
+
 
 		return list;
 	};
 
+	prototype.removeMissingReferences = function(layerName, elements)
+	{
+		var layer = this.layers[ layerName ];
+
+		if( layer )
+		{
+			if( elements.length == 0 )
+			{
+				layer.forEach( function(child)
+				{
+					this.removeChild( child );
+
+				}.bind(this) );
+			}
+		}
+	};
+
 	prototype.resolveElement = function(layerName, element, frames, index)
 	{
-		// var displayObject = this.getDisplayObjectWithID( )
-
 		var id = element.id;
 		var displayObject = this.getDisplayObject( layerName, id );
 
 		if( displayObject )
 		{
 			this.addTransformData( id, displayObject, frames, index );
+
 			this.addChild( displayObject );
 		}
 
@@ -163,16 +183,21 @@
 		var displayObject = null;
 		var layer = this.layers[ layerName ];
 
-		if( layer )
+		if( !layer )
+			layer = this.layers[ layerName ] = [];
+
+		displayObject = layer.find( function(element)
 		{
-			displayObject = layer.find( function(element)
-			{
-				return element && element.id == id;
-			});
+			return element && element.id == id;
+		});
+
+
+		if( !displayObject )
+		{
+			displayObject = this.parse( id );
+			layer.push( displayObject );
 		}
-
-		displayObject = displayObject || this.parse( id );
-
+		
 		return displayObject;
 	};
 
@@ -198,7 +223,6 @@
 
 		if( object )
 		{
-			// var compare = this.getFirstBiggerValue;
 			var totalFrames = template.totalFrames;
 
 			var item = Parse( object ).reduce( function(property, begin, result0)
@@ -207,10 +231,6 @@
 
 				Parse( object ).reduce( function(property, value, result1)
 				{
-					// result1.end = value < result1.end && value > result1.begin ? value : result1.end;
-					// return value < compare && compare > value ? compare : value;
-					// result1.end = compare( result1.end, value );
-
 					result1.end = result1.end < value && value > result1.end ? value : result1.end;
 					return result1;
 
@@ -225,11 +245,6 @@
 		else
 			return null;
 	};
-
-	// prototype.getFirstBiggerValue = function(value, compare)
-	// {
-	// 	return value < compare && compare > value ? compare : value;
-	// };
 
 	prototype.getFrames = function(frames, id)
 	{
@@ -336,7 +351,7 @@
 	/** TextFieled functions. */
 	prototype.getTextField = function()
 	{
-		
+		return null;	
 	};
 
 
@@ -351,25 +366,21 @@
 		var nextKeyframe = frames[ nextIndex ];
 
 		var percent = this.getPercent( previousIndex, nextIndex, index );
-		var transform = this.getTransform( frames, previousKeyframe, nextKeyframe, percent );
-		// console.log( "layerName", layerName ); 
-		// console.log( "displayObject", displayObject );
-		// console.log( "frames", frames );
-		// console.log( "index", index );
+		var transform = this.getTransform( frames, previousKeyframe, nextKeyframe, id, percent );
 
-		// var clone = Parse( element ).clone();
-		// var translated = this.translatePivot( this.translateScale( clone ) );
-		
-		// var tweened = this.getTweenValues( translated, frames, index );		
+		var translated = this.translatePivot( this.translateScale( transform ) );
 
-		// Parse( translated ).reduce( function( property, value, result ) 
-		// {
-		// 	if( value !== undefined )
-		// 		result[ property ] = value;
+		Parse( transform ).reduce( function( property, value, result ) 
+		{
+			if( value !== undefined )
+				result[ property ] = value;
 
-		// 	return result;
+			return result;
 
-		// }, displayObject );
+		}, displayObject );
+
+
+		displayObject.id = id;
 	};
 
 	prototype.getPercent = function(previous, next, index )
@@ -381,43 +392,108 @@
 		return result;
 	};
 
-	prototype.getTransform = function(frames, previous, next, percent)
+	prototype.getTransform = function(frames, previous, next, id, percent)
 	{
 		var animation = previous.animation;
 
-		if( animation )
-		{
-			var bezierPoints = this.getBezierPoints( animation );
-			
-			console.log( bezierPoints );
-		}
+		var previousItem = this.translateAlpha( this.getFrameTransform( previous, id ) );
+		var nextItem = this.translateAlpha( this.getFrameTransform( next, id ) );
 
+		var transform = previousItem;
 
-		// var previousTransform = this.getFrameTransform( previous, id );
-		// var nextTransform = this.getFrameTransform( next, id );
-		
+		var p = this.getBezierPoints( animation );
+		// var p = this.getBezierPointsSubset( bezierPoints, percent );
+
+		var progress = Bezier.getY( percent, p[ 0 ], p[ 1 ], p[ 2 ], p[ 3 ] );
+		transform = this.getTransformBetweenItems( previousItem, nextItem, progress );
+
+		return transform;
 	};
 
-	// prototype.quadraticBezier = function(t, p0, p1, p2, p3)
-	// {
-	// 	return Math.pow( 1 - t, 3 ) * p0 + 
-	// 	3 * Math.pow( 1 - t, 2 ) * t * p1 + 
-	// 	3 * ( 1 - t ) * Math.pow( t, 2 ) * p2 + 
-	// 	Math.pow( t, 3 ) * p3;
-	// };
+	prototype.getTransformBetweenItems = function(previous, next, progress)
+	{
+		var floatBetweenAandB = this.floatBetweenAandBAt;
+
+		var parse = function(object)
+		{
+			var transform = {};
+
+			Parse( object ).reduce( function(property, value)
+			{
+				if( typeof value == "number" )
+					transform[ property ] = floatBetweenAandB( value, next[ property ], progress );
+				else
+				if( typeof value == "object" )
+					transform[ property ] = parse( value );
+			});
+
+			return transform;
+		};
+
+		var transform = parse( previous );
+		
+		return transform;
+	};
+
+	prototype.floatBetweenAandBAt = function(a, b, position)
+	{
+		return a + position * ( b - a );
+	};
+
+	prototype.quadraticBezier = function(t, p0, p1, p2, p3)
+	{
+		return Math.pow( 1 - t, 3 ) * p0 + 
+		3 * Math.pow( 1 - t, 2 ) * t * p1 + 
+		3 * ( 1 - t ) * Math.pow( t, 2 ) * p2 + 
+		Math.pow( t, 3 ) * p3;
+	};
 
 	prototype.getBezierPoints = function(animation)
 	{
+		var points = null;
+
 		if( animation )
 		{
-			var points = animation.concat();
+			points = animation.concat();
 
 			points.unshift( { x:0, y:0 } );
 			points.push( { x:1, y:1 } );
 		}
+		else
+		{
+			points = 
+			[
+				{ x:0, y:0 },
+				{ x:0, y:0 },
+				{ x:1, y:1 },
+				{ x:1, y:1 }
+			];
+		}
 
 		return points;
 	};
+
+	// prototype.getBezierPointsSubset = function(list, percent)
+	// {
+	// 	var div = 4;
+	// 	var length = list.length;
+
+	// 	var center = Math.round( length * percent );
+
+	// 	// console.log( percent, length, center );
+	// 	// console.log( "\n" );
+	// 	// console.log( percent, length );
+
+	// 	// console.log( ( length * percent ) / div )
+
+	// 	// var begin = Math.floor( ( length * percent ) / div ) * div;
+	// 	// begin = Math.min( length - div, begin );
+
+	// 	var result = list.splice( 0, div );
+
+
+	// 	return result;
+	// };
 
 	prototype.getFrameTransform = function(keyframe, id)
 	{
@@ -446,6 +522,13 @@
 			object.x += object.pivot.x;
 			object.y += object.pivot.y;
 		}
+
+		return object;
+	};
+
+	prototype.translateAlpha = function(object)
+	{
+		object.alpha = object.alpha !== undefined ? object.alpha : 1;
 
 		return object;
 	};
@@ -483,9 +566,8 @@
 
 		}.bind(this), 0 );
 
+
 		return result;
-		// var frame = object[ result ];
-		// return frame;
 	};
 
 	prototype.getNextKeyframe = function(object, index)
@@ -509,9 +591,6 @@
 
 
 		return result;
-
-		// var frame = object[ result ];
-		// return frame;
 	};
 
 }(window));
