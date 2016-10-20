@@ -6,6 +6,11 @@
     prototype.constructor = Bezier;
 
 
+    Bezier.p00 = { x:0, y:0 };
+    Bezier.p11 = { x:1, y:1 };
+
+    Bezier.linearTransition = [ Bezier.p00, Bezier.p00, Bezier.p11, Bezier.p11 ];
+
     function Bezier(){}
 
 

@@ -275,7 +275,7 @@
 
 		// this.addProperty( object, "name", object.name, null );
 		this.addProperty( object, "text", text, "" );
-		this.addProperty( object, "lineSpacing", element.getTextAttr( "lineSpacing" ), 0 );
+		// this.addProperty( object, "lineSpacing", element.getTextAttr( "lineSpacing" ), 0 );
 		this.addProperty( object, "style", style, null );
 		this.addProperty( object, "margin", margin, null );
 
@@ -341,6 +341,15 @@
 	/** Transform data function. Parse item and add values to object. */
 	prototype.addItemTransformData = function(object, element)
 	{
+		var object = this.addAnimationTransformData( object, element );
+		object = this.addTextFieldsLineSpacingDisplacement( object, element );
+		object = this.addGraphicLoopFrames( object, element );
+
+		return object;
+	};
+
+	prototype.addAnimationTransformData = function(object, element)
+	{
 		var inputIsValid = element !== null && object !== null;
 		var elementHasPropertys = typeof element == "object";
 
@@ -361,9 +370,29 @@
 			this.addProperty( object, "rotation", element.rotation, null );
 			this.addProperty( object, "scaleX", element.scaleX, null, 4 );
 			this.addProperty( object, "scaleY", element.scaleY, null, 4 );
-			this.addProperty( object, "pivot", pivot, null );
+			// this.addProperty( object, "pivot", pivot, null );
+			// this.add
 		}
 
+		return object;
+	};
+
+	prototype.addTextFieldsLineSpacingDisplacement = function(object, element)
+	{
+		if( element.getTextAttr )
+			object.y += element.getTextAttr( "lineSpacing" );
+
+		return object;
+	};
+
+	prototype.addGraphicLoopFrames = function(object, element)
+	{
+		// var firstFrame = firstFrame !== undefined ? element.firstFrame : 0;
+		// var loop = loop !== undefined ? element.loop : "loop";
+
+		this.addProperty( object, "loop", element.loop || "loop", "loop" );
+		this.addProperty( object, "firstFrame", element.firstFrame || 0, 0 );
+		
 		return object;
 	};
 

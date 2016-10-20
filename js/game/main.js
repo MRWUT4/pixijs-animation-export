@@ -12,6 +12,7 @@
 		this.width = object.width;
 		this.height = object.height;
 		this.fps = object.fps || 24;
+		this.inFocus = true;
 
 		this.url = "img/assets.json";
 
@@ -26,6 +27,7 @@
 	prototype.init = function()
 	{
 		this.initPixiJS();
+		this.initWindowEvents();
 		this.initTick();
 		this.initFiles();
 	};
@@ -50,9 +52,27 @@
 	{	
 		setInterval( function()
 		{
-			this.renderer.render( this.stage );
+			if( this.inFocus )
+				this.renderer.render( this.stage );
 			
 		}.bind( this ), 1000 / this.fps );
+	};
+
+
+	prototype.initWindowEvents = function()
+	{
+		window.addEventListener( Event.BLUR, this.windowOnBlurHandler.bind(this) );
+		window.addEventListener( Event.FOCUS, this.windowOnFocusHandler.bind(this) );
+	};
+
+	prototype.windowOnBlurHandler = function(event)
+	{
+		this.inFocus = false;
+	};
+
+	prototype.windowOnFocusHandler = function(event)
+	{
+		this.inFocus = true;		
 	};
 
 
@@ -76,35 +96,6 @@
 	/** Scene functions. */
 	prototype.createTimeline = function()
 	{
-		// var p0 = 
-		// {
-		// 	x: 0.1532,
-		// 	y: 0.3064
-		// };
-
-		// var p1 = 
-		// {
-		// 	x: 0.0528,
-		// 	y: 0.2232
-		// };
-
-		// var p2 = 
-		// {
-		// 	x: 0.16,
-		// 	y: 0.471
-		// };
-
-		// var p3 = 
-		// {
-		// 	x: 0.229,
-		// 	y: 0.6304
-		// };
-
-
-		// var result = Bezier.getY( , p0, p1, p2, p3 );
-
-		// console.log( result );
-
 		var json = this.loader.getObjectWithID( this.url ).result;
 		var elements = this.loader.results;
 
@@ -115,19 +106,11 @@
 			id: "container"
 		});
 
-		// setInterval( function()
-		// {
-		// 	timeline.setFrame( timeline.index + 1 );
-
-		// }, 100 )
-
 		timeline.setFrame( 0 );
 		// timeline.setFrame( 0 );
-		timeline.setFrame( 47 );
-		timeline.setFrame( 50 );
+		timeline.setFrame( 10 );
+		// timeline.setFrame( 50 );
 		// timeline.setFrame( 60 );
-
-		console.log( timeline.children.length );
 
 		this.stage.addChild( timeline );
 		// var container = this.timeline.create( "container" );

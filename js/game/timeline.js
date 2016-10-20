@@ -82,10 +82,14 @@
 	{
 		this.setFrame( this.index + 1 );
 		this.updateTransformContainer();
-
 		// console.log( this.children.length );
 	};
-	/*/
+	//*/
+
+	prototype.gotoAndStop = function(index)
+	{
+		this.setFrame( index );
+	};
 
 
 	/** Timeline functions. */
@@ -97,7 +101,9 @@
 			library: this.library,
 			elements: this.elements,
 			id: id
-		});		
+		});
+
+		return timeline;
 	};
 
 	prototype.setFrame = function(index)
@@ -118,7 +124,7 @@
 
 	prototype.resolveLayers = function(layers, index)
 	{
-		layers.map( function( layer )
+		layers.forEach( function( layer )
 		{
 			var elements = this.resolveFrames( layer, index );
 			this.layers[ layer.name ] = elements;
@@ -171,11 +177,48 @@
 		if( displayObject )
 		{
 			this.addTransformData( id, displayObject, frames, index );
-
-			this.addChild( displayObject );
+			this.syncMovieClipFrame( displayObject, element, index );
+			this.add( displayObject );
 		}
 
 		return displayObject;
+	};
+
+
+	prototype.syncMovieClipFrame = function(displayObject, element, index)
+	{
+		var list = 
+		[
+			pixijs.MovieClip,
+			pixijs.Timeline
+		];
+
+		if( this.getIsInstanceOf( displayObject, list ) )
+		{
+			var previousIndex = this.getPreviousIndex( index );
+			var firstFrame = element.firstFrame || 0;
+			var frame = previousIndex + firstFrame + index;
+
+			displayObject.gotoAndStop( frame );
+		}
+	};
+
+
+	prototype.getIsInstanceOf = function(displayObject, list)
+	{
+		var result = list.find( function(type)
+		{
+			return displayObject instanceof type;
+		});
+
+		return result;
+	};
+
+
+	prototype.add = function(displayObject)
+	{
+		if( !displayObject.parent )
+			this.addChild( displayObject );
 	};
 
 	prototype.getDisplayObject = function(layerName, id)
@@ -349,9 +392,9 @@
 
 
 	/** TextFieled functions. */
-	prototype.getTextField = function()
+	prototype.getTextField = function(item, template)
 	{
-		return null;	
+		return new pixijs.TextField( template.text, template.style, template.margin );;
 	};
 
 
@@ -368,7 +411,16 @@
 		var percent = this.getPercent( previousIndex, nextIndex, index );
 		var transform = this.getTransform( frames, previousKeyframe, nextKeyframe, id, percent );
 
-		var translated = this.translatePivot( this.translateScale( transform ) );
+		transform = this.translateRotation( transform );
+		transform = this.translateScale( transform );
+		// transform = this.translatePivot( transform );
+
+		// console.log( transform );
+
+		// transform.pivot = { x:0, y:0 }
+		// delete transform.pivot;
+
+		// console.log( transform );
 
 		Parse( transform ).reduce( function( property, value, result ) 
 		{
@@ -378,7 +430,6 @@
 			return result;
 
 		}, displayObject );
-
 
 		displayObject.id = id;
 	};
@@ -456,20 +507,12 @@
 		{
 			points = animation.concat();
 
-			points.unshift( { x:0, y:0 } );
-			points.push( { x:1, y:1 } );
+			points.unshift( Bezier.p00 );
+			points.push( Bezier.p11 );
 		}
 		else
-		{
-			points = 
-			[
-				{ x:0, y:0 },
-				{ x:0, y:0 },
-				{ x:1, y:1 },
-				{ x:1, y:1 }
-			];
-		}
-
+			points = Bezier.linearTransition;
+		
 		return points;
 	};
 
@@ -515,14 +558,20 @@
 		return object;
 	};
 
-	prototype.translatePivot = function(object)
-	{
-		if( object.pivot )
-		{
-			object.x += object.pivot.x;
-			object.y += object.pivot.y;
-		}
+	// prototype.translatePivot = function(object)
+	// {
+	// 	if( object.pivot )
+	// 	{
+	// 		object.x += object.pivot.x * object.scale.x;
+	// 		object.y += object.pivot.y * object.scale.y;
+	// 	}
 
+	// 	return object;
+	// };
+
+	prototype.translateRotation = function(object)
+	{
+		object.rotation = object.rotation * ( Math.PI / 180 );
 		return object;
 	};
 
