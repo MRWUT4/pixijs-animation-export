@@ -14,7 +14,7 @@
 		this.fps = object.fps || 24;
 		this.inFocus = true;
 
-		this.url = "img/assets.json";
+		this.url = "img/runner.json";
 
 		this.init();
 	}
@@ -103,7 +103,7 @@
 		{
 			library: json.library,
 			elements: elements,
-			id: "container"
+			// id: "container"
 		});
 
 		timeline.setFrame( 0 );

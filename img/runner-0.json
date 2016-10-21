@@ -1,0 +1,99 @@
+﻿{"frames": {
+
+"armRight0000":
+{
+	"frame": {"x":751,"y":0,"w":62,"h":64},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":62,"h":64},
+	"sourceSize": {"w":62,"h":64}
+},
+"body0000":
+{
+	"frame": {"x":690,"y":0,"w":59,"h":71},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":59,"h":71},
+	"sourceSize": {"w":59,"h":71}
+},
+"floor0000":
+{
+	"frame": {"x":0,"y":0,"w":610,"h":100},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":610,"h":100},
+	"sourceSize": {"w":610,"h":100}
+},
+"footLeft0000":
+{
+	"frame": {"x":974,"y":0,"w":40,"h":30},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":40,"h":30},
+	"sourceSize": {"w":40,"h":30}
+},
+"footRight0000":
+{
+	"frame": {"x":931,"y":0,"w":41,"h":32},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":41,"h":32},
+	"sourceSize": {"w":41,"h":32}
+},
+"head0000":
+{
+	"frame": {"x":612,"y":0,"w":76,"h":105},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":76,"h":105},
+	"sourceSize": {"w":76,"h":105}
+},
+"legLowerLeft0000":
+{
+	"frame": {"x":815,"y":0,"w":35,"h":53},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":35,"h":53},
+	"sourceSize": {"w":35,"h":53}
+},
+"legLowerRight0000":
+{
+	"frame": {"x":852,"y":0,"w":35,"h":53},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":35,"h":53},
+	"sourceSize": {"w":35,"h":53}
+},
+"legUpperLeft0000":
+{
+	"frame": {"x":815,"y":0,"w":35,"h":53},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":35,"h":53},
+	"sourceSize": {"w":35,"h":53}
+},
+"legUpperRight0000":
+{
+	"frame": {"x":852,"y":0,"w":35,"h":53},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":35,"h":53},
+	"sourceSize": {"w":35,"h":53}
+},
+"scarf0000":
+{
+	"frame": {"x":889,"y":0,"w":40,"h":44},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":40,"h":44},
+	"sourceSize": {"w":40,"h":44}
+}},
+"meta": {
+	"app": "Adobe Animate",
+	"version": "15.2.1.95",
+	"image": "runner-0.png",
+	"format": "RGBA8888",
+	"size": {"w":1024,"h":1024},
+	"scale": "1"
+}
+}
