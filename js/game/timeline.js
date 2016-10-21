@@ -20,6 +20,7 @@
 		this.library = setup.library;
 		this.elements = setup.elements;
 		this.id = setup.id || "root";
+		this.isPlaying = true;
 
 		this.setFrame( 0 );
 	}
@@ -28,6 +29,20 @@
 	/**
 	 * Getter / Setter
 	 */
+
+	Object.defineProperty( prototype, "totalFrames", 
+	{
+		get: function() 
+		{	
+			if( !this._totalFrames )
+			{
+				var template = this.getTemplate( this.id );
+				this._totalFrames = template.totalFrames;
+			}
+
+			return this._totalFrames;
+		}
+	});
 
 	Object.defineProperty( prototype, "layers", 
 	{
@@ -42,6 +57,23 @@
 	{
 		return this.library[ id ];
 	};
+
+
+
+	/**
+	 * Overwrite interface.
+	 */
+
+	/** Updated transform override function. */
+	//*
+	prototype.updateTransformContainer = prototype.updateTransform;
+	prototype.updateTransform = function()
+	{
+		this.updatePlayback();
+		this.updateTransformContainer();
+		// console.log( this.children.length );
+	};
+	//*/
 
 
 	/**
@@ -75,22 +107,40 @@
 		return object;
 	};
 
-	/** Updated transform override function. */
-	//*
-	prototype.updateTransformContainer = prototype.updateTransform;
-	prototype.updateTransform = function()
+
+
+	prototype.updatePlayback = function()
 	{
-		this.setFrame( this.index + 1 );
-		this.updateTransformContainer();
-		// console.log( this.children.length );
+		if( this.isPlaying )
+			this.setFrame( this.index + 1 );
 	};
-	//*/
 
 	prototype.gotoAndStop = function(index)
 	{
 		this.setFrame( index );
+		this.stop();
 	};
 
+	prototype.gotoAndPlay = function()
+	{
+		this.setFrame( index );
+		this.play();
+	};
+
+	prototype.play = function()
+	{
+		this.isPlaying = true;
+	};
+
+	prototype.stop = function()
+	{
+		this.isPlaying = false;
+	};
+
+
+	/**
+	 * Private interface.
+	 */
 
 	/** Timeline functions. */
 	prototype.getTimeline = function(id)
@@ -195,11 +245,19 @@
 
 		if( this.getIsInstanceOf( displayObject, list ) )
 		{
-			var previousIndex = this.getPreviousIndex( index );
-			var firstFrame = element.firstFrame || 0;
-			var frame = previousIndex + firstFrame + index;
+			if( element.loop == "single frame" )
+				frame = element.firstFrame;
+			else
+			{
+				var previousIndex = this.getPreviousIndex( index );
+				var firstFrame = element.firstFrame || 0;
+				var frame = previousIndex + firstFrame + index;
 
-			displayObject.gotoAndStop( frame );
+				if( element.loop == "play once" )
+					frame = Math.min( frame, displayObject.totalFrames );
+			}
+
+			displayObject.setFrame( frame );
 		}
 	};
 
@@ -409,18 +467,10 @@
 		var nextKeyframe = frames[ nextIndex ];
 
 		var percent = this.getPercent( previousIndex, nextIndex, index );
-		var transform = this.getTransform( frames, previousKeyframe, nextKeyframe, id, percent );
 
+		var transform = this.getTransform( frames, previousKeyframe, nextKeyframe, id, percent );
 		transform = this.translateRotation( transform );
 		transform = this.translateScale( transform );
-		// transform = this.translatePivot( transform );
-
-		// console.log( transform );
-
-		// transform.pivot = { x:0, y:0 }
-		// delete transform.pivot;
-
-		// console.log( transform );
 
 		Parse( transform ).reduce( function( property, value, result ) 
 		{

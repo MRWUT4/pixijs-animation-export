@@ -10,7 +10,7 @@
 },
 "circle0000":
 {
-	"frame": {"x":552,"y":0,"w":100,"h":100},
+	"frame": {"x":552,"y":102,"w":100,"h":100},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":100,"h":100},
@@ -18,7 +18,7 @@
 },
 "squareImage0000":
 {
-	"frame": {"x":552,"y":102,"w":100,"h":100},
+	"frame": {"x":552,"y":0,"w":100,"h":100},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":100,"h":100},

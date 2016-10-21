@@ -108,7 +108,7 @@
 
 		timeline.setFrame( 0 );
 		// timeline.setFrame( 0 );
-		timeline.setFrame( 10 );
+		// timeline.setFrame( 10 );
 		// timeline.setFrame( 50 );
 		// timeline.setFrame( 60 );
 
