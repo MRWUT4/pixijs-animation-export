@@ -13,16 +13,13 @@
 	"folders":
 	[
 		{
-			"path": "/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export"
+			"path": "../../"
 		},
 		{
-			"path": "/Users/user/Documents/application/project/html/common/js/davidochmann"
+			"path": "../../../../common/js/davidochmann"
 		},
 		{
 			"path": "/Users/user/Library/Application Support/Adobe/Animate CC 2015.2/de_DE/Configuration/Commands"
-		},
-		{
-			"path": "/Users/user/Downloads/QuickLookJSON.qlgenerator"
 		}
 	]
 }

@@ -49,7 +49,7 @@
 			],
 			[
 				"st",
-				"style	Tag"
+				"style\tTag"
 			],
 			[
 				"li",
@@ -109,7 +109,7 @@
 			],
 			[
 				"__F",
-				"__for_loop_backwards	Creates a backwards for loop."
+				"__for_loop_backwards\tCreates a backwards for loop."
 			],
 			[
 				"spri",
@@ -161,7 +161,7 @@
 			],
 			[
 				"__ge",
-				"__getter_extended	GetterExtended"
+				"__getter_extended\tGetterExtended"
 			],
 			[
 				"item",
@@ -249,7 +249,7 @@
 			],
 			[
 				"__c",
-				"__class_template	ClassTemplate"
+				"__class_template\tClassTemplate"
 			],
 			[
 				"pad",
@@ -325,11 +325,11 @@
 			],
 			[
 				"__g",
-				"__getter-setter	GetterSetter"
+				"__getter-setter\tGetterSetter"
 			],
 			[
 				"__mo",
-				"__module_state	ModuleState"
+				"__module_state\tModuleState"
 			],
 			[
 				"Di",
@@ -357,7 +357,7 @@
 			],
 			[
 				"__module",
-				"__module_state	ModuleState"
+				"__module_state\tModuleState"
 			],
 			[
 				"of",
@@ -381,7 +381,7 @@
 			],
 			[
 				"__get",
-				"__getter	Getter"
+				"__getter\tGetter"
 			],
 			[
 				"pla",
@@ -445,7 +445,7 @@
 			],
 			[
 				"__mod",
-				"__module	StateModule"
+				"__module\tStateModule"
 			],
 			[
 				"set",
@@ -497,7 +497,7 @@
 			],
 			[
 				"__f",
-				"__for_loop	Creates a simple for loop."
+				"__for_loop\tCreates a simple for loop."
 			],
 			[
 				"to",
@@ -520,74 +520,10 @@
 	"buffers":
 	[
 		{
-			"file": "/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/jsfl/pixijs-animation-export.jsfl",
-			"settings":
-			{
-				"buffer_size": 2489,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/tools/commands/uglify.command",
-			"settings":
-			{
-				"buffer_size": 248,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/Users/user/Documents/application/project/html/common/js/davidochmann/nodejs/tools/uglifyhtml.js",
-			"settings":
-			{
-				"buffer_size": 3552,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/jsfl/json-timeline-parser.jsfl",
-			"settings":
-			{
-				"buffer_size": 7131,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/jsfl/json-exporter.jsfl",
-			"settings":
-			{
-				"buffer_size": 731,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/Users/user/Library/Application Support/Adobe/Animate CC 2015.2/de_DE/Configuration/Commands/tools/Export PixiJS Assets.jsfl",
-			"settings":
-			{
-				"buffer_size": 19152,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/jsfl/helper.jsfl",
-			"settings":
-			{
-				"buffer_size": 1010,
-				"line_ending": "Unix"
-			}
-		},
-		{
 			"file": "DavidOchmann-PixiJSAnimationExport.sublime-project",
 			"settings":
 			{
-				"buffer_size": 601,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/Users/user/Documents/application/project/html/europapark/Niederlande-BlumenChaos-Winter/tools/uglify-index.bat",
-			"settings":
-			{
-				"buffer_size": 4431,
+				"buffer_size": 810,
 				"line_ending": "Unix"
 			}
 		}
@@ -753,25 +689,30 @@
 	},
 	"expanded_folders":
 	[
+		"/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export",
+		"/Users/user/Documents/application/project/html/common/js/davidochmann",
 		"/Users/user/Library/Application Support/Adobe/Animate CC 2015.2/de_DE/Configuration/Commands",
-		"/Users/user/Library/Application Support/Adobe/Animate CC 2015.2/de_DE/Configuration/Commands/tools",
 		"/Users/user/Downloads/QuickLookJSON.qlgenerator"
 	],
 	"file_history":
 	[
+		"/Users/user/Documents/application/project/html/europapark/Niederlande-BlumenChaos-Winter/tools/uglify-index.bat",
+		"/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/jsfl/helper.jsfl",
 		"/Users/user/Library/Application Support/Adobe/Animate CC 2015.2/de_DE/Configuration/Commands/tools/Export PixiJS Assets.jsfl",
 		"/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/jsfl/json-exporter.jsfl",
+		"/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/jsfl/json-timeline-parser.jsfl",
+		"/Users/user/Documents/application/project/html/common/js/davidochmann/nodejs/tools/uglifyhtml.js",
+		"/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/tools/commands/uglify.command",
+		"/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/jsfl/pixijs-animation-export.jsfl",
 		"/Users/user/Documents/application/project/html/europapark/Italien-PizzaPizza/img/content_lang_de.json",
 		"/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/js/game/main.js",
 		"/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/img/content_lang_de.json",
 		"/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/img/container.json",
 		"/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/img/assets.json",
-		"/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/jsfl/json-timeline-parser.jsfl",
 		"/Users/user/Documents/application/project/html/common/js/davidochmann/doutils/loader/loader.js",
 		"/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/img/assets-atlas.json",
 		"/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/jsfl/frame-label-exporter.jsfl",
 		"/Users/user/Library/Caches/Cornerstone/Store/https%3A%2F%2Fdavid.ochmann%40svn.eoa.de%2Fsvn%2Fjs-library/0000010417/trunk/internetabc/Flizzys-Zeichenchaos/js/game/main.js",
-		"/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/jsfl/pixijs-animation-export.jsfl",
 		"/Users/user/Documents/application/project/html/common/js/davidochmann/doutils/pixijs-3/facade.js",
 		"/Users/user/Documents/application/project/html/common/js/davidochmann/doutils/pixijs-3/facade-1.1.0.js",
 		"/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/debug.html",
@@ -779,7 +720,6 @@
 		"/Users/user/Library/Application Support/Adobe/Animate CC 2015.2/de_DE/Configuration/Commands/tools/library/Assist.jsfl",
 		"/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/jsfl/atlas-exporter.jsfl",
 		"/Users/user/Documents/application/project/html/common/js/davidochmann/doutils/easeljs/buttonstate.js",
-		"/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/jsfl/helper.jsfl",
 		"/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/img/assets-atlas-0.json",
 		"/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/tools/project/DavidOchmann-PixiJSAnimationExport.sublime-project",
 		"/Users/user/Library/Application Support/Adobe/Animate CC 2015/de_DE/Configuration/Commands/tools/library/JSON Object.jsfl",
@@ -883,10 +823,7 @@
 		"/Users/david.ochmann/Documents/application/project/html/JS-Library/swiss/Skyboard/tools/project/project.sublime-project",
 		"/Users/david.ochmann/Documents/application/project/html/JS-Library/common/js/davidochmann/nodejs/tools/pngcompress.js",
 		"/Users/david.ochmann/Documents/application/project/html/JS-Library/swiss/Skyboard/tools/commands/pngcompress.bat",
-		"/Users/david.ochmann/Documents/application/project/html/JS-Library/swiss/Skyboard/tools/commands/pngcompress.command",
-		"/Users/david.ochmann/Documents/application/project/html/JS-Library/swiss/SkyboardSimulator/debug.html",
-		"/Users/david.ochmann/Documents/application/project/html/JS-Library/swiss/SkyboardSimulator/js/game/settingsstate.js",
-		"/Users/david.ochmann/Documents/application/project/html/JS-Library/swiss/SkyboardSimulator/js/game/resultstate.js"
+		"/Users/david.ochmann/Documents/application/project/html/JS-Library/swiss/Skyboard/tools/commands/pngcompress.command"
 	],
 	"find":
 	{
@@ -1052,212 +989,8 @@
 	"groups":
 	[
 		{
-			"selected": 0,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/jsfl/pixijs-animation-export.jsfl",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2489,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								990,
-								990
-							]
-						],
-						"settings":
-						{
-							"history_list_is_closing": true,
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/tools/commands/uglify.command",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 248,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								158,
-								158
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/ShellScript/Shell-Unix-Generic.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "/Users/user/Documents/application/project/html/common/js/davidochmann/nodejs/tools/uglifyhtml.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3552,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3409,
-								3417
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 1803.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/jsfl/json-timeline-parser.jsfl",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 7131,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1817,
-								1817
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 1194.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 8,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/jsfl/json-exporter.jsfl",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 731,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								510,
-								510
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 6,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "/Users/user/Library/Application Support/Adobe/Animate CC 2015.2/de_DE/Configuration/Commands/tools/Export PixiJS Assets.jsfl",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 19152,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								5952,
-								5952
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 1061.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 7,
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/jsfl/helper.jsfl",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1010,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								217,
-								217
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				}
 			]
 		},
 		{
@@ -1265,20 +998,20 @@
 			"sheets":
 			[
 				{
-					"buffer": 7,
+					"buffer": 0,
 					"file": "DavidOchmann-PixiJSAnimationExport.sublime-project",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 601,
+						"buffer_size": 810,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								72,
-								72
+								439,
+								471
 							]
 						],
 						"settings":
@@ -1291,35 +1024,6 @@
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 8,
-					"file": "/Users/user/Documents/application/project/html/europapark/Niederlande-BlumenChaos-Winter/tools/uglify-index.bat",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4431,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								89,
-								36
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Batch File/Batch File.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 697.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
 					"type": "text"
 				}
 			]
@@ -1353,7 +1057,7 @@
 		"cols":
 		[
 			0.0,
-			0.5,
+			0.340413750744,
 			1.0
 		],
 		"rows":
@@ -1902,9 +1606,17 @@
 	"select_project":
 	{
 		"height": 500.0,
-		"last_filter": "template",
+		"last_filter": "temp",
 		"selected_items":
 		[
+			[
+				"temp",
+				"~/Documents/application/project/html/JS-Library/eoa/Template-PixiJS/tools/project/EOA-Template-PixiJS.sublime-project"
+			],
+			[
+				"tem",
+				"~/Documents/application/project/html/JS-Library/europapark/Deutschland-Strassenverkehr/tools/project/EOA-Template-PixiJS.sublime-workspace"
+			],
 			[
 				"template",
 				"~/Documents/application/project/html/europapark/HappyFamily-Achterbahn/tools/project/Europapark-HappyFamilyAchterbahn.sublime-project"
@@ -1944,10 +1656,6 @@
 			[
 				"elfe",
 				"/Users/david.ochmann/Documents/application/space/sublimetext/Projects/europapark-frankreich-elfmeterschiessen.sublime-project"
-			],
-			[
-				"tem",
-				"/Users/david.ochmann/Documents/application/space/sublimetext/Projects/eoa-template-pixijs.sublime-project"
 			],
 			[
 				"appp",
@@ -2104,7 +1812,7 @@
 	"show_minimap": false,
 	"show_open_files": false,
 	"show_tabs": true,
-	"side_bar_visible": false,
+	"side_bar_visible": true,
 	"side_bar_width": 241.0,
 	"status_bar_visible": false,
 	"template_settings":
