@@ -106,6 +106,9 @@
 			// id: "head"
 		});
 
+		var runner = timeline.getChildByName( "runner" );
+		// runner.gotoAndStop( 20 );
+
 		// timeline.gotoAndStop( 0 );
 		// timeline.gotoAndStop( 14 );
 		// timeline.gotoAndStop( 0 );

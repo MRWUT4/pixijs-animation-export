@@ -3,7 +3,7 @@
 	window.pixijs = window.pixijs || {};
 	window.pixijs.Timeline = Timeline;
 
-	var prototype = Timeline.prototype = Object.create( PIXI.Container.prototype );
+	var prototype = Timeline.prototype = Object.create( pixijs.DisplayObjectContainer.prototype );
 	prototype.constructor = Timeline;
 
 
@@ -131,7 +131,7 @@
 
 	prototype.play = function()
 	{
-		// this.isPlaying = true;
+		this.isPlaying = true;
 	};
 
 	prototype.stop = function()
@@ -497,8 +497,8 @@
 			return result;
 
 		}, displayObject );
-
-		displayObject.id = id;
+		
+		displayObject.name = displayObject.name ? displayObject.name : displayObject.id;
 	};
 
 	prototype.getPercent = function(previous, next, index )
@@ -545,6 +545,8 @@
 				else
 				if( typeof value == "object" )
 					transform[ property ] = parse( value );
+				else
+					transform[ property ] = value;
 			});
 
 			return transform;
