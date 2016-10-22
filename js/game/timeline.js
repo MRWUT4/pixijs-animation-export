@@ -111,8 +111,10 @@
 
 	prototype.updatePlayback = function()
 	{
+		//*
 		if( this.isPlaying )
 			this.setFrame( this.index + 1 );
+		//*/
 	};
 
 	prototype.gotoAndStop = function(index)
@@ -142,6 +144,15 @@
 	 * Private interface.
 	 */
 
+	prototype.getLayerID = function(name, depth)
+	{
+		var suffix = depth !== null ? "#" + depth : "";
+		var id = name + suffix;
+
+		return id;
+	};
+
+
 	/** Timeline functions. */
 	prototype.getTimeline = function(id)
 	{
@@ -158,6 +169,9 @@
 
 	prototype.setFrame = function(index)
 	{
+		// console.log( "\n\n>index:", this.id, index );
+		// console.log( this.layers );
+
 		this.index = this.getValidIndex( index );
 
 		var template = this.getTemplate( this.id );
@@ -174,27 +188,30 @@
 
 	prototype.resolveLayers = function(layers, index)
 	{
-		layers.forEach( function( layer )
+		layers.forEach( function(layer, depth )
 		{
-			var elements = this.resolveFrames( layer, index );
-			this.layers[ layer.name ] = elements;
+			var elements = this.resolveFrames( layer, depth, index );
+			var id = this.getLayerID( layer.name, depth );
+
+			// this.getLayer( id, elements )
+			this.layers[ id ] = elements;
 
 		}.bind(this) );
 	};
 
-	prototype.resolveFrames = function(layer, index)
+	prototype.resolveFrames = function(layer, depth, index)
 	{
 		var frames = layer.frames;
 		var previousIndex = this.getPreviousIndex( frames, index );
 		var frame = frames[ previousIndex ];
 		var elements = frame.elements;
-		var layerName = layer.name;
+		var layerID = this.getLayerID( layer.name, depth );
 
-		this.removeMissingReferences( layerName, elements );
+		this.removeMissingReferences( layerID, elements );
 
 		var list = elements.map( function( element )
 		{
-			return this.resolveElement( layerName, element, frames, index );
+			return this.resolveElement( layerID, element, frames, index );
 
 		}.bind(this) );
 
@@ -202,9 +219,10 @@
 		return list;
 	};
 
-	prototype.removeMissingReferences = function(layerName, elements)
+	prototype.removeMissingReferences = function(layerID, elements)
 	{
-		var layer = this.layers[ layerName ];
+		// var layer = this.getLayer( layerID );
+		var layer = this.layers[ layerID ];
 
 		if( layer )
 		{
@@ -219,10 +237,10 @@
 		}
 	};
 
-	prototype.resolveElement = function(layerName, element, frames, index)
+	prototype.resolveElement = function(layerID, element, frames, index)
 	{
 		var id = element.id;
-		var displayObject = this.getDisplayObject( layerName, id );
+		var displayObject = this.getDisplayObject( layerID, id );
 
 		if( displayObject )
 		{
@@ -231,6 +249,32 @@
 			this.add( displayObject );
 		}
 
+		return displayObject;
+	};
+
+	prototype.getDisplayObject = function(layerID, id)
+	{
+		var displayObject = null;
+
+		// layer = this.getLayer( layerID );
+		var layer = this.layers[ layerID ];
+
+		if( !layer )
+			layer = this.layers[ layerID ] = [];
+
+		displayObject = layer.find( function(element)
+		{
+			return element && element.id == id;
+		});
+
+		// console.log( layerID, displayObject );
+
+		if( !displayObject )
+		{
+			displayObject = this.parse( id );
+			layer.push( displayObject );
+		}
+		
 		return displayObject;
 	};
 
@@ -278,30 +322,6 @@
 		if( !displayObject.parent )
 			this.addChild( displayObject );
 	};
-
-	prototype.getDisplayObject = function(layerName, id)
-	{
-		var displayObject = null;
-		var layer = this.layers[ layerName ];
-
-		if( !layer )
-			layer = this.layers[ layerName ] = [];
-
-		displayObject = layer.find( function(element)
-		{
-			return element && element.id == id;
-		});
-
-
-		if( !displayObject )
-		{
-			displayObject = this.parse( id );
-			layer.push( displayObject );
-		}
-		
-		return displayObject;
-	};
-
 
 
 	/** MovieClip functions. */

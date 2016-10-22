@@ -103,10 +103,10 @@
 		{
 			library: json.library,
 			elements: elements,
-			// id: "container"
+			// id: "runnerAnimation"
 		});
 
-		timeline.setFrame( 0 );
+		// timeline.setFrame( 0 ); 	 	
 		// timeline.setFrame( 0 );
 		// timeline.setFrame( 10 );
 		// timeline.setFrame( 50 );
