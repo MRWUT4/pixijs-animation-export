@@ -66,7 +66,7 @@
 
 	/** Updated transform override function. */
 	//*
-	prototype.updateTransformContainer = prototype.updateTransform;
+	prototype.updateTransformContainer = prototype.	updateTransform;
 	prototype.updateTransform = function()
 	{
 		this.updatePlayback();
@@ -131,7 +131,7 @@
 
 	prototype.play = function()
 	{
-		this.isPlaying = true;
+		// this.isPlaying = true;
 	};
 
 	prototype.stop = function()
@@ -169,9 +169,6 @@
 
 	prototype.setFrame = function(index)
 	{
-		// console.log( "\n\n>index:", this.id, index );
-		// console.log( this.layers );
-
 		this.index = this.getValidIndex( index );
 
 		var template = this.getTemplate( this.id );
@@ -221,19 +218,21 @@
 
 	prototype.removeMissingReferences = function(layerID, elements)
 	{
-		// var layer = this.getLayer( layerID );
 		var layer = this.layers[ layerID ];
 
 		if( layer )
 		{
-			if( elements.length == 0 )
+			layer.forEach( function(child)
 			{
-				layer.forEach( function(child)
+				element = elements.find( function(element)
 				{
+					return element.id == child.id;
+				} );
+
+				if( element == undefined )
 					this.removeChild( child );
 
-				}.bind(this) );
-			}
+			}.bind(this) );
 		}
 	};
 
@@ -266,8 +265,6 @@
 		{
 			return element && element.id == id;
 		});
-
-		// console.log( layerID, displayObject );
 
 		if( !displayObject )
 		{
@@ -535,6 +532,8 @@
 	{
 		var floatBetweenAandB = this.floatBetweenAandBAt;
 
+		next = next !== undefined ? next : previous;
+
 		var parse = function(object)
 		{
 			var transform = {};
@@ -593,12 +592,6 @@
 
 	// 	var center = Math.round( length * percent );
 
-	// 	// console.log( percent, length, center );
-	// 	// console.log( "\n" );
-	// 	// console.log( percent, length );
-
-	// 	// console.log( ( length * percent ) / div )
-
 	// 	// var begin = Math.floor( ( length * percent ) / div ) * div;
 	// 	// begin = Math.min( length - div, begin );
 
@@ -647,7 +640,8 @@
 
 	prototype.translateAlpha = function(object)
 	{
-		object.alpha = object.alpha !== undefined ? object.alpha : 1;
+		if( object )
+			object.alpha = object.alpha !== undefined ? object.alpha : 1;
 
 		return object;
 	};
@@ -662,16 +656,6 @@
 			delete object[ property ];
 		}
 	};
-
-
-	// prototype.getTweenValues = function(element, frames, index)
-	// {
-	// 	var next = this.getNextKeyframe( frames, index );
-
-	// 	console.log( element, next );
-
-	// };
-
 
 
 	prototype.getPreviousIndex = function(object, index)

@@ -103,14 +103,12 @@
 		{
 			library: json.library,
 			elements: elements,
-			// id: "runnerAnimation"
+			// id: "head"
 		});
 
-		// timeline.setFrame( 0 ); 	 	
-		// timeline.setFrame( 0 );
-		// timeline.setFrame( 10 );
-		// timeline.setFrame( 50 );
-		// timeline.setFrame( 60 );
+		// timeline.gotoAndStop( 0 );
+		// timeline.gotoAndStop( 14 );
+		// timeline.gotoAndStop( 0 );
 
 		this.stage.addChild( timeline );
 		// var container = this.timeline.create( "container" );
