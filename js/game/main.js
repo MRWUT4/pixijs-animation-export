@@ -3,6 +3,7 @@
 	window.Main = Main;
 
 	var prototype = Main.prototype = Object.create( Object.prototype );
+	prototype.constructor = Main;
 
 
 	function Main(object)
@@ -88,8 +89,6 @@
 	prototype.loaderCompleteHandler = function(event)
 	{
 		this.createTimeline();
-		// B(t) = (1 - t)^3
-		// console.log( this.quadraticBezier( .5, 0, .2, .3, 1 ) );
 	};
 
 
@@ -114,7 +113,6 @@
 		// timeline.gotoAndStop( 0 );
 
 		this.stage.addChild( timeline );
-		// var container = this.timeline.create( "container" );
 	};
 
 }(window));

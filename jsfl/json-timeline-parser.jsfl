@@ -367,7 +367,7 @@
 			this.addProperty( object, "alpha", alpha, 1 );
 			// this.addProperty( object, "width", element.width, 0 );
 			// this.addProperty( object, "height", element.height, 0 );
-			this.addProperty( object, "rotation", element.rotation, null );
+			this.addProperty( object, "rotation", element.rotation, function(value){ return isNaN(value) } );
 			this.addProperty( object, "scaleX", element.scaleX, null, 4 );
 			this.addProperty( object, "scaleY", element.scaleY, null, 4 );
 			// this.addProperty( object, "pivot", pivot, null );
@@ -398,7 +398,14 @@
 
 	prototype.addProperty = function(object, name, value, ignore, fixed)
 	{
-		if( value !== ignore )
+		var bool = true;
+
+		if( typeof ignore == "function" )
+			bool = !ignore( value );
+		else
+			bool = value !== ignore
+
+		if( bool )
 			object[ name ] = fixed === undefined ? value : this.getFixedValue( value, fixed );
 
 		return object;

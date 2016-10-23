@@ -8,37 +8,17 @@
 
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
      
-	<title>PixiJS - Animation Export</title>
+	<title>Adobe Animate PixiJS Export</title>
 
-	<!-- <link rel="stylesheet" href="css/fonts.css"> -->
+	<style type="text/css">
+		body { background: #efefef; }
+	</style>
 
 	<script src="js/index.min.js"></script>
 
-	<script type="text/javascript">
-		function init()
-		{
-			var gameSetup = new GameSetup( 
-			{
-				fps: 60,
-				createCanvas: false,
-				renderer: GameSetup.CANVAS,
-				orientation: GameSetup.LANDSCAPE,
-				fullscreen: System.getURLParameter( "fullscreen" ) == "true" || GameSetup.ALL,
-				orientationImageSRC: "img/orientation.gif",
-				allowUpscale: true,
-				size: { width:960, height:640 },
-				onComplete: function()
-				{ 
-					new Main(); 
-				} 
-			});
-		}
-
-	</script>
-
 	</head>
 	
-	<body onload="init();">
+	<body onload="new Main( { width:960, height:640 } );">
 	</body>
 
 </html>

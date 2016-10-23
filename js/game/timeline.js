@@ -65,15 +65,12 @@
 	 */
 
 	/** Updated transform override function. */
-	//*
 	prototype.updateTransformContainer = prototype.	updateTransform;
 	prototype.updateTransform = function()
 	{
 		this.updatePlayback();
 		this.updateTransformContainer();
-		// console.log( this.children.length );
 	};
-	//*/
 
 
 	/**
@@ -111,21 +108,19 @@
 
 	prototype.updatePlayback = function()
 	{
-		//*
 		if( this.isPlaying )
-			this.setFrame( this.index + 1 );
-		//*/
+			this.setFrame( this.currentFrame + 1 );
 	};
 
-	prototype.gotoAndStop = function(index)
+	prototype.gotoAndStop = function(currentFrame)
 	{
-		this.setFrame( index );
+		this.setFrame( currentFrame );
 		this.stop();
 	};
 
 	prototype.gotoAndPlay = function()
 	{
-		this.setFrame( index );
+		this.setFrame( currentFrame );
 		this.play();
 	};
 
@@ -167,27 +162,27 @@
 		return timeline;
 	};
 
-	prototype.setFrame = function(index)
+	prototype.setFrame = function(currentFrame)
 	{
-		this.index = this.getValidIndex( index );
+		this.currentFrame = this.getValidIndex( currentFrame );
 
 		var template = this.getTemplate( this.id );
 		var layers = template.layers;
 
-		this.resolveLayers( layers, index );
+		this.resolveLayers( layers, currentFrame );
 	};
 
-	prototype.getValidIndex = function(index)
+	prototype.getValidIndex = function(currentFrame)
 	{
 		var totalFrames = this.getTemplate( this.id ).totalFrames;
-		return index % totalFrames;
+		return currentFrame % totalFrames;
 	};
 
-	prototype.resolveLayers = function(layers, index)
+	prototype.resolveLayers = function(layers, currentFrame)
 	{
 		layers.forEach( function(layer, depth )
 		{
-			var elements = this.resolveFrames( layer, depth, index );
+			var elements = this.resolveFrames( layer, depth, currentFrame );
 			var id = this.getLayerID( layer.name, depth );
 
 			// this.getLayer( id, elements )
@@ -196,10 +191,10 @@
 		}.bind(this) );
 	};
 
-	prototype.resolveFrames = function(layer, depth, index)
+	prototype.resolveFrames = function(layer, depth, currentFrame)
 	{
 		var frames = layer.frames;
-		var previousIndex = this.getPreviousIndex( frames, index );
+		var previousIndex = this.getPreviousIndex( frames, currentFrame );
 		var frame = frames[ previousIndex ];
 		var elements = frame.elements;
 		var layerID = this.getLayerID( layer.name, depth );
@@ -208,7 +203,7 @@
 
 		var list = elements.map( function( element )
 		{
-			return this.resolveElement( layerID, element, frames, index );
+			return this.resolveElement( layerID, element, frames, currentFrame );
 
 		}.bind(this) );
 
@@ -236,15 +231,15 @@
 		}
 	};
 
-	prototype.resolveElement = function(layerID, element, frames, index)
+	prototype.resolveElement = function(layerID, element, frames, currentFrame)
 	{
 		var id = element.id;
 		var displayObject = this.getDisplayObject( layerID, id );
 
 		if( displayObject )
 		{
-			this.addTransformData( id, displayObject, frames, index );
-			this.syncMovieClipFrame( displayObject, element, index );
+			this.addTransformData( id, displayObject, frames, currentFrame );
+			this.syncMovieClipFrame( displayObject, element, currentFrame );
 			this.add( displayObject );
 		}
 
@@ -276,7 +271,7 @@
 	};
 
 
-	prototype.syncMovieClipFrame = function(displayObject, element, index)
+	prototype.syncMovieClipFrame = function(displayObject, element, currentFrame)
 	{
 		var list = 
 		[
@@ -286,19 +281,22 @@
 
 		if( this.getIsInstanceOf( displayObject, list ) )
 		{
-			if( element.loop == "single frame" )
-				frame = element.firstFrame;
-			else
+			if( element.loop )
 			{
-				var previousIndex = this.getPreviousIndex( index );
-				var firstFrame = element.firstFrame || 0;
-				var frame = previousIndex + firstFrame + index;
+				if( element.loop == "single frame" )
+					frame = element.firstFrame;
+				else
+				{
+					var previousIndex = this.getPreviousIndex( currentFrame );
+					var firstFrame = element.firstFrame || 0;
+					var frame = previousIndex + firstFrame + currentFrame;
 
-				if( element.loop == "play once" )
-					frame = Math.min( frame, displayObject.totalFrames );
+					if( element.loop == "play once" )
+						frame = Math.min( frame, displayObject.totalFrames );
+				}
 			}
-
-			displayObject.setFrame( frame );
+			// else
+			// 	displayObject.setFrame( displayObject.currentFrame + 1 );
 		}
 	};
 
@@ -475,15 +473,15 @@
 
 
 	/** TransformData functions. */
-	prototype.addTransformData = function(id, displayObject, frames, index)
+	prototype.addTransformData = function(id, displayObject, frames, currentFrame)
 	{
-		var previousIndex = this.getPreviousIndex( frames, index );
+		var previousIndex = this.getPreviousIndex( frames, currentFrame );
 		var previousKeyframe = frames[ previousIndex ];
 
-		var nextIndex = this.getNextKeyframe( frames, index );
+		var nextIndex = this.getNextKeyframe( frames, currentFrame );
 		var nextKeyframe = frames[ nextIndex ];
 
-		var percent = this.getPercent( previousIndex, nextIndex, index );
+		var percent = this.getPercent( previousIndex, nextIndex, currentFrame );
 
 		var transform = this.getTransform( frames, previousKeyframe, nextKeyframe, id, percent );
 		transform = this.translateRotation( transform );
@@ -501,9 +499,9 @@
 		displayObject.name = displayObject.name ? displayObject.name : displayObject.id;
 	};
 
-	prototype.getPercent = function(previous, next, index )
+	prototype.getPercent = function(previous, next, currentFrame )
 	{
-		var n0 = ( index - previous );
+		var n0 = ( currentFrame - previous );
 		var n1 = ( next - previous );
 		var result = n1 !== 0 ? ( n0 / n1 ) : 0;
 
@@ -587,22 +585,6 @@
 		return points;
 	};
 
-	// prototype.getBezierPointsSubset = function(list, percent)
-	// {
-	// 	var div = 4;
-	// 	var length = list.length;
-
-	// 	var center = Math.round( length * percent );
-
-	// 	// var begin = Math.floor( ( length * percent ) / div ) * div;
-	// 	// begin = Math.min( length - div, begin );
-
-	// 	var result = list.splice( 0, div );
-
-
-	// 	return result;
-	// };
-
 	prototype.getFrameTransform = function(keyframe, id)
 	{
 		var elements = keyframe.elements;
@@ -622,17 +604,6 @@
 
 		return object;
 	};
-
-	// prototype.translatePivot = function(object)
-	// {
-	// 	if( object.pivot )
-	// 	{
-	// 		object.x += object.pivot.x * object.scale.x;
-	// 		object.y += object.pivot.y * object.scale.y;
-	// 	}
-
-	// 	return object;
-	// };
 
 	prototype.translateRotation = function(object)
 	{
@@ -660,12 +631,12 @@
 	};
 
 
-	prototype.getPreviousIndex = function(object, index)
+	prototype.getPreviousIndex = function(object, currentFrame)
 	{
 		var result = Parse( object ).reduce( function(property, value, item)
 		{
 			var frameIndex = Number( property );
-			item = frameIndex >= item && frameIndex <= index ? frameIndex : item;
+			item = frameIndex >= item && frameIndex <= currentFrame ? frameIndex : item;
 
 			return item;
 
@@ -675,7 +646,7 @@
 		return result;
 	};
 
-	prototype.getNextKeyframe = function(object, index)
+	prototype.getNextKeyframe = function(object, currentFrame)
 	{
 		var biggestValue = Parse( object ).reduce( function( property, value, item )
 		{
@@ -688,7 +659,7 @@
 		var result = Parse( object ).reduce( function(property, value, item)
 		{
 			var frameIndex = Number( property );
-			item = frameIndex <= item && frameIndex >= index ? frameIndex : item;
+			item = frameIndex <= item && frameIndex >= currentFrame ? frameIndex : item;
 
 			return item;
 
