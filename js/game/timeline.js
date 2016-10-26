@@ -20,7 +20,10 @@
 		this.library = setup.library;
 		this.elements = setup.elements;
 		this.id = setup.id || "root";
+		
 		this.isPlaying = true;
+		this.currentFrame = 0;
+		this.currentLabel = null;
 
 		this.setFrame( 0 );
 	}
@@ -34,13 +37,7 @@
 	{
 		get: function() 
 		{	
-			if( !this._totalFrames )
-			{
-				var template = this.getTemplate( this.id );
-				this._totalFrames = template.totalFrames;
-			}
-
-			return this._totalFrames;
+			return this.template.totalFrames;
 		}
 	});
 
@@ -50,6 +47,23 @@
 		{	
 			this._layers = this._layers !== undefined ? this._layers : {};
 			return this._layers;
+		}
+	});
+
+	Object.defineProperty( prototype, "template", 
+	{
+		get: function() 
+		{	
+			this._tempalte = this._tempalte !== undefined ? this._tempalte : this.getTemplate( this.id );
+			return this._tempalte;
+		}
+	});
+
+	Object.defineProperty( prototype, "labels", 
+	{
+		get: function() 
+		{	
+			return this.template.labels;
 		}
 	});
 
@@ -65,12 +79,14 @@
 	 */
 
 	/** Updated transform override function. */
+	//*
 	prototype.updateTransformContainer = prototype.	updateTransform;
 	prototype.updateTransform = function()
 	{
 		this.updatePlayback();
 		this.updateTransformContainer();
 	};
+	//*/
 
 
 	/**
@@ -109,18 +125,22 @@
 	prototype.updatePlayback = function()
 	{
 		if( this.isPlaying )
-			this.setFrame( this.currentFrame + 1 );
+			this.setFrame( this.currentIndex + 1 );
 	};
 
-	prototype.gotoAndStop = function(currentFrame)
+	prototype.gotoAndStop = function(frame)
 	{
-		this.setFrame( currentFrame );
+		frame = this.inputToFrame( frame );
+
+		this.setFrame( frame );
 		this.stop();
 	};
 
-	prototype.gotoAndPlay = function()
+	prototype.gotoAndPlay = function(frame)
 	{
-		this.setFrame( currentFrame );
+		frame = this.inputToFrame( frame );
+
+		this.setFrame( frame );
 		this.play();
 	};
 
@@ -132,6 +152,20 @@
 	prototype.stop = function()
 	{
 		this.isPlaying = false;
+	};
+
+
+	prototype.inputToFrame = function(frame)
+	{
+		if( typeof frame == "number" )
+			return frame;
+		else
+		{
+			this.currentLabel = frame;
+			var index = this.labels[ this.currentLabel ];
+
+			return index;
+		}
 	};
 
 
@@ -162,20 +196,32 @@
 		return timeline;
 	};
 
-	prototype.setFrame = function(currentFrame)
+	prototype.setFrame = function(currentIndex)
 	{
-		this.currentFrame = this.getValidIndex( currentFrame );
+		// this.currentIndex = currentFrame % this.template.totalFrames;
+		this.currentIndex = currentIndex;
+		this.currentFrame = this.getValidIndex( this.currentIndex );
 
-		var template = this.getTemplate( this.id );
-		var layers = template.layers;
-
-		this.resolveLayers( layers, currentFrame );
+		this.resolveLayers( this.template.layers, this.currentFrame );
 	};
 
-	prototype.getValidIndex = function(currentFrame)
+	prototype.getValidIndex = function(currentIndex)
 	{
-		var totalFrames = this.getTemplate( this.id ).totalFrames;
-		return currentFrame % totalFrames;
+		if( this.currentLabel === null )
+		{
+			var totalFrames = this.template.totalFrames;
+			return currentIndex % totalFrames;
+		}
+		else
+		{
+			var beginEnd = this.getBeginEndObject( this.template, "labels" );
+			var range = beginEnd[ this.currentLabel ];
+
+			var frame = ( range.begin + ( currentIndex % ( range.end - range.begin ) ) );
+			// console.log( range.end, range.begin );
+			
+			return frame;
+		}
 	};
 
 	prototype.resolveLayers = function(layers, currentFrame)
@@ -185,7 +231,6 @@
 			var elements = this.resolveFrames( layer, depth, currentFrame );
 			var id = this.getLayerID( layer.name, depth );
 
-			// this.getLayer( id, elements )
 			this.layers[ id ] = elements;
 
 		}.bind(this) );
@@ -281,10 +326,12 @@
 
 		if( this.getIsInstanceOf( displayObject, list ) )
 		{
-			if( element.loop )
+			if( element.loop || element.firstFrame !== undefined )
 			{
 				if( element.loop == "single frame" )
+				{
 					frame = element.firstFrame;
+				}
 				else
 				{
 					var previousIndex = this.getPreviousIndex( currentFrame );
@@ -294,9 +341,9 @@
 					if( element.loop == "play once" )
 						frame = Math.min( frame, displayObject.totalFrames );
 				}
+				
+				displayObject.setFrame( frame );
 			}
-			// else
-			// 	displayObject.setFrame( displayObject.currentFrame + 1 );
 		}
 	};
 
@@ -341,18 +388,18 @@
 		{
 			var totalFrames = template.totalFrames;
 
-			var item = Parse( object ).reduce( function(property, begin, result0)
+			var item = Parse( object ).reduce( function(property, begin, result)
 			{
-				result0[ property ] = result0[ property ] || { begin:begin, end:totalFrames };
+				result[ property ] = result[ property ] || { begin:begin, end:totalFrames };
 
-				Parse( object ).reduce( function(property, value, result1)
+				var compare = result[ property ];
+
+				Parse( object ).forEach( function(property, value)
 				{
-					result1.end = result1.end < value && value > result1.end ? value : result1.end;
-					return result1;
+					compare.end = value < compare.end && value > compare.begin ? value : compare.end; 
+				});
 
-				}, result0[ property ] );
-
-				return result0;
+				return result;
 
 			}, {} );
 			
@@ -478,8 +525,10 @@
 		var previousIndex = this.getPreviousIndex( frames, currentFrame );
 		var previousKeyframe = frames[ previousIndex ];
 
+		var hasAnimation = previousKeyframe.animation/* && previousKeyframe.animation.length > 0*/;
+
 		var nextIndex = this.getNextKeyframe( frames, currentFrame );
-		var nextKeyframe = frames[ nextIndex ];
+		var nextKeyframe = hasAnimation ? frames[ nextIndex ] : previousKeyframe;
 
 		var percent = this.getPercent( previousIndex, nextIndex, currentFrame );
 
@@ -515,13 +564,12 @@
 		var previousItem = this.translateAlpha( this.getFrameTransform( previous, id ) );
 		var nextItem = this.translateAlpha( this.getFrameTransform( next, id ) );
 
-		var transform = previousItem;
 
 		var p = this.getBezierPoints( animation );
 		// var p = this.getBezierPointsSubset( bezierPoints, percent );
 
 		var progress = Bezier.getY( percent, p[ 0 ], p[ 1 ], p[ 2 ], p[ 3 ] );
-		transform = this.getTransformBetweenItems( previousItem, nextItem, progress );
+		var transform = this.getTransformBetweenItems( previousItem, nextItem, progress );
 
 		return transform;
 	};
@@ -572,7 +620,7 @@
 	{
 		var points = null;
 
-		if( animation )
+		if( animation && animation.length > 0 )
 		{
 			points = animation.concat();
 

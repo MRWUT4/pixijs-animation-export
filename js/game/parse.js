@@ -54,6 +54,15 @@
 				return false;
 			},
 
+			forEach: function(callback)
+			{
+				for( var property in object )
+				{
+					var value = object[ property ];
+					callback( property, value );
+				}
+			},
+
 			reduce: function(callback, result)
 			{
 				for( var property in object )

@@ -102,15 +102,17 @@
 		{
 			library: json.library,
 			elements: elements,
-			// id: "head"
+			// id: "runnerAnimation"
 		});
 
-		var runner = timeline.getChildByName( "runner" );
-		// runner.gotoAndStop( 20 );
+		// var runner = timeline.getChildByName( "runner" );
+		// runner.gotoAndPlay( "run" );
 
-		// timeline.gotoAndStop( 0 );
-		// timeline.gotoAndStop( 14 );
-		// timeline.gotoAndStop( 0 );
+		// timeline.gotoAndPlay( "run" );
+		// timeline.setFrame( 4 );
+
+		// runner.gotoAndPlay( "idle" );
+		// runner.setFrame( 4 ); 
 
 		this.stage.addChild( timeline );
 	};

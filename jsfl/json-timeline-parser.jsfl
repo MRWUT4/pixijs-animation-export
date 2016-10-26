@@ -196,12 +196,14 @@
 
 	prototype.parseAnimation = function(object, frame)
 	{
-		var tweenEasing = frame.tweenEasing;
+		// var tweenEasing = frame.tweenEasing;
 
-		if( tweenEasing )
+		if( frame.tweenType != "none" )
 		{
 			var ease = frame.getCustomEase( "all" );
 			var animation = ease.splice( 1, ease.length - 2 );
+
+			flash.trace( animation );
 
 			for( var property in animation )
 			{
