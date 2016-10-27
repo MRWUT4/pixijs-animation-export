@@ -252,7 +252,6 @@
 
 		}.bind(this) );
 
-
 		return list;
 	};
 
@@ -329,9 +328,7 @@
 			if( element.loop || element.firstFrame !== undefined )
 			{
 				if( element.loop == "single frame" )
-				{
 					frame = element.firstFrame;
-				}
 				else
 				{
 					var previousIndex = this.getPreviousIndex( currentFrame );

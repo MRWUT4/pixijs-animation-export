@@ -1,0 +1,35 @@
+﻿{"frames": {
+
+"eyesClosed0000":
+{
+	"frame": {"x":0,"y":211,"w":43,"h":22},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":43,"h":22},
+	"sourceSize": {"w":43,"h":22}
+},
+"eyesOpen0000":
+{
+	"frame": {"x":45,"y":211,"w":40,"h":20},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":40,"h":20},
+	"sourceSize": {"w":40,"h":20}
+},
+"face0000":
+{
+	"frame": {"x":0,"y":0,"w":150,"h":209},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":150,"h":209},
+	"sourceSize": {"w":150,"h":209}
+}},
+"meta": {
+	"app": "Adobe Animate",
+	"version": "15.2.1.95",
+	"image": "head-0.png",
+	"format": "RGBA8888",
+	"size": {"w":256,"h":256},
+	"scale": "1"
+}
+}

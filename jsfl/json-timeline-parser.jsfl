@@ -203,8 +203,6 @@
 			var ease = frame.getCustomEase( "all" );
 			var animation = ease.splice( 1, ease.length - 2 );
 
-			flash.trace( animation );
-
 			for( var property in animation )
 			{
 				var value = animation[ property ];

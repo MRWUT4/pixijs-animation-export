@@ -63,8 +63,6 @@
 		this.libraryItem = document.getTimeline().libraryItem;
 		this.timelineID = this.libraryItem ? this.libraryItem.name : this.documentName;
 		this.atlasID = this.documentName + "-atlas";
-
-		flash.trace( this.timelineID );
 	};
 
 

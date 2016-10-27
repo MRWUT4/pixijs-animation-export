@@ -201,6 +201,13 @@
   			spriteSheetExporter.exportSpriteSheet( name, AtlasExporter.exportFormat );
 
 
+
+  			// flash.trace( spriteSheetExporter );
+  			// tracePropertysAndValues( spriteSheetExporter.proto );
+  			// flash.trace( "\n\n" );
+  			// tracePropertysAndValues( spriteSheetExporter.prototype );
+
+
 			list.push( 
 			{ 
 				img: imageFolder + id + "." + AtlasExporter.exportFormat.format,
@@ -212,3 +219,15 @@
 	};
 
 }(window));
+
+// function tracePropertysAndValues(object)
+// {
+// 	for( var property in object )
+// 	{
+// 		var value = object[ property ];
+
+// 		flash.trace( "\n" );
+// 		flash.trace( property + " " + value );
+// 		flash.trace( typeof value );
+// 	}
+// }
