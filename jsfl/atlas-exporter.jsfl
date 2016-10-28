@@ -155,6 +155,8 @@
 			for(var i = 0; i < symbols.length; ++i)
 			{
 			    var symbol = symbols[ i ];
+
+			    pivot = that.calculateSymbolPivot( symbol );
 				symbolOverflowsExporter = that.addSymbolToExporter( spriteSheetExporter, symbol );
 
 				if( symbolOverflowsExporter )
@@ -174,6 +176,35 @@
 		addToSpriteSheetExporters( symbols );
 
 		return list;
+	};
+
+	prototype.calculateSymbolPivot = function(symbol)
+	{
+		var library = document.library;
+
+		library.selectNone();
+		library.duplicateItem( symbol.timeline.name );
+
+		var copy = library.getSelectedItems()[ 0 ];
+		var timeline = copy.timeline;
+
+		var bounds = this.getTimelineBounds( timeline );
+
+		library.deleteItem( copy.timeline.name );
+	};
+
+	prototype.getTimelineBounds = function(timeline)
+	{
+		timeline.selectAllFrames();
+
+		// var frameCount = timeline.frameCount;
+
+		// for(var i = 0; i < frameCount; ++i)
+		// {
+		//     var rect = timeline.getBounds( i + 1 );
+		    
+		//     flash.trace( JSON.encode( rect ) );
+		// }
 	};
 
 

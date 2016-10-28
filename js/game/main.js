@@ -102,7 +102,7 @@
 		{
 			library: json.library,
 			elements: elements,
-			// id: "head"
+			id: "head"
 		});
 
 		// var runner = timeline.getChildByName( "runner" );
