@@ -164,7 +164,7 @@
 						return;
 					else
 					{
-						addToSpriteSheetExporters( symbols.slice( i ) );
+						addToSpriteSheetExporters( symbols.splice( i, 1 ) );
 						break;
 					}
 				}
@@ -199,14 +199,6 @@
   			var imageFolder = AtlasExporter.imageFolder;
 
   			spriteSheetExporter.exportSpriteSheet( name, AtlasExporter.exportFormat );
-
-
-
-  			// flash.trace( spriteSheetExporter );
-  			// tracePropertysAndValues( spriteSheetExporter.proto );
-  			// flash.trace( "\n\n" );
-  			// tracePropertysAndValues( spriteSheetExporter.prototype );
-
 
 			list.push( 
 			{ 
