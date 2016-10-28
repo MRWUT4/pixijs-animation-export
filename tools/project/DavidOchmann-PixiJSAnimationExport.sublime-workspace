@@ -4,15 +4,27 @@
 		"selected_items":
 		[
 			[
+				"ex",
+				"exportSpriteSheets"
+			],
+			[
+				"sy",
+				"symbols"
+			],
+			[
+				"elem",
+				"elements"
+			],
+			[
+				"e",
+				"element"
+			],
+			[
 				"tim",
 				"timeline"
 			],
 			[
 				"elemen",
-				"element"
-			],
-			[
-				"elem",
 				"element"
 			],
 			[
@@ -78,10 +90,6 @@
 			[
 				"lab",
 				"labelObject"
-			],
-			[
-				"sy",
-				"symbol"
 			],
 			[
 				"sym",
@@ -506,25 +514,61 @@
 			[
 				"getL",
 				"getLevelItemID"
-			],
-			[
-				"up",
-				"updateValue"
-			],
-			[
-				"folo",
-				"followSpeed"
 			]
 		]
 	},
 	"buffers":
 	[
 		{
-			"file": "DavidOchmann-PixiJSAnimationExport.sublime-project",
+			"file": "/Users/david.ochmann/Documents/application/project/html/JS-Library/davidochmann/pixijs-animation-export/js/game/main.js",
 			"settings":
 			{
-				"buffer_size": 810,
+				"buffer_size": 2334,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/Users/david.ochmann/Documents/application/project/html/JS-Library/davidochmann/pixijs-animation-export/js/game/timeline.js",
+			"settings":
+			{
+				"buffer_size": 15129,
+				"encoding": "UTF-8",
 				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/david.ochmann/Documents/application/project/html/JS-Library/common/js/davidochmann/doutils/easeljs/buttonstate.js",
+			"settings":
+			{
+				"buffer_size": 6047,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/Users/david.ochmann/Documents/application/project/html/JS-Library/davidochmann/pixijs-animation-export/debug.html",
+			"settings":
+			{
+				"buffer_size": 1581,
+				"encoding": "UTF-8 with BOM",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/Users/david.ochmann/Documents/application/project/html/JS-Library/davidochmann/pixijs-animation-export/jsfl/atlas-exporter.jsfl",
+			"settings":
+			{
+				"buffer_size": 4883,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/david.ochmann/Documents/application/project/html/JS-Library/davidochmann/pixijs-animation-export/img/runner.json",
+			"settings":
+			{
+				"buffer_size": 31391,
+				"encoding": "UTF-8 with BOM",
+				"line_ending": "CR"
 			}
 		}
 	],
@@ -668,7 +712,7 @@
 				"Package Control: Install Package"
 			]
 		],
-		"width": 449.0
+		"width": 467.0
 	},
 	"console":
 	{
@@ -689,13 +733,12 @@
 	},
 	"expanded_folders":
 	[
-		"/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export",
-		"/Users/user/Documents/application/project/html/common/js/davidochmann",
-		"/Users/user/Library/Application Support/Adobe/Animate CC 2015.2/de_DE/Configuration/Commands",
-		"/Users/user/Downloads/QuickLookJSON.qlgenerator"
+		"/Users/david.ochmann/Documents/application/project/html/JS-Library/common/js/davidochmann",
+		"/Users/user/Library/Application Support/Adobe/Animate CC 2015.2/de_DE/Configuration/Commands"
 	],
 	"file_history":
 	[
+		"/Users/david.ochmann/Documents/application/project/html/JS-Library/davidochmann/pixijs-animation-export/tools/project/DavidOchmann-PixiJSAnimationExport.sublime-project",
 		"/Users/user/Documents/application/project/html/europapark/Niederlande-BlumenChaos-Winter/tools/uglify-index.bat",
 		"/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/jsfl/helper.jsfl",
 		"/Users/user/Library/Application Support/Adobe/Animate CC 2015.2/de_DE/Configuration/Commands/tools/Export PixiJS Assets.jsfl",
@@ -822,8 +865,7 @@
 		"/Users/david.ochmann/Documents/application/project/html/JS-Library/swiss/Skyboard/tools/project/Swiss-SkyboardSimulator.sublime-project",
 		"/Users/david.ochmann/Documents/application/project/html/JS-Library/swiss/Skyboard/tools/project/project.sublime-project",
 		"/Users/david.ochmann/Documents/application/project/html/JS-Library/common/js/davidochmann/nodejs/tools/pngcompress.js",
-		"/Users/david.ochmann/Documents/application/project/html/JS-Library/swiss/Skyboard/tools/commands/pngcompress.bat",
-		"/Users/david.ochmann/Documents/application/project/html/JS-Library/swiss/Skyboard/tools/commands/pngcompress.command"
+		"/Users/david.ochmann/Documents/application/project/html/JS-Library/swiss/Skyboard/tools/commands/pngcompress.bat"
 	],
 	"find":
 	{
@@ -843,6 +885,14 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"2048",
+			"1024",
+			"list",
+			"getSprite",
+			"getAtlasJSONWithID",
+			"floor",
+			":400",
+			":44",
 			"open",
 			"MOVIECLIP",
 			"SPRITE",
@@ -962,15 +1012,7 @@
 			"symbol",
 			"list",
 			"Assist",
-			"assets",
-			"json",
-			"parseComments",
-			"getFrameObjects",
-			"parseFunction",
-			"Animation",
-			"parseFrameObject",
-			"resources",
-			";\n"
+			"assets"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -989,29 +1031,169 @@
 	"groups":
 	[
 		{
-			"sheets":
-			[
-			]
-		},
-		{
-			"selected": 0,
+			"selected": 4,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "DavidOchmann-PixiJSAnimationExport.sublime-project",
+					"file": "/Users/david.ochmann/Documents/application/project/html/JS-Library/davidochmann/pixijs-animation-export/js/game/main.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 810,
+						"buffer_size": 2334,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								439,
-								471
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 768.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/Users/david.ochmann/Documents/application/project/html/JS-Library/davidochmann/pixijs-animation-export/js/game/timeline.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 15129,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								7823,
+								7823
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/Users/david.ochmann/Documents/application/project/html/JS-Library/common/js/davidochmann/doutils/easeljs/buttonstate.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6047,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/Users/david.ochmann/Documents/application/project/html/JS-Library/davidochmann/pixijs-animation-export/debug.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1581,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								15
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "/Users/david.ochmann/Documents/application/project/html/JS-Library/davidochmann/pixijs-animation-export/jsfl/atlas-exporter.jsfl",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4883,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								383,
+								397
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "/Users/david.ochmann/Documents/application/project/html/JS-Library/davidochmann/pixijs-animation-export/img/runner.json",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 31391,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								20344,
+								20349
 							]
 						],
 						"settings":
@@ -1020,10 +1202,10 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 18086.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 5,
 					"type": "text"
 				}
 			]
@@ -1046,18 +1228,11 @@
 				0,
 				1,
 				1
-			],
-			[
-				1,
-				0,
-				2,
-				1
 			]
 		],
 		"cols":
 		[
 			0.0,
-			0.340413750744,
 			1.0
 		],
 		"rows":
@@ -1088,6 +1263,30 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"pxi",
+				"pixijs-animation-export/jsfl/pixijs-animation-export.jsfl"
+			],
+			[
+				"atlas",
+				"pixijs-animation-export/jsfl/atlas-exporter.jsfl"
+			],
+			[
+				"debug",
+				"pixijs-animation-export/debug.html"
+			],
+			[
+				"debu",
+				"davidochmann/doutils/easeljs/buttonstate.js"
+			],
+			[
+				"timelin",
+				"pixijs-animation-export/js/game/timeline.js"
+			],
+			[
+				"main",
+				"pixijs-animation-export/js/game/main.js"
+			],
 			[
 				"uglify",
 				"davidochmann/nodejs/tools/uglifyhtml.js"
@@ -1129,10 +1328,6 @@
 				"davidochmann/doutils/loader/loader.js"
 			],
 			[
-				"main",
-				"pixijs-animation-export/js/game/main.js"
-			],
-			[
 				"label",
 				"pixijs-animation-export/jsfl/frame-label-exporter.jsfl"
 			],
@@ -1161,14 +1356,6 @@
 				"davidochmann/doutils/tools/gamesetup.js"
 			],
 			[
-				"debug",
-				"pixijs-animation-export/debug.html"
-			],
-			[
-				"debu",
-				"davidochmann/doutils/easeljs/buttonstate.js"
-			],
-			[
 				"jon",
 				"pixijs-animation-export/jsfl/json-timeline-parser.jsfl"
 			],
@@ -1183,10 +1370,6 @@
 			[
 				"assist",
 				"Commands/tools/library/Assist.jsfl"
-			],
-			[
-				"atlas",
-				"pixijs-animation-export/jsfl/atlas-exporter.jsfl"
 			],
 			[
 				"exportpi",
@@ -1591,14 +1774,6 @@
 			[
 				"gameplaymo",
 				"Skyboard/js/game/gameplaymodule.js"
-			],
-			[
-				"end",
-				"Skyboard/js/game/endstate.js"
-			],
-			[
-				"trackfa",
-				"Skyboard/js/game/trackfactorymodule.js"
 			]
 		],
 		"width": 0.0
@@ -1606,9 +1781,17 @@
 	"select_project":
 	{
 		"height": 500.0,
-		"last_filter": "temp",
+		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"comman",
+				"~/Documents/application/space/sublimetext/Projects/davidochmann-commands.sublime-project"
+			],
+			[
+				"swiss",
+				"~/Documents/application/project/html/JS-Library/europapark/YetiJagd/tools/project/Swiss-YetiJagd.sublime-project"
+			],
 			[
 				"temp",
 				"~/Documents/application/project/html/JS-Library/eoa/Template-PixiJS/tools/project/EOA-Template-PixiJS.sublime-project"
@@ -1805,7 +1988,7 @@
 		],
 		"width": 0.0
 	},
-	"selected_group": 1,
+	"selected_group": 0,
 	"settings":
 	{
 	},
