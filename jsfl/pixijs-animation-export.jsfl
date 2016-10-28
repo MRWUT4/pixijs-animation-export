@@ -116,4 +116,5 @@
 }(window));
 
 
-var pixiJSAnimationExport = new PixiJSAnimationExport();
+if( !window.ExecuteSetupScript )
+	var pixiJSAnimationExport = new PixiJSAnimationExport();
