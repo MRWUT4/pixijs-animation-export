@@ -219,7 +219,7 @@
 
 			var frame = ( range.begin + ( currentIndex % ( range.end - range.begin ) ) );
 			// console.log( range.end, range.begin );
-			
+
 			return frame;
 		}
 	};
@@ -283,7 +283,7 @@
 		if( displayObject )
 		{
 			this.addTransformData( id, displayObject, frames, currentFrame );
-			this.syncMovieClipFrame( displayObject, element, currentFrame );
+			this.syncMovieClipFrame( displayObject, element, frames, currentFrame );
 			this.add( displayObject );
 		}
 
@@ -315,7 +315,7 @@
 	};
 
 
-	prototype.syncMovieClipFrame = function(displayObject, element, currentFrame)
+	prototype.syncMovieClipFrame = function(displayObject, element, frames, currentFrame)
 	{
 		var list = 
 		[
@@ -331,9 +331,9 @@
 					frame = element.firstFrame;
 				else
 				{
-					var previousIndex = this.getPreviousIndex( currentFrame );
+					var previousIndex = this.getPreviousIndex( frames, currentFrame );
 					var firstFrame = element.firstFrame || 0;
-					var frame = previousIndex + firstFrame + currentFrame;
+					var frame = firstFrame + ( currentFrame - previousIndex );
 
 					if( element.loop == "play once" )
 						frame = Math.min( frame, displayObject.totalFrames );
