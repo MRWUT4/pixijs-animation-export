@@ -121,10 +121,39 @@
 
 	prototype.init = function()
 	{
+		this.initAddOriginKeyframeToSymbols();
 		this.initParsingByMode();
 		this.initResourceExport();
+		this.initRemoveOriginKeyframeFromSymbols();
+		this.initDocumentRoot();
 	};
 
+
+	prototype.initAddOriginKeyframeToSymbols = function()
+	{
+		var that = this;
+		
+		this.symbols.forEach( function(symbol)
+		{
+			that.addNullingRectangleToLastFrame( symbol );
+		});
+	};
+
+	prototype.initRemoveOriginKeyframeFromSymbols = function()
+	{
+		var that = this;
+
+		this.symbols.forEach( function(symbol)
+		{
+			that.removeLastFrame( symbol.timeline );
+		});
+	};
+
+
+	prototype.initDocumentRoot = function()
+	{
+		document.exitEditMode();
+	};
 
 	/** Construct SpriteSheetObjects according to mode. */
 	prototype.initParsingByMode = function(mode)
@@ -156,7 +185,7 @@
 			{
 			    var symbol = symbols[ i ];
 
-			    pivot = that.calculateSymbolPivot( symbol );
+			    // pivot = that.calculateSymbolPivot( symbol );
 				symbolOverflowsExporter = that.addSymbolToExporter( spriteSheetExporter, symbol );
 
 				if( symbolOverflowsExporter )
@@ -178,40 +207,59 @@
 		return list;
 	};
 
-	prototype.calculateSymbolPivot = function(symbol)
+	prototype.addNullingRectangleToLastFrame = function(symbol)
 	{
-		var library = document.library;
-
-		library.selectNone();
-		library.duplicateItem( symbol.timeline.name );
-
-		var copy = library.getSelectedItems()[ 0 ];
-		var timeline = copy.timeline;
-
-		var bounds = this.getTimelineBounds( timeline );
-
-		library.deleteItem( copy.timeline.name );
+		this.addEmptyKeyframeToTimeline( symbol.timeline );
+		this.setFillColorIfBlank();
+		this.drawRect();
 	};
 
-	prototype.getTimelineBounds = function(timeline)
+	prototype.addEmptyKeyframeToTimeline = function(timeline)
 	{
-		timeline.selectAllFrames();
+		var frameCount = timeline.frameCount;
 
-		// var frameCount = timeline.frameCount;
+		document.library.editItem( timeline.name );
+		timeline.insertBlankKeyframe( frameCount );
+	};
 
-		// for(var i = 0; i < frameCount; ++i)
-		// {
-		//     var rect = timeline.getBounds( i + 1 );
-		    
-		//     flash.trace( JSON.encode( rect ) );
-		// }
+	prototype.setFillColorIfBlank = function()
+	{
+		var fill = document.getCustomFill( "toolbar" );
+		
+		if( fill.color === undefined )
+		{
+			fill.color = "#000000";
+			fill.style = "solid";
+
+			document.setCustomFill( fill );
+		}
+	};
+
+	prototype.drawRect = function()
+	{
+		var drawingLayer = fl.drawingLayer;
+		var path = drawingLayer.newPath();
+
+		path.addPoint(0, 0);
+		path.addPoint(0, 1);
+		path.addPoint(1, 1);
+		path.addPoint(1, 0);
+		path.addPoint(0, 0);
+
+		var shape = path.makeShape();
+	};
+
+
+	prototype.removeLastFrame = function(timeline)
+	{
+		var frameCount = timeline.frameCount;
+		timeline.removeFrames( frameCount - 1 );
 	};
 
 
 	prototype.initResourceExport = function()
 	{
 		this.resources = this.exportSpriteSheets( this.spriteSheetExporters );
-
 		this.json.resources = this.resources;
 	};
 
@@ -231,14 +279,6 @@
 
   			spriteSheetExporter.exportSpriteSheet( name, AtlasExporter.exportFormat );
 
-
-
-  			// flash.trace( spriteSheetExporter );
-  			// tracePropertysAndValues( spriteSheetExporter.proto );
-  			// flash.trace( "\n\n" );
-  			// tracePropertysAndValues( spriteSheetExporter.prototype );
-
-
 			list.push( 
 			{ 
 				img: imageFolder + id + "." + AtlasExporter.exportFormat.format,
@@ -250,15 +290,3 @@
 	};
 
 }(window));
-
-// function tracePropertysAndValues(object)
-// {
-// 	for( var property in object )
-// 	{
-// 		var value = object[ property ];
-
-// 		flash.trace( "\n" );
-// 		flash.trace( property + " " + value );
-// 		flash.trace( typeof value );
-// 	}
-// }

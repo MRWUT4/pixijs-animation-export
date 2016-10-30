@@ -502,11 +502,29 @@
 		var texture = this.getTextures( elements, json, id )[ 0 ];
 
 		var sprite = new pixijs.Sprite( texture );
+		sprite.pivot = this.getSpritePivot( id, json );
 
 		return sprite;	
 	};
 
 
+	prototype.getSpritePivot = function(id, json)
+	{
+		var frames = this.getFrames( json.frames, id );
+
+		var result = frames.reduce( function( result, frame )
+		{
+			var size = frame.spriteSourceSize;
+
+			result.x = size.x > result.x || result.x == null ? size.x : result.x;
+			result.y = size.y > result.y || result.y == null ? size.y : result.y;
+
+			return result;
+
+		}, { x:null, y:null } );
+
+		return result;
+	};
 
 	/** TextFieled functions. */
 	prototype.getTextField = function(item, template)

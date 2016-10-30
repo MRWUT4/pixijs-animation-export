@@ -102,8 +102,10 @@
 		{
 			library: json.library,
 			elements: elements,
-			id: "head"
+			// id: "head"
 		});
+
+		// timeline.stop();
 
 		// var runner = timeline.getChildByName( "runner" );
 		// runner.gotoAndPlay( "run" );
