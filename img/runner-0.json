@@ -2,7 +2,7 @@
 
 "armLeft0000":
 {
-	"frame": {"x":273,"y":642,"w":127,"h":123},
+	"frame": {"x":272,"y":642,"w":127,"h":123},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":127,"h":123},
@@ -18,7 +18,7 @@
 },
 "armRight0000":
 {
-	"frame": {"x":402,"y":642,"w":127,"h":122},
+	"frame": {"x":401,"y":642,"w":127,"h":122},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":127,"h":122},
@@ -50,10 +50,10 @@
 },
 "body0000":
 {
-	"frame": {"x":153,"y":642,"w":118,"h":142},
+	"frame": {"x":153,"y":642,"w":117,"h":142},
 	"rotated": false,
 	"trimmed": true,
-	"spriteSourceSize": {"x":1,"y":1,"w":119,"h":143},
+	"spriteSourceSize": {"x":2,"y":1,"w":119,"h":143},
 	"sourceSize": {"w":119,"h":143}
 },
 "body0001":
@@ -66,7 +66,7 @@
 },
 "cloud00000":
 {
-	"frame": {"x":531,"y":642,"w":238,"h":53},
+	"frame": {"x":530,"y":642,"w":238,"h":53},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":1,"y":1,"w":239,"h":54},
@@ -130,7 +130,7 @@
 },
 "footLeft0000":
 {
-	"frame": {"x":685,"y":697,"w":80,"h":63},
+	"frame": {"x":684,"y":697,"w":80,"h":63},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":1,"y":1,"w":81,"h":64},
@@ -146,7 +146,7 @@
 },
 "footRight0000":
 {
-	"frame": {"x":915,"y":750,"w":80,"h":63},
+	"frame": {"x":914,"y":750,"w":80,"h":63},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":1,"y":1,"w":81,"h":64},
@@ -162,7 +162,7 @@
 },
 "legLowerLeft0000":
 {
-	"frame": {"x":915,"y":642,"w":70,"h":106},
+	"frame": {"x":914,"y":642,"w":70,"h":106},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":1,"y":1,"w":71,"h":107},
@@ -178,7 +178,7 @@
 },
 "legLowerRight0000":
 {
-	"frame": {"x":531,"y":697,"w":70,"h":106},
+	"frame": {"x":530,"y":697,"w":70,"h":106},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":1,"y":1,"w":71,"h":107},
@@ -194,7 +194,7 @@
 },
 "legUpperLeft0000":
 {
-	"frame": {"x":771,"y":642,"w":70,"h":120},
+	"frame": {"x":770,"y":642,"w":70,"h":120},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":1,"y":1,"w":71,"h":121},
@@ -210,7 +210,7 @@
 },
 "legUpperRight0000":
 {
-	"frame": {"x":843,"y":642,"w":70,"h":120},
+	"frame": {"x":842,"y":642,"w":70,"h":120},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":1,"y":1,"w":71,"h":121},
@@ -226,7 +226,7 @@
 },
 "scarf0000":
 {
-	"frame": {"x":603,"y":697,"w":80,"h":88},
+	"frame": {"x":602,"y":697,"w":80,"h":88},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":1,"y":1,"w":81,"h":89},
