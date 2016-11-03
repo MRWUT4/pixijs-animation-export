@@ -523,7 +523,16 @@
 			"file": "/Users/david.ochmann/Documents/application/project/html/JS-Library/davidochmann/pixijs-animation-export/jsfl/json-timeline-parser.jsfl",
 			"settings":
 			{
-				"buffer_size": 9368,
+				"buffer_size": 9405,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "DavidOchmann-PixiJSAnimationExport.sublime-project",
+			"settings":
+			{
+				"buffer_size": 763,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -686,7 +695,7 @@
 				"Package Control: Install Package"
 			]
 		],
-		"width": 485.0
+		"width": 467.0
 	},
 	"console":
 	{
@@ -841,7 +850,7 @@
 	],
 	"find":
 	{
-		"height": 23.0
+		"height": 35.0
 	},
 	"find_in_files":
 	{
@@ -1003,7 +1012,7 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -1012,15 +1021,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 9368,
+						"buffer_size": 9405,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								8725,
+								8725
 							]
 						],
 						"settings":
@@ -1029,14 +1038,43 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 1288.0,
+						"translation.y": 5340.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
+					"file": "DavidOchmann-PixiJSAnimationExport.sublime-project",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 763,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								763,
+								763
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
 					"file": "/Users/david.ochmann/Documents/application/project/html/JS-Library/davidochmann/pixijs-animation-export/jsfl/atlas-exporter.jsfl",
 					"semi_transient": false,
 					"settings":
@@ -1061,11 +1099,11 @@
 						"translation.y": 3409.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
-					"buffer": 2,
+					"buffer": 3,
 					"file": "/Users/david.ochmann/Documents/application/project/html/JS-Library/davidochmann/pixijs-animation-export/js/game/timeline.js",
 					"semi_transient": false,
 					"settings":
@@ -1077,8 +1115,8 @@
 						"selection":
 						[
 							[
-								15693,
-								15693
+								14840,
+								14840
 							]
 						],
 						"settings":
@@ -1090,7 +1128,7 @@
 						"translation.y": 10023.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 2,
 					"type": "text"
 				}
 			]
@@ -1666,9 +1704,13 @@
 	"select_project":
 	{
 		"height": 500.0,
-		"last_filter": "poke",
+		"last_filter": "pok",
 		"selected_items":
 		[
+			[
+				"pok",
+				"~/Documents/application/project/html/JS-Library/toggo/Pokemon-Wimmelbild/tools/project/Pokemon-Wimmelbild.sublime-project"
+			],
 			[
 				"poke",
 				"~/Documents/application/project/html/JS-Library/toggo/Pokemon-Wimmelbild/tools/project/Pokemon-Wimmelbild.sublime-project"

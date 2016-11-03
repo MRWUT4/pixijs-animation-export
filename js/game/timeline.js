@@ -20,6 +20,7 @@
 		this.library = setup.library;
 		this.elements = setup.elements;
 		this.id = setup.id || "root";
+		this.loop = setup.loop || true;
 		
 		this.isPlaying = true;
 		this.currentFrame = 0;
@@ -210,15 +211,17 @@
 		if( this.currentLabel === null )
 		{
 			var totalFrames = this.template.totalFrames;
-			return currentIndex % totalFrames;
+			return this.loop ? ( currentIndex % totalFrames ) : ( currentIndex >= totalFrames - 1 ? totalFrames - 1 : currentIndex );
 		}
 		else
 		{
 			var beginEnd = this.getBeginEndObject( this.template, "labels" );
 			var range = beginEnd[ this.currentLabel ];
+			var lastFrame = range.end - range.begin;
 
-			var frame = ( range.begin + ( currentIndex % ( range.end - range.begin ) ) );
-			// console.log( range.end, range.begin );
+			var frame = ( range.begin + ( currentIndex % lastFrame ) );
+			
+			// TODO: Add this.loop handling for label animations.
 
 			return frame;
 		}
@@ -339,7 +342,8 @@
 						frame = Math.min( frame, displayObject.totalFrames );
 				}
 				
-				displayObject.setFrame( frame );
+				if( displayObject.isPlaying )
+					displayObject.setFrame( frame );
 			}
 		}
 	};
@@ -413,9 +417,22 @@
 		return list;
 	};
 
+	prototype.getFilteredFrames = function(frames, id)
+	{
+		var list = this.getFrames( frames, id );
+
+		result = list.filter( function(element)
+		{
+			var frame = element.frame;
+			return frame.w != 1 && frame.h != 1;
+		});
+
+		return result;
+	};
+
 	prototype.getTextures = function(elements, json, id)
 	{
-		var frames = this.getFrames( json.frames, id );
+		var frames = this.getFilteredFrames( json.frames, id );
 		var baseTexture = this.getBaseTexture( elements, json.meta.image );
 
 		var list = frames.map( function(item)
