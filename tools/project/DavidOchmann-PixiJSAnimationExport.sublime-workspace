@@ -4,18 +4,66 @@
 		"selected_items":
 		[
 			[
-<<<<<<< HEAD
-				"sp",
-				"spriteSheetExporter"
+				"rec",
+				"rect0"
 			],
 			[
-				"pre",
-				"previousIndex"
+				"re",
+				"rect0"
 			],
 			[
-				"previ",
-				"previous"
-=======
+				"po",
+				"polygons"
+			],
+			[
+				"poly",
+				"polygon"
+			],
+			[
+				"proto",
+				"prototype"
+			],
+			[
+				"pos",
+				"posY"
+			],
+			[
+				"__F",
+				"__for_loop\tCreates a simple for loop."
+			],
+			[
+				"get",
+				"getItemAtIndex"
+			],
+			[
+				"con",
+				"container"
+			],
+			[
+				"tim",
+				"timeline"
+			],
+			[
+				"item",
+				"itemBounds"
+			],
+			[
+				"back",
+				"backgroundBounds"
+			],
+			[
+				"addItem",
+				"addItemComplete"
+			],
+			[
+				"init",
+				"initElement"
+			],
+			[
+				"__modul",
+				"__module\tStateModule"
+			],
+			[
 				"ex",
 				"exportSpriteSheets"
 			],
@@ -32,358 +80,8 @@
 				"element"
 			],
 			[
-				"tim",
-				"timeline"
-			],
-			[
 				"elemen",
 				"element"
->>>>>>> eb601c0bcb166bc5cdc881e0ee38af6c95874254
-			],
-			[
-				"ne",
-				"nextKeyframe"
-			],
-			[
-				"curren",
-				"currentFrame"
-			],
-			[
-				"cu",
-				"currentFrame"
-			],
-			[
-				"be",
-				"begin"
-			],
-			[
-				"resu",
-				"result0"
-			],
-			[
-				"current",
-				"currentFrame"
-			],
-			[
-				"cur",
-				"currentFrame"
-			],
-			[
-				"fram",
-				"frame"
-			],
-			[
-				"val",
-				"validateFrame"
-			],
-			[
-				"js",
-				"jsFiles"
-			],
-			[
-				"time",
-				"timeline"
-			],
-			[
-				"elem",
-				"element"
-			],
-			[
-				"ele",
-				"elements"
-			],
-			[
-				"lay",
-				"layerID"
-			],
-			[
-				"layer",
-				"layerID"
-			],
-			[
-				"la",
-				"layerID"
-			],
-			[
-<<<<<<< HEAD
-				"getLa",
-				"getLayer"
-			],
-			[
-				"getLay",
-				"getLayerName"
-=======
-				"sym",
-				"symbols"
->>>>>>> eb601c0bcb166bc5cdc881e0ee38af6c95874254
-			],
-			[
-				"getlayer",
-				"getLayerName"
-			],
-			[
-				"add",
-				"addToLayer"
-			],
-			[
-				"ad",
-				"addToLayer"
-			],
-			[
-				"frame",
-				"frameNumber"
-			],
-			[
-				"fra",
-				"frame"
-			],
-			[
-				"scal",
-				"scaleY"
-			],
-			[
-				"initF",
-				"initFocusHandling"
-			],
-			[
-				"eleme",
-				"element"
-			],
-			[
-				"chi",
-				"child"
-			],
-			[
-				"chil",
-				"children"
-			],
-			[
-				"elee",
-				"elements"
-			],
-			[
-				"elemen",
-				"element"
-			],
-			[
-				"in",
-				"instance"
-			],
-			[
-				"transla",
-				"translated"
-			],
-			[
-				"trans",
-				"translated"
-			],
-			[
-				"getBe",
-				"getBezierPointsSubset"
-			],
-			[
-				"fl",
-				"floatBetweenAandB"
-			],
-			[
-				"pro",
-				"progress"
-			],
-			[
-				"type",
-				"typeof"
-			],
-			[
-				"getTran",
-				"getTransformBetweenItems"
-			],
-			[
-				"net",
-				"nextItem"
-			],
-			[
-				"preiv",
-				"previousItem"
-			],
-			[
-				"typ",
-				"typeof"
-			],
-			[
-				"pr",
-				"prototype"
-			],
-			[
-				"di",
-				"displayObject"
-			],
-			[
-				"previou",
-				"previousItem"
-			],
-			[
-				"re",
-				"result"
-			],
-			[
-				"next",
-				"nextKeyframe"
-			],
-			[
-				"res",
-				"result"
-			],
-			[
-				"sca",
-				"scaleX"
-			],
-			[
-				"_l",
-				"__log\tCreates a backwards for loop."
-			],
-			[
-				"eel",
-				"element"
-			],
-			[
-				"to",
-				"totalFrames"
-			],
-			[
-				"prop",
-				"property"
-			],
-			[
-				"__f",
-				"__for_loop_backwards\tCreates a backwards for loop."
-			],
-			[
-				"com",
-				"compare"
-			],
-			[
-				"el",
-				"element"
-			],
-			[
-				"te",
-				"texture"
-			],
-			[
-				"mov",
-				"movieclip"
-			],
-			[
-				"va",
-				"value"
-			],
-			[
-				"obj",
-				"object"
-			],
-			[
-				"movie",
-				"movieClip"
-			],
-			[
-				"ob",
-				"object"
-			],
-			[
-				"for",
-				"forEvery"
-			],
-			[
-				"getFm",
-				"getFrameIDWithoutIndex"
-			],
-			[
-				"getFra",
-				"getFrameIDWithoutIndex"
-			],
-			[
-				"filter",
-				"filterValidJSONFiles"
-			],
-			[
-				"inde",
-				"index"
-			],
-			[
-				"reso",
-				"resolveKeyFrame"
-			],
-			[
-				"resol",
-				"resolveFrames"
-			],
-			[
-				"resolve",
-				"resolveFrames"
-			],
-			[
-				"key",
-				"keyFrame"
-			],
-			[
-				"set",
-				"setFrame"
-			],
-			[
-				"fun",
-				"function"
-			],
-			[
-				"par",
-				"parse"
-			],
-			[
-				"parse",
-				"parseLayers"
-			],
-			[
-				"load",
-				"loadItems"
-			],
-			[
-				"__ge",
-				"__getter\tGetter"
-			],
-			[
-				"As",
-				"AssetFactory"
-			],
-			[
-				"__F",
-				"__for_loop\tCreates a simple for loop."
-			],
-			[
-				"getAS",
-				"getAssetIDs"
-			],
-			[
-				"item",
-				"itemIsInLibrary"
-			],
-			[
-				"an",
-				"anonymousID"
-			],
-			[
-				"__com",
-				"__comment-3line\tComment-3Line"
-			],
-			[
-				"ass",
-				"assetFactory"
-			],
-			[
-				"crea",
-				"createScene"
-			],
-			[
-				"tim",
-				"timeline"
 			],
 			[
 				"JSON",
@@ -391,6 +89,10 @@
 			],
 			[
 				"timelin",
+				"timelineID"
+			],
+			[
+				"time",
 				"timelineID"
 			],
 			[
@@ -404,6 +106,14 @@
 			[
 				"du",
 				"durationObject"
+			],
+			[
+				"fram",
+				"frame"
+			],
+			[
+				"in",
+				"index"
 			],
 			[
 				"st",
@@ -438,12 +148,12 @@
 				"labelObject"
 			],
 			[
-				"sy",
-				"symbol"
-			],
-			[
 				"sym",
 				"symbols"
+			],
+			[
+				"pro",
+				"prototype"
 			],
 			[
 				"expo",
@@ -452,10 +162,6 @@
 			[
 				"a",
 				"atlasExporter"
-			],
-			[
-				"init",
-				"initAssetList"
 			],
 			[
 				"spriteSheet",
@@ -470,8 +176,16 @@
 				"atlasID"
 			],
 			[
+				"sp",
+				"spriteSheetExporters"
+			],
+			[
 				"lib",
 				"libraryItem"
+			],
+			[
+				"eleme",
+				"elementType"
 			],
 			[
 				"TY",
@@ -490,8 +204,36 @@
 				"type"
 			],
 			[
+				"ad",
+				"addProperty"
+			],
+			[
+				"par",
+				"parseSprite"
+			],
+			[
+				"obj",
+				"object"
+			],
+			[
+				"__ge",
+				"__getter_extended\tGetterExtended"
+			],
+			[
+				"add",
+				"addItemTransformData"
+			],
+			[
+				"ele",
+				"element"
+			],
+			[
 				"T",
 				"TYPE_TIMELINE"
+			],
+			[
+				"el",
+				"else"
 			],
 			[
 				"ini",
@@ -518,6 +260,10 @@
 				"text-align"
 			],
 			[
+				"di",
+				"divLogin"
+			],
+			[
 				"us",
 				"user"
 			],
@@ -534,7 +280,6 @@
 				"password"
 			],
 			[
-<<<<<<< HEAD
 				"user",
 				"username"
 			],
@@ -545,27 +290,237 @@
 			[
 				"da",
 				"dataStr"
-=======
-				"getL",
-				"getLevelItemID"
->>>>>>> eb601c0bcb166bc5cdc881e0ee38af6c95874254
+			],
+			[
+				"hi",
+				"highscoreData"
+			],
+			[
+				"__c",
+				"__class_template\tClassTemplate"
+			],
+			[
+				"pad",
+				"padding-bottom"
+			],
+			[
+				"login",
+				"loginCompleteHandler"
+			],
+			[
+				"input",
+				"inputPassword"
+			],
+			[
+				"ke",
+				"keyCodeEnter"
+			],
+			[
+				"key",
+				"keyCode"
+			],
+			[
+				"requ",
+				"requestValidation"
+			],
+			[
+				"co",
+				"color"
+			],
+			[
+				"All",
+				"AllerLightRegular"
+			],
+			[
+				"fon",
+				"font-family"
+			],
+			[
+				"font",
+				"font-size"
+			],
+			[
+				"sh",
+				"shell_cmd"
+			],
+			[
+				"fl",
+				"float"
+			],
+			[
+				"inputI",
+				"inputIsValid"
+			],
+			[
+				"wi",
+				"width"
+			],
+			[
+				"inpu",
+				"inputUsername"
+			],
+			[
+				"call",
+				"callback"
+			],
+			[
+				"__g",
+				"__getter-setter\tGetterSetter"
+			],
+			[
+				"__mo",
+				"__module_state\tModuleState"
+			],
+			[
+				"Di",
+				"DIFFICULTY_EASY"
+			],
+			[
+				"ha",
+				"hard"
+			],
+			[
+				"changeSP",
+				"changeSpriteFrame"
+			],
+			[
+				"ani",
+				"animateChangeSprite"
+			],
+			[
+				"mes",
+				"messenger"
+			],
+			[
+				"ID_",
+				"ID_STATE_HELP"
+			],
+			[
+				"__module",
+				"__module_state\tModuleState"
+			],
+			[
+				"of",
+				"offset"
+			],
+			[
+				"update",
+				"updateCameraPosition"
+			],
+			[
+				"messenger",
+				"messengerPositionHandler"
+			],
+			[
+				"__get",
+				"__getter\tGetter"
+			],
+			[
+				"pla",
+				"player"
+			],
+			[
+				"play",
+				"playerZ"
+			],
+			[
+				"au",
+				"audioPlaybackModules"
+			],
+			[
+				"audio",
+				"audioID"
+			],
+			[
+				"tw",
+				"tween"
+			],
+			[
+				"lo",
+				"loop"
+			],
+			[
+				"messe",
+				"messengerEndHandler"
+			],
+			[
+				"soun",
+				"soundTiltVolume"
+			],
+			[
+				"soundTil",
+				"soundTilt"
+			],
+			[
+				"so",
+				"soundTilt"
+			],
+			[
+				"wind",
+				"windStrong"
+			],
+			[
+				"Au",
+				"AudioPlaybackModule"
+			],
+			[
+				"tween",
+				"tweenHit"
+			],
+			[
+				"colli",
+				"collisionDistance"
+			],
+			[
+				"prop",
+				"property"
+			],
+			[
+				"__mod",
+				"__module\tStateModule"
+			],
+			[
+				"set",
+				"setupToggle"
+			],
+			[
+				"nam",
+				"nameModule"
+			],
+			[
+				"ch",
+				"changeScale"
+			],
+			[
+				"spr",
+				"sprite"
+			],
+			[
+				"me",
+				"messengerEndHandler"
+			],
+			[
+				"text",
+				"textField"
+			],
+			[
+				"twee",
+				"tweenOnUpdateHandler"
+			],
+			[
+				"textAm",
+				"textAmountFlowers"
+			],
+			[
+				"rp",
+				"replaceAt"
 			]
 		]
 	},
 	"buffers":
 	[
 		{
-<<<<<<< HEAD
-			"file": "/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/debug.html",
-			"settings":
-			{
-				"buffer_size": 1581,
-				"encoding": "UTF-8 with BOM",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/jsfl/json-timeline-parser.jsfl",
+			"file": "/Users/david.ochmann/Documents/application/project/html/JS-Library/davidochmann/pixijs-animation-export/jsfl/json-timeline-parser.jsfl",
 			"settings":
 			{
 				"buffer_size": 9368,
@@ -574,106 +529,11 @@
 			}
 		},
 		{
-			"file": "/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/js/game/timeline.js",
-			"settings":
-			{
-				"buffer_size": 15129,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/js/game/main.js",
-			"settings":
-			{
-				"buffer_size": 2334,
-				"encoding": "UTF-8",
-=======
-			"file": "/Users/david.ochmann/Documents/application/project/html/JS-Library/davidochmann/pixijs-animation-export/js/game/main.js",
-			"settings":
-			{
-				"buffer_size": 2334,
->>>>>>> eb601c0bcb166bc5cdc881e0ee38af6c95874254
-				"line_ending": "Windows"
-			}
-		},
-		{
-<<<<<<< HEAD
-			"file": "/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/jsfl/pixijs-animation-export.jsfl",
-			"settings":
-			{
-				"buffer_size": 2496,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/jsfl/atlas-exporter.jsfl",
-			"settings":
-			{
-				"buffer_size": 5086,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"contents": "Searching 247 files for \"flash.trace\" (case sensitive)\n\n/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/jsfl/atlas-exporter.jsfl:\n  203  \n  204  \n  205:   \t\t\t// flash.trace( spriteSheetExporter );\n  206    \t\t\t// tracePropertysAndValues( spriteSheetExporter.proto );\n  207:   \t\t\t// flash.trace( \"\\n\\n\" );\n  208    \t\t\t// tracePropertysAndValues( spriteSheetExporter.prototype );\n  209  \n  ...\n  227  // \t\tvar value = object[ property ];\n  228  \n  229: // \t\tflash.trace( \"\\n\" );\n  230: // \t\tflash.trace( property + \" \" + value );\n  231: // \t\tflash.trace( typeof value );\n  232  // \t}\n  233  // }\n\n/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/jsfl/json-timeline-parser.jsfl:\n  204  \t\t\tvar animation = ease.splice( 1, ease.length - 2 );\n  205  \n  206: \t\t\tflash.trace( animation );\n  207  \n  208  \t\t\tfor( var property in animation )\n\n/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/jsfl/pixi-export.jsfl:\n    1: (function(window){window.Helper=Helper;var prototype=Helper.prototype=new Object;Helper.TIMELINE=\"timeline\";Helper.MOVIECLIP=\"movieclip\";Helper.ELEMENT=\"element\";Helper.GRAPHIC=\"graphic\";Helper.LIBRARY_ITEM=\"library item\";Helper.SPRITE=\"sprite\";Helper.INSTANCE=\"instance\";Helper.TEXTFIELD=\"textfield\";Helper.TEXT=\"text\";function Helper(){}Helper.getItemType=function(object){var type=null;if(object.libraryItem&&object.libraryItem.itemType==Helper.GRAPHIC)type=Helper.GRAPHIC;else if(object instanceof Timeline)type=Helper.TIMELINE;else if(object instanceof Element){switch(object.elementType){case Helper.INSTANCE:type=Helper.INSTANCE;break;case Helper.TEXT:type=Helper.TEXT;break}}else if(object instanceof LibraryItem)type=Helper.LIBRARY_ITEM;return type};Helper.getExportType=function(object){}})(window);(function(window){var prototype=JSON.prototype=new Object;prototype.constructor=JSON;JSON.OBJECT=\"object\";JSON.NUMBER=\"number\";JSON.STRING=\"string\";JSON.ARRAY=\"array\";JSON.BOOLEAN=\"boolean\";function JSON(){}JSON.decode=function(string){var value=JSON.encodeStringValues(string);var value=JSON.removeFormat(value);var object=JSON.stringToObject(value);return object};JSON.stringToObject=function(string){var type=JSON.getStringType(string);var value=null;string=decodeURIComponent(string);switch(type){case JSON.OBJECT:value=JSON.parseObject(string);break;case JSON.ARRAY:value=JSON.parseArray(string);break;case JSON.STRING:value=JSON.parseString(string);break;case JSON.NUMBER:value=Number(string);break}return value};JSON.parseObject=function(string){var object={};var stringValue=JSON.removeStartAndEnd(string);var split=JSON.splitTopElements(stringValue);for(var j=0;j<split.length;++j){var splitString=split[j];var splitColon=splitString.split(\":\");var property=splitColon.splice(0,1);var value=splitColon.join(\":\");object[property]=JSON.stringToObject(value)}return object};JSON.parseArray=function(string){var array=[];var stringValue=JSON.removeStartAndEnd(string);var split=JSON.splitTopElements(stringValue);for(var j=0;j<split.length;++j){var splitString=split[j];array.push(JSON.stringToObject(splitString))}return array};JSON.parseString=function(string){return JSON.removeStartAndEnd(string)};JSON.encode=function(object,format){format=format!==undefined?format:true;var json=JSON.objectToJSON(object);if(format)json=JSON.format(json);json=decodeURIComponent(json);return json};JSON.format=function(json){json=JSON.formatNewLine(json);json=JSON.formatIndent(json);return json};JSON.objectToJSON=function(object){var string=object?\"{\":'\"';var index=0;var numOfProperties=JSON.numOfProperties(object);for(var property in object){index++;var value=object[property];var type=JSON.getType(value);var end=index<numOfProperties-1?\",\":\"\";switch(type){case JSON.OBJECT:string+=JSON.propertyPair(property,JSON.objectToJSON(value),end);break;case JSON.ARRAY:string+=JSON.propertyPair(property,JSON.arrayToJSON(value),end);break;case JSON.STRING:string+=JSON.propertyPair(property,'\"'+encodeURIComponent(value)+'\"',end);break;case JSON.NUMBER:string+=JSON.propertyPair(property,value,end);break;case JSON.BOOLEAN:string+=JSON.propertyPair(property,value,end);break}}string+=object?\"}\":'\"';return string};JSON.arrayToJSON=function(array){var string=array?\"[\":'\"';for(var i=0;i<array.length;++i){var value=array[i];var type=JSON.getType(value);var split=i<array.length-1?\",\":\"\";switch(type){case JSON.OBJECT:string+=JSON.objectToJSON(value)+split;break;case JSON.ARRAY:string+=JSON.arrayToJSON(value)+split;break;case JSON.STRING:string+='\"'+value+'\"'+split;break;case JSON.NUMBER:string+=value+split;break}}string+=array?\"]\":'\"';return string};JSON.removeStartAndEnd=function(string){return string.slice(1,string.length-1)};JSON.removeFormat=function(string){var value=string;value=value.replace(/(\\r\\n|\\n|\\r)/gm,\"\");value=value.split(\" \").join(\"\");value=value.split(\"\\n\").join(\"\");value=value.split(\"\\t\").join(\"\");return value};JSON.formatNewLine=function(json){json=json.split(\",\").join(\",\\n\");json=json.split(\"{\").join(\"\\n{\\n\");json=json.split(\"}\").join(\"\\n}\");json=json.split('[\"').join('[\\n\"');json=json.split(\"[\").join(\"\\n[\");json=json.split(\"]\").join(\"\\n]\");json=json.split(\"]}\").join(\"]\\n}\");json=json.split(\":\").join(\": \");json=json.split(\"},\\n\\n{\").join(\"},\\n{\");json=json.split(\"\\n\").splice(1).join(\"\\n\");return json};JSON.formatIndent=function(json){var list=json.split(\"\\n\");for(var i=0;i<list.length;++i){var line=list[i];var string=list.slice(0,i).join(\"\\n\");var numIndents=JSON.getNumOfOpeningObjects(string);for(var j=0;j<numIndents;++j)line=\"\\t\"+line;list[i]=line}json=list.join(\"\\n\");json=json.split(\"\\t}\").join(\"}\").split(\"\\t]\").join(\"]\");return json};JSON.getNumOfOpeningObjects=function(string){var s=\"_°$§!\";var numOpen=string.split(\"{\").join(s).split(\"[\").join(s).split(s).length;var numClosed=string.split(\"}\").join(s).split(\"]\").join(s).split(s).length;return numOpen-numClosed};JSON.encodeStringValues=function(string){var regex=/\"([^\"]*)\"/;while(string.match(regex)!=null)string=string.replace(regex,JSON.replaceHandler);return string};JSON.replaceHandler=function(p1){return encodeURIComponent(p1)};JSON.splitTopElements=function(string){var split=string.split(\",\");for(var i=split.length-2;i>=0;--i){var current=split[i];var previous=split[i+1];var nested=JSON.getIsNested(previous);if(nested!=0){split[i]=current+\",\"+previous;split.splice(i+1,1)}}return split};JSON.getIsNested=function(string){var countOpen0=JSON.getCharCount(string,\"{\");var countClosed0=JSON.getCharCount(string,\"}\");var countOpen1=JSON.getCharCount(string,\"[\");var countClosed1=JSON.getCharCount(string,\"]\");var isNested=countOpen0-countClosed0+countOpen1-countClosed1;return isNested};JSON.getCharCount=function(string,character){return string.split(character).length-1};JSON.propertyPair=function(type,string,end){return'\"'+type+'\"'+\":\"+string+end};JSON.getType=function(object){if(object instanceof Array)return JSON.ARRAY;else if(typeof object==\"boolean\")return JSON.BOOLEAN;else return typeof object};JSON.getStringType=function(string){var character=string.charAt(0);switch(character){case\"{\":return JSON.OBJECT;break;case\"[\":return JSON.ARRAY;break;case'\"':return JSON.STRING;break;case\"true\":case\"false\":return JSON.BOOLEAN;break;default:return JSON.NUMBER;break}};JSON.numOfProperties=function(object){var num=0;for(var property in object)num++;num=num>0?num+1:num;return num};window.JSON=JSON})(window);(function(window){window.JSONTimelineParser=JSONTimelineParser;var prototype=JSONTimelineParser.prototype=new Object;prototype.constructor=JSONTimelineParser;JSONTimelineParser.JOIN_FONTFACE=false;function JSONTimelineParser(setup){Object.call(this);this.timeline=setup.timeline;this.init()}prototype.getLibraryObject=function(id){return this.library[id]};prototype.init=function(){this.initVariables();this.initTimelineRecursion()};prototype.initVariables=function(){this.data={library:{},resources:[]};this.symbols=[];this.timelines=[];this.library=this.data.library;this.numAnonymousTextFields=0};prototype.initTimelineRecursion=function(){flash.outputPanel.clear();this.parse(this.timeline)};prototype.parse=function(item){var type=Helper.getItemType(item);var object=null;switch(type){case Helper.TIMELINE:object=this.parseTimeline(item);break;case Helper.LIBRARY_ITEM:object=this.parseTimeline(item.timeline);break;case Helper.INSTANCE:object=this.parseTimeline(item.libraryItem.timeline);break;case Helper.GRAPHIC:object=this.parseGraphic(item);break;case Helper.TEXT:object=this.parseText(item);break}this.addToLibrary(object);return object};prototype.parseTimeline=function(timeline,id){var libraryItem=timeline.libraryItem||{name:\"root\"};var object={type:Helper.TIMELINE,id:libraryItem.name,totalFrames:timeline.frameCount};var layers=timeline.layers;var objectLayers=[];for(var i=layers.length-1;i>=0;--i){var layer=layers[i];if(layer.layerType==\"normal\"){var item=this.parseLayer(layer);if(item!=null)objectLayers.push(item)}}if(objectLayers.length>0)object.layers=objectLayers;this.timelines.push(timeline);return object};prototype.parseLayer=function(layer){var object={name:layer.name,frames:{}};var frames=layer.frames;var numFrames=0;for(var i=0;i<frames.length;++i){var frame=frames[i];var isKeyframe=frame.startFrame==i;if(isKeyframe){var item=this.parseFrame(frame,i);if(item!=null){numFrames++;object.frames[i]=item}}}if(numFrames>0)return object;else return null};prototype.parseFrame=function(frame,index){var object={elements:[]};var elements=frame.elements;object=this.parseAnimation(object,frame);for(var i=0;i<elements.length;++i){var element=elements[i];var item=this.parse(element);if(item!=null){var itemIsInLibrary=this.getLibraryObject(item.id);if(itemIsInLibrary)item={id:item.id};item=this.addItemTransformData(item,element);object.elements.push(item)}}return object};prototype.parseAnimation=function(object,frame){if(frame.tweenType!=\"none\"){var ease=frame.getCustomEase(\"all\");var animation=ease.splice(1,ease.length-2);flash.trace(animation);for(var property in animation){var value=animation[property];value.x=this.getFixedValue(value.x,4);value.y=this.getFixedValue(value.y,4)}object.animation=animation}return object};prototype.parseGraphic=function(item){var libraryItem=item.libraryItem;var timeline=libraryItem.timeline;var isMovieClip=timeline.frameCount>1;var type=isMovieClip?Helper.MOVIECLIP:Helper.SPRITE;var object={type:type,id:libraryItem.name};if(isMovieClip)object.totalFrames=timeline.frameCount;var isInLibrary=this.getLibraryObject(object.id);if(!isInLibrary){this.symbols.push(libraryItem);this.timelines.push(timeline)}return object};prototype.parseText=function(element){var anonymousID=\"text\"+(!element.name?this.numAnonymousTextFields++:this.numAnonymousTextFields);var object={type:Helper.TEXTFIELD,id:element.name||anonymousID};var text=element.getTextString().split('\"').join('\\\\\"').split(/\\r\\n|\\r|\\n/g).join(\"\\\\n\");var style={font:this.getTextElementStyle(element),fill:element.getTextAttr(\"fillColor\"),align:element.getTextAttr(\"alignment\")};var margin={width:element.width,height:element.height};this.addProperty(object,\"text\",text,\"\");this.addProperty(object,\"style\",style,null);this.addProperty(object,\"margin\",margin,null);return object};prototype.getTextElementStyle=function(element){var string=\"\";var bold=element.getTextAttr(\"bold\");string+=bold?\"bold \":\"\";string+=element.getTextAttr(\"size\")+\"px \";string+=JSONTimelineParser.JOIN_FONTFACE?element.getTextAttr(\"face\").split(\" \").join(\"_\"):element.getTextAttr(\"face\").split(\" \")[0];return string};prototype.addToLibrary=function(object){if(object){var isInLibrary=this.getLibraryObject(object.id);if(!isInLibrary){var item=this.deepCopyObject(object);delete item.id;this.library[object.id]=item}}};prototype.deepCopyObject=function(object){var parse=function(object,item){for(var property in object){var value=object[property];if(value instanceof Array)item[property]=parse(value,[]);else if(typeof value==\"object\")item[property]=parse(value,{});else item[property]=value}return item};var item=parse(object,{});return item};prototype.addItemTransformData=function(object,element){var object=this.addAnimationTransformData(object,element);object=this.addTextFieldsLineSpacingDisplacement(object,element);object=this.addGraphicLoopFrames(object,element);return object};prototype.addAnimationTransformData=function(object,element){var inputIsValid=element!==null&&object!==null;var elementHasPropertys=typeof element==\"object\";var transform=element.getTransformationPoint();var pivot=transform.x||transform.y?{x:transform.x,y:transform.y}:null;var alpha=isNaN(element.colorAlphaPercent)?1:element.colorAlphaPercent/100;if(inputIsValid&&elementHasPropertys){this.addProperty(object,\"type\",Helper.getExportType(element));this.addProperty(object,\"name\",element.name,\"\");this.addProperty(object,\"x\",element.x,null);this.addProperty(object,\"y\",element.y,null);this.addProperty(object,\"alpha\",alpha,1);this.addProperty(object,\"rotation\",element.rotation,function(value){return isNaN(value)});this.addProperty(object,\"scaleX\",element.scaleX,null,4);this.addProperty(object,\"scaleY\",element.scaleY,null,4)}return object};prototype.addTextFieldsLineSpacingDisplacement=function(object,element){if(element.getTextAttr)object.y+=element.getTextAttr(\"lineSpacing\");return object};prototype.addGraphicLoopFrames=function(object,element){this.addProperty(object,\"loop\",element.loop||\"loop\",\"loop\");this.addProperty(object,\"firstFrame\",element.firstFrame||0,0);return object};prototype.addProperty=function(object,name,value,ignore,fixed){var bool=true;if(typeof ignore==\"function\")bool=!ignore(value);else bool=value!==ignore;if(bool)object[name]=fixed===undefined?value:this.getFixedValue(value,fixed);return object};prototype.getFixedValue=function(value,position){var object=value.toFixed(position);while(object[object.length-1]==\"0\")object=object.slice(0,object.length-1);if(object[object.length-1]==\".\")object=object.slice(0,object.length-1);return Number(object)}})(window);(function(window){window.AtlasExporter=AtlasExporter;var prototype=AtlasExporter.prototype=new Object;prototype.constructor=AtlasExporter;AtlasExporter.allowRotate=false;AtlasExporter.borderPadding=0;AtlasExporter.shapePadding=2;AtlasExporter.allowTrimming=true;AtlasExporter.autoSize=true;AtlasExporter.maxSheetWidth=2048;AtlasExporter.maxSheetHeight=1024;AtlasExporter.stackDuplicateFrames=true;AtlasExporter.layoutFormat=\"JSON\";AtlasExporter.algorithm=\"maxRects\";AtlasExporter.exportFormat={format:\"png\",bitDepth:32,backgroundColor:\"#00000000\"};AtlasExporter.imageFolder=\"img/\";function AtlasExporter(setup){Object.call(this);this.id=setup.id;this.path=setup.path;this.symbols=setup.symbols;this.json=setup.json;this.init()}prototype.getSpriteSheetExporter=function(){spriteSheetExporter=new SpriteSheetExporter;spriteSheetExporter.allowRotate=AtlasExporter.allowRotate;spriteSheetExporter.borderPadding=AtlasExporter.borderPadding;spriteSheetExporter.shapePadding=AtlasExporter.shapePadding;spriteSheetExporter.allowTrimming=AtlasExporter.allowTrimming;spriteSheetExporter.autoSize=AtlasExporter.autoSize;spriteSheetExporter.maxSheetWidth=AtlasExporter.maxSheetWidth;spriteSheetExporter.maxSheetHeight=AtlasExporter.maxSheetHeight;spriteSheetExporter.stackDuplicateFrames=AtlasExporter.stackDuplicateFrames;spriteSheetExporter.layoutFormat=AtlasExporter.layoutFormat;spriteSheetExporter.algorithm=AtlasExporter.algorithm;return spriteSheetExporter};prototype.getLibraryItemSize=function(libraryItem){var timeline=libraryItem.timeline;var length=timeline.frameCount;var width=0;var height=0;for(var i=1;i<=length;i++){var rect=timeline.getBounds(i,true);if(rect!=0){var w=rect.right-rect.left;var h=rect.bottom-rect.top;width+=w;height+=h}}return width*height};prototype.getSortedList=function(list){var self=this;list.sort(function(a,b){var sizeA=self.getLibraryItemSize(a);var sizeB=self.getLibraryItemSize(b);if(sizeA>sizeB)return-1;if(sizeA<sizeB)return 1;return 0});return list};prototype.addSymbolToExporter=function(exporter,symbol){exporter.addSymbol(symbol);var overflowed=exporter.overflowed;if(overflowed)exporter.removeSymbol(symbol);return overflowed?true:false};prototype.init=function(){this.initParsingByMode();this.initResourceExport()};prototype.initParsingByMode=function(mode){this.symbols=this.getSortedList(this.symbols);this.spriteSheetExporters=null;switch(mode){default:this.spriteSheetExporters=this.parseAssetsCombined(this.symbols);break}};prototype.parseAssetsCombined=function(symbols){var that=this;var list=[];var addToSpriteSheetExporters=function(symbols){var spriteSheetExporter=that.getSpriteSheetExporter();list.push(spriteSheetExporter);var symbolOverflowsExporter=false;for(var i=0;i<symbols.length;++i){var symbol=symbols[i];symbolOverflowsExporter=that.addSymbolToExporter(spriteSheetExporter,symbol);if(symbolOverflowsExporter){if(symbols.length==1)return;else{addToSpriteSheetExporters(symbols.slice(i));break}}}};addToSpriteSheetExporters(symbols);return list};prototype.initResourceExport=function(){this.resources=this.exportSpriteSheets(this.spriteSheetExporters);this.json.resources=this.resources};prototype.exportSpriteSheets=function(spriteSheetExporters){var list=[];for(var i=0;i<spriteSheetExporters.length;++i){var spriteSheetExporter=spriteSheetExporters[i];var id=this.id+\"-\"+i;var name=this.path+id;var imageFolder=AtlasExporter.imageFolder;spriteSheetExporter.exportSpriteSheet(name,AtlasExporter.exportFormat);list.push({img:imageFolder+id+\".\"+AtlasExporter.exportFormat.format,json:imageFolder+id+\".json\"})}return list}})(window);(function(window){window.FrameLabelExporter=FrameLabelExporter;var prototype=FrameLabelExporter.prototype=new Object;prototype.constructor=FrameLabelExporter;function FrameLabelExporter(setup){Object.call(this);this.json=setup.json;this.timelines=setup.timelines;this.init()}prototype.getLabelDurationObject=function(timeline,parseComments){parseComments=parseComments!==undefined?parseComments:false;var duration=null;var hasAnimations=null;var frameCount=timeline.frameCount;var durationObject={};for(var i=0;i<frameCount;++i){var objectList=this.getFrameObjects(timeline,i,parseComments);for(var j=0;j<objectList.length;++j){var object=objectList[j];hasAnimations=hasAnimations||object.name;if(object.name)durationObject[object.name]=i}}return hasAnimations?durationObject:null};prototype.getFrameObjects=function(timeline,index,parseComments){parseComments=parseComments!==undefined?parseComments:false;var list=[];for(var i=0;i<timeline.layers.length;++i){var layer=timeline.layers[i];var frame=layer.frames[index];if(frame){var isKeyFrame=frame.startFrame==index;var name=frame.name;var isComment=frame.labelType==\"comment\";if(isComment&&parseComments||!isComment&&!parseComments){if(name&&isKeyFrame){var object={index:index,name:name};list.push(object)}}}}if(list.length==0)list.push({});return list};prototype.init=function(){var list=this.parseList(this.timelines)};prototype.parseList=function(timelines){for(var i=0;i<timelines.length;++i){var timeline=timelines[i];var labelObject=this.getLabelDurationObject(timeline);var commmentObject=this.getLabelDurationObject(timeline,true);var libraryItem=timeline.libraryItem;if(libraryItem){var name=libraryItem.name;var libraryObject=this.json.library[name];if(libraryObject){if(labelObject)libraryObject.labels=labelObject;if(commmentObject)libraryObject.comments=commmentObject}}}return[]}})(window);(function(window){window.JSONExporter=JSONExporter;var prototype=JSONExporter.prototype=new Object;prototype.constructor=JSONExporter;function JSONExporter(setup){Object.call(this);this.id=setup.id;this.json=setup.json;this.path=setup.path;this.init()}prototype.init=function(){this.initSave()};prototype.initSave=function(){var outputPanel=flash.outputPanel}})(window);(function(window){window.PixiJSAnimationExport=PixiJSAnimationExport;var prototype=PixiJSAnimationExport.prototype=new Object;function PixiJSAnimationExport(setup){Object.call(this);this.init()}prototype.getUniversalPath=function(path){return path.split(\"/\").slice(0,-1).join(\"/\")+\"/\"};prototype.init=function(){this.initVariables();this.initJSONTimelineParser();this.initAtlasExporter();this.initFrameLabelExporter();this.initJSONExporter()};prototype.initVariables=function(){this.documentName=document.name.split(\".fla\")[0];this.documentPath=this.getUniversalPath(document.pathURI);this.libraryItem=document.getTimeline().libraryItem;this.timelineID=this.libraryItem?this.libraryItem.name:this.documentName;this.atlasID=this.documentName+\"-atlas\";flash.trace(this.timelineID)};prototype.initJSONTimelineParser=function(){this.jsonTimelineParser=new JSONTimelineParser({timeline:document.getTimeline()})};prototype.initAtlasExporter=function(){this.atlasExporter=new AtlasExporter({id:this.timelineID,path:this.documentPath,symbols:this.jsonTimelineParser.symbols,json:this.jsonTimelineParser.data})};prototype.initFrameLabelExporter=function(){this.frameLabelExporter=new FrameLabelExporter({timelines:this.jsonTimelineParser.timelines,json:this.jsonTimelineParser.data})};prototype.initJSONExporter=function(){this.jsonExporter=new JSONExporter({id:this.timelineID,path:this.documentPath,json:this.jsonTimelineParser.data})}})(window);var pixiJSAnimationExport=new PixiJSAnimationExport;\n\n/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/jsfl/pixijs-animation-export.jsfl:\n   65  \t\tthis.atlasID = this.documentName + \"-atlas\";\n   66  \n   67: \t\tflash.trace( this.timelineID );\n   68  \t};\n   69  \n\n/Users/user/Library/Application Support/Adobe/Animate CC 2015.2/de_DE/Configuration/Commands/tools/Execute Setup Script.jsfl:\n  100  \tprototype.initExecuteScripts = function()\n  101  \t{\n  102: \t\tflash.trace( this.execute );\n  103  \n  104  \t\tfor(var i = 0; i < this.execute.length; ++i)\n\n/Users/user/Library/Application Support/Adobe/Animate CC 2015.2/de_DE/Configuration/Commands/tools/Flash Add Library Item Frame Label.jsfl:\n   22  \t// var timeline = fl.getDocumentDOM().getTimeline();\n   23  \t// var selectedLayer = timeline.layers[ timeline.getSelectedLayers() ];\n   24:  //    flash.trace( selectedLayer.name );\n   25  \n   26   //    var symbol = document.convertToSymbol( \"movie clip\", selectedLayer.name, \"top left\" );\n\n/Users/user/Library/Application Support/Adobe/Animate CC 2015.2/de_DE/Configuration/Commands/tools/Flash Change Keyframe Name.jsfl:\n   22  // \t\tframe.name = name;\n   23  \n   24: // \t\tflash.trace( name );\n   25  \n   26  //     \tcontinue;\n\n/Users/user/Library/Application Support/Adobe/Animate CC 2015.2/de_DE/Configuration/Commands/tools/Flash Convert Layer Frames to Bitmaps.jsfl:\n   33  \t\t    callback( i, isKeyFrame, elements );\n   34  \n   35: \t\t    // flash.trace( i + \" isKeyFrame \" + isKeyFrame );\n   36  \t\t}\n   37  \t}\n\n/Users/user/Library/Application Support/Adobe/Animate CC 2015.2/de_DE/Configuration/Commands/tools/Flash Normalize Keyframe Names.jsfl:\n   17  \t\tframe.name = name;\n   18  \n   19: \t\tflash.trace( name );\n   20  \n   21      \tcontinue;\n\n/Users/user/Library/Application Support/Adobe/Animate CC 2015.2/de_DE/Configuration/Commands/tools/Flash Space Keyframes.jsfl:\n   36  \t\t    callback( i, isKeyFrame );\n   37  \n   38: \t\t    // flash.trace( i + \" isKeyFrame \" + isKeyFrame );\n   39  \t\t}\n   40  \t}\n\n/Users/user/Library/Application Support/Adobe/Animate CC 2015.2/de_DE/Configuration/Commands/tools/Flash Swap Library Item Type.jsfl:\n   15  \tlibrary.setItemProperty( \"symbolType\", type ); \n   16  \n   17: \tflash.trace( name + \" is now a \" + type );\n   18  }\n\n/Users/user/Library/Application Support/Adobe/Animate CC 2015.2/de_DE/Configuration/Commands/tools/library/Assist.jsfl:\n   38  \n   39  \t\t\t\t\t\tif( parseComments )\n   40: \t\t\t\t\t\t\tflash.trace( index + \" \" + name );\n   41  \n   42  \t\t\t\t    \tlist.push( object )\n\n/Users/user/Library/Application Support/Adobe/Animate CC 2015.2/de_DE/Configuration/Commands/tools/library/Export EaselJS.jsfl:\n   45  \tfl.outputPanel.trace( json );\n   46  \tfl.outputPanel.save( \"file:///\" + filePath + fileName + \".json\", false, false );\n   47: \tflash.trace( \"file:///\" + filePath + \"/\" + fileName + \".json\" );\n   48  \tfl.outputPanel.clear();\n   49  \t/*/\n\n18 matches across 13 files\n\n\nSearching 247 files for \"flash.trace\" (case sensitive)\n\n/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/jsfl/atlas-exporter.jsfl:\n  203  \n  204  \n  205:   \t\t\t// flash.trace( spriteSheetExporter );\n  206    \t\t\t// tracePropertysAndValues( spriteSheetExporter.proto );\n  207:   \t\t\t// flash.trace( \"\\n\\n\" );\n  208    \t\t\t// tracePropertysAndValues( spriteSheetExporter.prototype );\n  209  \n  ...\n  227  // \t\tvar value = object[ property ];\n  228  \n  229: // \t\tflash.trace( \"\\n\" );\n  230: // \t\tflash.trace( property + \" \" + value );\n  231: // \t\tflash.trace( typeof value );\n  232  // \t}\n  233  // }\n\n/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/jsfl/pixi-export.jsfl:\n    1: (function(window){window.Helper=Helper;var prototype=Helper.prototype=new Object;Helper.TIMELINE=\"timeline\";Helper.MOVIECLIP=\"movieclip\";Helper.ELEMENT=\"element\";Helper.GRAPHIC=\"graphic\";Helper.LIBRARY_ITEM=\"library item\";Helper.SPRITE=\"sprite\";Helper.INSTANCE=\"instance\";Helper.TEXTFIELD=\"textfield\";Helper.TEXT=\"text\";function Helper(){}Helper.getItemType=function(object){var type=null;if(object.libraryItem&&object.libraryItem.itemType==Helper.GRAPHIC)type=Helper.GRAPHIC;else if(object instanceof Timeline)type=Helper.TIMELINE;else if(object instanceof Element){switch(object.elementType){case Helper.INSTANCE:type=Helper.INSTANCE;break;case Helper.TEXT:type=Helper.TEXT;break}}else if(object instanceof LibraryItem)type=Helper.LIBRARY_ITEM;return type};Helper.getExportType=function(object){}})(window);(function(window){var prototype=JSON.prototype=new Object;prototype.constructor=JSON;JSON.OBJECT=\"object\";JSON.NUMBER=\"number\";JSON.STRING=\"string\";JSON.ARRAY=\"array\";JSON.BOOLEAN=\"boolean\";function JSON(){}JSON.decode=function(string){var value=JSON.encodeStringValues(string);var value=JSON.removeFormat(value);var object=JSON.stringToObject(value);return object};JSON.stringToObject=function(string){var type=JSON.getStringType(string);var value=null;string=decodeURIComponent(string);switch(type){case JSON.OBJECT:value=JSON.parseObject(string);break;case JSON.ARRAY:value=JSON.parseArray(string);break;case JSON.STRING:value=JSON.parseString(string);break;case JSON.NUMBER:value=Number(string);break}return value};JSON.parseObject=function(string){var object={};var stringValue=JSON.removeStartAndEnd(string);var split=JSON.splitTopElements(stringValue);for(var j=0;j<split.length;++j){var splitString=split[j];var splitColon=splitString.split(\":\");var property=splitColon.splice(0,1);var value=splitColon.join(\":\");object[property]=JSON.stringToObject(value)}return object};JSON.parseArray=function(string){var array=[];var stringValue=JSON.removeStartAndEnd(string);var split=JSON.splitTopElements(stringValue);for(var j=0;j<split.length;++j){var splitString=split[j];array.push(JSON.stringToObject(splitString))}return array};JSON.parseString=function(string){return JSON.removeStartAndEnd(string)};JSON.encode=function(object,format){format=format!==undefined?format:true;var json=JSON.objectToJSON(object);if(format)json=JSON.format(json);json=decodeURIComponent(json);return json};JSON.format=function(json){json=JSON.formatNewLine(json);json=JSON.formatIndent(json);return json};JSON.objectToJSON=function(object){var string=object?\"{\":'\"';var index=0;var numOfProperties=JSON.numOfProperties(object);for(var property in object){index++;var value=object[property];var type=JSON.getType(value);var end=index<numOfProperties-1?\",\":\"\";switch(type){case JSON.OBJECT:string+=JSON.propertyPair(property,JSON.objectToJSON(value),end);break;case JSON.ARRAY:string+=JSON.propertyPair(property,JSON.arrayToJSON(value),end);break;case JSON.STRING:string+=JSON.propertyPair(property,'\"'+encodeURIComponent(value)+'\"',end);break;case JSON.NUMBER:string+=JSON.propertyPair(property,value,end);break;case JSON.BOOLEAN:string+=JSON.propertyPair(property,value,end);break}}string+=object?\"}\":'\"';return string};JSON.arrayToJSON=function(array){var string=array?\"[\":'\"';for(var i=0;i<array.length;++i){var value=array[i];var type=JSON.getType(value);var split=i<array.length-1?\",\":\"\";switch(type){case JSON.OBJECT:string+=JSON.objectToJSON(value)+split;break;case JSON.ARRAY:string+=JSON.arrayToJSON(value)+split;break;case JSON.STRING:string+='\"'+value+'\"'+split;break;case JSON.NUMBER:string+=value+split;break}}string+=array?\"]\":'\"';return string};JSON.removeStartAndEnd=function(string){return string.slice(1,string.length-1)};JSON.removeFormat=function(string){var value=string;value=value.replace(/(\\r\\n|\\n|\\r)/gm,\"\");value=value.split(\" \").join(\"\");value=value.split(\"\\n\").join(\"\");value=value.split(\"\\t\").join(\"\");return value};JSON.formatNewLine=function(json){json=json.split(\",\").join(\",\\n\");json=json.split(\"{\").join(\"\\n{\\n\");json=json.split(\"}\").join(\"\\n}\");json=json.split('[\"').join('[\\n\"');json=json.split(\"[\").join(\"\\n[\");json=json.split(\"]\").join(\"\\n]\");json=json.split(\"]}\").join(\"]\\n}\");json=json.split(\":\").join(\": \");json=json.split(\"},\\n\\n{\").join(\"},\\n{\");json=json.split(\"\\n\").splice(1).join(\"\\n\");return json};JSON.formatIndent=function(json){var list=json.split(\"\\n\");for(var i=0;i<list.length;++i){var line=list[i];var string=list.slice(0,i).join(\"\\n\");var numIndents=JSON.getNumOfOpeningObjects(string);for(var j=0;j<numIndents;++j)line=\"\\t\"+line;list[i]=line}json=list.join(\"\\n\");json=json.split(\"\\t}\").join(\"}\").split(\"\\t]\").join(\"]\");return json};JSON.getNumOfOpeningObjects=function(string){var s=\"_°$§!\";var numOpen=string.split(\"{\").join(s).split(\"[\").join(s).split(s).length;var numClosed=string.split(\"}\").join(s).split(\"]\").join(s).split(s).length;return numOpen-numClosed};JSON.encodeStringValues=function(string){var regex=/\"([^\"]*)\"/;while(string.match(regex)!=null)string=string.replace(regex,JSON.replaceHandler);return string};JSON.replaceHandler=function(p1){return encodeURIComponent(p1)};JSON.splitTopElements=function(string){var split=string.split(\",\");for(var i=split.length-2;i>=0;--i){var current=split[i];var previous=split[i+1];var nested=JSON.getIsNested(previous);if(nested!=0){split[i]=current+\",\"+previous;split.splice(i+1,1)}}return split};JSON.getIsNested=function(string){var countOpen0=JSON.getCharCount(string,\"{\");var countClosed0=JSON.getCharCount(string,\"}\");var countOpen1=JSON.getCharCount(string,\"[\");var countClosed1=JSON.getCharCount(string,\"]\");var isNested=countOpen0-countClosed0+countOpen1-countClosed1;return isNested};JSON.getCharCount=function(string,character){return string.split(character).length-1};JSON.propertyPair=function(type,string,end){return'\"'+type+'\"'+\":\"+string+end};JSON.getType=function(object){if(object instanceof Array)return JSON.ARRAY;else if(typeof object==\"boolean\")return JSON.BOOLEAN;else return typeof object};JSON.getStringType=function(string){var character=string.charAt(0);switch(character){case\"{\":return JSON.OBJECT;break;case\"[\":return JSON.ARRAY;break;case'\"':return JSON.STRING;break;case\"true\":case\"false\":return JSON.BOOLEAN;break;default:return JSON.NUMBER;break}};JSON.numOfProperties=function(object){var num=0;for(var property in object)num++;num=num>0?num+1:num;return num};window.JSON=JSON})(window);(function(window){window.JSONTimelineParser=JSONTimelineParser;var prototype=JSONTimelineParser.prototype=new Object;prototype.constructor=JSONTimelineParser;JSONTimelineParser.JOIN_FONTFACE=false;function JSONTimelineParser(setup){Object.call(this);this.timeline=setup.timeline;this.init()}prototype.getLibraryObject=function(id){return this.library[id]};prototype.init=function(){this.initVariables();this.initTimelineRecursion()};prototype.initVariables=function(){this.data={library:{},resources:[]};this.symbols=[];this.timelines=[];this.library=this.data.library;this.numAnonymousTextFields=0};prototype.initTimelineRecursion=function(){flash.outputPanel.clear();this.parse(this.timeline)};prototype.parse=function(item){var type=Helper.getItemType(item);var object=null;switch(type){case Helper.TIMELINE:object=this.parseTimeline(item);break;case Helper.LIBRARY_ITEM:object=this.parseTimeline(item.timeline);break;case Helper.INSTANCE:object=this.parseTimeline(item.libraryItem.timeline);break;case Helper.GRAPHIC:object=this.parseGraphic(item);break;case Helper.TEXT:object=this.parseText(item);break}this.addToLibrary(object);return object};prototype.parseTimeline=function(timeline,id){var libraryItem=timeline.libraryItem||{name:\"root\"};var object={type:Helper.TIMELINE,id:libraryItem.name,totalFrames:timeline.frameCount};var layers=timeline.layers;var objectLayers=[];for(var i=layers.length-1;i>=0;--i){var layer=layers[i];if(layer.layerType==\"normal\"){var item=this.parseLayer(layer);if(item!=null)objectLayers.push(item)}}if(objectLayers.length>0)object.layers=objectLayers;this.timelines.push(timeline);return object};prototype.parseLayer=function(layer){var object={name:layer.name,frames:{}};var frames=layer.frames;var numFrames=0;for(var i=0;i<frames.length;++i){var frame=frames[i];var isKeyframe=frame.startFrame==i;if(isKeyframe){var item=this.parseFrame(frame,i);if(item!=null){numFrames++;object.frames[i]=item}}}if(numFrames>0)return object;else return null};prototype.parseFrame=function(frame,index){var object={elements:[]};var elements=frame.elements;object=this.parseAnimation(object,frame);for(var i=0;i<elements.length;++i){var element=elements[i];var item=this.parse(element);if(item!=null){var itemIsInLibrary=this.getLibraryObject(item.id);if(itemIsInLibrary)item={id:item.id};item=this.addItemTransformData(item,element);object.elements.push(item)}}return object};prototype.parseAnimation=function(object,frame){if(frame.tweenType!=\"none\"){var ease=frame.getCustomEase(\"all\");var animation=ease.splice(1,ease.length-2);flash.trace(animation);for(var property in animation){var value=animation[property];value.x=this.getFixedValue(value.x,4);value.y=this.getFixedValue(value.y,4)}object.animation=animation}return object};prototype.parseGraphic=function(item){var libraryItem=item.libraryItem;var timeline=libraryItem.timeline;var isMovieClip=timeline.frameCount>1;var type=isMovieClip?Helper.MOVIECLIP:Helper.SPRITE;var object={type:type,id:libraryItem.name};if(isMovieClip)object.totalFrames=timeline.frameCount;var isInLibrary=this.getLibraryObject(object.id);if(!isInLibrary){this.symbols.push(libraryItem);this.timelines.push(timeline)}return object};prototype.parseText=function(element){var anonymousID=\"text\"+(!element.name?this.numAnonymousTextFields++:this.numAnonymousTextFields);var object={type:Helper.TEXTFIELD,id:element.name||anonymousID};var text=element.getTextString().split('\"').join('\\\\\"').split(/\\r\\n|\\r|\\n/g).join(\"\\\\n\");var style={font:this.getTextElementStyle(element),fill:element.getTextAttr(\"fillColor\"),align:element.getTextAttr(\"alignment\")};var margin={width:element.width,height:element.height};this.addProperty(object,\"text\",text,\"\");this.addProperty(object,\"style\",style,null);this.addProperty(object,\"margin\",margin,null);return object};prototype.getTextElementStyle=function(element){var string=\"\";var bold=element.getTextAttr(\"bold\");string+=bold?\"bold \":\"\";string+=element.getTextAttr(\"size\")+\"px \";string+=JSONTimelineParser.JOIN_FONTFACE?element.getTextAttr(\"face\").split(\" \").join(\"_\"):element.getTextAttr(\"face\").split(\" \")[0];return string};prototype.addToLibrary=function(object){if(object){var isInLibrary=this.getLibraryObject(object.id);if(!isInLibrary){var item=this.deepCopyObject(object);delete item.id;this.library[object.id]=item}}};prototype.deepCopyObject=function(object){var parse=function(object,item){for(var property in object){var value=object[property];if(value instanceof Array)item[property]=parse(value,[]);else if(typeof value==\"object\")item[property]=parse(value,{});else item[property]=value}return item};var item=parse(object,{});return item};prototype.addItemTransformData=function(object,element){var object=this.addAnimationTransformData(object,element);object=this.addTextFieldsLineSpacingDisplacement(object,element);object=this.addGraphicLoopFrames(object,element);return object};prototype.addAnimationTransformData=function(object,element){var inputIsValid=element!==null&&object!==null;var elementHasPropertys=typeof element==\"object\";var transform=element.getTransformationPoint();var pivot=transform.x||transform.y?{x:transform.x,y:transform.y}:null;var alpha=isNaN(element.colorAlphaPercent)?1:element.colorAlphaPercent/100;if(inputIsValid&&elementHasPropertys){this.addProperty(object,\"type\",Helper.getExportType(element));this.addProperty(object,\"name\",element.name,\"\");this.addProperty(object,\"x\",element.x,null);this.addProperty(object,\"y\",element.y,null);this.addProperty(object,\"alpha\",alpha,1);this.addProperty(object,\"rotation\",element.rotation,function(value){return isNaN(value)});this.addProperty(object,\"scaleX\",element.scaleX,null,4);this.addProperty(object,\"scaleY\",element.scaleY,null,4)}return object};prototype.addTextFieldsLineSpacingDisplacement=function(object,element){if(element.getTextAttr)object.y+=element.getTextAttr(\"lineSpacing\");return object};prototype.addGraphicLoopFrames=function(object,element){this.addProperty(object,\"loop\",element.loop||\"loop\",\"loop\");this.addProperty(object,\"firstFrame\",element.firstFrame||0,0);return object};prototype.addProperty=function(object,name,value,ignore,fixed){var bool=true;if(typeof ignore==\"function\")bool=!ignore(value);else bool=value!==ignore;if(bool)object[name]=fixed===undefined?value:this.getFixedValue(value,fixed);return object};prototype.getFixedValue=function(value,position){var object=value.toFixed(position);while(object[object.length-1]==\"0\")object=object.slice(0,object.length-1);if(object[object.length-1]==\".\")object=object.slice(0,object.length-1);return Number(object)}})(window);(function(window){window.AtlasExporter=AtlasExporter;var prototype=AtlasExporter.prototype=new Object;prototype.constructor=AtlasExporter;AtlasExporter.allowRotate=false;AtlasExporter.borderPadding=0;AtlasExporter.shapePadding=2;AtlasExporter.allowTrimming=true;AtlasExporter.autoSize=true;AtlasExporter.maxSheetWidth=2048;AtlasExporter.maxSheetHeight=1024;AtlasExporter.stackDuplicateFrames=true;AtlasExporter.layoutFormat=\"JSON\";AtlasExporter.algorithm=\"maxRects\";AtlasExporter.exportFormat={format:\"png\",bitDepth:32,backgroundColor:\"#00000000\"};AtlasExporter.imageFolder=\"img/\";function AtlasExporter(setup){Object.call(this);this.id=setup.id;this.path=setup.path;this.symbols=setup.symbols;this.json=setup.json;this.init()}prototype.getSpriteSheetExporter=function(){spriteSheetExporter=new SpriteSheetExporter;spriteSheetExporter.allowRotate=AtlasExporter.allowRotate;spriteSheetExporter.borderPadding=AtlasExporter.borderPadding;spriteSheetExporter.shapePadding=AtlasExporter.shapePadding;spriteSheetExporter.allowTrimming=AtlasExporter.allowTrimming;spriteSheetExporter.autoSize=AtlasExporter.autoSize;spriteSheetExporter.maxSheetWidth=AtlasExporter.maxSheetWidth;spriteSheetExporter.maxSheetHeight=AtlasExporter.maxSheetHeight;spriteSheetExporter.stackDuplicateFrames=AtlasExporter.stackDuplicateFrames;spriteSheetExporter.layoutFormat=AtlasExporter.layoutFormat;spriteSheetExporter.algorithm=AtlasExporter.algorithm;return spriteSheetExporter};prototype.getLibraryItemSize=function(libraryItem){var timeline=libraryItem.timeline;var length=timeline.frameCount;var width=0;var height=0;for(var i=1;i<=length;i++){var rect=timeline.getBounds(i,true);if(rect!=0){var w=rect.right-rect.left;var h=rect.bottom-rect.top;width+=w;height+=h}}return width*height};prototype.getSortedList=function(list){var self=this;list.sort(function(a,b){var sizeA=self.getLibraryItemSize(a);var sizeB=self.getLibraryItemSize(b);if(sizeA>sizeB)return-1;if(sizeA<sizeB)return 1;return 0});return list};prototype.addSymbolToExporter=function(exporter,symbol){exporter.addSymbol(symbol);var overflowed=exporter.overflowed;if(overflowed)exporter.removeSymbol(symbol);return overflowed?true:false};prototype.init=function(){this.initParsingByMode();this.initResourceExport()};prototype.initParsingByMode=function(mode){this.symbols=this.getSortedList(this.symbols);this.spriteSheetExporters=null;switch(mode){default:this.spriteSheetExporters=this.parseAssetsCombined(this.symbols);break}};prototype.parseAssetsCombined=function(symbols){var that=this;var list=[];var addToSpriteSheetExporters=function(symbols){var spriteSheetExporter=that.getSpriteSheetExporter();list.push(spriteSheetExporter);var symbolOverflowsExporter=false;for(var i=0;i<symbols.length;++i){var symbol=symbols[i];symbolOverflowsExporter=that.addSymbolToExporter(spriteSheetExporter,symbol);if(symbolOverflowsExporter){if(symbols.length==1)return;else{addToSpriteSheetExporters(symbols.slice(i));break}}}};addToSpriteSheetExporters(symbols);return list};prototype.initResourceExport=function(){this.resources=this.exportSpriteSheets(this.spriteSheetExporters);this.json.resources=this.resources};prototype.exportSpriteSheets=function(spriteSheetExporters){var list=[];for(var i=0;i<spriteSheetExporters.length;++i){var spriteSheetExporter=spriteSheetExporters[i];var id=this.id+\"-\"+i;var name=this.path+id;var imageFolder=AtlasExporter.imageFolder;spriteSheetExporter.exportSpriteSheet(name,AtlasExporter.exportFormat);list.push({img:imageFolder+id+\".\"+AtlasExporter.exportFormat.format,json:imageFolder+id+\".json\"})}return list}})(window);(function(window){window.FrameLabelExporter=FrameLabelExporter;var prototype=FrameLabelExporter.prototype=new Object;prototype.constructor=FrameLabelExporter;function FrameLabelExporter(setup){Object.call(this);this.json=setup.json;this.timelines=setup.timelines;this.init()}prototype.getLabelDurationObject=function(timeline,parseComments){parseComments=parseComments!==undefined?parseComments:false;var duration=null;var hasAnimations=null;var frameCount=timeline.frameCount;var durationObject={};for(var i=0;i<frameCount;++i){var objectList=this.getFrameObjects(timeline,i,parseComments);for(var j=0;j<objectList.length;++j){var object=objectList[j];hasAnimations=hasAnimations||object.name;if(object.name)durationObject[object.name]=i}}return hasAnimations?durationObject:null};prototype.getFrameObjects=function(timeline,index,parseComments){parseComments=parseComments!==undefined?parseComments:false;var list=[];for(var i=0;i<timeline.layers.length;++i){var layer=timeline.layers[i];var frame=layer.frames[index];if(frame){var isKeyFrame=frame.startFrame==index;var name=frame.name;var isComment=frame.labelType==\"comment\";if(isComment&&parseComments||!isComment&&!parseComments){if(name&&isKeyFrame){var object={index:index,name:name};list.push(object)}}}}if(list.length==0)list.push({});return list};prototype.init=function(){var list=this.parseList(this.timelines)};prototype.parseList=function(timelines){for(var i=0;i<timelines.length;++i){var timeline=timelines[i];var labelObject=this.getLabelDurationObject(timeline);var commmentObject=this.getLabelDurationObject(timeline,true);var libraryItem=timeline.libraryItem;if(libraryItem){var name=libraryItem.name;var libraryObject=this.json.library[name];if(libraryObject){if(labelObject)libraryObject.labels=labelObject;if(commmentObject)libraryObject.comments=commmentObject}}}return[]}})(window);(function(window){window.JSONExporter=JSONExporter;var prototype=JSONExporter.prototype=new Object;prototype.constructor=JSONExporter;function JSONExporter(setup){Object.call(this);this.id=setup.id;this.json=setup.json;this.path=setup.path;this.init()}prototype.init=function(){this.initSave()};prototype.initSave=function(){var outputPanel=flash.outputPanel}})(window);(function(window){window.PixiJSAnimationExport=PixiJSAnimationExport;var prototype=PixiJSAnimationExport.prototype=new Object;function PixiJSAnimationExport(setup){Object.call(this);this.init()}prototype.getUniversalPath=function(path){return path.split(\"/\").slice(0,-1).join(\"/\")+\"/\"};prototype.init=function(){this.initVariables();this.initJSONTimelineParser();this.initAtlasExporter();this.initFrameLabelExporter();this.initJSONExporter()};prototype.initVariables=function(){this.documentName=document.name.split(\".fla\")[0];this.documentPath=this.getUniversalPath(document.pathURI);this.libraryItem=document.getTimeline().libraryItem;this.timelineID=this.libraryItem?this.libraryItem.name:this.documentName;this.atlasID=this.documentName+\"-atlas\";flash.trace(this.timelineID)};prototype.initJSONTimelineParser=function(){this.jsonTimelineParser=new JSONTimelineParser({timeline:document.getTimeline()})};prototype.initAtlasExporter=function(){this.atlasExporter=new AtlasExporter({id:this.timelineID,path:this.documentPath,symbols:this.jsonTimelineParser.symbols,json:this.jsonTimelineParser.data})};prototype.initFrameLabelExporter=function(){this.frameLabelExporter=new FrameLabelExporter({timelines:this.jsonTimelineParser.timelines,json:this.jsonTimelineParser.data})};prototype.initJSONExporter=function(){this.jsonExporter=new JSONExporter({id:this.timelineID,path:this.documentPath,json:this.jsonTimelineParser.data})}})(window);var pixiJSAnimationExport=new PixiJSAnimationExport;\n\n/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/jsfl/pixijs-animation-export.jsfl:\n   65  \t\tthis.atlasID = this.documentName + \"-atlas\";\n   66  \n   67: \t\tflash.trace( this.timelineID );\n   68  \t};\n   69  \n\n/Users/user/Library/Application Support/Adobe/Animate CC 2015.2/de_DE/Configuration/Commands/tools/Execute Setup Script.jsfl:\n  100  \tprototype.initExecuteScripts = function()\n  101  \t{\n  102: \t\tflash.trace( this.execute );\n  103  \n  104  \t\tfor(var i = 0; i < this.execute.length; ++i)\n\n/Users/user/Library/Application Support/Adobe/Animate CC 2015.2/de_DE/Configuration/Commands/tools/Flash Add Library Item Frame Label.jsfl:\n   22  \t// var timeline = fl.getDocumentDOM().getTimeline();\n   23  \t// var selectedLayer = timeline.layers[ timeline.getSelectedLayers() ];\n   24:  //    flash.trace( selectedLayer.name );\n   25  \n   26   //    var symbol = document.convertToSymbol( \"movie clip\", selectedLayer.name, \"top left\" );\n\n/Users/user/Library/Application Support/Adobe/Animate CC 2015.2/de_DE/Configuration/Commands/tools/Flash Change Keyframe Name.jsfl:\n   22  // \t\tframe.name = name;\n   23  \n   24: // \t\tflash.trace( name );\n   25  \n   26  //     \tcontinue;\n\n/Users/user/Library/Application Support/Adobe/Animate CC 2015.2/de_DE/Configuration/Commands/tools/Flash Convert Layer Frames to Bitmaps.jsfl:\n   33  \t\t    callback( i, isKeyFrame, elements );\n   34  \n   35: \t\t    // flash.trace( i + \" isKeyFrame \" + isKeyFrame );\n   36  \t\t}\n   37  \t}\n\n/Users/user/Library/Application Support/Adobe/Animate CC 2015.2/de_DE/Configuration/Commands/tools/Flash Normalize Keyframe Names.jsfl:\n   17  \t\tframe.name = name;\n   18  \n   19: \t\tflash.trace( name );\n   20  \n   21      \tcontinue;\n\n/Users/user/Library/Application Support/Adobe/Animate CC 2015.2/de_DE/Configuration/Commands/tools/Flash Space Keyframes.jsfl:\n   36  \t\t    callback( i, isKeyFrame );\n   37  \n   38: \t\t    // flash.trace( i + \" isKeyFrame \" + isKeyFrame );\n   39  \t\t}\n   40  \t}\n\n/Users/user/Library/Application Support/Adobe/Animate CC 2015.2/de_DE/Configuration/Commands/tools/Flash Swap Library Item Type.jsfl:\n   15  \tlibrary.setItemProperty( \"symbolType\", type ); \n   16  \n   17: \tflash.trace( name + \" is now a \" + type );\n   18  }\n\n/Users/user/Library/Application Support/Adobe/Animate CC 2015.2/de_DE/Configuration/Commands/tools/library/Assist.jsfl:\n   38  \n   39  \t\t\t\t\t\tif( parseComments )\n   40: \t\t\t\t\t\t\tflash.trace( index + \" \" + name );\n   41  \n   42  \t\t\t\t    \tlist.push( object )\n\n/Users/user/Library/Application Support/Adobe/Animate CC 2015.2/de_DE/Configuration/Commands/tools/library/Export EaselJS.jsfl:\n   45  \tfl.outputPanel.trace( json );\n   46  \tfl.outputPanel.save( \"file:///\" + filePath + fileName + \".json\", false, false );\n   47: \tflash.trace( \"file:///\" + filePath + \"/\" + fileName + \".json\" );\n   48  \tfl.outputPanel.clear();\n   49  \t/*/\n\n17 matches across 12 files\n",
-			"settings":
-			{
-				"buffer_size": 48223,
-				"line_ending": "Unix",
-				"name": "Find Results",
-				"scratch": true
-			}
-		},
-		{
-			"file": "/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/jsfl/json-exporter.jsfl",
-			"settings":
-			{
-				"buffer_size": 731,
-=======
-			"file": "/Users/david.ochmann/Documents/application/project/html/JS-Library/davidochmann/pixijs-animation-export/js/game/timeline.js",
-			"settings":
-			{
-				"buffer_size": 15129,
->>>>>>> eb601c0bcb166bc5cdc881e0ee38af6c95874254
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/Users/david.ochmann/Documents/application/project/html/JS-Library/common/js/davidochmann/doutils/easeljs/buttonstate.js",
-			"settings":
-			{
-				"buffer_size": 6047,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/Users/david.ochmann/Documents/application/project/html/JS-Library/davidochmann/pixijs-animation-export/debug.html",
-			"settings":
-			{
-				"buffer_size": 1581,
-				"encoding": "UTF-8 with BOM",
-				"line_ending": "Windows"
-			}
-		},
-		{
 			"file": "/Users/david.ochmann/Documents/application/project/html/JS-Library/davidochmann/pixijs-animation-export/jsfl/atlas-exporter.jsfl",
 			"settings":
 			{
-				"buffer_size": 4883,
-				"encoding": "UTF-8",
+				"buffer_size": 6262,
 				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/Users/david.ochmann/Documents/application/project/html/JS-Library/davidochmann/pixijs-animation-export/img/runner.json",
-			"settings":
-			{
-				"buffer_size": 31391,
-				"encoding": "UTF-8 with BOM",
-				"line_ending": "CR"
 			}
 		}
 	],
@@ -693,40 +553,12 @@
 				"Project: Edit Project"
 			],
 			[
-				"close",
-				"File: Close All"
-			],
-			[
-				"dele",
-				"ANF: Delete Current File"
-			],
-			[
-				"lowe",
-				"Convert Case: Lower Case"
-			],
-			[
-				"ed",
-				"Project: Edit Project"
-			],
-			[
 				"anf",
 				"ANF: Rename File"
 			],
 			[
-				"edio",
-				"Project: Edit Project"
-			],
-			[
-				"up",
-				"Convert Case: Upper Case"
-			],
-			[
-				"upp",
-				"Convert Case: Upper Case"
-			],
-			[
-				"anfre",
-				"ANF: Rename File"
+				"close",
+				"File: Close All"
 			],
 			[
 				"ss js",
@@ -757,8 +589,16 @@
 				"Project: Edit Project"
 			],
 			[
+				"lowe",
+				"Convert Case: Lower Case"
+			],
+			[
 				"anf ren",
 				"ANF: Rename File"
+			],
+			[
+				"dele",
+				"ANF: Delete Current File"
 			],
 			[
 				"delet",
@@ -837,7 +677,7 @@
 				"Package Control: Install Package"
 			]
 		],
-		"width": 467.0
+		"width": 485.0
 	},
 	"console":
 	{
@@ -858,76 +698,72 @@
 	},
 	"expanded_folders":
 	[
-<<<<<<< HEAD
 	],
 	"file_history":
 	[
-		"/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/index.html",
-		"/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/tools/project/DavidOchmann-PixiJSAnimationExport.sublime-project",
-		"/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/img/runner.json",
-		"/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/js/index.min.js",
-		"/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/js/game/bezier.js",
-		"/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/tools/commands/uglify-jsfl.command",
-		"/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/js/game/parse.js",
-=======
-		"/Users/david.ochmann/Documents/application/project/html/JS-Library/common/js/davidochmann",
-		"/Users/user/Library/Application Support/Adobe/Animate CC 2015.2/de_DE/Configuration/Commands"
-	],
-	"file_history":
-	[
+		"/Users/david.ochmann/Documents/application/project/html/JS-Library/toggo/Pokemon-Wimmelbild/img/content-1.json",
+		"/Users/david.ochmann/Documents/application/project/html/JS-Library/davidochmann/pixijs-animation-export/debug.html",
+		"/Users/david.ochmann/Documents/application/project/html/JS-Library/davidochmann/pixijs-animation-export/tools/commands/uglify-jsfl.command",
 		"/Users/david.ochmann/Documents/application/project/html/JS-Library/davidochmann/pixijs-animation-export/tools/project/DavidOchmann-PixiJSAnimationExport.sublime-project",
+		"/Users/david.ochmann/Documents/application/project/html/JS-Library/common/js/davidochmann/tools/math/calculate.js",
+		"/Users/david.ochmann/Documents/application/project/html/JS-Library/common/js/davidochmann/doutils/tools/calculator.js",
+		"/Users/david.ochmann/Documents/application/project/html/JS-Library/toggo/Pokemon-Wimmelbild/js/game/backgrounditemmodule.js",
+		"/Users/david.ochmann/Documents/application/project/html/JS-Library/toggo/Pokemon-Wimmelbild/debug.html",
+		"/Users/david.ochmann/Documents/application/project/html/JS-Library/common/js/davidochmann/doutils/tools/assist.js",
+		"/Users/david.ochmann/Documents/application/project/html/JS-Library/toggo/Pokemon-Wimmelbild/json/items.json",
+		"/Users/david.ochmann/Documents/application/project/html/JS-Library/toggo/Pokemon-Wimmelbild/js/game/canvasutils.js",
+		"/Users/david.ochmann/Documents/application/project/html/JS-Library/common/js/davidochmann/doutils/audio/sound.js",
+		"/Users/david.ochmann/Library/Caches/Cornerstone/Store/https%3A%2F%2Fdavid.ochmann%40svn.eoa.de%2Fsvn%2Fjs-library/0000007351/trunk/jetfriends/Lufthansa/Advent2015/Memory/js/game/gamestate.js",
+		"/Users/david.ochmann/Library/Caches/Cornerstone/Store/https%3A%2F%2Fdavid.ochmann%40svn.eoa.de%2Fsvn%2Fjs-library/0000007351/trunk/jetfriends/Lufthansa/Advent2015/Becherspiel/js/game/gamestate.js",
+		"/Users/david.ochmann/Library/Caches/Cornerstone/Store/https%3A%2F%2Fdavid.ochmann%40svn.eoa.de%2Fsvn%2Fjs-library/0000007437/trunk/jetfriends/Lufthansa/Advent2015/Memory/js/game/main.js",
+		"/Users/david.ochmann/Library/Caches/Cornerstone/Store/https%3A%2F%2Fdavid.ochmann%40svn.eoa.de%2Fsvn%2Fjs-library/0000007351/trunk/jetfriends/Lufthansa/Advent2015/Becherspiel/js/game/assistcalendar.js",
+		"/Users/david.ochmann/Library/Caches/Cornerstone/Store/https%3A%2F%2Fdavid.ochmann%40svn.eoa.de%2Fsvn%2Fjs-library/0000007437/trunk/jetfriends/Lufthansa/Advent2015/Becherspiel/js/game/main.js",
+		"/Users/david.ochmann/Documents/application/project/html/JS-Library/toggo/Pokemon-Wimmelbild/js/game/main.js",
+		"/Users/david.ochmann/Documents/application/project/html/JS-Library/davidochmann/pixijs-animation-export/img/runner.json",
+		"/Users/david.ochmann/Documents/application/project/html/JS-Library/toggo/Pokemon-Wimmelbild/js/game/gamestate.js",
+		"/Users/david.ochmann/Documents/application/project/html/JS-Library/davidochmann/pixijs-animation-export/js/game/main.js",
+		"/Users/david.ochmann/Library/Caches/Cornerstone/Store/https%3A%2F%2Fdavid.ochmann%40svn.eoa.de%2Fsvn%2Fjs-library/0000007351/trunk/jetfriends/Lufthansa/Advent2015/Becherspiel/js/game/settings.js",
+		"/Users/david.ochmann/Library/Caches/Cornerstone/Store/https%3A%2F%2Fdavid.ochmann%40svn.eoa.de%2Fsvn%2Fjs-library/0000007351/trunk/jetfriends/Lufthansa/Advent2015/Becherspiel/js/game/adventbuttonstate.js",
+		"/Users/david.ochmann/Library/Caches/Cornerstone/Store/https%3A%2F%2Fdavid.ochmann%40svn.eoa.de%2Fsvn%2Fjs-library/0000002065/trunk/jetfriends/Common/js/game/advent/assist/assistcalendar.js",
+		"/Users/david.ochmann/Documents/application/project/html/JS-Library/toggo/Pokemon-Wimmelbild/js/utils/timeline.js",
+		"/Users/david.ochmann/Documents/application/project/html/JS-Library/common/js/framework/pixijs/pixi-3.0.9.min.js",
+		"/Users/david.ochmann/Documents/application/project/html/JS-Library/toggo/Pokemon-Wimmelbild/js/game/settings.js",
+		"/Users/david.ochmann/Documents/application/project/html/JS-Library/toggo/Pokemon-Wimmelbild/json/items.js",
+		"/Users/david.ochmann/Documents/application/project/html/JS-Library/toggo/Toggo-WinterGames/index.html",
+		"/Users/david.ochmann/Documents/application/project/html/JS-Library/toggo/Toggo-WinterGames/js/utils/timelinemodule.js",
+		"/Users/david.ochmann/Documents/application/project/html/JS-Library/toggo/Toggo-WinterGames/js/utils/timeline.js",
+		"/Users/david.ochmann/Documents/application/project/html/JS-Library/common/js/davidochmann/module/easeljs/fluidmodule.js",
+		"/Users/david.ochmann/Documents/application/project/html/JS-Library/common/js/davidochmann/doutils/tools/gamesetup-1.1.0.js",
+		"/Users/david.ochmann/Documents/application/project/html/JS-Library/toggo/Toggo-WinterGames/debug.html",
+		"/Users/david.ochmann/Documents/application/project/html/JS-Library/toggo/Toggo-WinterGames/js/game/preloaderstate.js",
+		"/Users/david.ochmann/Documents/application/project/html/JS-Library/common/js/davidochmann/module/easeljs/graphicsmodule.js",
+		"/Users/david.ochmann/Documents/application/project/html/JS-Library/common/js/davidochmann/doutils/loader/loader.js",
 		"/Users/user/Documents/application/project/html/europapark/Niederlande-BlumenChaos-Winter/tools/uglify-index.bat",
 		"/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/jsfl/helper.jsfl",
 		"/Users/user/Library/Application Support/Adobe/Animate CC 2015.2/de_DE/Configuration/Commands/tools/Export PixiJS Assets.jsfl",
->>>>>>> eb601c0bcb166bc5cdc881e0ee38af6c95874254
 		"/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/jsfl/json-exporter.jsfl",
-		"/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/js/game/timeline.js",
 		"/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/jsfl/json-timeline-parser.jsfl",
-		"/Users/user/Documents/application/project/html/common/js/davidochmann/doutils/pixijs-3/movieclip.js",
-		"/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/jsfl/pixijs-animation-export.jsfl",
 		"/Users/user/Documents/application/project/html/common/js/davidochmann/nodejs/tools/uglifyhtml.js",
-		"/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/js/game/main.js",
-		"/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/debug.html",
-		"/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/js/game/assetfactory.js",
 		"/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/tools/commands/uglify.command",
-		"/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/img/assets.json",
-		"/Users/user/Documents/application/project/html/common/js/davidochmann/doutils/pixijs-3/facade.js",
-		"/Users/user/Documents/application/project/html/common/js/davidochmann/doutils/tools/assist.js",
-		"/Users/user/Documents/application/project/html/common/js/davidochmann/tools/math/calculate.js",
-		"/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/img/container.json",
-		"/Users/user/Documents/application/project/html/common/js/davidochmann/doutils/pixijs-3/textfield.js",
-		"/Users/user/Library/Application Support/Adobe/Animate CC 2015.2/de_DE/Configuration/Commands/tools/Export PixiJS Assets.jsfl",
-		"/Users/user/Documents/application/project/html/common/js/davidochmann/doutils/pixijs-3/scene.js",
-		"/Users/user/Documents/application/project/html/common/js/davidochmann/doutils/easeljs/scene.js",
-		"/Users/user/Documents/application/project/html/common/js/davidochmann/doutils/pixijs-2/sprite.js",
-		"/Users/user/Documents/application/project/html/common/js/framework/pixijs/pixi-4.0.0.js",
-		"/Users/user/Documents/application/project/html/common/js/davidochmann/doutils/pixijs-3/atlas.js",
-		"/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/js/game/invoke.js",
-		"/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/js/game/assist.js",
-		"/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/js/game/do.js",
-		"/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/jsfl/helper.jsfl",
-		"/Applications/Google Chrome.app/Contents/PkgInfo",
-		"/Applications/Google Chrome.app/Contents/Info.plist",
-		"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
-		"/Users/user/Documents/application/project/html/common/js/davidochmann/doutils/loader/loader.js",
-		"/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/js/game/loader.js",
-		"/Users/user/Library/Application Support/Adobe/Animate CC 2015.2/de_DE/Configuration/Commands/tools/library/JSON Object.jsfl",
-		"/Users/user/Documents/application/project/html/common/js/davidochmann/doutils/pixijs-2/displayobjectcontainer.js",
-		"/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/jsfl/pixi-export.jsfl",
-		"/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/js/game/scene.js",
-		"/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/js/timeline.jsfl",
-		"/Users/user/Documents/application/project/html/europapark/Niederlande-BlumenChaos-Winter/tools/uglify-index.bat",
+		"/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/jsfl/pixijs-animation-export.jsfl",
 		"/Users/user/Documents/application/project/html/europapark/Italien-PizzaPizza/img/content_lang_de.json",
+		"/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/js/game/main.js",
 		"/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/img/content_lang_de.json",
+		"/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/img/container.json",
+		"/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/img/assets.json",
+		"/Users/user/Documents/application/project/html/common/js/davidochmann/doutils/loader/loader.js",
 		"/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/img/assets-atlas.json",
 		"/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/jsfl/frame-label-exporter.jsfl",
 		"/Users/user/Library/Caches/Cornerstone/Store/https%3A%2F%2Fdavid.ochmann%40svn.eoa.de%2Fsvn%2Fjs-library/0000010417/trunk/internetabc/Flizzys-Zeichenchaos/js/game/main.js",
+		"/Users/user/Documents/application/project/html/common/js/davidochmann/doutils/pixijs-3/facade.js",
 		"/Users/user/Documents/application/project/html/common/js/davidochmann/doutils/pixijs-3/facade-1.1.0.js",
+		"/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/debug.html",
 		"/Users/user/Documents/application/project/html/common/js/davidochmann/doutils/tools/gamesetup.js",
 		"/Users/user/Library/Application Support/Adobe/Animate CC 2015.2/de_DE/Configuration/Commands/tools/library/Assist.jsfl",
 		"/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/jsfl/atlas-exporter.jsfl",
 		"/Users/user/Documents/application/project/html/common/js/davidochmann/doutils/easeljs/buttonstate.js",
 		"/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/img/assets-atlas-0.json",
+		"/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/tools/project/DavidOchmann-PixiJSAnimationExport.sublime-project",
 		"/Users/user/Library/Application Support/Adobe/Animate CC 2015/de_DE/Configuration/Commands/tools/library/JSON Object.jsfl",
 		"/Users/user/Library/Application Support/Adobe/Animate CC 2015/de_DE/Configuration/Commands/tools/Export PixiJS Assets.jsfl",
 		"/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/jsfl/asset-library-parser.jsfl",
@@ -984,7 +820,6 @@
 		"/Users/david.ochmann/Documents/application/project/html/JS-Library/europapark/Italien-PizzaPizza/debug.html",
 		"/Users/david.ochmann/Documents/application/project/html/JS-Library/common/js/europapark/shared/generic/highscoreanimationmodule.js",
 		"/Users/david.ochmann/Documents/application/project/html/JS-Library/europapark/App-GameCollection/platforms/android/AndroidManifest.xml",
-		"/Users/david.ochmann/Documents/application/project/html/JS-Library/common/js/davidochmann/doutils/tools/gamesetup-1.1.0.js",
 		"/Users/david.ochmann/Documents/application/project/html/JS-Library/common/js/davidochmann/doutils/tools/gamesetup.js",
 		"/Users/david.ochmann/Documents/application/project/html/JS-Library/europapark/App-GameCollection/platforms/android/android.json",
 		"/Users/david.ochmann/Documents/application/project/html/JS-Library/common/js/swiss/module/shared/highscoreinterfacemodule.js",
@@ -993,50 +828,11 @@
 		"/Users/david.ochmann/Downloads/webfontkit-20160628-080406/stylesheet.css",
 		"/Users/david.ochmann/Documents/application/project/html/JS-Library/toggo/Nerf-BlasterCreator/debug.html",
 		"/Users/david.ochmann/Documents/application/project/html/JS-Library/common/js/toggo/module/toggopostmodule.js",
-		"/Users/david.ochmann/Documents/application/project/html/JS-Library/toggo/Nerf-BlasterCreator/js/game/generateimagemodule.js",
-		"/Users/david.ochmann/Documents/application/project/html/JS-Library/toggo/Nerf-BlasterCreator/js/game/uploadstate.js",
-		"/Users/david.ochmann/Documents/application/project/html/JS-Library/europapark/App-GameCollection/readme.txt",
-		"/Users/david.ochmann/Documents/application/project/html/JS-Library/europapark/App-GameCollection/www/readme.txt",
-		"/Users/david.ochmann/Documents/application/project/html/JS-Library/toggo/MaxAdventures-WasserRuinen/js/game/proxy.js",
-		"/Users/david.ochmann/Documents/application/project/html/JS-Library/toggo/MaxAdventures-WasserRuinen/js/game/resultshootstate.js",
-		"/Users/david.ochmann/Documents/application/project/html/JS-Library/toggo/MaxAdventures-WasserRuinen/debug.html",
-<<<<<<< HEAD
-		"/Users/david.ochmann/Documents/application/project/html/JS-Library/swiss/Skyboard/js/game/settingsanimationmodule.js"
-=======
-		"/Users/david.ochmann/Documents/application/project/html/JS-Library/swiss/Skyboard/js/game/settingsanimationmodule.js",
-		"/Users/david.ochmann/Documents/application/project/html/JS-Library/swiss/Skyboard/js/game/proxy.js",
-		"/Users/david.ochmann/Documents/application/project/html/JS-Library/swiss/Skyboard/js/game/draw.js",
-		"/Users/david.ochmann/Documents/application/project/html/JS-Library/common/js/davidochmann/module/pixijs/togglemodule.js",
-		"/Users/david.ochmann/Documents/application/project/html/JS-Library/swiss/Skyboard/json/level-0.json",
-		"/Users/david.ochmann/Documents/application/project/html/JS-Library/swiss/Skyboard/js/game/trackfactorymodule.js",
-		"/Users/david.ochmann/Documents/application/project/html/JS-Library/swiss/Skyboard/js/game/roadrenderergyrocontrolmodule.js",
-		"/Users/david.ochmann/Documents/application/project/html/JS-Library/swiss/Skyboard/js/game/menustate.js",
-		"/Users/david.ochmann/Documents/application/project/html/JS-Library/swiss/Skyboard/js/game/animation.js",
-		"/Users/david.ochmann/Documents/application/project/html/JS-Library/swiss/Skyboard/js/game/main.js",
-		"/Users/david.ochmann/Documents/application/project/html/JS-Library/swiss/Skyboard/js/game/helpstate.js",
-		"/Users/david.ochmann/Documents/application/project/html/JS-Library/swiss/Skyboard/js/game/settingsstate.js",
-		"/Users/david.ochmann/Documents/application/project/html/JS-Library/swiss/Skyboard/js/game/sensitivitysetupmodule.js",
-		"/Users/david.ochmann/Documents/application/project/html/JS-Library/swiss/Skyboard/js/game/gamestate.js",
-		"/Users/david.ochmann/Documents/application/project/html/JS-Library/swiss/Skyboard/js/game/uiscoredisplaymodule.js",
-		"/Users/david.ochmann/Documents/application/project/html/JS-Library/swiss/Skyboard/js/game/gameplaymodule.js",
-		"/Users/david.ochmann/Documents/application/project/html/JS-Library/swiss/Skyboard/js/game/playeranimationmodule.js",
-		"/Users/david.ochmann/Documents/application/project/html/JS-Library/swiss/Skyboard/js/game/roadrenderer.js",
-		"/Users/david.ochmann/Documents/application/project/html/JS-Library/common/js/davidochmann/engine/jumpandrun/levelparser.js",
-		"/Users/david.ochmann/Documents/application/project/html/JS-Library/swiss/Skyboard/js/game/particleconfettimodule.js",
-		"/Users/david.ochmann/Documents/application/project/html/JS-Library/swiss/Skyboard/js/game/particledustmodule.js",
-		"/Users/david.ochmann/Documents/application/project/html/JS-Library/swiss/Skyboard/js/game/socketgyrocontrolmodule.js",
-		"/Users/david.ochmann/Documents/application/project/html/JS-Library/common/js/davidochmann/doutils/pixijs-3/displayobjectcontainer.js",
-		"/Users/david.ochmann/Documents/application/project/html/JS-Library/swiss/Skyboard/js/game/settings.js",
-		"/Users/david.ochmann/Documents/application/project/html/JS-Library/swiss/Skyboard/tools/project/Swiss-Skyboard.sublime-project",
-		"/Users/david.ochmann/Documents/application/project/html/JS-Library/swiss/Skyboard/tools/project/Swiss-SkyboardSimulator.sublime-project",
-		"/Users/david.ochmann/Documents/application/project/html/JS-Library/swiss/Skyboard/tools/project/project.sublime-project",
-		"/Users/david.ochmann/Documents/application/project/html/JS-Library/common/js/davidochmann/nodejs/tools/pngcompress.js",
-		"/Users/david.ochmann/Documents/application/project/html/JS-Library/swiss/Skyboard/tools/commands/pngcompress.bat"
->>>>>>> eb601c0bcb166bc5cdc881e0ee38af6c95874254
+		"/Users/david.ochmann/Documents/application/project/html/JS-Library/toggo/Nerf-BlasterCreator/js/game/generateimagemodule.js"
 	],
 	"find":
 	{
-		"height": 35.0
+		"height": 23.0
 	},
 	"find_in_files":
 	{
@@ -1052,8 +848,117 @@
 		"case_sensitive": true,
 		"find_history":
 		[
-<<<<<<< HEAD
-=======
+			"30",
+			"50",
+			"30",
+			"10",
+			"displayobjectcontainer",
+			"degreeToRadians",
+			"90",
+			"maxB",
+			"isUndefined",
+			"0",
+			"p",
+			"bounds",
+			"toGlobal",
+			"parent",
+			"toGlobal",
+			"parent",
+			"bounds",
+			"Bounds",
+			"rect0",
+			"prototype",
+			"polygons",
+			"prototype",
+			"100",
+			"color",
+			"100",
+			"400",
+			"vo",
+			"itemHitNeighbours",
+			"item",
+			"displayObject",
+			"itterations",
+			"object",
+			"getVONeighbours",
+			"800",
+			"400",
+			"200",
+			"y",
+			"posX",
+			"retu",
+			"200",
+			"list",
+			"item",
+			"background",
+			"\t\t\t.",
+			"this.loader.getObjectWithID( this.url ).result.list",
+			"index",
+			"width",
+			"x",
+			"item",
+			"addItem",
+			"prototype",
+			"CanvasUtils",
+			"Canvas",
+			"Ut",
+			"CanvasUtils",
+			"getShuffledArrayFrom",
+			"color",
+			"100",
+			"10",
+			"background",
+			"50",
+			"100",
+			"width",
+			"x",
+			"100",
+			"renderer",
+			"gameSetupList",
+			"head",
+			"eyes",
+			"runnerAnimation",
+			"animation",
+			"x",
+			"width",
+			"callback",
+			"addAndCenterItem",
+			"getTransformedBounds",
+			"() ",
+			"container",
+			"generateItem",
+			"resu",
+			"contianer",
+			"initElement",
+			"CanvasTinter",
+			"settings",
+			"Pokemon",
+			"list",
+			"preloader",
+			"img",
+			",",
+			"rotation",
+			"voList",
+			"setCenterCSS",
+			"center",
+			"640",
+			"timeline",
+			"graphics",
+			"scene",
+			"false",
+			"boolean",
+			"urlPreloader",
+			"json",
+			"this",
+			"null",
+			"id",
+			"GraphicsModule",
+			"[\n",
+			"bezier",
+			"timeline",
+			"main",
+			"game",
+			"640",
 			"2048",
 			"1024",
 			"list",
@@ -1070,242 +975,7 @@
 			"SPRITE",
 			"parseGraphic",
 			"movieclip",
-			"MOVIECLIP",
-			"\";\n",
-			"parseTimeline",
-			"object",
-			"ite",
-			"//",
-			"element",
-			"width",
-			"isKey",
-			"x",
-			".x",
-			"animation",
-			"true",
-			"guide",
-			"LAYER_GUIDE",
-			"guide",
-			"scaleX",
-			"transformX",
-			"width",
-			"item",
-			"width",
-			"addItemTransformData",
-			"width",
-			"getTextElementStyle",
-			"addItemTransformData",
-			"getLibraryObject",
-			"addToLibrary",
-			"}",
-			" },",
-			"ignore",
-			":",
-			"ignore",
-			"value",
-			"JOIN_FONTFACE",
-			"parseText",
-			"TYPE_TEXT",
-			"outputPanel",
-			"TEXT",
-			"sortAlphabetically",
-			"atlasID",
-			"timelineID",
-			"documentName",
-			"timelineID",
-			"documentID",
-			"true",
-			"null",
-			"LoadItemJSON",
-			"createLoadItem",
-			"recursion",
-			"p4",
-			"p3",
-			"p2",
-			"p1",
-			"( 1 - t )",
-			"d",
-			"c",
-			"b",
-			"a",
-			"load",
-			"initContent",
-			"documentFolder",
-			"jsonString",
-			"FrameLabelExporter",
-			"initFileExporter",
-			"parseMotion",
-			"ease",
-			"all",
-			"frame",
-			"parseMotion",
-			"object",
-			"hasAnimations",
-			"previous",
-			"elements",
-			"name",
-			"height",
-			"getPixiRenderer",
-			"initPixi",
-			"640",
-			"width",
-			"height",
-			"getPixi",
-			"getPixiRenderer",
-			"preserveDrawingBuffer",
-			"initPixi",
-			"initVariables",
-			"initCanvas",
-			"960",
-			"width",
-			"appenChild",
-			"this.canvas",
-			"333333",
-			"111111",
-			"000000",
->>>>>>> eb601c0bcb166bc5cdc881e0ee38af6c95874254
-			"flash.trace",
-			"trace",
-<<<<<<< HEAD
-			"spriteSheetExporter",
-			"image",
-			"transform",
-			"getTransform",
-			"_beginEndObject",
-			"getFrameTransform",
-			"head",
-			"runnerAnimation",
-			"loop",
-			"timelineAnimation",
-			"runner",
-			"idle",
-			"gotoAndPlay",
-			"run",
-			"frame",
-			"hasAnimation",
-			"armLeft",
-			"hasAnimation",
-			"console",
-			"getBezierPoints",
-			"null",
-			"tweenEasing",
-			"type",
-			"legLowerRight",
-			"legLower",
-			"animation",
-			"9",
-			"previousKeyframe",
-			"head",
-			"idle",
-			"conso",
-			"previous",
-			"getTransformBetweenItems",
-			"runner",
-			"head",
-			"runner",
-			"currentIndex",
-			"currentFrame",
-			"run",
-			"result",
-			"result0",
-			"getBeginEndObject",
-			"result1",
-			"every",
-			"template",
-			"getBeginEndObject",
-			"range",
-			"idle",
-			"totalFrames",
-			"getBeginEndObject",
-			"beginEnd",
-			"setFrame",
-			"currentFrame",
-			"getAnimationFrameIndex",
-			"currentFrame",
-			"range",
-			"currentFrame",
-			"run",
-			"setFrame",
-			"updatePlayback",
-			"setFrame",
-			"currentFrame",
-			"undefined",
-			"template",
-			"this",
-			"labels",
-			"template",
-			"animations",
-			"getBeginEndObject",
-			"getValidIn",
-			"currentLabel",
-			"];\n",
-			"run",
-			"template",
-			"index",
-			"20",
-			"godtoAndStop",
-			"element",
-			"frame",
-			"typeof",
-			"number",
-			"validateFrame",
-			"transformFrame",
-			"currentFrame",
-			"loop",
-			"</script>",
-			"Main",
-			"/ =",
-			"!",
-			"< =",
-			"> =",
-			"=  = ",
-			"=",
-			"Main",
-			"console",
-			"return",
-			"var",
-			" ",
-			"bezier",
-			"game",
-			"jsfl",
-			"index",
-			"currentFrame",
-			"frame",
-			"displayObject",
-			"frame",
-			"setFrame",
-			"NaN",
-			"10",
-			"conso",
-			"consoel",
-			"console",
-			"conso",
-			"background",
-			".id =",
-			"addTransformData",
-			"resolve",
-			"Container",
-			"runner",
-			"syncMovieClipFrame",
-			"14",
-			"console",
-			"conso",
-			"getFrameTransform",
-			"translateAlpha",
-			"nextKeyframe"
-=======
-			"symbol",
-			"symbols",
-			"libraryItedm",
-			"timelines",
-			"labelObject",
-			"timelines",
-			"libraryItem",
-			"symbol",
-			"list",
-			"Assist",
-			"assets"
->>>>>>> eb601c0bcb166bc5cdc881e0ee38af6c95874254
+			"MOVIECLIP"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1324,46 +994,12 @@
 	"groups":
 	[
 		{
-<<<<<<< HEAD
-			"selected": 3,
-=======
-			"selected": 4,
->>>>>>> eb601c0bcb166bc5cdc881e0ee38af6c95874254
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-<<<<<<< HEAD
-					"file": "/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/debug.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1581,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								514,
-								417
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 59.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 7,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/jsfl/json-timeline-parser.jsfl",
+					"file": "/Users/david.ochmann/Documents/application/project/html/JS-Library/davidochmann/pixijs-animation-export/jsfl/json-timeline-parser.jsfl",
 					"semi_transient": false,
 					"settings":
 					{
@@ -1374,500 +1010,50 @@
 						"selection":
 						[
 							[
-								3646,
-								3646
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 2508.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/js/game/timeline.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 15129,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								6427,
-								6427
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 4272.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 6,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/js/game/main.js",
-=======
-					"file": "/Users/david.ochmann/Documents/application/project/html/JS-Library/davidochmann/pixijs-animation-export/js/game/main.js",
->>>>>>> eb601c0bcb166bc5cdc881e0ee38af6c95874254
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2334,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-<<<<<<< HEAD
-								2054,
-								2054
-=======
 								0,
 								0
->>>>>>> eb601c0bcb166bc5cdc881e0ee38af6c95874254
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-<<<<<<< HEAD
-=======
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 768.0,
+						"translation.y": 1288.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "/Users/david.ochmann/Documents/application/project/html/JS-Library/davidochmann/pixijs-animation-export/js/game/timeline.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 15129,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								7823,
-								7823
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "/Users/david.ochmann/Documents/application/project/html/JS-Library/common/js/davidochmann/doutils/easeljs/buttonstate.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 6047,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "/Users/david.ochmann/Documents/application/project/html/JS-Library/davidochmann/pixijs-animation-export/debug.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1581,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								15
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
 					"file": "/Users/david.ochmann/Documents/application/project/html/JS-Library/davidochmann/pixijs-animation-export/jsfl/atlas-exporter.jsfl",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4883,
+						"buffer_size": 6262,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								383,
-								397
+								5114,
+								5122
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
->>>>>>> eb601c0bcb166bc5cdc881e0ee38af6c95874254
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 984.0,
+						"translation.y": 3409.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
 					"type": "text"
-				},
-				{
-<<<<<<< HEAD
-					"buffer": 4,
-					"file": "/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/jsfl/pixijs-animation-export.jsfl",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2496,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1448,
-								1448
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 562.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/jsfl/atlas-exporter.jsfl",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 5086,
-=======
-					"buffer": 5,
-					"file": "/Users/david.ochmann/Documents/application/project/html/JS-Library/davidochmann/pixijs-animation-export/img/runner.json",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 31391,
->>>>>>> eb601c0bcb166bc5cdc881e0ee38af6c95874254
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-<<<<<<< HEAD
-								4520,
-								4525
-=======
-								20344,
-								20349
->>>>>>> eb601c0bcb166bc5cdc881e0ee38af6c95874254
-							]
-						],
-						"settings":
-						{
-<<<<<<< HEAD
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 671.0,
-=======
-							"syntax": "Packages/JavaScript/JSON.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 18086.0,
->>>>>>> eb601c0bcb166bc5cdc881e0ee38af6c95874254
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-<<<<<<< HEAD
-				},
-				{
-					"buffer": 6,
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 48223,
-						"regions":
-						{
-							"match":
-							{
-								"flags": 112,
-								"regions":
-								[
-									[
-										197,
-										208
-									],
-									[
-										317,
-										328
-									],
-									[
-										491,
-										502
-									],
-									[
-										524,
-										535
-									],
-									[
-										575,
-										586
-									],
-									[
-										825,
-										836
-									],
-									[
-										9999,
-										10010
-									],
-									[
-										20602,
-										20613
-									],
-									[
-										21535,
-										21546
-									],
-									[
-										21782,
-										21793
-									],
-									[
-										22169,
-										22180
-									],
-									[
-										22497,
-										22508
-									],
-									[
-										22769,
-										22780
-									],
-									[
-										23020,
-										23031
-									],
-									[
-										23263,
-										23274
-									],
-									[
-										23539,
-										23550
-									],
-									[
-										23767,
-										23778
-									],
-									[
-										24110,
-										24121
-									],
-									[
-										24446,
-										24457
-									],
-									[
-										24566,
-										24577
-									],
-									[
-										24740,
-										24751
-									],
-									[
-										24773,
-										24784
-									],
-									[
-										24824,
-										24835
-									],
-									[
-										33975,
-										33986
-									],
-									[
-										44578,
-										44589
-									],
-									[
-										45511,
-										45522
-									],
-									[
-										45758,
-										45769
-									],
-									[
-										46145,
-										46156
-									],
-									[
-										46473,
-										46484
-									],
-									[
-										46745,
-										46756
-									],
-									[
-										46996,
-										47007
-									],
-									[
-										47239,
-										47250
-									],
-									[
-										47515,
-										47526
-									],
-									[
-										47743,
-										47754
-									],
-									[
-										48086,
-										48097
-									]
-								],
-								"scope": ""
-							}
-						},
-						"selection":
-						[
-							[
-								45535,
-								45535
-							]
-						],
-						"settings":
-						{
-							"detect_indentation": false,
-							"line_numbers": false,
-							"output_tag": 2,
-							"result_base_dir": "",
-							"result_file_regex": "^([^ \t].*):$",
-							"result_line_regex": "^ +([0-9]+):",
-							"scroll_past_end": true,
-							"syntax": "Packages/Default/Find Results.hidden-tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 5255.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/jsfl/json-exporter.jsfl",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 731,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								510,
-								510
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 20.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-=======
->>>>>>> eb601c0bcb166bc5cdc881e0ee38af6c95874254
 				}
 			]
 		}
@@ -1905,7 +1091,7 @@
 	"menu_visible": false,
 	"output.exec":
 	{
-		"height": 302.0
+		"height": 100.0
 	},
 	"output.find_results":
 	{
@@ -1925,260 +1111,190 @@
 		"selected_items":
 		[
 			[
-<<<<<<< HEAD
-				"main",
-				"pixijs-animation-export/js/game/main.js"
-			],
-			[
-				"json",
-				"pixijs-animation-export/jsfl/json-exporter.jsfl"
-=======
-				"pxi",
-				"pixijs-animation-export/jsfl/pixijs-animation-export.jsfl"
->>>>>>> eb601c0bcb166bc5cdc881e0ee38af6c95874254
+				"dbeu",
+				"pixijs-animation-export/debug.html"
 			],
 			[
 				"atlas",
 				"pixijs-animation-export/jsfl/atlas-exporter.jsfl"
 			],
 			[
-<<<<<<< HEAD
-				"pix",
-				"pixijs-animation-export/jsfl/pixijs-animation-export.jsfl"
-			],
-			[
-				"inde",
-				"pixijs-animation-export/index.html"
-			],
-			[
-				"runn",
-				"pixijs-animation-export/img/runner.json"
-			],
-			[
-				"timeiln",
-				"pixijs-animation-export/jsfl/json-timeline-parser.jsfl"
-			],
-			[
-				"runner",
-				"pixijs-animation-export/img/runner.json"
-			],
-			[
-				"jsone",
-				"pixijs-animation-export/jsfl/json-exporter.jsfl"
-			],
-			[
-				"jsontim",
-				"pixijs-animation-export/jsfl/json-timeline-parser.jsfl"
-=======
-				"debug",
-				"pixijs-animation-export/debug.html"
-			],
-			[
-				"debu",
-				"davidochmann/doutils/easeljs/buttonstate.js"
->>>>>>> eb601c0bcb166bc5cdc881e0ee38af6c95874254
-			],
-			[
 				"timelin",
-				"pixijs-animation-export/js/game/timeline.js"
+				"pixijs-animation-export/jsfl/json-timeline-parser.jsfl"
 			],
 			[
-<<<<<<< HEAD
-				"time",
-				"pixijs-animation-export/js/game/timeline.js"
-			],
-			[
-				"par",
-				"pixijs-animation-export/js/game/parse.js"
-			],
-			[
-				"movi",
-				"davidochmann/doutils/pixijs-3/movieclip.js"
-			],
-			[
-				"pixi",
-				"pixijs-animation-export/jsfl/pixijs-animation-export.jsfl"
-			],
-			[
-				"uglify-",
+				"comm",
 				"pixijs-animation-export/tools/commands/uglify-jsfl.command"
-=======
-				"main",
-				"pixijs-animation-export/js/game/main.js"
->>>>>>> eb601c0bcb166bc5cdc881e0ee38af6c95874254
 			],
 			[
-				"uglify",
-				"davidochmann/nodejs/tools/uglifyhtml.js"
-			],
-			[
-				"bezi",
-				"pixijs-animation-export/js/game/bezier.js"
-			],
-			[
-				"in",
-				"pixijs-animation-export/js/index.min.js"
-			],
-			[
-				"debu",
-				"pixijs-animation-export/debug.html"
-			],
-			[
-				"timeilne",
-				"pixijs-animation-export/js/game/timeline.js"
-			],
-			[
-				"be",
-				"pixijs-animation-export/js/game/bezier.js"
-			],
-			[
-				"timein",
-				"pixijs-animation-export/js/game/timeline.js"
-			],
-			[
-				"assetfa",
-				"pixijs-animation-export/js/game/assetfactory.js"
-			],
-			[
-				"bez",
-				"pixijs-animation-export/js/game/bezier.js"
-			],
-			[
-				"jsont",
-				"pixijs-animation-export/jsfl/json-timeline-parser.jsfl"
-			],
-			[
-				"tim",
-				"pixijs-animation-export/jsfl/json-timeline-parser.jsfl"
-			],
-			[
-				"uglif",
-				"pixijs-animation-export/tools/commands/uglify.command"
-			],
-			[
-				"asset",
-				"pixijs-animation-export/img/assets.json"
-			],
-			[
-				"asse",
-				"pixijs-animation-export/img/assets.json"
-			],
-			[
-				"export",
-				"pixijs-animation-export/jsfl/json-timeline-parser.jsfl"
-			],
-			[
-				"assets",
-				"pixijs-animation-export/img/assets.json"
-			],
-			[
-				"ass",
-				"davidochmann/doutils/tools/assist.js"
-			],
-			[
-				"timeline",
-				"pixijs-animation-export/jsfl/json-timeline-parser.jsfl"
+				"ugli",
+				"pixijs-animation-export/tools/commands/uglify-jsfl.command"
 			],
 			[
 				"cal",
 				"davidochmann/tools/math/calculate.js"
 			],
 			[
-				"faca",
-				"davidochmann/doutils/pixijs-3/facade.js"
+				"colli",
+				"Pokemon-Wimmelbild/js/game/collisiontestmodule.js"
 			],
 			[
-				"con",
-				"pixijs-animation-export/img/container.json"
+				"game",
+				"Pokemon-Wimmelbild/js/game/gamestate.js"
 			],
 			[
-				"timlin",
-				"pixijs-animation-export/js/game/timeline.js"
+				"debu",
+				"Pokemon-Wimmelbild/debug.html"
 			],
 			[
-				"movie",
-				"davidochmann/doutils/pixijs-3/movieclip.js"
+				"as",
+				"davidochmann/doutils/tools/assist.js"
 			],
 			[
-				"text",
-				"davidochmann/doutils/pixijs-3/textfield.js"
+				"ass",
+				"davidochmann/doutils/tools/assist.js"
 			],
 			[
-				"scene",
-				"davidochmann/doutils/pixijs-3/scene.js"
+				"item",
+				"Pokemon-Wimmelbild/json/items.json"
 			],
 			[
-				"sce",
-				"davidochmann/doutils/easeljs/scene.js"
+				"facto",
+				"Pokemon-Wimmelbild/js/game/itemfactory.js"
 			],
 			[
 				"assist",
 				"davidochmann/doutils/tools/assist.js"
 			],
 			[
-				"export-tim",
-				"pixijs-animation-export/jsfl/json-timeline-parser.jsfl"
+				"additem",
+				"Pokemon-Wimmelbild/js/game/additemmodule.js"
 			],
 			[
-				"spr",
-				"davidochmann/doutils/pixijs-2/sprite.js"
+				"ca",
+				"Pokemon-Wimmelbild/js/game/canvasutils.js"
 			],
 			[
-				"hel",
-				"pixijs-animation-export/jsfl/helper.jsfl"
+				"sound",
+				"davidochmann/doutils/audio/sound.js"
 			],
 			[
-				"load",
-				"davidochmann/doutils/loader/loader.js"
+				"backg",
+				"Pokemon-Wimmelbild/js/game/backgrounditemmodule.js"
+			],
+			[
+				"fac",
+				"Pokemon-Wimmelbild/js/game/itemfactory.js"
+			],
+			[
+				"gamesta",
+				"Pokemon-Wimmelbild/js/game/gamestate.js"
+			],
+			[
+				"tim",
+				"Pokemon-Wimmelbild/js/utils/timeline.js"
+			],
+			[
+				"set",
+				"Pokemon-Wimmelbild/js/game/settings.js"
+			],
+			[
+				"de",
+				"Pokemon-Wimmelbild/debug.html"
+			],
+			[
+				"main",
+				"Pokemon-Wimmelbild/js/game/main.js"
+			],
+			[
+				"timei",
+				"Toggo-WinterGames/js/utils/timeline.js"
+			],
+			[
+				"timeiln",
+				"Toggo-WinterGames/js/utils/timelinemodule.js"
+			],
+			[
+				"fluidcon",
+				"davidochmann/doutils/tools/fluidcontainer.js"
+			],
+			[
+				"fluidmo",
+				"davidochmann/module/easeljs/fluidmodule.js"
+			],
+			[
+				"prelo",
+				"Toggo-WinterGames/js/game/preloaderstate.js"
+			],
+			[
+				"graphics",
+				"davidochmann/module/pixijs/graphicsmodule.js"
+			],
+			[
+				"sce",
+				"davidochmann/doutils/pixijs-3/scene.js"
 			],
 			[
 				"loader",
 				"davidochmann/doutils/loader/loader.js"
 			],
 			[
-<<<<<<< HEAD
-				"at",
-				"davidochmann/doutils/pixijs-3/atlas.js"
+				"preloaders",
+				"Toggo-WinterGames/js/game/preloaderstate.js"
 			],
 			[
-				"jsono",
-				"Commands/tools/library/JSON Object.jsfl"
+				"gam",
+				"Toggo-WinterGames/js/game/gamestate.js"
 			],
 			[
-				"displayobj",
-				"davidochmann/doutils/pixijs-2/displayobjectcontainer.js"
+				"inde",
+				"Toggo-WinterGames/index.html"
 			],
 			[
-				"displ",
-				"davidochmann/doutils/pixijs-2/displayobjectcontainer.js"
-			],
-			[
-				"mov",
-				"davidochmann/doutils/pixijs-3/movieclip.js"
-			],
-			[
-				"ugli",
-				"pixijs-animation-export/tools/commands/uglify.command"
-			],
-			[
-				"pixiani",
+				"pxi",
 				"pixijs-animation-export/jsfl/pixijs-animation-export.jsfl"
+			],
+			[
+				"debug",
+				"pixijs-animation-export/debug.html"
+			],
+			[
+				"uglify",
+				"davidochmann/nodejs/tools/uglifyhtml.js"
 			],
 			[
 				"help",
 				"pixijs-animation-export/jsfl/helper.jsfl"
 			],
 			[
+				"pixi",
+				"Commands/tools/Export PixiJS Assets.jsfl"
+			],
+			[
+				"jsone",
+				"pixijs-animation-export/jsfl/json-exporter.jsfl"
+			],
+			[
+				"hel",
+				"pixijs-animation-export/jsfl/helper.jsfl"
+			],
+			[
+				"jsontim",
+				"pixijs-animation-export/jsfl/json-timeline-parser.jsfl"
+			],
+			[
 				"pixijs",
 				"Commands/tools/Export PixiJS Assets.jsfl"
+			],
+			[
+				"assets",
+				"pixijs-animation-export/img/assets.json"
 			],
 			[
 				"assets.sj",
 				"pixijs-animation-export/img/assets.json"
 			],
 			[
-=======
->>>>>>> eb601c0bcb166bc5cdc881e0ee38af6c95874254
 				"label",
 				"pixijs-animation-export/jsfl/frame-label-exporter.jsfl"
 			],
@@ -2195,21 +1311,14 @@
 				"davidochmann/doutils/pixijs-3/facade-1.1.0.js"
 			],
 			[
-				"game",
-				"davidochmann/doutils/tools/gamesetup.js"
+				"faca",
+				"davidochmann/doutils/pixijs-3/facade.js"
 			],
 			[
 				"gameste",
 				"davidochmann/doutils/tools/gamesetup.js"
 			],
 			[
-<<<<<<< HEAD
-				"debug",
-				"pixijs-animation-export/debug.html"
-			],
-			[
-=======
->>>>>>> eb601c0bcb166bc5cdc881e0ee38af6c95874254
 				"jon",
 				"pixijs-animation-export/jsfl/json-timeline-parser.jsfl"
 			],
@@ -2222,13 +1331,6 @@
 				"pixijs-animation-export/jsfl/json-timeline-parser.jsfl"
 			],
 			[
-<<<<<<< HEAD
-=======
-				"assist",
-				"Commands/tools/library/Assist.jsfl"
-			],
-			[
->>>>>>> eb601c0bcb166bc5cdc881e0ee38af6c95874254
 				"exportpi",
 				"Commands/tools/Export PixiJS Assets.jsfl"
 			],
@@ -2273,10 +1375,6 @@
 				"App-GameCollection/www/json/fr.json"
 			],
 			[
-				"de",
-				"App-GameCollection/www/json/de.json"
-			],
-			[
 				"ap",
 				"App-GameCollection/www/js/application.js"
 			],
@@ -2313,8 +1411,16 @@
 				"App-GameCollection/www/start.html"
 			],
 			[
+				"in",
+				"App-GameCollection/www/index.html"
+			],
+			[
 				"lo",
 				"App-GameCollection/www/js/login.js"
+			],
+			[
+				"con",
+				"App-GameCollection/config.xml"
 			],
 			[
 				"login",
@@ -2335,10 +1441,6 @@
 			[
 				"langu",
 				"App-GameCollection/www/js/language.js"
-			],
-			[
-				"gam",
-				"App-GameCollection/www/game.html"
 			],
 			[
 				"confi",
@@ -2437,10 +1539,6 @@
 				"davidochmann/ui/pixijs-3/inputtext.js"
 			],
 			[
-				"set",
-				"Skyboard/js/game/settings.js"
-			],
-			[
 				"menu",
 				"Skyboard/js/game/menustate.js"
 			],
@@ -2467,8 +1565,6 @@
 			[
 				"radrende",
 				"Skyboard/js/game/roadrenderergyrocontrolmodule.js"
-<<<<<<< HEAD
-=======
 			],
 			[
 				"play",
@@ -2525,103 +1621,6 @@
 			[
 				"roadre",
 				"Skyboard/js/game/roadrenderergyrocontrolmodule.js"
-			],
-			[
-				"gyro",
-				"Skyboard/js/game/roadrenderergyrocontrolmodule.js"
-			],
-			[
-				"sensi",
-				"Skyboard/js/game/sensitivitysetupmodule.js"
-			],
-			[
-				"settin",
-				"Skyboard/js/game/settingsstate.js"
-			],
-			[
-				"gamest",
-				"Skyboard/js/game/gamestate.js"
-			],
-			[
-				"containe",
-				"davidochmann/doutils/pixijs-3/displayobjectcontainer.js"
-			],
-			[
-				"settingsani",
-				"Skyboard/js/game/settingsanimationmodule.js"
-			],
-			[
-				"pngcom",
-				"davidochmann/nodejs/tools/pngcompress.js"
-			],
-			[
-				"png",
-				"Skyboard/tools/commands/pngcompress.command"
-			],
-			[
-				"level",
-				"SkyboardSimulator/json/level-0.json"
-			],
-			[
-				"roadren",
-				"SkyboardSimulator/js/game/roadrendererbirdmovementmodule.js"
-			],
-			[
-				"gampl",
-				"SkyboardSimulator/img/gameplay.json"
-			],
-			[
-				"cont",
-				"SkyboardSimulator/img/content.json"
-			],
-			[
-				"conten",
-				"SkyboardSimulator/img/content.json"
-			],
-			[
-				"gamesta",
-				"SkyboardSimulator/js/game/gamestate.js"
-			],
-			[
-				"autio",
-				"davidochmann/module/generic/autoexitmodule.js"
-			],
-			[
-				"re",
-				"SkyboardSimulator/js/game/resultstate.js"
-			],
-			[
-				"frametimer",
-				"davidochmann/doutils/tools/frametimer.js"
-			],
-			[
-				"settingss",
-				"SkyboardSimulator/js/game/settingsstate.js"
-			],
-			[
-				"sett",
-				"SkyboardSimulator/js/game/settings.js"
-			],
-			[
-				"server",
-				"Skyboard\\js\\nodejs\\server.js"
-			],
-			[
-				"ser",
-				"Skyboard\\js\\nodejs\\server.js"
-			],
-			[
-				"ass",
-				"davidochmann/doutils/tools/assist.js"
-			],
-			[
-				"games",
-				"Skyboard/js/game/gamestate.js"
-			],
-			[
-				"gameplaymo",
-				"Skyboard/js/game/gameplaymodule.js"
->>>>>>> eb601c0bcb166bc5cdc881e0ee38af6c95874254
 			]
 		],
 		"width": 0.0
@@ -2629,12 +1628,26 @@
 	"select_project":
 	{
 		"height": 500.0,
-		"last_filter": "",
+		"last_filter": "po",
 		"selected_items":
 		[
 			[
-<<<<<<< HEAD
-=======
+				"po",
+				"~/Documents/application/project/html/JS-Library/toggo/Pokemon-Wimmelbild/tools/project/Pokemon-Wimmelbild.sublime-project"
+			],
+			[
+				"pixi",
+				"~/Documents/application/project/html/JS-Library/davidochmann/pixijs-animation-export/tools/project/DavidOchmann-PixiJSAnimationExport.sublime-project"
+			],
+			[
+				"yet",
+				"~/Documents/application/project/html/JS-Library/swiss/YetiJagd/tools/project/Swiss-YetiJagd.sublime-project"
+			],
+			[
+				"eur",
+				"~/Documents/application/project/html/JS-Library/europapark/App-GameCollection/tools/project/Europapark-Spielbox.sublime-project"
+			],
+			[
 				"comman",
 				"~/Documents/application/space/sublimetext/Projects/davidochmann-commands.sublime-project"
 			],
@@ -2651,7 +1664,6 @@
 				"~/Documents/application/project/html/JS-Library/europapark/Deutschland-Strassenverkehr/tools/project/EOA-Template-PixiJS.sublime-workspace"
 			],
 			[
->>>>>>> eb601c0bcb166bc5cdc881e0ee38af6c95874254
 				"template",
 				"~/Documents/application/project/html/europapark/HappyFamily-Achterbahn/tools/project/Europapark-HappyFamilyAchterbahn.sublime-project"
 			],
@@ -2690,10 +1702,6 @@
 			[
 				"elfe",
 				"/Users/david.ochmann/Documents/application/space/sublimetext/Projects/europapark-frankreich-elfmeterschiessen.sublime-project"
-			],
-			[
-				"tem",
-				"/Users/david.ochmann/Documents/application/space/sublimetext/Projects/eoa-template-pixijs.sublime-project"
 			],
 			[
 				"appp",
@@ -2836,12 +1844,12 @@
 	},
 	"select_symbol":
 	{
-		"height": 392.0,
+		"height": 0.0,
 		"last_filter": "",
 		"selected_items":
 		[
 		],
-		"width": 431.0
+		"width": 0.0
 	},
 	"selected_group": 0,
 	"settings":
@@ -2850,7 +1858,7 @@
 	"show_minimap": false,
 	"show_open_files": false,
 	"show_tabs": true,
-	"side_bar_visible": false,
+	"side_bar_visible": true,
 	"side_bar_width": 241.0,
 	"status_bar_visible": false,
 	"template_settings":
