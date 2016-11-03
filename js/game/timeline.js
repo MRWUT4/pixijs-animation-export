@@ -373,6 +373,7 @@
 		var comments = this.getBeginEndObject( template, "comments" );
 
 		var movieClip = new pixijs.MovieClip( textures, animations, comments );
+		movieClip.pivot = this.getDisplayObjectPivot( id, json );
 
 		return movieClip;
 	};
@@ -502,13 +503,13 @@
 		var texture = this.getTextures( elements, json, id )[ 0 ];
 
 		var sprite = new pixijs.Sprite( texture );
-		sprite.pivot = this.getSpritePivot( id, json );
+		sprite.pivot = this.getDisplayObjectPivot( id, json );
 
 		return sprite;	
 	};
 
 
-	prototype.getSpritePivot = function(id, json)
+	prototype.getDisplayObjectPivot = function(id, json)
 	{
 		var frames = this.getFrames( json.frames, id );
 
