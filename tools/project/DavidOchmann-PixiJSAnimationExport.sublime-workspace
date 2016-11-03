@@ -535,6 +535,15 @@
 				"buffer_size": 6262,
 				"line_ending": "Unix"
 			}
+		},
+		{
+			"file": "/Users/david.ochmann/Documents/application/project/html/JS-Library/davidochmann/pixijs-animation-export/js/game/timeline.js",
+			"settings":
+			{
+				"buffer_size": 15693,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
 		}
 	],
 	"build_system": "",
@@ -994,7 +1003,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 2,
 			"sheets":
 			[
 				{
@@ -1023,7 +1032,7 @@
 						"translation.y": 1288.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
@@ -1050,6 +1059,35 @@
 						},
 						"translation.x": 0.0,
 						"translation.y": 3409.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/Users/david.ochmann/Documents/application/project/html/JS-Library/davidochmann/pixijs-animation-export/js/game/timeline.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 15693,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								15693,
+								15693
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 10023.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -1110,6 +1148,10 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"time",
+				"pixijs-animation-export/js/game/timeline.js"
+			],
 			[
 				"dbeu",
 				"pixijs-animation-export/debug.html"
@@ -1617,10 +1659,6 @@
 			[
 				"gyrocon",
 				"Skyboard/js/game/socketgyrocontrolmodule.js"
-			],
-			[
-				"roadre",
-				"Skyboard/js/game/roadrenderergyrocontrolmodule.js"
 			]
 		],
 		"width": 0.0
@@ -1628,9 +1666,13 @@
 	"select_project":
 	{
 		"height": 500.0,
-		"last_filter": "po",
+		"last_filter": "poke",
 		"selected_items":
 		[
+			[
+				"poke",
+				"~/Documents/application/project/html/JS-Library/toggo/Pokemon-Wimmelbild/tools/project/Pokemon-Wimmelbild.sublime-project"
+			],
 			[
 				"po",
 				"~/Documents/application/project/html/JS-Library/toggo/Pokemon-Wimmelbild/tools/project/Pokemon-Wimmelbild.sublime-project"
