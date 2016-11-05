@@ -420,14 +420,14 @@
 	prototype.getFilteredFrames = function(frames, id)
 	{
 		var list = this.getFrames( frames, id );
+		list.pop();
+		// result = list.filter( function(element)
+		// {
+		// 	var frame = element.frame;
+		// 	return frame.w != 1 && frame.h != 1;
+		// });
 
-		result = list.filter( function(element)
-		{
-			var frame = element.frame;
-			return frame.w != 1 && frame.h != 1;
-		});
-
-		return result;
+		return list;
 	};
 
 	prototype.getTextures = function(elements, json, id)

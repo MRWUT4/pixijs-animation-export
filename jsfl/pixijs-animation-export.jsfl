@@ -48,14 +48,21 @@
 	prototype.init = function()
 	{
 		this.initVariables();
+		this.initIdleMessage();
 		this.initJSONTimelineParser();
 		this.initAtlasExporter();
 		this.initFrameLabelExporter();
 		this.initJSONExporter();
+		this.initCompleteAlert();
 	};
 
 
 	/** Variable setup. */
+	prototype.initIdleMessage = function()
+	{
+		fl.showIdleMessage( false );
+	};
+
 	prototype.initVariables = function()
 	{
 		this.documentName = document.name.split(".fla")[ 0 ];
@@ -111,6 +118,13 @@
 			path: this.documentPath,
 			json: this.jsonTimelineParser.data
 		});
+	};
+
+
+	/** Show complete alert after export. */
+	prototype.initCompleteAlert = function()
+	{
+		alert( "Export complete!" );
 	};
 
 }(window));

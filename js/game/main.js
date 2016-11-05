@@ -12,10 +12,10 @@
 
 		this.width = object.width;
 		this.height = object.height;
-		this.fps = object.fps || 24;
+		this.fps = object.fps || 30;
 		this.inFocus = true;
 
-		this.url = "img/runner.json";
+		this.url = object.url;
 
 		this.init();
 	}
