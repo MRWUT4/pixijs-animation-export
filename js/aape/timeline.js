@@ -199,17 +199,13 @@
 
 	prototype.setFrame = function(currentIndex)
 	{
-		// this.currentIndex = currentFrame % this.template.totalFrames;
-
 		this.currentIndex = currentIndex;
 
 		var nextFrame = this.getValidIndex( this.currentIndex );
 
-		if( this.currentFrame !== nextFrame )
-		{
-			this.currentFrame = nextFrame;
-			this.resolveLayers( this.template.layers, this.currentFrame );
-		}
+		this.frameChanged = this.currentFrame !== nextFrame;
+		this.currentFrame = nextFrame;
+		this.resolveLayers( this.template.layers, this.currentFrame );
 	};
 
 	prototype.getValidIndex = function(currentIndex)
@@ -275,7 +271,7 @@
 				element = elements.find( function(element)
 				{
 					return element.id == child.id;
-				} );
+				});
 
 				if( element == undefined )
 					this.removeChild( child );
@@ -291,9 +287,13 @@
 
 		if( displayObject )
 		{
-			this.addTransformData( id, displayObject, frames, currentFrame );
+			if( this.frameChanged || this.frameChanged === undefined )
+			{
+				this.addTransformData( id, displayObject, frames, currentFrame );
+				this.add( displayObject );
+			}
+
 			this.syncMovieClipFrame( displayObject, element, frames, currentFrame );
-			this.add( displayObject );
 		}
 
 		return displayObject;
@@ -302,6 +302,8 @@
 	prototype.getDisplayObject = function(layerID, id)
 	{
 		var displayObject = null;
+
+		// layer = this.getLayer( layerID );
 		var layer = this.layers[ layerID ];
 
 		if( !layer )
@@ -382,6 +384,7 @@
 
 		var movieClip = new pixijs.MovieClip( textures, animations, comments );
 		movieClip.pivot = this.getDisplayObjectPivot( id, json );
+		movieClip.play();
 
 		return movieClip;
 	};
@@ -425,6 +428,7 @@
 	{
 		var list = this.getFrames( frames, id );
 		list.pop();
+
 		// result = list.filter( function(element)
 		// {
 		// 	var frame = element.frame;
@@ -443,7 +447,7 @@
 		{
 			var frame = item.frame;
 			var size = item.spriteSourceSize;
-
+			
 			var rectangle = new PIXI.Rectangle( frame.x, frame.y, frame.w, frame.h );
 			var trim = new PIXI.Rectangle( size.x, size.y, size.w, size.h );
 
