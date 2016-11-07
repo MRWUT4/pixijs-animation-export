@@ -23,7 +23,7 @@
 		this.loop = setup.loop || true;
 		
 		this.isPlaying = true;
-		this.currentFrame = 0;
+		this.currentFrame = null;
 		this.currentLabel = null;
 
 		this.setFrame( 0 );
@@ -200,10 +200,16 @@
 	prototype.setFrame = function(currentIndex)
 	{
 		// this.currentIndex = currentFrame % this.template.totalFrames;
-		this.currentIndex = currentIndex;
-		this.currentFrame = this.getValidIndex( this.currentIndex );
 
-		this.resolveLayers( this.template.layers, this.currentFrame );
+		this.currentIndex = currentIndex;
+
+		var nextFrame = this.getValidIndex( this.currentIndex );
+
+		if( this.currentFrame !== nextFrame )
+		{
+			this.currentFrame = nextFrame;
+			this.resolveLayers( this.template.layers, this.currentFrame );
+		}
 	};
 
 	prototype.getValidIndex = function(currentIndex)
@@ -296,8 +302,6 @@
 	prototype.getDisplayObject = function(layerID, id)
 	{
 		var displayObject = null;
-
-		// layer = this.getLayer( layerID );
 		var layer = this.layers[ layerID ];
 
 		if( !layer )
