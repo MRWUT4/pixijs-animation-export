@@ -5,6 +5,7 @@ cd ..
 cd ..
 uglifyjs \
 jsfl/helper.jsfl \
+jsfl/monitor.jsfl \
 jsfl/json-object.jsfl \
 jsfl/json-timeline-parser.jsfl \
 jsfl/atlas-exporter.jsfl \

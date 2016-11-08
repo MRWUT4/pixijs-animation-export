@@ -47,13 +47,36 @@
 
 	prototype.init = function()
 	{
+
+		// var monitorInitVariables = new Monitor( true );
 		this.initVariables();
+		// monitorInitVariables.log( "initVariables" );
+
+		// var monitorInitIdleMessage = new Monitor( true );
 		this.initIdleMessage();
+		// monitorInitIdleMessage.log( "initIdleMessage" );
+		
+		// var monitorInitJSONTimelineParser = new Monitor( true );
 		this.initJSONTimelineParser();
+		// monitorInitJSONTimelineParser.log( "initJSONTimelineParser" );
+
+		// var monitorInitAtlasExporter = new Monitor( true );
 		this.initAtlasExporter();
+		// monitorInitAtlasExporter.log( "initAtlasExporter" );
+		
+		// var monitorInitFrameLabelExporter = new Monitor( true );
 		this.initFrameLabelExporter();
+		// monitorInitFrameLabelExporter.log( "initFrameLabelExporter" );
+
+		// var monitorInitJSONExporter = new Monitor( true );
 		this.initJSONExporter();
+		// monitorInitJSONExporter.log( "initJSONExporter" );
+		
+		// var monitorInitCompleteAlert = new Monitor( true );
 		this.initCompleteAlert();
+		// monitorInitCompleteAlert.log( "initCompleteAlert" );
+
+
 	};
 
 

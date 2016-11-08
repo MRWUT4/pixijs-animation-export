@@ -107,14 +107,20 @@
 
 	JSON.encode = function(object, format)
 	{
-		format = format !== undefined ? format : true;
+		format = format !== undefined ? format : false;
 
+		// var monitorObjectToJSON = new Monitor( true );
 		var json = JSON.objectToJSON( object );
+		// monitorObjectToJSON.log( "objectToJSON" );
 
+		// var monitorFormat = new Monitor( true );
 		if( format )
 			json = JSON.format( json );
+		// monitorFormat.log( "format" );
 
+		// var monitorDecodeURI = new Monitor( true );
 		json = decodeURIComponent( json );
+		// monitorDecodeURI.log( "decodeURIComponent" );
 
 		return json;
 	};

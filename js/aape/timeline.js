@@ -21,6 +21,7 @@
 		this.elements = setup.elements;
 		this.id = setup.id || "root";
 		this.loop = setup.loop || true;
+		this.timeScale = setup.timeScale || 1;
 		
 		this.isPlaying = true;
 		this.currentFrame = null;
@@ -72,6 +73,28 @@
 	{
 		return this.library[ id ];
 	};
+
+	Object.defineProperty( prototype, "timeScale", 
+	{
+		get: function() 
+		{	
+			return this._timeScale;
+		},
+		set: function(value) 
+		{	
+			this._timeScale = value;
+
+			var that = this;
+
+			Parse( this.layers ).forEach( function(property, children)
+			{
+				children.forEach( function(child)
+				{
+					child.timeScale = that._timeScale;
+				});
+			});
+		}
+	});
 
 
 
@@ -126,7 +149,7 @@
 	prototype.updatePlayback = function()
 	{
 		if( this.isPlaying )
-			this.setFrame( this.currentIndex + 1 );
+			this.setFrame( this.currentIndex + this.timeScale );
 	};
 
 	prototype.gotoAndStop = function(frame)
@@ -191,6 +214,7 @@
 		{
 			library: this.library,
 			elements: this.elements,
+			timeScale: this.timeScale,
 			id: id
 		});
 
