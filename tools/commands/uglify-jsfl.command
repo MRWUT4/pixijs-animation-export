@@ -11,6 +11,7 @@ jsfl/json-timeline-parser.jsfl \
 jsfl/atlas-exporter.jsfl \
 jsfl/frame-label-exporter.jsfl \
 jsfl/json-exporter.jsfl \
+jsfl/metadata-exporter.jsfl \
 jsfl/pixijs-animation-export.jsfl \
 -o jsfl/aape.jsfl
 #node ../../common/js/davidochmann/nodejs/tools/uglifyhtml.js $(pwd)

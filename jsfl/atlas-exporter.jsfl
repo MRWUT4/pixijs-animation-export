@@ -121,11 +121,25 @@
 
 	prototype.init = function()
 	{
+		// var monitorAddOriginKeyframeToSymbols = new Monitor( true );
 		this.initAddOriginKeyframeToSymbols();
+		// monitorAddOriginKeyframeToSymbols.log( "monitorAddOriginKeyframeToSymbols" );
+		
+		// var monitorParsingByMode = new Monitor( true );
 		this.initParsingByMode();
+		// monitorParsingByMode.log( "monitorParsingByMode" );
+		
+		// var monitorResourceExport = new Monitor( true );
 		this.initResourceExport();
+		// monitorResourceExport.log( "monitorResourceExport" );
+		
+		// var monitorRemoveOriginKeyframeFromSymbols = new Monitor( true );
 		this.initRemoveOriginKeyframeFromSymbols();
+		// monitorRemoveOriginKeyframeFromSymbols.log( "monitorRemoveOriginKeyframeFromSymbols" );
+
+		// var monitorDocumentRoot = new Monitor( true );
 		this.initDocumentRoot();
+		// monitorDocumentRoot.log( "monitorDocumentRoot" );
 	};
 
 
@@ -241,10 +255,10 @@
 		var path = drawingLayer.newPath();
 
 		path.addPoint(0, 0);
-		path.addPoint(0, 1);
-		path.addPoint(1, 1);
 		path.addPoint(1, 0);
-		path.addPoint(0, 0);
+		path.addPoint(0, 1);
+		// path.addPoint(0, 0);
+		// path.addPoint(0, 0);
 
 		var shape = path.makeShape();
 	};

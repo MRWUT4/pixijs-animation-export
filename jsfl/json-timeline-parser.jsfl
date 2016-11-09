@@ -42,6 +42,7 @@
 	{
 		this.data = 
 		{
+			meta: {},
 			library: {},
 			resources: []
 		};

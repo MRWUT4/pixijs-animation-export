@@ -12,7 +12,7 @@
 
 		this.width = object.width;
 		this.height = object.height;
-		this.fps = object.fps || 60;
+		this.fps = object.fps || 30;
 		this.inFocus = true;
 
 		this.url = object.url;
@@ -97,27 +97,14 @@
 	{
 		var json = this.loader.getObjectWithID( this.url ).result;
 		var elements = this.loader.results;
+		var timeScale = json.meta.frameRate / this.fps;
 
 		var timeline = new pixijs.Timeline(
 		{
 			library: json.library,
 			elements: elements,
-			// timeScale: .5,
-			// id: "runnerAnimation"
+			timeScale: timeScale
 		});
-
-		timeline.timeScale = .5;
-
-		// timeline.stop();
-
-		// var runner = timeline.getChildByName( "runner" );
-		// runner.gotoAndPlay( "run" );
-
-		// timeline.gotoAndPlay( "run" );
-		// timeline.setFrame( 4 );
-
-		// runner.gotoAndPlay( "idle" );
-		// runner.setFrame( 4 ); 
 
 		this.stage.addChild( timeline );
 	};

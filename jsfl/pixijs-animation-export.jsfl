@@ -68,6 +68,8 @@
 		this.initFrameLabelExporter();
 		// monitorInitFrameLabelExporter.log( "initFrameLabelExporter" );
 
+		this.initMetadataExporter();
+
 		// var monitorInitJSONExporter = new Monitor( true );
 		this.initJSONExporter();
 		// monitorInitJSONExporter.log( "initJSONExporter" );
@@ -127,6 +129,16 @@
 		this.frameLabelExporter = new FrameLabelExporter(
 		{
 			timelines: this.jsonTimelineParser.timelines,
+			json: this.jsonTimelineParser.data
+		});
+	};
+
+
+	/** Exports document meta data. */
+	prototype.initMetadataExporter = function()
+	{
+		this.metadataExporter = new MetadataExporter(
+		{
 			json: this.jsonTimelineParser.data
 		});
 	};
