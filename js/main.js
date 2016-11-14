@@ -12,7 +12,7 @@
 
 		this.width = object.width;
 		this.height = object.height;
-		this.fps = object.fps || 30;
+		this.fps = object.fps || 60;
 		this.inFocus = true;
 
 		this.url = object.url;
@@ -80,7 +80,7 @@
 	/** Load files. */
 	prototype.initFiles = function()
 	{
-		this.loader = new doutils.Loader( { static:false } );
+		this.loader = new aape.Loader( { static:false } );
 
 		this.loader.addEventListener( Event.COMPLETE, this.loaderCompleteHandler, this );
 		this.loader.load( this.url );
@@ -99,12 +99,14 @@
 		var elements = this.loader.results;
 		var timeScale = json.meta.frameRate / this.fps;
 
-		var timeline = new pixijs.Timeline(
+		var timeline = new aape.Timeline(
 		{
 			library: json.library,
 			elements: elements,
 			timeScale: timeScale
 		});
+
+		// timeline.stop();
 
 		this.stage.addChild( timeline );
 	};

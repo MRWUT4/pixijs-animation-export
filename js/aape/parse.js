@@ -1,6 +1,7 @@
 (function(window){
 
-	window.Parse = Parse;
+	window.aape = window.aape || {};
+	window.aape.Parse = Parse;
 
 	var prototype = Parse.prototype = Object.create( Object.prototype );
 	prototype.constructor = Parse;

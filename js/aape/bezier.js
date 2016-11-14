@@ -1,6 +1,7 @@
 (function(window){
 
-	window.Bezier = Bezier;
+	window.aape = window.aape || {};
+	window.aape.Bezier = Bezier;
 
 	var prototype = Bezier.prototype = Object.create(Object.prototype);
 	prototype.constructor = Bezier;

@@ -1,9 +1,9 @@
 (function(window){
 
-	window.doutils = window.doutils || {};
-	window.doutils.LoadItem = LoadItem;
+	window.aape = window.aape || {};
+	window.aape.LoadItem = LoadItem;
 
-	var prototype = LoadItem.prototype = Object.create( EventDispatcher.prototype );
+	var prototype = LoadItem.prototype = Object.create( aape.EventDispatcher.prototype );
 	prototype.constructor = LoadItem;
 
 
@@ -11,7 +11,7 @@
 	 * LoadItem
 	 *
 	 * @class LoadItem
-	 * @module doutils
+	 * @module aape
 	 * @extends EventDispatcher
 	 * @constructor
 	 *
@@ -22,7 +22,7 @@
 
 	function LoadItem(recursion)
 	{
-		EventDispatcher.call(this);
+		aape.EventDispatcher.call(this);
 
 		this.type = LoadItem.TYPE_FILE;
 		this.startRecursion = recursion;
@@ -95,7 +95,7 @@
 		this.url = url;
 		this.isLoading = true;
 
-		this.urlRequest = new doutils.URLRequest();
+		this.urlRequest = new aape.URLRequest();
 		this.urlRequest.addEventListener( Event.PROGRESS, this.urlRequestProgressHandler.bind(this) );
 		this.urlRequest.addEventListener( Event.COMPLETE, this.urlRequestCompleteHandler.bind(this) );
 		this.urlRequest.load( this.url );
@@ -126,10 +126,10 @@
 
 (function(window){
 
-	window.doutils = window.doutils || {};
-	window.doutils.LoadItemJSON = LoadItemJSON;
+	window.aape = window.aape || {};
+	window.aape.LoadItemJSON = LoadItemJSON;
 
-	var prototype = LoadItemJSON.prototype = Object.create( doutils.LoadItem.prototype );
+	var prototype = LoadItemJSON.prototype = Object.create( aape.LoadItem.prototype );
 	prototype.constructor = LoadItemJSON;
 
 
@@ -137,7 +137,7 @@
 	 * description
 	 *
 	 * @class LoadItemJSON
-	 * @module doutils
+	 * @module aape
 	 * @extends EventDispatcher
 	 * @constructor
 	 */
@@ -146,7 +146,7 @@
 
 	function LoadItemJSON(recursion)
 	{
-		doutils.LoadItem.call( this, recursion );
+		aape.LoadItem.call( this, recursion );
 		this.type = LoadItemJSON.TYPE_JSON;
 	}
 
@@ -183,10 +183,10 @@
 
 (function(window){
 
-	window.doutils = window.doutils || {};
-	window.doutils.LoadItemImage = LoadItemImage;
+	window.aape = window.aape || {};
+	window.aape.LoadItemImage = LoadItemImage;
 
-	var prototype = LoadItemImage.prototype = Object.create( doutils.LoadItem.prototype );
+	var prototype = LoadItemImage.prototype = Object.create( aape.LoadItem.prototype );
 	prototype.constructor = LoadItemImage;
 
 
@@ -194,7 +194,7 @@
 	 * description
 	 *
 	 * @class LoadItemImage
-	 * @module doutils
+	 * @module aape
 	 * @extends EventDispatcher
 	 * @constructor
 	 */
@@ -206,7 +206,7 @@
 
 	function LoadItemImage(recursion, forceURLImage)
 	{
-		doutils.LoadItem.call( this, recursion );
+		aape.LoadItem.call( this, recursion );
 		this.type = LoadItemImage.TYPE_IMAGE;
 		this.forceURLImage = forceURLImage || false;
 	}
@@ -245,7 +245,7 @@
 			this.urlRequestErrorHandler();
 		else
 		{
-			this.urlRequest = new doutils.URLRequest();
+			this.urlRequest = new aape.URLRequest();
 			this.urlRequest.mimeType = LoadItemImage.MIME_TYPE;
 
 			this.urlRequest.addEventListener( Event.PROGRESS, this.urlRequestProgressHandler.bind(this) );
@@ -320,10 +320,10 @@
 
 (function(window){
 
-	window.doutils = window.doutils || {};
-	window.doutils.LoadItemAudio = LoadItemAudio;
+	window.aape = window.aape || {};
+	window.aape.LoadItemAudio = LoadItemAudio;
 
-	var prototype = LoadItemAudio.prototype = Object.create( doutils.LoadItem.prototype );
+	var prototype = LoadItemAudio.prototype = Object.create( aape.LoadItem.prototype );
 	prototype.constructor = LoadItemAudio;
 
 
@@ -331,7 +331,7 @@
 	 * description
 	 *
 	 * @class LoadItemAudio
-	 * @module doutils
+	 * @module aape
 	 * @extends EventDispatcher
 	 * @constructor
 	 */
@@ -347,7 +347,7 @@
 
 	function LoadItemAudio(recursion)
 	{
-		doutils.LoadItem.call( this, recursion );
+		aape.LoadItem.call( this, recursion );
 	
 		this.type = LoadItemAudio.TYPE_AUDIO;
 		this.audioContext = window.Jukebox ? Jukebox.audioContext : null;
@@ -409,7 +409,7 @@
 	/** Load URLRequest */
 	prototype.loadRequest = function(url)
 	{
-		this.urlRequest = new doutils.URLRequest();
+		this.urlRequest = new aape.URLRequest();
 		this.urlRequest.responseType = LoadItemAudio.RESPONSE_TYPE;
 		// this.urlRequest.responseType = LoadItemAudio.RESPONSE_TYPE_BLOB;
 
@@ -467,10 +467,10 @@
 
 (function(window){
 
-	window.doutils = window.doutils || {};
-	window.doutils.LoadItemJS = LoadItemJS;
+	window.aape = window.aape || {};
+	window.aape.LoadItemJS = LoadItemJS;
 
-	var prototype = LoadItemJS.prototype = Object.create( doutils.LoadItem.prototype );
+	var prototype = LoadItemJS.prototype = Object.create( aape.LoadItem.prototype );
 	prototype.constructor = LoadItemJS;
 
 
@@ -478,7 +478,7 @@
 	 * description
 	 *
 	 * @class LoadItemJS
-	 * @module doutils
+	 * @module aape
 	 * @extends EventDispatcher
 	 * @constructor
 	 */
@@ -487,7 +487,7 @@
 
 	function LoadItemJS(recursion)
 	{
-		doutils.LoadItem.call( this, recursion );
+		aape.LoadItem.call( this, recursion );
 		this.type = LoadItemJS.TYPE_JS;
 	}
 

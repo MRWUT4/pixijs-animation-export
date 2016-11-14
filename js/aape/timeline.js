@@ -1,9 +1,9 @@
 (function(window){
 
-	window.pixijs = window.pixijs || {};
-	window.pixijs.Timeline = Timeline;
+	window.aape = window.aape || {};
+	window.aape.Timeline = Timeline;
 
-	var prototype = Timeline.prototype = Object.create( pixijs.DisplayObjectContainer.prototype );
+	var prototype = Timeline.prototype = Object.create( aape.DisplayObjectContainer.prototype );
 	prototype.constructor = Timeline;
 
 
@@ -86,7 +86,7 @@
 
 			var that = this;
 
-			Parse( this.layers ).forEach( function(property, children)
+			aape.Parse( this.layers ).forEach( function(property, children)
 			{
 				children.forEach( function(child)
 				{
@@ -210,7 +210,7 @@
 	prototype.getTimeline = function(id)
 	{
 		// timeline creates its own DisplayObjects to simplify object constuction.
-		var timeline = new pixijs.Timeline(
+		var timeline = new aape.Timeline(
 		{
 			library: this.library,
 			elements: this.elements,
@@ -237,7 +237,7 @@
 		if( this.currentLabel === null )
 		{
 			var totalFrames = this.template.totalFrames;
-			return this.loop ? ( currentIndex % totalFrames ) : ( currentIndex >= totalFrames - 1 ? totalFrames - 1 : currentIndex );
+			return /*this.loop ? ( currentIndex % totalFrames ) :*/ ( currentIndex >= totalFrames - 1 ? totalFrames - 1 : currentIndex );
 		}
 		else
 		{
@@ -352,12 +352,14 @@
 	{
 		var list = 
 		[
-			pixijs.MovieClip,
-			pixijs.Timeline
+			aape.MovieClip,
+			aape.Timeline
 		];
+
 
 		if( this.getIsInstanceOf( displayObject, list ) )
 		{
+
 			if( element.loop || element.firstFrame !== undefined )
 			{
 				if( element.loop == "single frame" )
@@ -371,7 +373,7 @@
 					if( element.loop == "play once" )
 						frame = Math.min( frame, displayObject.totalFrames );
 				}
-				
+
 				if( displayObject.isPlaying )
 					displayObject.setFrame( frame );
 			}
@@ -392,7 +394,7 @@
 
 	prototype.add = function(displayObject)
 	{
-		if( !displayObject.parent )
+		// if( !displayObject.parent )
 			this.addChild( displayObject );
 	};
 
@@ -406,7 +408,7 @@
 		var animations = this.getBeginEndObject( template, "labels" );
 		var comments = this.getBeginEndObject( template, "comments" );
 
-		var movieClip = new pixijs.MovieClip( textures, animations, comments );
+		var movieClip = new aape.MovieClip( textures, animations, comments );
 		movieClip.pivot = this.getDisplayObjectPivot( id, json );
 		movieClip.play();
 
@@ -421,13 +423,13 @@
 		{
 			var totalFrames = template.totalFrames;
 
-			var item = Parse( object ).reduce( function(property, begin, result)
+			var item = aape.Parse( object ).reduce( function(property, begin, result)
 			{
 				result[ property ] = result[ property ] || { begin:begin, end:totalFrames };
 
 				var compare = result[ property ];
 
-				Parse( object ).forEach( function(property, value)
+				aape.Parse( object ).forEach( function(property, value)
 				{
 					compare.end = value < compare.end && value > compare.begin ? value : compare.end; 
 				});
@@ -444,7 +446,7 @@
 
 	prototype.getFrames = function(frames, id)
 	{
-		var list = Parse( frames ).filter( this.nameIsID( id ).bind(this) );
+		var list = aape.Parse( frames ).filter( this.nameIsID( id ).bind(this) );
 		return list;
 	};
 
@@ -492,7 +494,7 @@
 
 			if( isImage )
 			{
-				var path = element.src.split( "/" ).slice( -1 )[ 0 ];
+				var path = element.src.split( "/" ).slice( -1 )[ 0 ].split( "?" )[ 0 ];
 				var hasURL = path == image;
 
 				return hasURL;
@@ -511,7 +513,7 @@
 			if( this.getIsValidAtlas( element ) )
 			{
 				var frames = element.frames;
-				var hasID = Parse( frames ).every( this.nameIsID( id ).bind(this) );
+				var hasID = aape.Parse( frames ).every( this.nameIsID( id ).bind(this) );
 
 				return hasID;
 			}
@@ -551,7 +553,7 @@
 		var json = this.getAtlasJSONWithID( elements, id );
 		var texture = this.getTextures( elements, json, id )[ 0 ];
 
-		var sprite = new pixijs.Sprite( texture );
+		var sprite = new aape.Sprite( texture );
 		sprite.pivot = this.getDisplayObjectPivot( id, json );
 
 		return sprite;	
@@ -576,10 +578,11 @@
 		return result;
 	};
 
+
 	/** TextFieled functions. */
 	prototype.getTextField = function(item, template)
 	{
-		return new pixijs.TextField( template.text, template.style, template.margin );;
+		return new aape.TextField( template.text, template.style, template.margin );;
 	};
 
 
@@ -601,7 +604,7 @@
 		transform = this.translateRotation( transform );
 		transform = this.translateScale( transform );
 
-		Parse( transform ).reduce( function( property, value, result ) 
+		aape.Parse( transform ).reduce( function( property, value, result ) 
 		{
 			if( value !== undefined )
 				result[ property ] = value;
@@ -633,7 +636,7 @@
 		var p = this.getBezierPoints( animation );
 		// var p = this.getBezierPointsSubset( bezierPoints, percent );
 
-		var progress = Bezier.getY( percent, p[ 0 ], p[ 1 ], p[ 2 ], p[ 3 ] );
+		var progress = aape.Bezier.getY( percent, p[ 0 ], p[ 1 ], p[ 2 ], p[ 3 ] );
 		var transform = this.getTransformBetweenItems( previousItem, nextItem, progress );
 
 		return transform;
@@ -649,7 +652,7 @@
 		{
 			var transform = {};
 
-			Parse( object ).reduce( function(property, value)
+			aape.Parse( object ).reduce( function(property, value)
 			{
 				if( typeof value == "number" )
 					transform[ property ] = floatBetweenAandB( value, next[ property ], progress );
@@ -689,11 +692,11 @@
 		{
 			points = animation.concat();
 
-			points.unshift( Bezier.p00 );
-			points.push( Bezier.p11 );
+			points.unshift( aape.Bezier.p00 );
+			points.push( aape.Bezier.p11 );
 		}
 		else
-			points = Bezier.linearTransition;
+			points = aape.Bezier.linearTransition;
 		
 		return points;
 	};
@@ -746,7 +749,7 @@
 
 	prototype.getPreviousIndex = function(object, currentFrame)
 	{
-		var result = Parse( object ).reduce( function(property, value, item)
+		var result = aape.Parse( object ).reduce( function(property, value, item)
 		{
 			var frameIndex = Number( property );
 			item = frameIndex >= item && frameIndex <= currentFrame ? frameIndex : item;
@@ -761,7 +764,7 @@
 
 	prototype.getNextKeyframe = function(object, currentFrame)
 	{
-		var biggestValue = Parse( object ).reduce( function( property, value, item )
+		var biggestValue = aape.Parse( object ).reduce( function( property, value, item )
 		{
 			var frameIndex = Number( property );
 			return frameIndex > item ? frameIndex : item;
@@ -769,7 +772,7 @@
 		}, 0 );
 
 
-		var result = Parse( object ).reduce( function(property, value, item)
+		var result = aape.Parse( object ).reduce( function(property, value, item)
 		{
 			var frameIndex = Number( property );
 			item = frameIndex <= item && frameIndex >= currentFrame ? frameIndex : item;

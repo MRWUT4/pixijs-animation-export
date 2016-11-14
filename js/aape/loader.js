@@ -1,9 +1,9 @@
 (function(window){
 
-	window.doutils = window.doutils || {};
-	window.doutils.Loader = Loader;
+	window.aape = window.aape || {};
+	window.aape.Loader = Loader;
 
-	var prototype = Loader.prototype = Object.create( EventDispatcher.prototype );
+	var prototype = Loader.prototype = Object.create( aape.EventDispatcher.prototype );
 	prototype.constructor = Loader;
 
 
@@ -11,7 +11,7 @@
 	 * Load files
 	 *
 	 * @class Loader
-	 * @module doutils
+	 * @module aape
 	 * @extends EventDispatcher
 	 * @constructor
 	 *
@@ -22,10 +22,11 @@
 
 	function Loader(setup)
 	{
-		EventDispatcher.call(this);
+		aape.EventDispatcher.call(this);
 
 		this.setup = setup || {};
 		this.recursion = this.setup.recursion || 1;
+		this.static = this.setup.static || true;
 		this.ignoreRecursionProgressDepth = this.setup.ignoreRecursionProgressDepth || 1;
 		this.maxCueSize = this.setup.maxCueSize || 4;
 		this.forceURLImage = this.setup.forceURLImage || true;
@@ -52,6 +53,36 @@
 	/**
 	 * Getter / Setter
 	 */
+
+	Object.defineProperty( prototype, "results", 
+	{
+		get: function() 
+		{	
+			var list = [];
+
+			for(var i = 0; i < this.loadItems.length; ++i)
+			{
+			    var loadItem = this.loadItems[ i ];
+			    list.push( loadItem.result );
+			}
+
+			return list;
+		}
+	});
+
+	Object.defineProperty( prototype, "loadItems", 
+	{
+		get: function() 
+		{	
+			if( this.static )
+				return Loader.POOL;
+			else
+			{
+				this._loadItems = this._loadItems !== undefined ? this._loadItems : [];
+				return this._loadItems;
+			}
+		}
+	});
 
 	Object.defineProperty( prototype, "list", 
 	{
@@ -131,7 +162,7 @@
 
 	prototype.getLoadItemsWithID = function(id)
 	{
-		return this.getItemsInArrayWithId( Loader.POOL, id );
+		return this.getItemsInArrayWithId( this.loadItems, id );
 	};
 
 	prototype.getItemsInArrayWithId = function(array, id)
@@ -188,24 +219,24 @@
 
 		switch( type )
 		{
-			case doutils.LoadItemJSON.TYPE_JSON:
-				item = new doutils.LoadItemJSON( recursion );
+			case aape.LoadItemJSON.TYPE_JSON:
+				item = new aape.LoadItemJSON( recursion );
 				break;
 
-			case doutils.LoadItemImage.TYPE_PNG:
-			case doutils.LoadItemImage.TYPE_JPG:
-			case doutils.LoadItemImage.TYPE_GIF:
-				item = new doutils.LoadItemImage( recursion, this.forceURLImage );
+			case aape.LoadItemImage.TYPE_PNG:
+			case aape.LoadItemImage.TYPE_JPG:
+			case aape.LoadItemImage.TYPE_GIF:
+				item = new aape.LoadItemImage( recursion, this.forceURLImage );
 				break;
 
-			case doutils.LoadItemAudio.TYPE_MP3:
-			case doutils.LoadItemAudio.TYPE_OGG:
-			case doutils.LoadItemAudio.TYPE_WAV:
-				item = new doutils.LoadItemAudio( recursion );
+			case aape.LoadItemAudio.TYPE_MP3:
+			case aape.LoadItemAudio.TYPE_OGG:
+			case aape.LoadItemAudio.TYPE_WAV:
+				item = new aape.LoadItemAudio( recursion );
 				break;
 
-			case doutils.LoadItemJS.TYPE_JS:
-				item = new doutils.LoadItemJS( recursion );
+			case aape.LoadItemJS.TYPE_JS:
+				item = new aape.LoadItemJS( recursion );
 				break;
 		}
 
@@ -356,7 +387,7 @@
 	prototype.addItemToGlobalPool = function(loadItem)
 	{
 		if( !this.getObjectWithID( loadItem.id ) )
-			Loader.POOL.push( loadItem );
+			this.loadItems.push( loadItem );
 	};
 
 	prototype.recurseLoadResult = function(loadItem)
