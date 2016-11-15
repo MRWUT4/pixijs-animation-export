@@ -1,8 +1,9 @@
 (function(window){
 
-	window.aape.Loader = Loader;
+	window.doutils = window.doutils || {};
+	window.doutils.Loader = Loader;
 
-	var prototype = Loader.prototype = Object.create( EventDispatcher.prototype );
+	var prototype = Loader.prototype = Object.create( doutils.EventDispatcher.prototype );
 	prototype.constructor = Loader;
 
 
@@ -10,7 +11,7 @@
 	 * Load files
 	 *
 	 * @class Loader
-	 * @module aape
+	 * @module doutils
 	 * @extends EventDispatcher
 	 * @constructor
 	 *
@@ -21,7 +22,7 @@
 
 	function Loader(setup)
 	{
-		aape.EventDispatcher.call(this);
+		doutils.EventDispatcher.call(this);
 
 		this.setup = setup || {};
 		this.recursion = this.setup.recursion || 1;
@@ -218,24 +219,24 @@
 
 		switch( type )
 		{
-			case aape.LoadItemJSON.TYPE_JSON:
-				item = new aape.LoadItemJSON( recursion );
+			case doutils.LoadItemJSON.TYPE_JSON:
+				item = new doutils.LoadItemJSON( recursion );
 				break;
 
-			case aape.LoadItemImage.TYPE_PNG:
-			case aape.LoadItemImage.TYPE_JPG:
-			case aape.LoadItemImage.TYPE_GIF:
-				item = new aape.LoadItemImage( recursion, this.forceURLImage );
+			case doutils.LoadItemImage.TYPE_PNG:
+			case doutils.LoadItemImage.TYPE_JPG:
+			case doutils.LoadItemImage.TYPE_GIF:
+				item = new doutils.LoadItemImage( recursion, this.forceURLImage );
 				break;
 
-			case aape.LoadItemAudio.TYPE_MP3:
-			case aape.LoadItemAudio.TYPE_OGG:
-			case aape.LoadItemAudio.TYPE_WAV:
-				item = new aape.LoadItemAudio( recursion );
+			case doutils.LoadItemAudio.TYPE_MP3:
+			case doutils.LoadItemAudio.TYPE_OGG:
+			case doutils.LoadItemAudio.TYPE_WAV:
+				item = new doutils.LoadItemAudio( recursion );
 				break;
 
-			case aape.LoadItemJS.TYPE_JS:
-				item = new aape.LoadItemJS( recursion );
+			case doutils.LoadItemJS.TYPE_JS:
+				item = new doutils.LoadItemJS( recursion );
 				break;
 		}
 

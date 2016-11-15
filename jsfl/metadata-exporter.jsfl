@@ -37,6 +37,7 @@
 		this.meta.name = document.name;
 		this.meta.frameRate = document.frameRate;
 		this.meta.backgroundColor = document.backgroundColor;
+		this.meta.size = { width:document.width, height:document.height };
 	};
 
 

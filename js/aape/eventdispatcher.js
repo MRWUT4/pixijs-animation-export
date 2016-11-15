@@ -1,6 +1,7 @@
 (function(window){
 
-	window.EventDispatcher = EventDispatcher;
+	window.doutils = window.doutils || {};
+	window.doutils.EventDispatcher = EventDispatcher;
 
 	var prototype = EventDispatcher.prototype = Object.create( Object.prototype );
 	prototype.constructor = EventDispatcher;

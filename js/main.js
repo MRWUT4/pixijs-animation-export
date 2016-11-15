@@ -10,8 +10,6 @@
 	{
 		Object.call( this );
 
-		this.width = object.width;
-		this.height = object.height;
 		this.fps = object.fps || 60;
 		this.inFocus = true;
 
@@ -27,10 +25,28 @@
 
 	prototype.init = function()
 	{
-		this.initPixiJS();
+		this.initLoader();
+		// this.initPixiJS();
 		this.initWindowEvents();
 		this.initTick();
-		this.initFiles();
+	};
+
+
+	/** Load files. */
+	prototype.initLoader = function()
+	{
+		this.loader = new doutils.Loader( { static:false } );
+
+		this.loader.addEventListener( Event.COMPLETE, this.loaderCompleteHandler, this );
+		this.loader.load( this.url );
+	};
+
+	prototype.loaderCompleteHandler = function(event)
+	{
+		var meta = this.loader.getObjectWithID( this.url ).result.meta;
+
+		this.initPixiJS( meta.size.width, meta.size.height );
+		this.createTimeline();
 	};
 
 
@@ -40,7 +56,7 @@
 		window.PIXI.utils._saidHello = true;
 
 	    this.stage = new PIXI.Container();
-	    this.renderer = new PIXI.CanvasRenderer( this.width, this.height, { transparent:true } );
+	    this.renderer = new PIXI.CanvasRenderer( width, height, { transparent:true } );
 
 	    this.canvas = this.renderer.view;
 
@@ -53,7 +69,7 @@
 	{	
 		setInterval( function()
 		{
-			if( this.inFocus )
+			if( this.inFocus && this.renderer )
 				this.renderer.render( this.stage );
 			
 		}.bind( this ), 1000 / this.fps );
@@ -74,21 +90,6 @@
 	prototype.windowOnFocusHandler = function(event)
 	{
 		this.inFocus = true;		
-	};
-
-
-	/** Load files. */
-	prototype.initFiles = function()
-	{
-		this.loader = new aape.Loader( { static:false } );
-
-		this.loader.addEventListener( Event.COMPLETE, this.loaderCompleteHandler, this );
-		this.loader.load( this.url );
-	};
-
-	prototype.loaderCompleteHandler = function(event)
-	{
-		this.createTimeline();
 	};
 
 

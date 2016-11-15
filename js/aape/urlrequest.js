@@ -1,9 +1,9 @@
 (function(window){
 
-	window.aape = window.aape || {};
-	window.aape.URLRequest = URLRequest;
+	window.doutils = window.doutils || {};
+	window.doutils.URLRequest = URLRequest;
 
-	var prototype = URLRequest.prototype = Object.create( aape.EventDispatcher.prototype );
+	var prototype = URLRequest.prototype = Object.create( doutils.EventDispatcher.prototype );
 	prototype.constructor = URLRequest;
 
 
@@ -11,13 +11,13 @@
 	 * URLRequest
 	 *
 	 * @class URLRequest
-	 * @module aape
+	 * @module doutils
 	 * @extends EventDispatcher
 	 * @constructor
 	 */
 	function URLRequest()
 	{
-		aape.EventDispatcher.call(this);
+		doutils.EventDispatcher.call(this);
 		
 		this.mimeType = null;
 		this.responseType = null;

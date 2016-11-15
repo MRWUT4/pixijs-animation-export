@@ -14,7 +14,13 @@
 
 	<!-- framework -->
 	<script src="js/framework/pixi-3.0.9.min.js"></script>
-	<script src="js/loader-1.0.0.min.js"></script>
+
+	<script src="js/aape/eventdispatcher.js"></script>
+	<script src="js/aape/loader.js"></script>
+	<script src="js/aape/urlrequest.js"></script>
+	<script src="js/aape/loaditem.js"></script>
+
+	<!-- <script src="js/loader-1.0.0.min.js"></script> -->
 
 	<!-- display -->
 	<script src="js/aape/movieclip.js"></script>
@@ -29,7 +35,7 @@
 
 	</head>
 	
-	<body onload="new Main( { width:640, height:960, url:'img/pokemon.json' } );">
+	<body onload="new Main( { url:'img/pokemon.json' } );">
 	</body>
 
 </html>
