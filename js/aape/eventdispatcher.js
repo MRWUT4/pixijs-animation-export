@@ -1,7 +1,6 @@
 (function(window){
 
-	window.aape = window.aape || {};
-	window.aape.EventDispatcher = EventDispatcher;
+	window.EventDispatcher = EventDispatcher;
 
 	var prototype = EventDispatcher.prototype = Object.create( Object.prototype );
 	prototype.constructor = EventDispatcher;

@@ -103,8 +103,12 @@
 		{
 			library: json.library,
 			elements: elements,
-			timeScale: timeScale
+			timeScale: timeScale,
+			// id: "menuContent"
 		});
+
+		// var content = timeline.getChildByName( "content" );
+		// content.loop = false;
 
 		// timeline.stop();
 

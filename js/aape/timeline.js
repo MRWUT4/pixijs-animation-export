@@ -237,7 +237,7 @@
 		if( this.currentLabel === null )
 		{
 			var totalFrames = this.template.totalFrames;
-			return /*this.loop ? ( currentIndex % totalFrames ) :*/ ( currentIndex >= totalFrames - 1 ? totalFrames - 1 : currentIndex );
+			return this.loop ? ( currentIndex % totalFrames ) : ( currentIndex >= totalFrames - 1 ? totalFrames - 1 : currentIndex );
 		}
 		else
 		{
@@ -359,8 +359,7 @@
 
 		if( this.getIsInstanceOf( displayObject, list ) )
 		{
-
-			if( element.loop || element.firstFrame !== undefined )
+			if( element.loop !== undefined && element.firstFrame !== undefined )
 			{
 				if( element.loop == "single frame" )
 					frame = element.firstFrame;
@@ -372,6 +371,7 @@
 
 					if( element.loop == "play once" )
 						frame = Math.min( frame, displayObject.totalFrames );
+
 				}
 
 				if( displayObject.isPlaying )

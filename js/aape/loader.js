@@ -1,9 +1,8 @@
 (function(window){
 
-	window.aape = window.aape || {};
 	window.aape.Loader = Loader;
 
-	var prototype = Loader.prototype = Object.create( aape.EventDispatcher.prototype );
+	var prototype = Loader.prototype = Object.create( EventDispatcher.prototype );
 	prototype.constructor = Loader;
 
 
