@@ -3,7 +3,7 @@
 	window.doutils = window.doutils || {};
 	window.doutils.LoadItem = LoadItem;
 
-	var prototype = LoadItem.prototype = Object.create( doutils.EventDispatcher.prototype );
+	var prototype = LoadItem.prototype = Object.create( EventDispatcher.prototype );
 	prototype.constructor = LoadItem;
 
 
@@ -22,7 +22,7 @@
 
 	function LoadItem(recursion)
 	{
-		doutils.EventDispatcher.call(this);
+		EventDispatcher.call(this);
 
 		this.type = LoadItem.TYPE_FILE;
 		this.startRecursion = recursion;

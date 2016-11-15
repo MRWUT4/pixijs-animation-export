@@ -3,7 +3,7 @@
 	window.doutils = window.doutils || {};
 	window.doutils.Loader = Loader;
 
-	var prototype = Loader.prototype = Object.create( doutils.EventDispatcher.prototype );
+	var prototype = Loader.prototype = Object.create( EventDispatcher.prototype );
 	prototype.constructor = Loader;
 
 
@@ -22,7 +22,7 @@
 
 	function Loader(setup)
 	{
-		doutils.EventDispatcher.call(this);
+		EventDispatcher.call(this);
 
 		this.setup = setup || {};
 		this.recursion = this.setup.recursion || 1;

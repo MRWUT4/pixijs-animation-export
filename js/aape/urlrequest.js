@@ -3,7 +3,7 @@
 	window.doutils = window.doutils || {};
 	window.doutils.URLRequest = URLRequest;
 
-	var prototype = URLRequest.prototype = Object.create( doutils.EventDispatcher.prototype );
+	var prototype = URLRequest.prototype = Object.create( EventDispatcher.prototype );
 	prototype.constructor = URLRequest;
 
 
@@ -17,7 +17,7 @@
 	 */
 	function URLRequest()
 	{
-		doutils.EventDispatcher.call(this);
+		EventDispatcher.call(this);
 		
 		this.mimeType = null;
 		this.responseType = null;

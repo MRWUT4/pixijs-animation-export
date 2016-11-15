@@ -520,65 +520,39 @@
 	"buffers":
 	[
 		{
-			"file": "/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/js/game/main.js",
+			"file": "/Users/david.ochmann/Documents/application/project/html/JS-Library/davidochmann/pixijs-animation-export/js/aape/eventdispatcher.js",
 			"settings":
 			{
-				"buffer_size": 2361,
+				"buffer_size": 5478,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/debug.html",
+			"file": "/Users/david.ochmann/Documents/application/project/html/JS-Library/davidochmann/pixijs-animation-export/js/aape/loader.js",
 			"settings":
 			{
-				"buffer_size": 1566,
-				"encoding": "UTF-8 with BOM",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/aape.html",
-			"settings":
-			{
-				"buffer_size": 626,
-				"encoding": "UTF-8 with BOM",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/runner.html",
-			"settings":
-			{
-				"buffer_size": 628,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/Users/user/Documents/application/project/html/common/js/davidochmann/nodejs/tools/uglifyhtml.js",
-			"settings":
-			{
-				"buffer_size": 3515,
+				"buffer_size": 8581,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "/Users/user/Library/Application Support/Adobe/Animate CC 2015.2/de_DE/Configuration/Commands/tools/Execute Setup Script.jsfl",
+			"file": "/Users/david.ochmann/Documents/application/project/html/JS-Library/davidochmann/pixijs-animation-export/js/aape/loaditem.js",
 			"settings":
 			{
-				"buffer_size": 3022,
+				"buffer_size": 11090,
+				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/js/game/timeline.js",
+			"file": "/Users/david.ochmann/Documents/application/project/html/JS-Library/davidochmann/pixijs-animation-export/js/aape/urlrequest.js",
 			"settings":
 			{
-				"buffer_size": 16169,
+				"buffer_size": 2878,
 				"encoding": "UTF-8",
-				"line_ending": "Unix"
+				"line_ending": "Windows"
 			}
 		}
 	],
@@ -746,6 +720,13 @@
 	],
 	"file_history":
 	[
+		"/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/js/game/timeline.js",
+		"/Users/user/Documents/application/project/html/common/js/davidochmann/nodejs/tools/uglifyhtml.js",
+		"/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/runner.html",
+		"/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/aape.html",
+		"/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/debug.html",
+		"/Users/user/Library/Application Support/Adobe/Animate CC 2015.2/de_DE/Configuration/Commands/tools/Execute Setup Script.jsfl",
+		"/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/js/game/main.js",
 		"/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/css/style.css",
 		"/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/jsfl/pixijs-animation-export.jsfl",
 		"/Users/user/Library/Application Support/Adobe/Animate CC 2015.2/de_DE/Configuration/Commands/tools/Export PixiJS Assets.jsfl",
@@ -796,10 +777,8 @@
 		"/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/jsfl/helper.jsfl",
 		"/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/jsfl/json-exporter.jsfl",
 		"/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/jsfl/json-timeline-parser.jsfl",
-		"/Users/user/Documents/application/project/html/common/js/davidochmann/nodejs/tools/uglifyhtml.js",
 		"/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/tools/commands/uglify.command",
 		"/Users/user/Documents/application/project/html/europapark/Italien-PizzaPizza/img/content_lang_de.json",
-		"/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/js/game/main.js",
 		"/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/img/content_lang_de.json",
 		"/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/img/container.json",
 		"/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/img/assets.json",
@@ -809,7 +788,6 @@
 		"/Users/user/Library/Caches/Cornerstone/Store/https%3A%2F%2Fdavid.ochmann%40svn.eoa.de%2Fsvn%2Fjs-library/0000010417/trunk/internetabc/Flizzys-Zeichenchaos/js/game/main.js",
 		"/Users/user/Documents/application/project/html/common/js/davidochmann/doutils/pixijs-3/facade.js",
 		"/Users/user/Documents/application/project/html/common/js/davidochmann/doutils/pixijs-3/facade-1.1.0.js",
-		"/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/debug.html",
 		"/Users/user/Documents/application/project/html/common/js/davidochmann/doutils/tools/gamesetup.js",
 		"/Users/user/Library/Application Support/Adobe/Animate CC 2015.2/de_DE/Configuration/Commands/tools/library/Assist.jsfl",
 		"/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/jsfl/atlas-exporter.jsfl",
@@ -869,11 +847,7 @@
 		"/Users/david.ochmann/Documents/application/project/html/JS-Library/europapark/Frankreich-BaguetteWeitwurf/debug.html",
 		"/Users/david.ochmann/Documents/application/project/html/JS-Library/europapark/Irland-Schafhuepfen/debug.html",
 		"/Users/david.ochmann/Documents/application/project/html/JS-Library/europapark/Italien-PizzaPizza/debug.html",
-		"/Users/david.ochmann/Documents/application/project/html/JS-Library/common/js/europapark/shared/generic/highscoreanimationmodule.js",
-		"/Users/david.ochmann/Documents/application/project/html/JS-Library/europapark/App-GameCollection/platforms/android/AndroidManifest.xml",
-		"/Users/david.ochmann/Documents/application/project/html/JS-Library/common/js/davidochmann/doutils/tools/gamesetup.js",
-		"/Users/david.ochmann/Documents/application/project/html/JS-Library/europapark/App-GameCollection/platforms/android/android.json",
-		"/Users/david.ochmann/Documents/application/project/html/JS-Library/common/js/swiss/module/shared/highscoreinterfacemodule.js"
+		"/Users/david.ochmann/Documents/application/project/html/JS-Library/common/js/europapark/shared/generic/highscoreanimationmodule.js"
 	],
 	"find":
 	{
@@ -893,6 +867,9 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"doutils",
+			"doutils.",
+			"doutils",
 			"document",
 			"flash",
 			"that",
@@ -1017,10 +994,7 @@
 			"640",
 			"2048",
 			"1024",
-			"list",
-			"getSprite",
-			"getAtlasJSONWithID",
-			"floor"
+			"list"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1039,117 +1013,29 @@
 	"groups":
 	[
 		{
-			"selected": 5,
+			"selected": 3,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/js/game/main.js",
+					"file": "/Users/david.ochmann/Documents/application/project/html/JS-Library/davidochmann/pixijs-animation-export/js/aape/eventdispatcher.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2361,
+						"buffer_size": 5478,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								332,
-								332
+								27,
+								27
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 42.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 6,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/debug.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1566,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								478,
-								417
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/aape.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 626,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								626
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/runner.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 628,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								597,
-								597
-							]
-						],
-						"settings":
-						{
-							"_anf_new": "",
-							"syntax": "Packages/HTML/HTML.sublime-syntax",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
@@ -1160,20 +1046,24 @@
 					"type": "text"
 				},
 				{
-					"buffer": 4,
-					"file": "/Users/user/Documents/application/project/html/common/js/davidochmann/nodejs/tools/uglifyhtml.js",
+					"buffer": 1,
+					"file": "/Users/david.ochmann/Documents/application/project/html/JS-Library/davidochmann/pixijs-animation-export/js/aape/loader.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3515,
+						"buffer_size": 8581,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2597,
-								2597
+								145,
+								145
+							],
+							[
+								507,
+								507
 							]
 						],
 						"settings":
@@ -1182,27 +1072,60 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 1461.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
-					"buffer": 5,
-					"file": "/Users/user/Library/Application Support/Adobe/Animate CC 2015.2/de_DE/Configuration/Commands/tools/Execute Setup Script.jsfl",
+					"buffer": 2,
+					"file": "/Users/david.ochmann/Documents/application/project/html/JS-Library/davidochmann/pixijs-animation-export/js/aape/loaditem.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3022,
+						"buffer_size": 11090,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1437,
-								1409
+								151,
+								151
+							],
+							[
+								431,
+								431
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/Users/david.ochmann/Documents/application/project/html/JS-Library/davidochmann/pixijs-animation-export/js/aape/urlrequest.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2878,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								592,
+								592
 							]
 						],
 						"settings":
@@ -1215,35 +1138,6 @@
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/js/game/timeline.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 16169,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								8426,
-								8426
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 5437.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
 					"type": "text"
 				}
 			]
@@ -1301,6 +1195,22 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"url",
+				"pixijs-animation-export/js/aape/urlrequest.js"
+			],
+			[
+				"loadi",
+				"pixijs-animation-export/js/aape/loaditem.js"
+			],
+			[
+				"loader",
+				"pixijs-animation-export/js/aape/loader.js"
+			],
+			[
+				"event",
+				"pixijs-animation-export/js/aape/eventdispatcher.js"
+			],
 			[
 				"st",
 				"pixijs-animation-export/css/style.css"
@@ -1452,10 +1362,6 @@
 			[
 				"sce",
 				"davidochmann/doutils/pixijs-3/scene.js"
-			],
-			[
-				"loader",
-				"davidochmann/doutils/loader/loader.js"
 			],
 			[
 				"preloaders",
@@ -1800,18 +1706,6 @@
 			[
 				"lelve",
 				"davidochmann/engine/jumpandrun/levelparser.js"
-			],
-			[
-				"gamepl",
-				"Skyboard/js/game/gameplaymodule.js"
-			],
-			[
-				"particle",
-				"Skyboard/js/game/particledustmodule.js"
-			],
-			[
-				"gamepla",
-				"Skyboard/js/game/gameplaymodule.js"
 			]
 		],
 		"width": 0.0
@@ -1819,15 +1713,15 @@
 	"select_project":
 	{
 		"height": 500.0,
-		"last_filter": "pok",
+		"last_filter": "poke",
 		"selected_items":
 		[
 			[
-				"pok",
+				"poke",
 				"~/Documents/application/project/html/JS-Library/toggo/Pokemon-Wimmelbild/tools/project/Pokemon-Wimmelbild.sublime-project"
 			],
 			[
-				"poke",
+				"pok",
 				"~/Documents/application/project/html/JS-Library/toggo/Pokemon-Wimmelbild/tools/project/Pokemon-Wimmelbild.sublime-project"
 			],
 			[
