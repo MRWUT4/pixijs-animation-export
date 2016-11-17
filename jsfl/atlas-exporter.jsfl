@@ -11,8 +11,8 @@
 	AtlasExporter.shapePadding = 2;
 	AtlasExporter.allowTrimming = true;
 	AtlasExporter.autoSize = true;
-	AtlasExporter.maxSheetWidth = 2048;
-	AtlasExporter.maxSheetHeight = 1024;
+	AtlasExporter.maxSheetWidth = 1024;
+	AtlasExporter.maxSheetHeight = 2048;
 	AtlasExporter.stackDuplicateFrames = true;
 	AtlasExporter.layoutFormat = "JSON";
 	AtlasExporter.algorithm = "maxRects";
@@ -188,10 +188,11 @@
 		var that = this;
 		var list = [];
 
-		var addToSpriteSheetExporters = function(symbols)
+		var addToSpriteSheetExporters = function(symbols, overflows)
 		{
 			var spriteSheetExporter = that.getSpriteSheetExporter();
 			list.push( spriteSheetExporter );
+
 
 			var symbolOverflowsExporter = false;
 
@@ -199,24 +200,22 @@
 			{
 			    var symbol = symbols[ i ];
 
-			    // pivot = that.calculateSymbolPivot( symbol );
 				symbolOverflowsExporter = that.addSymbolToExporter( spriteSheetExporter, symbol );
 
 				if( symbolOverflowsExporter )
 				{
-					// avoid infinite recursion with single overflowing symbol.
-					if( symbols.length == 1 )
-						return;
-					else
+					if( overflows <= 1 )
 					{
-						addToSpriteSheetExporters( symbols.slice( i ) );
+						addToSpriteSheetExporters( symbols.slice( i ), overflows + 1 );
 						break;
 					}
+					else
+						return alert( "Symbol to big for atlas of size " + AtlasExporter.maxSheetWidth + "x" + AtlasExporter.maxSheetHeight + ": " + symbol.name );
 				}
-			}
+			}	
 		};
 
-		addToSpriteSheetExporters( symbols );
+		addToSpriteSheetExporters( symbols, 0 );
 
 		return list;
 	};

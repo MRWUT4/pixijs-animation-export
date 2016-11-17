@@ -54,6 +54,10 @@
 			case JSON.NUMBER:
 				value = Number( string );
 				break;
+
+			case JSON.BOOLEAN:
+				value = string == "true" ? true : false;
+				break;
 		}
 
 		return value;
@@ -360,9 +364,9 @@
 			return typeof object;
 	};
 
-	JSON.getStringType = function(string)
+	JSON.getStringType = function(value)
 	{
-		var character = string.charAt( 0 );
+		var character = value.charAt( 0 );
 
 		switch( character )
 		{
@@ -377,7 +381,10 @@
 			case "\"":
 				return JSON.STRING;
 				break;
+		}
 
+		switch( value )
+		{
 			case "true":
 			case "false":
 				return JSON.BOOLEAN;
