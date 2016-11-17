@@ -720,6 +720,7 @@
 	],
 	"file_history":
 	[
+		"/Users/david.ochmann/Documents/application/project/html/JS-Library/davidochmann/pixijs-animation-export/jsfl/json-timeline-parser.jsfl",
 		"/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/js/game/timeline.js",
 		"/Users/user/Documents/application/project/html/common/js/davidochmann/nodejs/tools/uglifyhtml.js",
 		"/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/runner.html",
@@ -735,7 +736,6 @@
 		"/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/index.html",
 		"/Users/david.ochmann/Documents/application/project/html/JS-Library/davidochmann/pixijs-animation-export/js/game/timeline.js",
 		"/Users/david.ochmann/Documents/application/project/html/JS-Library/davidochmann/pixijs-animation-export/jsfl/atlas-exporter.jsfl",
-		"/Users/david.ochmann/Documents/application/project/html/JS-Library/davidochmann/pixijs-animation-export/jsfl/json-timeline-parser.jsfl",
 		"/Users/david.ochmann/Documents/application/project/html/JS-Library/toggo/Pokemon-Wimmelbild/img/content-1.json",
 		"/Users/david.ochmann/Documents/application/project/html/JS-Library/davidochmann/pixijs-animation-export/debug.html",
 		"/Users/david.ochmann/Documents/application/project/html/JS-Library/davidochmann/pixijs-animation-export/tools/commands/uglify-jsfl.command",
@@ -867,6 +867,9 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"numTextFields",
+			"numAnonymousTextFields",
+			"Text",
 			"doutils",
 			"doutils.",
 			"doutils",
@@ -991,10 +994,7 @@
 			"timeline",
 			"main",
 			"game",
-			"640",
-			"2048",
-			"1024",
-			"list"
+			"640"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1196,6 +1196,10 @@
 		"selected_items":
 		[
 			[
+				"tim",
+				"pixijs-animation-export/jsfl/json-timeline-parser.jsfl"
+			],
+			[
 				"url",
 				"pixijs-animation-export/js/aape/urlrequest.js"
 			],
@@ -1246,10 +1250,6 @@
 			[
 				"main",
 				"pixijs-animation-export/js/game/main.js"
-			],
-			[
-				"tim",
-				"pixijs-animation-export/js/game/timeline.js"
 			],
 			[
 				"time",
@@ -1721,16 +1721,16 @@
 				"~/Documents/application/project/html/JS-Library/toggo/Pokemon-Wimmelbild/tools/project/Pokemon-Wimmelbild.sublime-project"
 			],
 			[
+				"pixi",
+				"~/Documents/application/project/html/JS-Library/davidochmann/pixijs-animation-export/tools/project/DavidOchmann-PixiJSAnimationExport.sublime-project"
+			],
+			[
 				"pok",
 				"~/Documents/application/project/html/JS-Library/toggo/Pokemon-Wimmelbild/tools/project/Pokemon-Wimmelbild.sublime-project"
 			],
 			[
 				"po",
 				"~/Documents/application/project/html/JS-Library/toggo/Pokemon-Wimmelbild/tools/project/Pokemon-Wimmelbild.sublime-project"
-			],
-			[
-				"pixi",
-				"~/Documents/application/project/html/JS-Library/davidochmann/pixijs-animation-export/tools/project/DavidOchmann-PixiJSAnimationExport.sublime-project"
 			],
 			[
 				"yet",

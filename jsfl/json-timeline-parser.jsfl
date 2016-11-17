@@ -50,7 +50,7 @@
 		this.symbols = [];
 		this.timelines = [];
 		this.library = this.data.library;
-		this.numAnonymousTextFields = 0;
+		this.numTextFields = 0;
 	};
 
 	prototype.initTimelineRecursion = function()
@@ -257,8 +257,8 @@
 	/** Text parsing. */
 	prototype.parseText = function(element)
 	{
-		var anonymousID = "text" + ( !element.name ? this.numAnonymousTextFields++ : this.numAnonymousTextFields );
-		var object = { type:Helper.TEXTFIELD, id:element.name || anonymousID };
+		var anonymousID = "text" + /*( !element.name ?*/ this.numTextFields++/* : this.numTextFields )*/;
+		var object = { type:Helper.TEXTFIELD, id:/*element.name ||*/ anonymousID };
 		var text = element.getTextString().split( "\"" ).join( "\\\"" ).split( /\r\n|\r|\n/g ).join( "\\n" );
 
 		var style = 
@@ -407,7 +407,7 @@
 			bool = value !== ignore
 
 		if( bool )
-			object[ name ] = fixed === undefined ? value : this.getFixedValue( value, fixed );
+			object[ name ] = /*fixed === undefined ? */value/* : this.getFixedValue( value, fixed )*/;
 
 		return object;
 	};
