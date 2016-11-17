@@ -204,13 +204,13 @@
 			var ease = frame.getCustomEase( "all" );
 			var animation = ease.splice( 1, ease.length - 2 );
 
-			// for( var property in animation )
-			// {
-			// 	var value = animation[ property ];
+			for( var property in animation )
+			{
+				var value = animation[ property ];
 
-			// 	value.x = this.getFixedValue( value.x, 4 );
-			// 	value.y = this.getFixedValue( value.y, 4 );
-			// }
+				value.x = this.getFixedValue( value.x, 4 );
+				value.y = this.getFixedValue( value.y, 4 );
+			}
 
 			object.animation = animation;
 		}
@@ -412,17 +412,17 @@
 		return object;
 	};
 
-	// prototype.getFixedValue = function(value, position)
-	// {
-	// 	var object = value.toFixed( position );
+	prototype.getFixedValue = function(value, position)
+	{
+		var object = value.toFixed( position );
 		
-	// 	while( object[ object.length - 1 ] == "0" )
-	// 		object = object.slice( 0, object.length - 1 );
+		while( object[ object.length - 1 ] == "0" )
+			object = object.slice( 0, object.length - 1 );
 		
-	// 	if( object[ object.length - 1 ] == "." )
-	// 		object = object.slice( 0, object.length - 1 );
+		if( object[ object.length - 1 ] == "." )
+			object = object.slice( 0, object.length - 1 );
 
-	// 	return Number( object );
-	// };
+		return Number( object );
+	};
 
 }(window));

@@ -108,6 +108,9 @@
 			// id: "menuContent"
 		});
 
+		var content = timeline.getChildByName( "content" );
+		content.loop = false;
+
 		// var content = timeline.getChildByName( "content" );
 		// content.loop = false;
 
