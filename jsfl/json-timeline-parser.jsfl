@@ -50,7 +50,7 @@
 		this.symbols = [];
 		this.timelines = [];
 		this.library = this.data.library;
-		this.numAnonymousTextFields = 0;
+		this.numTextFields = 0;
 	};
 
 	prototype.initTimelineRecursion = function()
@@ -204,13 +204,13 @@
 			var ease = frame.getCustomEase( "all" );
 			var animation = ease.splice( 1, ease.length - 2 );
 
-			for( var property in animation )
-			{
-				var value = animation[ property ];
+			// for( var property in animation )
+			// {
+			// 	var value = animation[ property ];
 
-				value.x = this.getFixedValue( value.x, 4 );
-				value.y = this.getFixedValue( value.y, 4 );
-			}
+			// 	value.x = this.getFixedValue( value.x, 4 );
+			// 	value.y = this.getFixedValue( value.y, 4 );
+			// }
 
 			object.animation = animation;
 		}
@@ -257,8 +257,8 @@
 	/** Text parsing. */
 	prototype.parseText = function(element)
 	{
-		var anonymousID = "text" + ( !element.name ? this.numAnonymousTextFields++ : this.numAnonymousTextFields );
-		var object = { type:Helper.TEXTFIELD, id:element.name || anonymousID };
+		var id = "text" + /*( !element.name ?*/ this.numTextFields++ /*: this.numTextFields )*/;
+		var object = { type:Helper.TEXTFIELD, id:/*element.name || */id };
 		var text = element.getTextString().split( "\"" ).join( "\\\"" ).split( /\r\n|\r|\n/g ).join( "\\n" );
 
 		var style = 
@@ -407,22 +407,22 @@
 			bool = value !== ignore
 
 		if( bool )
-			object[ name ] = fixed === undefined ? value : this.getFixedValue( value, fixed );
+			object[ name ] = /*fixed === undefined ?*/ value/* : this.getFixedValue( value, fixed )*/;
 
 		return object;
 	};
 
-	prototype.getFixedValue = function(value, position)
-	{
-		var object = value.toFixed( position );
+	// prototype.getFixedValue = function(value, position)
+	// {
+	// 	var object = value.toFixed( position );
 		
-		while( object[ object.length - 1 ] == "0" )
-			object = object.slice( 0, object.length - 1 );
+	// 	while( object[ object.length - 1 ] == "0" )
+	// 		object = object.slice( 0, object.length - 1 );
 		
-		if( object[ object.length - 1 ] == "." )
-			object = object.slice( 0, object.length - 1 );
+	// 	if( object[ object.length - 1 ] == "." )
+	// 		object = object.slice( 0, object.length - 1 );
 
-		return Number( object );
-	};
+	// 	return Number( object );
+	// };
 
 }(window));
