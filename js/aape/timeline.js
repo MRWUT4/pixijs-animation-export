@@ -21,7 +21,7 @@
 		this.elements = setup.elements;
 		this.id = setup.id || "root";
 		this.loop = setup.loop || true;
-		this.timeScale = setup.timeScale || 1;
+		this.timeScale = setup.timeScale !== undefined ? setup.timeScale : 1;
 		
 		this.isPlaying = true;
 		this.currentFrame = null;
@@ -225,23 +225,25 @@
 	{
 		this.currentIndex = currentIndex;
 
-		var nextFrame = this.getValidIndex( this.currentIndex );
+		var template = this.template;
+		var nextFrame = this.getValidIndex( template, this.currentIndex );
 
-		this.frameChanged = this.currentFrame === null || Math.floor( this.currentFrame ) !== Math.floor( nextFrame );
+		this.frameChanged = this.currentFrame === null || this.currentFrame.toFixed( 8 ) !== nextFrame.toFixed( 8 );
 		this.currentFrame = nextFrame;
-		this.resolveLayers( this.template.layers, this.currentFrame );
+
+		this.resolveLayers( template.layers, this.currentFrame );
 	};
 
-	prototype.getValidIndex = function(currentIndex)
+	prototype.getValidIndex = function(template, currentIndex)
 	{
 		if( this.currentLabel === null )
 		{
-			var totalFrames = this.template.totalFrames;
+			var totalFrames = template.totalFrames;
 			return this.loop ? ( currentIndex % totalFrames ) : ( currentIndex >= totalFrames - 1 ? totalFrames - 1 : currentIndex );
 		}
 		else
 		{
-			var beginEnd = this.getBeginEndObject( this.template, "labels" );
+			var beginEnd = this.getBeginEndObject( template, "labels" );
 			var range = beginEnd[ this.currentLabel ];
 			var lastFrame = range.end - range.begin;
 

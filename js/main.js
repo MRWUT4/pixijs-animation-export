@@ -105,8 +105,10 @@
 			library: json.library,
 			elements: elements,
 			timeScale: timeScale,
-			// id: "menuContent"
+			// id: "playerCrossHead"
 		});
+
+		// timeline.loop = false;
 
 		// var content = timeline.getChildByName( "content" );
 		// content.loop = false;
