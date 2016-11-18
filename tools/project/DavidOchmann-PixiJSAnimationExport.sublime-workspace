@@ -529,6 +529,14 @@
 			}
 		},
 		{
+			"file": "/Users/david.ochmann/Documents/application/project/html/JS-Library/davidochmann/pixijs-animation-export/js/main.js",
+			"settings":
+			{
+				"buffer_size": 2455,
+				"line_ending": "Windows"
+			}
+		},
+		{
 			"file": "/Users/david.ochmann/Documents/application/project/html/JS-Library/davidochmann/pixijs-animation-export/js/aape/loader.js",
 			"settings":
 			{
@@ -547,6 +555,15 @@
 			}
 		},
 		{
+			"file": "/Users/david.ochmann/Documents/application/project/html/JS-Library/davidochmann/pixijs-animation-export/js/aape/timeline.js",
+			"settings":
+			{
+				"buffer_size": 17073,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
 			"file": "/Users/david.ochmann/Documents/application/project/html/JS-Library/davidochmann/pixijs-animation-export/js/aape/urlrequest.js",
 			"settings":
 			{
@@ -556,10 +573,10 @@
 			}
 		},
 		{
-			"file": "/Users/david.ochmann/Documents/application/project/html/JS-Library/davidochmann/pixijs-animation-export/js/aape/timeline.js",
+			"file": "/Users/david.ochmann/Documents/application/project/html/JS-Library/davidochmann/pixijs-animation-export/jsfl/atlas-exporter.jsfl",
 			"settings":
 			{
-				"buffer_size": 17073,
+				"buffer_size": 6987,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -737,6 +754,7 @@
 	],
 	"file_history":
 	[
+		"/Users/david.ochmann/Documents/application/project/html/JS-Library/davidochmann/pixijs-animation-export/js/aape/timeline.js",
 		"/Users/david.ochmann/Documents/application/project/html/JS-Library/davidochmann/pixijs-animation-export/debug.html",
 		"/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/js/game/timeline.js",
 		"/Users/user/Documents/application/project/html/common/js/davidochmann/nodejs/tools/uglifyhtml.js",
@@ -863,8 +881,7 @@
 		"/Users/david.ochmann/Documents/application/project/html/JS-Library/europapark/Schweiz-KaeseJagd/debug.html",
 		"/Users/david.ochmann/Documents/application/project/html/JS-Library/europapark/Frankreich-BaguetteWeitwurf/debug.html",
 		"/Users/david.ochmann/Documents/application/project/html/JS-Library/europapark/Irland-Schafhuepfen/debug.html",
-		"/Users/david.ochmann/Documents/application/project/html/JS-Library/europapark/Italien-PizzaPizza/debug.html",
-		"/Users/david.ochmann/Documents/application/project/html/JS-Library/common/js/europapark/shared/generic/highscoreanimationmodule.js"
+		"/Users/david.ochmann/Documents/application/project/html/JS-Library/europapark/Italien-PizzaPizza/debug.html"
 	],
 	"find":
 	{
@@ -1046,8 +1063,8 @@
 						"selection":
 						[
 							[
-								27,
-								27
+								63,
+								63
 							]
 						],
 						"settings":
@@ -1064,6 +1081,35 @@
 				},
 				{
 					"buffer": 1,
+					"file": "/Users/david.ochmann/Documents/application/project/html/JS-Library/davidochmann/pixijs-animation-export/js/main.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2455,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1433,
+								1433
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 968.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
 					"file": "/Users/david.ochmann/Documents/application/project/html/JS-Library/davidochmann/pixijs-animation-export/js/aape/loader.js",
 					"semi_transient": false,
 					"settings":
@@ -1092,11 +1138,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
-					"buffer": 2,
+					"buffer": 3,
 					"file": "/Users/david.ochmann/Documents/application/project/html/JS-Library/davidochmann/pixijs-animation-export/js/aape/loaditem.js",
 					"semi_transient": false,
 					"settings":
@@ -1122,14 +1168,43 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 2283.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
-					"buffer": 3,
+					"buffer": 4,
+					"file": "/Users/david.ochmann/Documents/application/project/html/JS-Library/davidochmann/pixijs-animation-export/js/aape/timeline.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 17073,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								554,
+								563
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
 					"file": "/Users/david.ochmann/Documents/application/project/html/JS-Library/davidochmann/pixijs-animation-export/js/aape/urlrequest.js",
 					"semi_transient": false,
 					"settings":
@@ -1154,24 +1229,24 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 6,
 					"type": "text"
 				},
 				{
-					"buffer": 4,
-					"file": "/Users/david.ochmann/Documents/application/project/html/JS-Library/davidochmann/pixijs-animation-export/js/aape/timeline.js",
+					"buffer": 6,
+					"file": "/Users/david.ochmann/Documents/application/project/html/JS-Library/davidochmann/pixijs-animation-export/jsfl/atlas-exporter.jsfl",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 17073,
+						"buffer_size": 6987,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3499,
-								3499
+								4614,
+								4614
 							]
 						],
 						"settings":
@@ -1180,14 +1255,14 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 2934.0,
+						"translation.y": 2597.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 5,
 					"type": "text"
 				},
 				{
-					"buffer": 5,
+					"buffer": 7,
 					"file": "DavidOchmann-PixiJSAnimationExport.sublime-project",
 					"semi_transient": false,
 					"settings":
@@ -1212,7 +1287,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 7,
 					"type": "text"
 				}
 			]
@@ -1271,8 +1346,20 @@
 		"selected_items":
 		[
 			[
+				"time",
+				"pixijs-animation-export/js/aape/timeline.js"
+			],
+			[
+				"main",
+				"pixijs-animation-export/js/main.js"
+			],
+			[
 				"debu",
 				"pixijs-animation-export/debug.html"
+			],
+			[
+				"atlas",
+				"pixijs-animation-export/jsfl/atlas-exporter.jsfl"
 			],
 			[
 				"tim",
@@ -1323,20 +1410,8 @@
 				"pixijs-animation-export/index.html"
 			],
 			[
-				"main",
-				"pixijs-animation-export/js/game/main.js"
-			],
-			[
-				"time",
-				"pixijs-animation-export/js/game/timeline.js"
-			],
-			[
 				"dbeu",
 				"pixijs-animation-export/debug.html"
-			],
-			[
-				"atlas",
-				"pixijs-animation-export/jsfl/atlas-exporter.jsfl"
 			],
 			[
 				"timelin",
@@ -1788,9 +1863,13 @@
 	"select_project":
 	{
 		"height": 500.0,
-		"last_filter": "poke",
+		"last_filter": "winter",
 		"selected_items":
 		[
+			[
+				"winter",
+				"~/Documents/application/project/html/JS-Library/toggo/Toggo-WinterGames/tools/project/Toggo-WinterGames.sublime-project"
+			],
 			[
 				"poke",
 				"~/Documents/application/project/html/JS-Library/toggo/Pokemon-Wimmelbild/tools/project/Pokemon-Wimmelbild.sublime-project"
@@ -2026,7 +2105,7 @@
 	"show_minimap": false,
 	"show_open_files": false,
 	"show_tabs": true,
-	"side_bar_visible": true,
+	"side_bar_visible": false,
 	"side_bar_width": 241.0,
 	"status_bar_visible": false,
 	"template_settings":

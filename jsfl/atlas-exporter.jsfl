@@ -204,7 +204,7 @@
 
 				if( symbolOverflowsExporter )
 				{
-					if( overflows < 1 )
+					if( overflows <= 1 )
 					{
 						addToSpriteSheetExporters( symbols.slice( i ), overflows + 1 );
 						break;
