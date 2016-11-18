@@ -602,6 +602,7 @@
 
 		var transform = this.getTransform( frames, previousKeyframe, nextKeyframe, id, percent );
 		transform = this.translateRotation( transform );
+		transform = this.translateVisible( transform );
 		transform = this.translateScale( transform );
 
 		aape.Parse( transform ).reduce( function( property, value, result ) 
@@ -717,6 +718,13 @@
 	{
 		this.propertyToObjectValue( object, "scaleX", "scale", "x" );
 		this.propertyToObjectValue( object, "scaleY", "scale", "y" );
+
+		return object;
+	};
+
+	prototype.translateVisible = function(object)
+	{
+		object.visible = object.visible !== undefined ? object.visible : true;
 
 		return object;
 	};

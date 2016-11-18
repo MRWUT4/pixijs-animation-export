@@ -366,6 +366,7 @@
 			this.addProperty( object, "x", element.x, null );
 			this.addProperty( object, "y", element.y, null );
 			this.addProperty( object, "alpha", alpha, 1 );
+			this.addProperty( object, "visible", element.visible, true );
 			// this.addProperty( object, "width", element.width, 0 );
 			// this.addProperty( object, "height", element.height, 0 );
 			this.addProperty( object, "rotation", element.rotation, function(value){ return isNaN(value) } );

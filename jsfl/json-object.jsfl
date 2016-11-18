@@ -111,7 +111,7 @@
 
 	JSON.encode = function(object, format)
 	{
-		format = format !== undefined ? format : false;
+		format = format !== undefined ? format : true;
 
 		// var monitorObjectToJSON = new Monitor( true );
 		var json = JSON.objectToJSON( object );

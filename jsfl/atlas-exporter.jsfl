@@ -11,8 +11,8 @@
 	AtlasExporter.shapePadding = 2;
 	AtlasExporter.allowTrimming = true;
 	AtlasExporter.autoSize = true;
-	AtlasExporter.maxSheetWidth = 1024;
-	AtlasExporter.maxSheetHeight = 2048;
+	AtlasExporter.maxSheetWidth = 2048;
+	AtlasExporter.maxSheetHeight = 1024;
 	AtlasExporter.stackDuplicateFrames = true;
 	AtlasExporter.layoutFormat = "JSON";
 	AtlasExporter.algorithm = "maxRects";
