@@ -227,7 +227,7 @@
 
 		var nextFrame = this.getValidIndex( this.currentIndex );
 
-		this.frameChanged = this.currentFrame !== nextFrame;
+		this.frameChanged = this.currentFrame === null || Math.floor( this.currentFrame ) !== Math.floor( nextFrame );
 		this.currentFrame = nextFrame;
 		this.resolveLayers( this.template.layers, this.currentFrame );
 	};
