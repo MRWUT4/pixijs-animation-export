@@ -227,14 +227,14 @@
 
 		var template = this.template;
 		var nextFrame = this.getValidIndex( template, this.currentIndex );
+		var frameChanged = this.currentFrame === null || this.currentFrame.toFixed( 8 ) !== nextFrame.toFixed( 8 );
 
-		this.frameChanged = this.currentFrame === null || this.currentFrame.toFixed( 8 ) !== nextFrame.toFixed( 8 );
 		this.currentFrame = nextFrame;
 
-		this.resolveLayers( template.layers, this.currentFrame );
+		this.resolveLayers( template.layers, this.currentFrame, this.frameChanged );
 	};
 
-	prototype.getValidIndex = function(template, currentIndex)
+	prototype.getValidIndex = function(template, currentIndex, frameChanged)
 	{
 		if( this.currentLabel === null )
 		{
@@ -255,11 +255,11 @@
 		}
 	};
 
-	prototype.resolveLayers = function(layers, currentFrame)
+	prototype.resolveLayers = function(layers, currentFrame, frameChanged)
 	{
 		layers.forEach( function(layer, depth )
 		{
-			var elements = this.resolveFrames( layer, depth, currentFrame );
+			var elements = this.resolveFrames( layer, depth, currentFrame, frameChanged );
 			var id = this.getLayerID( layer.name, depth );
 
 			this.layers[ id ] = elements;
@@ -267,7 +267,7 @@
 		}.bind(this) );
 	};
 
-	prototype.resolveFrames = function(layer, depth, currentFrame)
+	prototype.resolveFrames = function(layer, depth, currentFrame, frameChanged)
 	{
 		var frames = layer.frames;
 		var previousIndex = this.getPreviousIndex( frames, currentFrame );
@@ -279,7 +279,7 @@
 
 		var list = elements.map( function( element )
 		{
-			return this.resolveElement( layerID, element, frames, currentFrame );
+			return this.resolveElement( layerID, element, frames, currentFrame, frameChanged );
 
 		}.bind(this) );
 
@@ -306,14 +306,14 @@
 		}
 	};
 
-	prototype.resolveElement = function(layerID, element, frames, currentFrame)
+	prototype.resolveElement = function(layerID, element, frames, currentFrame, frameChanged)
 	{
 		var id = element.id;
 		var displayObject = this.getDisplayObject( layerID, id );
 
 		if( displayObject )
 		{
-			if( this.frameChanged || this.frameChanged === undefined )
+			if( frameChanged || frameChanged === undefined )
 			{
 				this.addTransformData( id, displayObject, frames, currentFrame );
 				this.add( displayObject );
