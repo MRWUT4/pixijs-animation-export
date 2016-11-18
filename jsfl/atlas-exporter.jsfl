@@ -215,7 +215,8 @@
 			}	
 		};
 
-		addToSpriteSheetExporters( symbols, 0 );
+		if( symbols.length > 0 )
+			addToSpriteSheetExporters( symbols, 0 );
 
 		return list;
 	};
