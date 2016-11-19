@@ -259,7 +259,8 @@
 	{
 		var id = "text" + /*( !element.name ?*/ this.numTextFields++ /*: this.numTextFields )*/;
 		var object = { type:Helper.TEXTFIELD, id:/*element.name || */id };
-		var text = element.getTextString().split( "\"" ).join( "\\\"" ).split( /\r\n|\r|\n/g ).join( "\\n" );
+
+		var text = this.getTextFieldText( element );
 
 		var style = 
 		{
@@ -281,6 +282,26 @@
 		this.addProperty( object, "margin", margin, null );
 
 		return object;
+	};
+
+	prototype.getTextFieldText = function(element)
+	{
+		var string = element.getTextString();
+		var text = "";
+
+		element.textLines.forEach( function(textLine, index, list)
+		{
+			var startIndex = textLine.startIndex;
+			var length = textLine.length;
+
+			var suffix = index == list.length - 1 ? "" : "\n";
+			var line = string.slice( startIndex, startIndex + length );
+			text += line + suffix;
+		});
+
+		text = text.split( "\"" ).join( "\\\"" ).split( /\r\n|\r|\n/g ).join( "\\n" );
+
+		return text;
 	};
 
 	prototype.getTextElementStyle = function(element)
