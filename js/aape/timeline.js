@@ -231,7 +231,7 @@
 
 		this.currentFrame = nextFrame;
 
-		this.resolveLayers( template.layers, this.currentFrame, this.frameChanged );
+		this.resolveLayers( template.layers, this.currentFrame, frameChanged );
 	};
 
 	prototype.getValidIndex = function(template, currentIndex, frameChanged)
