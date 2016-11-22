@@ -10,7 +10,7 @@
 	{
 		Object.call( this );
 
-		this.fps = object.fps || 60;
+		this.fps = object.fps || 30;
 		this.inFocus = true;
 
 		this.url = object.url;
@@ -104,9 +104,12 @@
 		{
 			library: json.library,
 			elements: elements,
-			timeScale: timeScale,
+			// timeScale: timeScale,
 			// id: "playerCrossHead"
 		});
+
+		// var uiTimeout = timeline.getChildByName( "uiTimeout" );
+		// uiTimeout.loop = false;
 
 		// timeline.loop = false;
 

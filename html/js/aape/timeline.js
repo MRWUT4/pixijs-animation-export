@@ -231,7 +231,7 @@
 
 		this.currentFrame = nextFrame;
 
-		this.resolveLayers( template.layers, this.currentFrame, frameChanged );
+		this.resolveLayers( template.layers, this.currentFrame, currentIndex, this.totalFrames, frameChanged );
 	};
 
 	prototype.getValidIndex = function(template, currentIndex, frameChanged)
@@ -255,11 +255,11 @@
 		}
 	};
 
-	prototype.resolveLayers = function(layers, currentFrame, frameChanged)
+	prototype.resolveLayers = function(layers, currentFrame, currentIndex, totalFrames, frameChanged)
 	{
 		layers.forEach( function(layer, depth )
 		{
-			var elements = this.resolveFrames( layer, depth, currentFrame, frameChanged );
+			var elements = this.resolveFrames( layer, depth, currentFrame, currentIndex, totalFrames, frameChanged );
 			var id = this.getLayerID( layer.name, depth );
 
 			this.layers[ id ] = elements;
@@ -267,7 +267,7 @@
 		}.bind(this) );
 	};
 
-	prototype.resolveFrames = function(layer, depth, currentFrame, frameChanged)
+	prototype.resolveFrames = function(layer, depth, currentFrame, currentIndex, totalFrames, frameChanged)
 	{
 		var frames = layer.frames;
 		var previousIndex = this.getPreviousIndex( frames, currentFrame );
@@ -279,7 +279,7 @@
 
 		var list = elements.map( function( element )
 		{
-			return this.resolveElement( layerID, element, frames, currentFrame, frameChanged );
+			return this.resolveElement( layerID, element, frames, currentFrame, currentIndex, totalFrames, frameChanged );
 
 		}.bind(this) );
 
@@ -306,7 +306,7 @@
 		}
 	};
 
-	prototype.resolveElement = function(layerID, element, frames, currentFrame, frameChanged)
+	prototype.resolveElement = function(layerID, element, frames, currentFrame, currentIndex, totalFrames, frameChanged)
 	{
 		var id = element.id;
 		var displayObject = this.getDisplayObject( layerID, id );
@@ -319,7 +319,7 @@
 				this.add( displayObject );
 			}
 
-			this.syncMovieClipFrame( displayObject, element, frames, currentFrame );
+			this.syncMovieClipFrame( displayObject, element, frames, currentFrame, currentIndex, totalFrames );
 		}
 
 		return displayObject;
@@ -350,7 +350,7 @@
 	};
 
 
-	prototype.syncMovieClipFrame = function(displayObject, element, frames, currentFrame)
+	prototype.syncMovieClipFrame = function(displayObject, element, frames, currentFrame, currentIndex, totalFrames)
 	{
 		var list = 
 		[
@@ -361,23 +361,30 @@
 
 		if( this.getIsInstanceOf( displayObject, list ) )
 		{
+			var frame = null;
+
 			if( element.loop !== undefined && element.firstFrame !== undefined )
 			{
+
 				if( element.loop == "single frame" )
 					frame = element.firstFrame;
+				else
+				if( element.loop == "play once" )
+				{
+					var previous = frame - 1;
+					frame = Math.min( currentIndex, totalFrames )
+				}
 				else
 				{
 					var previousIndex = this.getPreviousIndex( frames, currentFrame );
 					var firstFrame = element.firstFrame || 0;
-					var frame = firstFrame + ( currentFrame - previousIndex );
-
-					if( element.loop == "play once" )
-						frame = Math.min( frame, displayObject.totalFrames );
-
+					
+					frame = firstFrame + ( currentFrame - previousIndex );
 				}
 
 				if( displayObject.isPlaying )
 					displayObject.setFrame( frame );
+
 			}
 		}
 	};
@@ -597,7 +604,7 @@
 
 		var hasAnimation = previousKeyframe.animation/* && previousKeyframe.animation.length > 0*/;
 
-		var nextIndex = this.getNextKeyframe( frames, currentFrame );
+		var nextIndex = this.getNextIndex( frames, currentFrame );
 		var nextKeyframe = hasAnimation ? frames[ nextIndex ] : previousKeyframe;
 
 		var percent = this.getPercent( previousIndex, nextIndex, currentFrame );
@@ -772,7 +779,7 @@
 		return result;
 	};
 
-	prototype.getNextKeyframe = function(object, currentFrame)
+	prototype.getNextIndex = function(object, currentFrame)
 	{
 		var biggestValue = aape.Parse( object ).reduce( function( property, value, item )
 		{

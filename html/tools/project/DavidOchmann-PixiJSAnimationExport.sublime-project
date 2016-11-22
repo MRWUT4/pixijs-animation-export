@@ -6,7 +6,7 @@
 			// "shell_cmd": "open /Applications/Google\\ Chrome.app --args -disable-web-security --user-data-dir"
 			
 			// "shell_cmd": "${project_path}/../commands/uglify-js.command"
-			"shell_cmd": "${project_path}/../commands/uglify-jsfl.command && open ${project_path}/../../jsfl/aape.jsfl"
+			"shell_cmd": "${project_path}/../commands/uglify-jsfl.command && open ${project_path}/../../../jsfl/aape.jsfl"
 			// "shell_cmd": "open ${project_path}/../../jsfl/pixi-export.jsfl"
 			// "shell_cmd": "open ${project_path}/../../debug.html"
 			// "shell_cmd": "open ${project_path}/../../jsfl/pixi-export.jsfl"
@@ -17,11 +17,14 @@
 		{
 			"path": "../../"
 		},
+		{
+			"path": "../../../jsfl"
+		},
 		// {
 		// 	"path": "../../../../common/js/davidochmann"
 		// },
 		{
-			"path": "/Users/user/Library/Application Support/Adobe/Animate CC 2017/de_DE/Configuration/Commands"
+			"path": "/Users/user/Library/Application Support/Adobe/Animate CC 2017/de_DE/Configuration/Commands/tools"
 		}
 	]
 }
