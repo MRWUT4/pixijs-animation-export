@@ -230,16 +230,23 @@
 		var frameChanged = this.currentFrame === null || this.currentFrame.toFixed( 8 ) !== nextFrame.toFixed( 8 );
 
 		this.currentFrame = nextFrame;
-
 		this.resolveLayers( template.layers, this.currentFrame, currentIndex, this.totalFrames, frameChanged );
 	};
 
-	prototype.getValidIndex = function(template, currentIndex, frameChanged)
+	prototype.getValidIndex = function(template, currentIndex)
 	{
+		var frame = null;
+
 		if( this.currentLabel === null )
-		{
+		{	
 			var totalFrames = template.totalFrames;
-			return this.loop ? ( currentIndex % totalFrames ) : ( currentIndex >= totalFrames - 1 ? totalFrames - 1 : currentIndex );
+
+			if( totalFrames > 1 )
+				frame = this.loop ? ( currentIndex % totalFrames ) : ( currentIndex >= totalFrames - 1 ? totalFrames - 1 : currentIndex )
+			else
+				frame = 0;
+
+			return frame;
 		}
 		else
 		{
@@ -247,7 +254,7 @@
 			var range = beginEnd[ this.currentLabel ];
 			var lastFrame = range.end - range.begin;
 
-			var frame = ( range.begin + ( currentIndex % lastFrame ) );
+			frame = ( range.begin + ( currentIndex % lastFrame ) );
 			
 			// TODO: Add this.loop handling for label animations.
 

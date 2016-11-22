@@ -14,6 +14,8 @@
 	JSON.ARRAY = "array";
  	JSON.BOOLEAN = "boolean";
 
+	JSON.FORMAT = false;
+
 	function JSON(){}
 
 
@@ -111,7 +113,7 @@
 
 	JSON.encode = function(object, format)
 	{
-		format = format !== undefined ? format : false;
+		format = format !== undefined ? format : JSON.FORMAT;
 
 		// var monitorObjectToJSON = new Monitor( true );
 		var json = JSON.objectToJSON( object );

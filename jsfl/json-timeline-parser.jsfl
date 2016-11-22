@@ -379,6 +379,11 @@
 		var pivot = transform.x || transform.y ? { x:transform.x, y: transform.y } : null;
 		var alpha = isNaN( element.colorAlphaPercent) ? 1 : element.colorAlphaPercent / 100;
 
+		// if( element.name == "circle" )
+			// alert( element.scaleX )
+
+		// alert( element.name )
+
 		if( inputIsValid && elementHasPropertys )
 		{
 			// this.addProperty( object, "elementType", element.elementType );
