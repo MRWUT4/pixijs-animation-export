@@ -15,14 +15,14 @@
 	"folders":
 	[
 		{
-			"path": "../../"
+			"path": "../../html"
 		},
 		{
-			"path": "../../../jsfl"
+			"path": "../../jsfl"
 		},
-		// {
-		// 	"path": "../../../../common/js/davidochmann"
-		// },
+		{
+			"path": "../commands"
+		},
 		{
 			"path": "/Users/user/Library/Application Support/Adobe/Animate CC 2017/de_DE/Configuration/Commands/tools"
 		}
