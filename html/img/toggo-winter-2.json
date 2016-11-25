@@ -1,0 +1,27 @@
+﻿{"frames": {
+
+"gameHockeyBackground0000":
+{
+	"frame": {"x":0,"y":0,"w":1000,"h":2000},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":1000,"h":2000},
+	"sourceSize": {"w":1000,"h":2000}
+},
+"gameHockeyBackground0001":
+{
+	"frame": {"x":0,"y":0,"w":0,"h":0},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":0,"w":1000,"h":2000},
+	"sourceSize": {"w":1000,"h":2000}
+}},
+"meta": {
+	"app": "Adobe Animate",
+	"version": "16.0.0.112",
+	"image": "toggo-winter-2.png",
+	"format": "RGBA8888",
+	"size": {"w":1024,"h":2048},
+	"scale": "1"
+}
+}

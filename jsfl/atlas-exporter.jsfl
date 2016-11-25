@@ -121,25 +121,11 @@
 
 	prototype.init = function()
 	{
-		// var monitorAddOriginKeyframeToSymbols = new Monitor( true );
-		this.initAddOriginKeyframeToSymbols();
-		// monitorAddOriginKeyframeToSymbols.log( "monitorAddOriginKeyframeToSymbols" );
-		
-		// var monitorParsingByMode = new Monitor( true );
+		this.initAddOriginKeyframeToSymbols();	
 		this.initParsingByMode();
-		// monitorParsingByMode.log( "monitorParsingByMode" );
-		
-		// var monitorResourceExport = new Monitor( true );
 		this.initResourceExport();
-		// monitorResourceExport.log( "monitorResourceExport" );
-		
-		// var monitorRemoveOriginKeyframeFromSymbols = new Monitor( true );
 		this.initRemoveOriginKeyframeFromSymbols();
-		// monitorRemoveOriginKeyframeFromSymbols.log( "monitorRemoveOriginKeyframeFromSymbols" );
-
-		// var monitorDocumentRoot = new Monitor( true );
 		this.initDocumentRoot();
-		// monitorDocumentRoot.log( "monitorDocumentRoot" );
 	};
 
 
@@ -188,38 +174,53 @@
 		var that = this;
 		var list = [];
 
-		var addToSpriteSheetExporters = function(symbols, overflows)
+		var addToSpriteSheetExporters = function(symbols, length)
 		{
 			var spriteSheetExporter = that.getSpriteSheetExporter();
+
+			// that.debugSpriteSheetExporter( spriteSheetExporter );
+			// return;
+
 			list.push( spriteSheetExporter );
 
-
-			var symbolOverflowsExporter = false;
-
-			for(var i = 0; i < symbols.length; ++i)
+			for(var i = symbols.length - 1; i >= 0; --i)
 			{
 			    var symbol = symbols[ i ];
-
+			
 				symbolOverflowsExporter = that.addSymbolToExporter( spriteSheetExporter, symbol );
 
 				if( symbolOverflowsExporter )
 				{
-					if( overflows <= 1 )
-					{
-						addToSpriteSheetExporters( symbols.slice( i ), overflows + 1 );
-						break;
-					}
+					var symbolsLengthDidChange = symbols.length != length;
+
+					if( symbolsLengthDidChange )
+						return addToSpriteSheetExporters( symbols, symbols.length );
 					else
 						return alert( "Symbol to big for atlas of size " + AtlasExporter.maxSheetWidth + "x" + AtlasExporter.maxSheetHeight + ": " + symbol.name );
 				}
-			}	
+				else
+					symbols.splice( i, 1 );
+			}
 		};
 
 		if( symbols.length > 0 )
-			addToSpriteSheetExporters( symbols, 0 );
+			addToSpriteSheetExporters( symbols.concat() );
 
 		return list;
 	};
+
+
+	// prototype.debugSpriteSheetExporter = function(spriteSheetExporter)
+	// {
+	// 	alert( "jo");
+
+	// 	for( var property in spriteSheetExporter )
+	// 	{
+	// 		var value = spriteSheetExporter[ property ];
+	// 		flash.trace( property + " " + value );
+	// 	}
+	// };
+
 
 	prototype.addNullingRectangleToLastFrame = function(symbol)
 	{

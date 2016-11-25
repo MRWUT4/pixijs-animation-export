@@ -1,0 +1,45 @@
+﻿{"frames": [
+
+{
+	"filename": "handSide Instanz 10000",
+	"frame": {"x":0,"y":0,"w":189,"h":215},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":189,"h":215},
+	"sourceSize": {"w":189,"h":215}
+}
+,{
+	"filename": "handSide Instanz 10001",
+	"frame": {"x":189,"y":0,"w":189,"h":215},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":189,"h":215},
+	"sourceSize": {"w":189,"h":215}
+}
+,{
+	"filename": "handSide Instanz 10002",
+	"frame": {"x":0,"y":215,"w":189,"h":215},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":189,"h":215},
+	"sourceSize": {"w":189,"h":215}
+}
+,{
+	"filename": "handSide Instanz 10003",
+	"frame": {"x":189,"y":215,"w":189,"h":215},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":189,"h":215},
+	"sourceSize": {"w":189,"h":215}
+}],
+"meta": {
+	"app": "Adobe Animate",
+	"version": "16.0.0.112",
+	"Target": "Edge Animate",
+	"Target Version": "4.0",
+	"image": "toggo-winter.png",
+	"format": "RGBA8888",
+	"size": {"w":512,"h":512},
+	"scale": "1"
+}
+}

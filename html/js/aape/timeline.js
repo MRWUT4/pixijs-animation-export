@@ -43,15 +43,6 @@
 		}
 	});
 
-	Object.defineProperty( prototype, "layers", 
-	{
-		get: function() 
-		{	
-			this._layers = this._layers !== undefined ? this._layers : {};
-			return this._layers;
-		}
-	});
-
 	Object.defineProperty( prototype, "template", 
 	{
 		get: function() 
@@ -193,6 +184,38 @@
 	};
 
 
+	Object.defineProperty( prototype, "layers", 
+	{
+		get: function() 
+		{	
+			this._layers = this._layers !== undefined ? this._layers : {};
+			return this._layers;
+		}
+	});
+
+	prototype.setLayer = function(id, vo)
+	{
+		return this.layers[ id ] = vo;
+	};
+
+	prototype.getLayer = function(id)
+	{
+		if( this.layers[ id ] == undefined ) 
+		{
+			this.layers[ id ] = 
+			{
+				elements: [],
+				previousIndex: null,
+				nextIndex: null,
+				previousKeyframe: null,
+				nextKeyframe: null
+			}
+		}
+
+		return this.layers[ id ];
+	};
+
+
 	/**
 	 * Private interface.
 	 */
@@ -224,179 +247,200 @@
 	prototype.setFrame = function(currentIndex)
 	{
 		this.currentIndex = currentIndex;
+		this.nextFrame = this.getValidIndex( this.template, this.currentIndex );
+		this.frameChanged = this.currentFrame === null || this.currentFrame.toFixed( 8 ) !== this.nextFrame.toFixed( 8 );
+		this.currentFrame = this.nextFrame;
 
-		var template = this.template;
-		var nextFrame = this.getValidIndex( template, this.currentIndex );
-		var frameChanged = this.currentFrame === null || this.currentFrame.toFixed( 8 ) !== nextFrame.toFixed( 8 );
-
-		this.currentFrame = nextFrame;
-		
-		// this.resolveLayers( template.layers, this.currentFrame, currentIndex, this.totalFrames, frameChanged );
-
-		var resolve = this.resolve( currentIndex, this.currentFrame, this.totalFrames, frameChanged );
-		resolve.layers( this.layers, template.layers );
+		this.resolveLayers( this.template.layers );
 	};
 
 
-	prototype.resolve = function(currentIndex, currentFrame, totalFrames, frameChanged)
+	prototype.resolveLayers = function(layers)
 	{
-		var that = this;
+		layers.forEach( function(layer, depth)
+		{
+			var vo = this.resolveFrames( layer, depth );
+			var id = this.getLayerID( layer.name, depth );
 
-		return {
+			this.setLayer( id, vo );
 
-			/** Traverse timeline display list. **/
-			layers: function(library, layers)
+		}.bind(this) );
+	};
+
+	prototype.resolveFrames = function(layer, depth)
+	{
+		var layerID = this.getLayerID( layer.name, depth );
+
+
+		var frames = layer.frames;
+
+		var previousIndex = this.getPreviousIndex( frames, this.currentFrame );
+		var previousKeyframe = frames[ previousIndex ];
+
+		var hasAnimation = previousKeyframe.animation;
+
+		var nextIndex = this.getNextIndex( frames, this.currentFrame );
+		var nextKeyframe = hasAnimation ? frames[ nextIndex ] : previousKeyframe;				
+
+		var previousElements = previousKeyframe.elements;
+		
+
+		var vo = this.getLayer( layerID );
+
+		vo.previousIndex = previousIndex;
+		vo.nextIndex = nextIndex;
+		vo.previousKeyframe = previousKeyframe;
+		vo.nextKeyframe = nextKeyframe;
+
+
+		var elements = previousElements.map( function( element )
+		{
+			return this.resolveElement( layerID, element );
+
+		}.bind(this) )
+
+		this.removeMissing( layerID, elements );
+		vo.elements = elements;
+
+		return vo;
+	};
+
+	prototype.resolveElement = function(layerID, element)
+	{
+		var id = element.id;
+		
+		var layerVO = this.getLayer( layerID );
+		var displayObject = this.getDisplayObject( layerVO, id );
+
+		if( displayObject )
+		{
+			if( this.frameChanged || this.frameChanged === undefined )
 			{
-				layers.forEach( function(layer, depth)
-				{
-					var elements = this.frames( layer, depth );
-					var id = that.getLayerID( layer.name, depth );
+				this.transform( id, displayObject, layerVO );
+				this.add( displayObject );
+			}
 
-					library[ id ] = elements;
+			this.sync( displayObject, element, layerVO.previousIndex );
+		}
 
-				}.bind(this) );
-			},
+		return displayObject;
+	};
 
-			frames: function(layer, depth)
+
+	prototype.getDisplayObject = function(layerVO, id)
+	{
+		var displayObject = null;
+
+		
+		// if( !layer )
+		// 	layer = this.setLayer( layerID, [] );
+
+		displayObject = layerVO.elements.find( function(element)
+		{
+			return element && element.id == id;
+		});
+
+		if( !displayObject )
+		{
+			displayObject = this.parse( id );
+			layerVO.elements.push( displayObject );
+		}
+		
+		return displayObject;
+	};
+
+
+	prototype.transform = function(id, displayObject, layerVO /*previousIndex, nextIndex, previousKeyframe, nextKeyframe*/)
+	{
+		var percent = this.getPercent( layerVO.previousIndex, layerVO.nextIndex, this.currentFrame );
+
+		var transform = this.getTransform( layerVO.previousKeyframe, layerVO.nextKeyframe, id, percent );
+		transform = this.translateRotation( transform );
+		transform = this.translateVisible( transform );
+		transform = this.translateScale( transform );
+
+		aape.Parse( transform ).reduce( function( property, value, result ) 
+		{
+			if( value !== undefined )
+				result[ property ] = value;
+
+			return result;
+
+		}, displayObject );
+		
+		displayObject.name = displayObject.name ? displayObject.name : displayObject.id;
+	},
+
+
+	/** Sync child frames. */
+	prototype.sync = function(displayObject, element, previousIndex)
+	{
+		var list = 
+		[
+			aape.MovieClip,
+			aape.Timeline
+		];
+
+
+		if( this.getIsInstanceOf( displayObject, list ) )
+		{
+			var frame = null;
+
+			if( element.loop !== undefined && element.firstFrame !== undefined )
 			{
-				var frames = layer.frames;
-				var previousIndex = that.getPreviousIndex( frames, currentFrame );
-				var frame = frames[ previousIndex ];
-				var elements = frame.elements;
-				var layerID = that.getLayerID( layer.name, depth );
-
-				this.removeMissing( layerID, elements );
-
-				var list = elements.map( function( element )
+				if( element.loop == "single frame" )
+					frame = element.firstFrame;
+				else
+				if( element.loop == "play once" )
 				{
-					return this.element( layerID, element, frames );
-
-				}.bind(this) );
-
-				return list;
-			},
-
-			element: function(layerID, element, frames)
-			{
-				var id = element.id;
-				var displayObject = that.getDisplayObject( layerID, id );
-
-				if( displayObject )
+					var previous = frame - 1;
+					frame = Math.min( this.currentIndex, this.totalFrames )
+				}
+				else
 				{
-					if( frameChanged || frameChanged === undefined )
-					{
-						this.addTransformData( id, displayObject, frames );
-						this.add( displayObject );
-					}
-
-					this.sync( displayObject, element, frames );
+					// var previousIndex = this.getPreviousIndex( frames, currentFrame );
+					var firstFrame = element.firstFrame || 0;
+					
+					frame = firstFrame + ( currentFrame - previousIndex );
 				}
 
-				return displayObject;
-			},
+				if( displayObject.isPlaying )
+					displayObject.setFrame( frame );
 
-
-			/** Transform displayObject according to frame propertys. */
-			addTransformData: function(id, displayObject, frames)
-			{
-				var previousIndex = that.getPreviousIndex( frames, currentFrame );
-				var previousKeyframe = frames[ previousIndex ];
-
-				var hasAnimation = previousKeyframe.animation;
-
-				var nextIndex = that.getNextIndex( frames, currentFrame );
-				var nextKeyframe = hasAnimation ? frames[ nextIndex ] : previousKeyframe;
-
-				var percent = that.getPercent( previousIndex, nextIndex, currentFrame );
-
-				var transform = that.getTransform( frames, previousKeyframe, nextKeyframe, id, percent );
-				transform = that.translateRotation( transform );
-				transform = that.translateVisible( transform );
-				transform = that.translateScale( transform );
-
-				aape.Parse( transform ).reduce( function( property, value, result ) 
-				{
-					if( value !== undefined )
-						result[ property ] = value;
-
-					return result;
-
-				}, displayObject );
-				
-				displayObject.name = displayObject.name ? displayObject.name : displayObject.id;
-			},
-
-
-			/** Sync child frames. */
-			sync: function(displayObject, element, frames)
-			{
-				var list = 
-				[
-					aape.MovieClip,
-					aape.Timeline
-				];
-
-
-				if( that.getIsInstanceOf( displayObject, list ) )
-				{
-					var frame = null;
-
-					if( element.loop !== undefined && element.firstFrame !== undefined )
-					{
-						if( element.loop == "single frame" )
-							frame = element.firstFrame;
-						else
-						if( element.loop == "play once" )
-						{
-							var previous = frame - 1;
-							frame = Math.min( currentIndex, totalFrames )
-						}
-						else
-						{
-							var previousIndex = that.getPreviousIndex( frames, currentFrame );
-							var firstFrame = element.firstFrame || 0;
-							
-							frame = firstFrame + ( currentFrame - previousIndex );
-						}
-
-						if( displayObject.isPlaying )
-							displayObject.setFrame( frame );
-
-					}
-				}
-			},
-
-
-			/** Add child to display list. */
-			add: function(displayObject)
-			{
-				// if( !displayObject.parent )
-					that.addChild( displayObject );
-			},
-
-			removeMissing: function(layerID, elements)
-			{
-				var layer = that.layers[ layerID ];
-
-				if( layer )
-				{
-					layer.forEach( function(child)
-					{
-						element = elements.find( function(element)
-						{
-							return element.id == child.id;
-						});
-
-						if( element == undefined )
-							that.removeChild( child );
-
-					});
-				}
 			}
 		}
-	};
+	},
 
 
+	/** Add child to display list. */
+	prototype.add = function(displayObject)
+	{
+		// if( !displayObject.parent )
+			this.addChild( displayObject );
+	},
+
+	prototype.removeMissing = function(layerID, elements)
+	{
+		var layerElements = this.getLayer( layerID ).elements;
+
+		if( layerElements )
+		{
+			layerElements.forEach( function(child)
+			{
+				element = elements.find( function(element)
+				{
+					return element.id == child.id;
+				});
+
+				if( element == undefined )
+					this.removeChild( child );
+
+			}.bind(this) );
+		}
+	}
+
+
+	/** Getter */
 	prototype.getValidIndex = function(template, currentIndex)
 	{
 		var frame = null;
@@ -425,31 +469,6 @@
 			return frame;
 		}
 	};
-
-	prototype.getDisplayObject = function(layerID, id)
-	{
-		var displayObject = null;
-
-		// layer = this.getLayer( layerID );
-		var layer = this.layers[ layerID ];
-
-		if( !layer )
-			layer = this.layers[ layerID ] = [];
-
-		displayObject = layer.find( function(element)
-		{
-			return element && element.id == id;
-		});
-
-		if( !displayObject )
-		{
-			displayObject = this.parse( id );
-			layer.push( displayObject );
-		}
-		
-		return displayObject;
-	};
-
 
 	prototype.getIsInstanceOf = function(displayObject, list)
 	{
@@ -517,12 +536,6 @@
 	{
 		var list = this.getFrames( frames, id );
 		list.pop();
-
-		// result = list.filter( function(element)
-		// {
-		// 	var frame = element.frame;
-		// 	return frame.w != 1 && frame.h != 1;
-		// });
 
 		return list;
 	};
@@ -660,7 +673,7 @@
 		return result;
 	};
 
-	prototype.getTransform = function(frames, previous, next, id, percent)
+	prototype.getTransform = function(previous, next, id, percent)
 	{
 		var animation = previous.animation;
 

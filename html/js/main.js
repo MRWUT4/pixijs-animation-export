@@ -10,7 +10,7 @@
 	{
 		Object.call( this );
 
-		this.fps = object.fps || 30;
+		this.fps = object.fps || 60;
 		this.inFocus = true;
 
 		this.url = object.url;
@@ -104,7 +104,8 @@
 		{
 			library: json.library,
 			elements: elements,
-			// timeScale: timeScale,
+			timeScale: timeScale,
+			id: "gameCross"
 			// id: "playerCrossHead"
 		});
 
