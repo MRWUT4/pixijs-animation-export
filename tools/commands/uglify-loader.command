@@ -10,6 +10,6 @@ html/js/aape/eventdispatcher.js \
 html/js/aape/loader.js \
 html/js/aape/urlrequest.js \
 html/js/aape/loaditem.js \
--o js/loader-1.0.0.min.js
+-o html/js/loader-1.0.0.min.js
 
 exit 0

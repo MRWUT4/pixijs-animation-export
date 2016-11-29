@@ -77,9 +77,11 @@
 
 			var that = this;
 
-			aape.Parse( this.layers ).forEach( function(property, children)
-			{
-				children.forEach( function(child)
+			aape.Parse( this.layers ).forEach( function(property, vo)
+			{	
+				var elements = vo.elements;
+
+				elements.forEach( function(child)
 				{
 					child.timeScale = that._timeScale;
 				});
@@ -177,9 +179,9 @@
 		else
 		{
 			this.currentLabel = frame;
-			var index = this.labels[ this.currentLabel ];
 
-			return index;
+			// var index = this.labels[ this.currentLabel ];
+			return 0;
 		}
 	};
 
@@ -462,9 +464,7 @@
 			var range = beginEnd[ this.currentLabel ];
 			var lastFrame = range.end - range.begin;
 
-			frame = ( range.begin + ( currentIndex % lastFrame ) );
-			
-			// TODO: Add this.loop handling for label animations.
+			frame = !this.loop && currentIndex >= lastFrame ? ( range.end - 1 ) : ( range.begin + ( currentIndex % lastFrame ) );
 
 			return frame;
 		}
