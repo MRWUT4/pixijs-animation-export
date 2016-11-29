@@ -1,18 +1,26 @@
 ﻿{"frames": {
 
-"background0000":
+"__aape__originpixel0000":
+{
+	"frame": {"x":0,"y":2002,"w":1,"h":1},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":1,"h":1},
+	"sourceSize": {"w":1,"h":1}
+},
+"__aape__originpixel0001":
+{
+	"frame": {"x":0,"y":2002,"w":1,"h":1},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":1,"h":1},
+	"sourceSize": {"w":1,"h":1}
+},
+"gameCrossBackground0000":
 {
 	"frame": {"x":0,"y":0,"w":1000,"h":2000},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":1000,"h":2000},
-	"sourceSize": {"w":1000,"h":2000}
-},
-"background0001":
-{
-	"frame": {"x":0,"y":0,"w":0,"h":0},
-	"rotated": false,
-	"trimmed": true,
 	"spriteSourceSize": {"x":0,"y":0,"w":1000,"h":2000},
 	"sourceSize": {"w":1000,"h":2000}
 }},

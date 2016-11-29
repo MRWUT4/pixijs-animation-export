@@ -11,8 +11,8 @@
 	AtlasExporter.shapePadding = 2;
 	AtlasExporter.allowTrimming = true;
 	AtlasExporter.autoSize = true;
-	AtlasExporter.maxSheetWidth = 2048;
-	AtlasExporter.maxSheetHeight = 1024;
+	AtlasExporter.maxSheetWidth = 1024;
+	AtlasExporter.maxSheetHeight = 2048;
 	AtlasExporter.stackDuplicateFrames = true;
 	AtlasExporter.layoutFormat = "JSON";
 	AtlasExporter.algorithm = "maxRects";
@@ -121,42 +121,75 @@
 
 	prototype.init = function()
 	{
-		this.initAddOriginKeyframeToSymbols();	
-		this.initParsingByMode();
-		this.initResourceExport();
-		this.initRemoveOriginKeyframeFromSymbols();
-		this.initDocumentRoot();
+		this.addOriginPixelToLibrary();
+		this.copyOriginPixelFrame();
+		this.addOriginPixelToSymbols();
+		this.paseByMode();
+		this.exportResources();
+		this.removeLastFrameFromSymbols();
+		this.exitDocumentEditMode();
 	};
 
 
-	prototype.initAddOriginKeyframeToSymbols = function()
+	prototype.addOriginPixelToLibrary = function()
 	{
-		var that = this;
+		var type = "graphic";
+		var name = "__aape__originpixel";
+
+		var library = document.library;
+		var hasOriginPixel = library.itemExists( name );
+
+		if( !hasOriginPixel )
+			library.addNewItem( type, name );
 		
-		this.symbols.forEach( function(symbol)
+		library.selectItem( name, true );
+		this.originPixel = library.getSelectedItems()[ 0 ];
+
+		if( !hasOriginPixel )
 		{
-			that.addNullingRectangleToLastFrame( symbol );
-		});
+			this.setFillColorIfBlank();
+			this.drawRect( this.originPixel.timeline );
+		}
 	};
 
-	prototype.initRemoveOriginKeyframeFromSymbols = function()
-	{
-		var that = this;
-
-		this.symbols.forEach( function(symbol)
-		{
-			that.removeLastFrame( symbol.timeline );
-		});
-	};
-
-
-	prototype.initDocumentRoot = function()
+	prototype.exitDocumentEditMode = function()
 	{
 		document.exitEditMode();
 	};
 
+	prototype.copyOriginPixelFrame = function()
+	{
+		var timeline = this.originPixel.timeline;
+		timeline.copyFrames( timeline.frameCount - 1 );
+	};
+
+	prototype.addOriginPixelToSymbols = function()
+	{
+		var that = this;
+	
+		this.symbols.forEach( function(symbol)
+		{
+			var timeline = symbol.timeline;
+
+			that.addEmptyKeyframeToTimeline( timeline );
+			timeline.pasteFrames( timeline.frameCount - 1 );
+		});
+	};
+
+	prototype.removeLastFrameFromSymbols = function()
+	{
+		var that = this;
+	
+		this.symbols.forEach( function(symbol)
+		{
+			var timeline = symbol.timeline;
+			timeline.removeFrames( timeline.frameCount - 1 );
+		});
+	};
+
+
 	/** Construct SpriteSheetObjects according to mode. */
-	prototype.initParsingByMode = function(mode)
+	prototype.paseByMode = function(mode)
 	{
 		this.symbols = this.getSortedList( this.symbols );
 		this.spriteSheetExporters = null;
@@ -177,7 +210,6 @@
 		var addToSpriteSheetExporters = function(symbols, length)
 		{
 			var spriteSheetExporter = that.getSpriteSheetExporter();
-
 			// that.debugSpriteSheetExporter( spriteSheetExporter );
 			// return;
 
@@ -222,18 +254,18 @@
 	// };
 
 
-	prototype.addNullingRectangleToLastFrame = function(symbol)
-	{
-		this.addEmptyKeyframeToTimeline( symbol.timeline );
-		this.setFillColorIfBlank();
-		this.drawRect();
-	};
+	// prototype.addNullingRectangleToLastFrame = function(symbol)
+	// {
+	// 	this.addEmptyKeyframeToTimeline( symbol.timeline );
+	// 	this.setFillColorIfBlank();
+	// 	this.drawRect();
+	// };
 
 	prototype.addEmptyKeyframeToTimeline = function(timeline)
 	{
 		var frameCount = timeline.frameCount;
-
 		document.library.editItem( timeline.name );
+
 		timeline.insertBlankKeyframe( frameCount );
 	};
 
@@ -250,18 +282,22 @@
 		}
 	};
 
-	prototype.drawRect = function()
+	prototype.drawRect = function(timeline)
 	{
+		document.library.editItem( timeline.name );
+
 		var drawingLayer = fl.drawingLayer;
+
+		drawingLayer.beginDraw()
+		drawingLayer.beginFrame()
 		var path = drawingLayer.newPath();
+		path.addPoint( 0, 0 );
+		path.addPoint( 1, 0 );
+		path.addPoint( 0, 1 );
+		path.addPoint( 0, 0 );
+		drawingLayer.endFrame()
 
-		path.addPoint(0, 0);
-		path.addPoint(1, 0);
-		path.addPoint(0, 1);
-		// path.addPoint(0, 0);
-		// path.addPoint(0, 0);
-
-		var shape = path.makeShape();
+		var shape = path.makeShape( false, true );
 	};
 
 
@@ -272,7 +308,7 @@
 	};
 
 
-	prototype.initResourceExport = function()
+	prototype.exportResources = function()
 	{
 		this.resources = this.exportSpriteSheets( this.spriteSheetExporters );
 		this.json.resources = this.resources;
