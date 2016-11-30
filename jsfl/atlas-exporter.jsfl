@@ -152,7 +152,9 @@
 			document.exitEditMode();
 		}
 
-		return hasOriginPixel;
+
+
+		library.addNewItem( "bitmap", "__aape__bitmap" );
 	};
 
 	prototype.copyOriginPixelFrame = function()
