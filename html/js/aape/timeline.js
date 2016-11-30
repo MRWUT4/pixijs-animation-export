@@ -171,6 +171,11 @@
 		this.isPlaying = false;
 	};
 
+	prototype.clone = function()
+	{
+		return this.getTimeline( this.id );
+	};
+
 
 	prototype.inputToFrame = function(frame)
 	{

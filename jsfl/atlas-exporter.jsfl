@@ -127,7 +127,6 @@
 		this.paseByMode();
 		this.exportResources();
 		this.removeLastFrameFromSymbols();
-		this.exitDocumentEditMode();
 	};
 
 
@@ -149,12 +148,11 @@
 		{
 			this.setFillColorIfBlank();
 			this.drawRect( this.originPixel.timeline );
-		}
-	};
 
-	prototype.exitDocumentEditMode = function()
-	{
-		document.exitEditMode();
+			document.exitEditMode();
+		}
+
+		return hasOriginPixel;
 	};
 
 	prototype.copyOriginPixelFrame = function()
@@ -210,15 +208,14 @@
 		var addToSpriteSheetExporters = function(symbols, length)
 		{
 			var spriteSheetExporter = that.getSpriteSheetExporter();
-			// that.debugSpriteSheetExporter( spriteSheetExporter );
-			// return;
-
 			list.push( spriteSheetExporter );
 
 			for(var i = symbols.length - 1; i >= 0; --i)
 			{
 			    var symbol = symbols[ i ];
 			
+			    flash.trace( symbol );
+
 				symbolOverflowsExporter = that.addSymbolToExporter( spriteSheetExporter, symbol );
 
 				if( symbolOverflowsExporter )
@@ -264,7 +261,7 @@
 	prototype.addEmptyKeyframeToTimeline = function(timeline)
 	{
 		var frameCount = timeline.frameCount;
-		document.library.editItem( timeline.name );
+		// document.library.editItem( timeline.name );
 
 		timeline.insertBlankKeyframe( frameCount );
 	};

@@ -104,9 +104,7 @@
 		{
 			library: json.library,
 			elements: elements,
-			timeScale: timeScale,
-			id: "gameCross"
-			// id: "playerCrossHead"
+			timeScale: timeScale
 		});
 
 		// var uiTimeout = timeline.getChildByName( "uiTimeout" );
