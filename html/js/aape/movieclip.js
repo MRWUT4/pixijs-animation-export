@@ -50,7 +50,7 @@
 	{
 		get: function() 
 		{	
-			return this.endFrame - this.beginFrame;
+			return ( this.endFrame - 1 ) - this.beginFrame;
 		}
 	});
 
