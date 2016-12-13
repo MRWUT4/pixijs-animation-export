@@ -401,7 +401,7 @@
 				if( element.loop == "play once" )
 				{
 					var template = this.getTemplate( element.id );
-					frame = Math.min( this.currentIndex, template.totalFrames - 1 );
+					frame = Math.min( this.currentIndex - previousIndex, template.totalFrames - 1 );
 				}
 				else
 				{

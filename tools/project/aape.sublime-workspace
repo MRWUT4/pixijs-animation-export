@@ -532,16 +532,17 @@
 			"file": "/Users/david.ochmann/Documents/application/project/html/JS-Library/davidochmann/pixijs-animation-export/jsfl/json-timeline-parser.jsfl",
 			"settings":
 			{
-				"buffer_size": 9998,
+				"buffer_size": 10135,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "/Users/david.ochmann/Documents/application/project/html/JS-Library/davidochmann/pixijs-animation-export/jsfl/pixijs-animation-export.jsfl",
+			"file": "/Users/david.ochmann/Library/Application Support/Adobe/Animate CC 2017/de_DE/Configuration/Commands/tools/Export PixiJS Assets.jsfl",
 			"settings":
 			{
-				"buffer_size": 3834,
+				"buffer_size": 19214,
+				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
@@ -549,7 +550,25 @@
 			"file": "/Users/david.ochmann/Documents/application/project/html/JS-Library/davidochmann/pixijs-animation-export/jsfl/atlas-exporter.jsfl",
 			"settings":
 			{
-				"buffer_size": 7563,
+				"buffer_size": 7477,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/david.ochmann/Documents/application/project/html/JS-Library/davidochmann/pixijs-animation-export/html/js/aape/timeline.js",
+			"settings":
+			{
+				"buffer_size": 17732,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "aape.sublime-project",
+			"settings":
+			{
+				"buffer_size": 790,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -580,7 +599,7 @@
 	"command_palette":
 	{
 		"height": 392.0,
-		"last_filter": "",
+		"last_filter": "edi",
 		"selected_items":
 		[
 			[
@@ -740,6 +759,7 @@
 	],
 	"file_history":
 	[
+		"/Users/david.ochmann/Documents/application/project/html/JS-Library/davidochmann/pixijs-animation-export/jsfl/pixijs-animation-export.jsfl",
 		"/Users/david.ochmann/Documents/application/project/html/JS-Library/davidochmann/pixijs-animation-export/html/js/aape/timeline.js",
 		"/Users/david.ochmann/Documents/application/project/html/JS-Library/davidochmann/pixijs-animation-export/tools/commands/uglify-aape.command",
 		"/Users/david.ochmann/Documents/application/project/html/JS-Library/davidochmann/pixijs-animation-export/html/js/aape/parse.js",
@@ -866,8 +886,7 @@
 		"/Users/david.ochmann/Documents/application/project/html/JS-Library/europapark/App-GameCollection/www/js/application.js",
 		"/Users/david.ochmann/Documents/application/project/html/JS-Library/europapark/App-GameCollection/www/js/goto.js",
 		"/Users/david.ochmann/Documents/application/project/html/JS-Library/europapark/App-GameCollection/config.xml",
-		"/Users/david.ochmann/Documents/application/project/html/JS-Library/europapark/App-GameCollection/tools/project/Europapark-Spielbox.sublime-project",
-		"/Users/david.ochmann/Documents/application/project/html/JS-Library/europapark/App-GameCollection/www/info.html"
+		"/Users/david.ochmann/Documents/application/project/html/JS-Library/europapark/App-GameCollection/tools/project/Europapark-Spielbox.sublime-project"
 	],
 	"find":
 	{
@@ -887,6 +906,7 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"scaleY",
 			"timeline",
 			"clone",
 			"labels",
@@ -1013,8 +1033,7 @@
 			"player",
 			"messengerItemsReadyHandler",
 			"ITEMS_READY",
-			"false",
-			"duration"
+			"false"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1033,7 +1052,7 @@
 	"groups":
 	[
 		{
-			"selected": 3,
+			"selected": 4,
 			"sheets":
 			[
 				{
@@ -1062,7 +1081,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 5,
 					"type": "text"
 				},
 				{
@@ -1071,15 +1090,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 9998,
+						"buffer_size": 10135,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1544,
-								1544
+								8781,
+								8781
 							]
 						],
 						"settings":
@@ -1096,19 +1115,19 @@
 				},
 				{
 					"buffer": 2,
-					"file": "/Users/david.ochmann/Documents/application/project/html/JS-Library/davidochmann/pixijs-animation-export/jsfl/pixijs-animation-export.jsfl",
+					"file": "/Users/david.ochmann/Library/Application Support/Adobe/Animate CC 2017/de_DE/Configuration/Commands/tools/Export PixiJS Assets.jsfl",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3834,
+						"buffer_size": 19214,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								355,
-								355
+								7215,
+								7066
 							]
 						],
 						"settings":
@@ -1117,10 +1136,10 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 4290.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
@@ -1129,15 +1148,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 7563,
+						"buffer_size": 7477,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								261,
-								261
+								3400,
+								3400
 							]
 						],
 						"settings":
@@ -1146,14 +1165,72 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 1632.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "/Users/david.ochmann/Documents/application/project/html/JS-Library/davidochmann/pixijs-animation-export/html/js/aape/timeline.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 17732,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								8026,
+								8026
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 5116.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
 					"type": "text"
 				},
 				{
-					"buffer": 4,
+					"buffer": 5,
+					"file": "aape.sublime-project",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 790,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								784,
+								704
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
 					"file": "/Users/david.ochmann/Documents/application/project/html/JS-Library/davidochmann/pixijs-animation-export/html/js/main.js",
 					"semi_transient": false,
 					"settings":
@@ -1178,11 +1255,11 @@
 						"translation.y": 1077.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 7,
 					"type": "text"
 				},
 				{
-					"buffer": 5,
+					"buffer": 7,
 					"file": "/Users/david.ochmann/Documents/application/project/html/JS-Library/davidochmann/pixijs-animation-export/html/debug.html",
 					"semi_transient": false,
 					"settings":
@@ -1207,7 +1284,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 6,
 					"type": "text"
 				}
 			]
@@ -1266,6 +1343,14 @@
 		"selected_items":
 		[
 			[
+				"timeline",
+				"html/js/aape/timeline.js"
+			],
+			[
+				"pixi",
+				"tools/Export PixiJS Assets.jsfl"
+			],
+			[
 				"atlas",
 				"jsfl/atlas-exporter.jsfl"
 			],
@@ -1276,10 +1361,6 @@
 			[
 				"ugli",
 				"commands/uglify-aape.command"
-			],
-			[
-				"pixi",
-				"jsfl/pixijs-animation-export.jsfl"
 			],
 			[
 				"json",
@@ -1772,10 +1853,6 @@
 			[
 				"css",
 				"App-GameCollection/www/css/style.css"
-			],
-			[
-				"userda",
-				"App-GameCollection/www/js/userdata.js"
 			]
 		],
 		"width": 0.0
@@ -1783,9 +1860,13 @@
 	"select_project":
 	{
 		"height": 500.0,
-		"last_filter": "fli",
+		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"",
+				"~/Documents/application/project/html/JS-Library/internetabc/Flizzys-Zeichenchaos/tools/project/InternetABC-FlizzysZeichenchaos.sublime-project"
+			],
 			[
 				"fli",
 				"~/Documents/application/project/html/JS-Library/internetabc/Flizzys-Zeichenchaos/tools/project/InternetABC-FlizzysZeichenchaos.sublime-project"
@@ -1793,10 +1874,6 @@
 			[
 				"to",
 				"~/Documents/application/project/html/JS-Library/toggo/Toggo-WinterGames/tools/project/Toggo-WinterGames.sublime-project"
-			],
-			[
-				"",
-				"~/Documents/application/project/html/JS-Library/davidochmann/pixijs-animation-export/tools/project/aape.sublime-project"
 			],
 			[
 				"win",
