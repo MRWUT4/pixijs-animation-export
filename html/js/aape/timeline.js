@@ -400,8 +400,8 @@
 				else
 				if( element.loop == "play once" )
 				{
-					var previous = frame - 1;
-					frame = Math.min( this.currentIndex, this.totalFrames )
+					var template = this.getTemplate( element.id );
+					frame = Math.min( this.currentIndex - previousIndex, template.totalFrames - 1 );
 				}
 				else
 				{

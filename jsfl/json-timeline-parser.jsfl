@@ -401,6 +401,14 @@
 
 		// alert( element.name )
 
+		var scewMultiplier = { x:element.skewY == 180 ? -1 : 1 };
+
+		var scale = 
+		{ 
+			x: element.scaleX * scewMultiplier.x, 
+			y: element.scaleY 
+		};
+
 		if( inputIsValid && elementHasPropertys )
 		{
 			// this.addProperty( object, "elementType", element.elementType );
@@ -413,8 +421,8 @@
 			// this.addProperty( object, "width", element.width, 0 );
 			// this.addProperty( object, "height", element.height, 0 );
 			this.addProperty( object, "rotation", element.rotation, function(value){ return isNaN(value) } );
-			this.addProperty( object, "scaleX", element.scaleX, null, 4 );
-			this.addProperty( object, "scaleY", element.scaleY, null, 4 );
+			this.addProperty( object, "scaleX", scale.x, null, 4 );
+			this.addProperty( object, "scaleY", scale.y, null, 4 );
 			// this.addProperty( object, "pivot", pivot, null );
 			// this.add
 		}
