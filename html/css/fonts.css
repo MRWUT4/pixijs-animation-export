@@ -1,0 +1,14 @@
+#font
+{
+	font-family: 'Gibson Bold';
+	visibility: hidden;
+}
+
+@font-face {
+    font-family: 'Gibson Bold';
+    src: url('gibson-bold-webfont.woff2') format('woff2'),
+         url('gibson-bold-webfont.woff') format('woff');
+    font-weight: bold;
+    font-style: bold;
+
+}

@@ -262,22 +262,38 @@
 
 		var text = this.getTextFieldText( element );
 
-		var style = 
-		{
-			font: this.getTextElementStyle( element ),
-			fill: element.getTextAttr( "fillColor" ),
-			align: element.getTextAttr( "alignment" )
-		};
+		// var style = 
+		// {
+		// 	// font: this.getTextElementStyle( element ),
+		// 	fill: element.getTextAttr( "fillColor" ),
+		// 	align: element.getTextAttr( "alignment" )
+		// };
 
+		// this.addProperty( style, "fontStyle", element.getTextAttr( "size" ), "" );
+		// this.addProperty( style, "fontVariant", element.getTextAttr( "size" ), "" );
+		// this.addProperty( style, "fontWeight", element.getTextAttr( "size" ), "" );
+
+
+		// this.addProperty( object, "name", object.name, null );
+		this.addProperty( object, "text", text, "" );
+		// this.addProperty( object, "lineSpacing", element.getTextAttr( "lineSpacing" ), 0 );
+		// this.addProperty( object, "style", style, null );
+
+		var style = {};
+
+		this.addProperty( style, "fontFamily", element.getTextAttr( "face" ), "" );
+		this.addProperty( style, "fontSize", element.getTextAttr( "size" ), "" );
+		this.addProperty( style, "fontWeight", element.getTextAttr( "bold" ) ? "bold" : "", "" );
+		this.addProperty( style, "fill", element.getTextAttr( "fillColor" ), "" );
+		this.addProperty( style, "align", element.getTextAttr( "alignment" ), "" );
+		
+		
 		var margin =
 		{
 			width: element.width,
 			height: element.height
 		};
-
-		// this.addProperty( object, "name", object.name, null );
-		this.addProperty( object, "text", text, "" );
-		// this.addProperty( object, "lineSpacing", element.getTextAttr( "lineSpacing" ), 0 );
+		
 		this.addProperty( object, "style", style, null );
 		this.addProperty( object, "margin", margin, null );
 
@@ -304,17 +320,18 @@
 		return text;
 	};
 
-	prototype.getTextElementStyle = function(element)
-	{
-		var string = "";
-		var bold = element.getTextAttr( "bold" );
+	// prototype.getTextElementStyle = function(element)
+	// {
+	// 	var object = {};
+		// var string = "";
+		// var bold = element.getTextAttr( "bold" );
 
-		string += bold ? "bold " : "";
-		string += element.getTextAttr( "size" ) + "px ";
-		string += JSONTimelineParser.JOIN_FONTFACE ? element.getTextAttr( "face" ).split( " " ).join( "_" ) : element.getTextAttr( "face" ).split( " " )[ 0 ];
+		// string += bold ? "bold " : "";
+		// string += element.getTextAttr( "size" ) + "px ";
+		// string += JSONTimelineParser.JOIN_FONTFACE ? element.getTextAttr( "face" ).split( " " ).join( "_" ) : element.getTextAttr( "face" ).split( " " )[ 0 ];
 
-		return string;
-	};
+	// 	return object;
+	// };
 
 
 	/** Add object to data library. */

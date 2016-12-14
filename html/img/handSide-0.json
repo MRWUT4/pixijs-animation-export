@@ -1,0 +1,35 @@
+﻿{"frames": {
+
+"handSide0000":
+{
+	"frame": {"x":0,"y":0,"w":230,"h":159},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":0,"w":230,"h":159},
+	"sourceSize": {"w":230,"h":159}
+},
+"handSide0001":
+{
+	"frame": {"x":0,"y":163,"w":230,"h":150},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":0,"w":230,"h":159},
+	"sourceSize": {"w":230,"h":159}
+},
+"handSide0002":
+{
+	"frame": {"x":0,"y":317,"w":1,"h":1},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":0,"w":230,"h":159},
+	"sourceSize": {"w":230,"h":159}
+}},
+"meta": {
+	"app": "Adobe Animate",
+	"version": "16.0.0.112",
+	"image": "handSide-0.png",
+	"format": "RGBA8888",
+	"size": {"w":256,"h":512},
+	"scale": "1"
+}
+}

@@ -6,7 +6,7 @@
 	prototype.constructor = AtlasExporter;
 
 
-	AtlasExporter.allowRotate = false;
+	AtlasExporter.allowRotate = true;
 	AtlasExporter.borderPadding = 0;
 	AtlasExporter.shapePadding = 2;
 	AtlasExporter.allowTrimming = true;
@@ -152,10 +152,20 @@
 			document.exitEditMode();
 		}
 
-
-
-		library.addNewItem( "bitmap", "__aape__bitmap" );
+		// var bitmap = this.getLibraryItem( "bitmap", "__aape__bitmap" );
 	};
+
+	// prototype.getLibraryItem = function(type, id)
+	// {
+	// 	var library = document.library;
+
+	// 	library.addNewItem( type, id );
+	// 	library.selectItem( id, true );
+
+	// 	selection = library.getSelectedItems()[ 0 ];
+
+	// 	return selection;
+	// };
 
 	prototype.copyOriginPixelFrame = function()
 	{
@@ -216,8 +226,6 @@
 			{
 			    var symbol = symbols[ i ];
 			
-			    flash.trace( symbol );
-
 				symbolOverflowsExporter = that.addSymbolToExporter( spriteSheetExporter, symbol );
 
 				if( symbolOverflowsExporter )

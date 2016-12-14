@@ -3,7 +3,7 @@
 	window.aape = window.aape || {};
 	window.aape.MovieClip = MovieClip;
 
-	var prototype = MovieClip.prototype = Object.create( PIXI.extras.MovieClip.prototype );
+	var prototype = MovieClip.prototype = Object.create( PIXI.extras.AnimatedSprite.prototype );
 	prototype.constructor = MovieClip;
 
 	/**
@@ -22,7 +22,7 @@
 
 	function MovieClip(textures, animations, comments)
 	{
-		PIXI.extras.MovieClip.call( this, textures, animations );
+		PIXI.extras.AnimatedSprite.call( this, textures, animations );
 
 		this.animationDictionary = animations || {};
 		this.comments = comments || null;
@@ -50,7 +50,7 @@
 	{
 		get: function() 
 		{	
-			return this.endFrame - this.beginFrame;
+			return ( this.endFrame - 1 ) - this.beginFrame;
 		}
 	});
 

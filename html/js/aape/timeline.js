@@ -323,7 +323,7 @@
 		{
 			if( this.frameChanged || this.frameChanged === undefined )
 			{
-				this.transform( id, displayObject, layerVO );
+				this.addTransform( id, displayObject, layerVO );
 				this.add( displayObject );
 			}
 
@@ -357,7 +357,7 @@
 	};
 
 
-	prototype.transform = function(id, displayObject, layerVO /*previousIndex, nextIndex, previousKeyframe, nextKeyframe*/)
+	prototype.addTransform = function(id, displayObject, layerVO /*previousIndex, nextIndex, previousKeyframe, nextKeyframe*/)
 	{
 		var percent = this.getPercent( layerVO.previousIndex, layerVO.nextIndex, this.currentFrame );
 
@@ -552,14 +552,14 @@
 
 		var list = frames.map( function(item)
 		{
-			var frame = item.frame;
+			var itemFrame = item.frame;
 			var size = item.spriteSourceSize;
 			
-			var rectangle = new PIXI.Rectangle( frame.x, frame.y, frame.w, frame.h );
-			var trim = new PIXI.Rectangle( size.x, size.y, size.w, size.h );
+			var frame = new PIXI.Rectangle( itemFrame.x, itemFrame.y, itemFrame.w, itemFrame.h );
+			var orig = new PIXI.Rectangle( size.x, size.y, size.w, size.h );
+			var trim = undefined;
 
-			var texture = new PIXI.Texture( baseTexture, rectangle );
-			texture.trim = trim;
+			var texture = new PIXI.Texture( baseTexture, frame, orig, trim );
 
 			return texture;
 		});
@@ -663,7 +663,15 @@
 	/** TextFieled functions. */
 	prototype.getTextField = function(item, template)
 	{
-		return new aape.TextField( template.text, template.style, template.margin );;
+		var style = new PIXI.TextStyle();
+
+		aape.Parse( template.style ).forEach( function(property, value)
+		{
+			style[ property ] = value;
+
+		}.bind(this) );
+
+		return new aape.TextField( template.text, style, template.margin );;
 	};
 
 

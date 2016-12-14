@@ -53,7 +53,7 @@
 	/** PixiJS functions. */
 	prototype.initPixiJS = function(width, height)
 	{
-		window.PIXI.utils._saidHello = true;
+		PIXI.utils.skipHello();
 
 	    this.stage = new PIXI.Container();
 	    this.renderer = new PIXI.CanvasRenderer( width, height, { transparent:true } );
