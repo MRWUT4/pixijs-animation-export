@@ -141,8 +141,9 @@
 
 	prototype.updatePlayback = function()
 	{
-		if( this.isPlaying )
-			this.setFrame( this.currentIndex + this.timeScale );
+		// if( this.isPlaying )
+		var add = this.isPlaying ? this.timeScale : 0;
+		this.setFrame( this.currentIndex + add );
 	};
 
 	prototype.gotoAndStop = function(frame)

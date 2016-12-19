@@ -75,6 +75,19 @@
 				return result;
 			},
 
+			find: function(callback, result)
+			{
+				for( var property in object )
+				{
+					var value = object[ property ];
+
+					if( callback( property, value, result ) == true )
+						result = property;
+				}
+
+				return result;
+			},
+
 			clone: function()
 			{
 				var parse = function(element, item)
