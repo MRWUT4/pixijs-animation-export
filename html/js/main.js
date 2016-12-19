@@ -53,7 +53,7 @@
 	/** PixiJS functions. */
 	prototype.initPixiJS = function(width, height)
 	{
-		window.PIXI.utils._saidHello = true;
+		PIXI.utils.skipHello();
 
 	    this.stage = new PIXI.Container();
 	    this.renderer = new PIXI.CanvasRenderer( width, height, { transparent:true } );
@@ -70,7 +70,10 @@
 		setInterval( function()
 		{
 			if( this.inFocus && this.renderer )
+			{
 				this.renderer.render( this.stage );
+				this.update();
+			}
 			
 		}.bind( this ), 1000 / this.fps );
 	};
@@ -93,6 +96,13 @@
 	};
 
 
+	prototype.update = function()
+	{
+		if( this.sunContainer )
+			this.sunContainer.rotation += .01;
+	};
+
+
 	/** Scene functions. */
 	prototype.createTimeline = function()
 	{
@@ -106,6 +116,31 @@
 			elements: elements,
 			timeScale: timeScale
 		});
+
+		var content = timeline.getChildByName( "content" );
+		content.gotoAndStop( content.totalFrames - 1);
+
+		var stopDisplayObject = function(displayOject)
+		{
+			displayOject.stop();
+		};
+
+		this.sunContainer = timeline.getChildByName( "sunContainer" );
+
+		console.log( this.sunContainer );
+
+		var medals = timeline.getChildrenByName( "medal" );
+
+		var buttons = timeline.getChildrenByName( "button" );
+
+		var dicipline = timeline.getChildByName( "dicipline" );
+		var list = medals.concat( dicipline ).concat( buttons );
+
+		list.forEach( stopDisplayObject );
+
+		// dicipline.gotoAndStop( dicipline.totalFrames - 1 );
+		// dicipline.y += 50;
+		// dicipline.scale.x = dicipline.scale.y = 10;
 
 		// var uiTimeout = timeline.getChildByName( "uiTimeout" );
 		// uiTimeout.loop = false;

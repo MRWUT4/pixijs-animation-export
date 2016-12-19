@@ -13,59 +13,19 @@
 
 	function TextField(text, style, margin)
 	{
-		this.style = style;
+		this.textStyle = style;
 		this.margin = margin;
 
 		PIXI.Text.call( this, text, style );
 
-		this.setText( text );
+		this.setupText( text );
 	}
 
-
-	/**
-	 * Override functions.
-	 */
-
-	prototype.setTextText = prototype.setText;
-	prototype.setText = function(string)
-	{
-		string = this.modifyStringToFitLineWidth( string );
-		this.text = string;
-
-		this.positionText();
-	};
-
-	Object.defineProperty( prototype, "_text", 
-	{
-		get: function() 
-		{	
-			return this.__text;
-		},
-		set: function(value) 
-		{	
-			this.__text = value;
-
-			if( this.position && this.style )
-				this.positionText();
-		}
-	});
 
 
 	/**
 	 * Getter / Setter
 	 */
-
-	Object.defineProperty( prototype, "property", 
-	{
-		get: function() 
-		{	
-			return this._property;
-		},
-		set: function(value) 
-		{	
-			this._property = value;
-		}
-	});
 
 	Object.defineProperty( prototype, "x", 
 	{
@@ -76,106 +36,81 @@
 		set: function(value) 
 		{	
 			this.position.x = value;
+			
 			this.changeBasePosition();
 			this.positionText();
 		}
 	});
 
-	Object.defineProperty( prototype, "margin", 
+
+	/**
+	 * Public interface
+	 */
+
+	Object.defineProperty( prototype, "_text", 
 	{
 		get: function() 
 		{	
-			return this._margin;
+			return this.__text;
 		},
 		set: function(value) 
 		{	
-			this._margin = value;
+			this.__text = value;
+			this.positionText();
 		}
 	});
 
-	Object.defineProperty( prototype, "lineWidth", 
+	prototype.setupText = function(text)
 	{
-		get: function() 
-		{	
-			return this._lineWidth;
-		},
-		set: function(value) 
-		{	
-			this._lineWidth = value;
-		}
-	});
+		this.text = text;
+		this.setupComplete = true;
 
-	Object.defineProperty( prototype, "isUnderLineWidth", 
-	{
-		get: function() 
-		{	
-			return this.getBounds().width < this.lineWidth || !this.lineWidth;
-		}
-	});
+		this.changeBasePosition();
+		this.positionText();
+	};
 
 
 	/**
 	 * Private interface.
 	 */
 
+	prototype.changeBasePosition = function()
+	{
+		this.margin.x = this.position.x;
+		this.margin.y = this.position.y;
+	};
+
 
 	/** Position functions. */
 	prototype.positionText = function()
 	{
-		if( this.margin )
+		if( this.setupComplete )
 		{
-			switch( this.style.align )
+			var bounds = this.getBounds();
+
+			switch( this.textStyle.align )
 			{
 				case TextField.CENTER:
-					this.alignTextToCenter();
+					this.alignTextToCenter( bounds );
 					break;
 
 				case TextField.RIGHT:
-					this.alignTextToRight();
+					this.alignTextToRight( bounds );
 					break;
 			}
 		}
 	};
 
-	prototype.changeBasePosition = function()
+	prototype.alignTextToCenter = function(bounds)
 	{
-		if( this.margin.x === undefined )
-		{
-			this.margin.x = this.position.x;
-			this.margin.y = this.position.y;
-		}
-	};
-
-	prototype.alignTextToCenter = function()
-	{
-		var position = this.margin.x + ( this.margin.width - this.width ) * .5;
+		var position = this.margin.x + ( this.margin.width - bounds.width ) * .5;
 		this.position.x = position;
 	};
 
-	prototype.alignTextToRight = function()
-	{
-		var position = ( this.margin.x + this.margin.width - this.width );
+	prototype.alignTextToRight = function(bounds)
+	{	
+		var position = this.margin.x + this.margin.width - bounds.width;
 		this.position.x = position;
-	};
-
-
-	/** Line width handling. */
-	prototype.modifyStringToFitLineWidth = function(string)
-	{
-		if( !this.isUnderLineWidth && this.multiline )
-		{
-			var split = string.split( " " );
-			split.splice( split.length - 2, 0, "\n" );
-			string = split.join( " " );
-		}
-		else
-		if( !this.isUnderLineWidth )
-		{
-			if( string.length >= this.text.length )
-				string = this.text;
-		}
-
-		return string;
 	};
 
 }(window));

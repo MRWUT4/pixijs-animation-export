@@ -15,6 +15,6 @@ jsfl/frame-label-exporter.jsfl \
 jsfl/json-exporter.jsfl \
 jsfl/metadata-exporter.jsfl \
 jsfl/pixijs-animation-export.jsfl \
--o jsfl/aape.jsfl
+-o jsfl/aape-1.0.1.jsfl
 #node ../../common/js/davidochmann/nodejs/tools/uglifyhtml.js $(pwd)
 exit 0
