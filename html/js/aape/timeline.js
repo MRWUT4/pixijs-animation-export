@@ -550,14 +550,22 @@
 		var frames = this.getFilteredFrames( json.frames, id );
 		var baseTexture = this.getBaseTexture( elements, json.meta.image );
 
-		var list = frames.map( function(item)
+		var list = frames.map( function(item, index)
 		{
 			var itemFrame = item.frame;
-			var size = item.spriteSourceSize;
+			var itemSpriteSourceSize = item.spriteSourceSize;
+			var itemSourceSize = item.sourceSize;
 			
 			var frame = new PIXI.Rectangle( itemFrame.x, itemFrame.y, itemFrame.w, itemFrame.h );
-			var orig = new PIXI.Rectangle( size.x, size.y, size.w, size.h );
-			var trim = undefined;
+			var orig = undefined;
+			var trim = new PIXI.Rectangle( itemSpriteSourceSize.x, itemSpriteSourceSize.y, itemFrame.w, itemFrame.h );
+
+			// var orig = new PIXI.Rectangle( itemSpriteSourceSize.x, itemSpriteSourceSize.y, itemSpriteSourceSize.w, itemSpriteSourceSize.h );
+			// var trim = new PIXI.Rectangle( 0, 0, itemSourceSize.w, itemSourceSize.h );
+			// var trim = undefined;
+			//the rectanle frame of the texture to show
+			//the area of the original texture
+			//trimmed rectangle of original texture
 
 			var texture = new PIXI.Texture( baseTexture, frame, orig, trim );
 

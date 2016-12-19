@@ -405,7 +405,7 @@
 
 		var scale = 
 		{ 
-			x: element.scaleX * scewMultiplier.x, 
+			x: element.scaleX /** scewMultiplier.x*/, 
 			y: element.scaleY 
 		};
 

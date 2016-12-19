@@ -13,6 +13,6 @@ html/js/aape/textfield.js \
 html/js/aape/parse.js \
 html/js/aape/bezier.js \
 html/js/aape/timeline.js \
--o html/js/aape-1.0.0.min.js
+-o html/js/aape-1.0.1.min.js
 
 # exit 0
