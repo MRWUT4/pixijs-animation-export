@@ -14,7 +14,7 @@
 	JSON.ARRAY = "array";
  	JSON.BOOLEAN = "boolean";
 
-	JSON.FORMAT = true;
+	JSON.FORMAT = false;
 
 	function JSON(){}
 

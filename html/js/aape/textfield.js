@@ -36,9 +36,20 @@
 		set: function(value) 
 		{	
 			this.position.x = value;
-			
-			this.changeBasePosition();
-			this.positionText();
+			this.cuePositionUpdate = true;
+		}
+	});
+
+	Object.defineProperty( prototype, "id", 
+	{
+		get: function() 
+		{	
+			return this._id;
+		},
+		set: function(value) 
+		{	
+			this._id = value;
+			this.cuePositionUpdate = true;
 		}
 	});
 
@@ -56,7 +67,7 @@
 		set: function(value) 
 		{	
 			this.__text = value;
-			this.positionText();
+			this.cuePositionUpdate = true;
 		}
 	});
 
@@ -65,21 +76,32 @@
 		this.text = text;
 		this.setupComplete = true;
 
-		this.changeBasePosition();
-		this.positionText();
+		this.cuePositionUpdate = true;
+	};
+
+
+	prototype.updateTransformText = prototype.updateTransform;
+	prototype.updateTransform = function()
+	{
+		this.updateTransformText();
+		this.updateTextPosition();
+		// this.updatePlayback();
+	};
+
+
+	prototype.updateTextPosition = function()
+	{
+		if( this.cuePositionUpdate === true )
+		{
+			this.cuePositionUpdate = false;
+			this.positionText();
+		}
 	};
 
 
 	/**
 	 * Private interface.
 	 */
-
-	prototype.changeBasePosition = function()
-	{
-		this.margin.x = this.position.x;
-		this.margin.y = this.position.y;
-	};
-
 
 	/** Position functions. */
 	prototype.positionText = function()
@@ -97,20 +119,29 @@
 				case TextField.RIGHT:
 					this.alignTextToRight( bounds );
 					break;
+
+				default:
+					this.alignTextToLeft( bounds );
+					break;
 			}
 		}
 	};
 
 	prototype.alignTextToCenter = function(bounds)
 	{
-		var position = this.margin.x + ( this.margin.width - bounds.width ) * .5;
-		this.position.x = position;
+		var x = this.margin.x + ( this.margin.width - bounds.width ) * .5;
+		this.position.x = x;
 	};
 
 	prototype.alignTextToRight = function(bounds)
 	{	
-		var position = this.margin.x + this.margin.width - bounds.width;
-		this.position.x = position;
+		var x = this.margin.x + this.margin.width - bounds.width;
+		this.position.x = x;
+	};
+
+	prototype.alignTextToLeft = function(bounds)
+	{
+		this.position.x = this.margin.x;
 	};
 
 }(window));

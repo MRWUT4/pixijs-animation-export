@@ -676,7 +676,7 @@
 
 		}.bind(this) );
 
-		return new aape.TextField( template.text, style, template.margin );;
+		return new aape.TextField( template.text, style, template.margin );
 	};
 
 
@@ -804,21 +804,16 @@
 	prototype.translateMatrix = function(transform, displayObject)
 	{
 		var matrix = Timeline.matrix;
-
 		var transformMatrix = transform.matrix;
 
-		console.log( "\n", displayObject.name );
 		aape.Parse( transformMatrix ).forEach( function(property, value)
 		{
-			console.log( property, value );
 			matrix[ property ] = transformMatrix[ property ];
 		});
 
-
-		// matrix.c *= -1;
+		matrix.c *= -1;
 		// matrix.c = -matrix.d;
 		// matrix.d *= -1;
-		console.log( matrix );
 		displayObject.transform.setFromMatrix( matrix );
 
 		return transform;

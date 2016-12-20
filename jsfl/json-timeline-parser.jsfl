@@ -290,6 +290,8 @@
 		
 		var margin =
 		{
+			x: element.x,
+			y: element.y,
 			width: element.width,
 			height: element.height
 		};
@@ -403,11 +405,11 @@
 
 		var scewMultiplier = { x:element.skewY == 180 ? -1 : 1 };
 
-		var scale = 
-		{ 
-			x: element.scaleX /** scewMultiplier.x*/, 
-			y: element.scaleY 
-		};
+		// var scale = 
+		// { 
+		// 	x: element.scaleX * scewMultiplier.x, 
+		// 	y: element.scaleY 
+		// };
 
 		if( inputIsValid && elementHasPropertys )
 		{
@@ -433,7 +435,7 @@
 	prototype.addTextFieldsLineSpacingDisplacement = function(object, element)
 	{
 		if( element.getTextAttr )
-			object.y += element.getTextAttr( "lineSpacing" );
+			object.matrix.ty += element.getTextAttr( "lineSpacing" );
 
 		return object;
 	};
