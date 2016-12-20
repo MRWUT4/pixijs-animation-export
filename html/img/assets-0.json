@@ -10,10 +10,26 @@
 },
 "background0001":
 {
-	"frame": {"x":0,"y":0,"w":0,"h":0},
+	"frame": {"x":202,"y":642,"w":1,"h":1},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":480,"y":320,"w":960,"h":640},
+	"sourceSize": {"w":960,"h":640}
+},
+"rectangle0000":
+{
+	"frame": {"x":0,"y":642,"w":200,"h":200},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":200,"h":200},
+	"sourceSize": {"w":200,"h":200}
+},
+"rectangle0001":
+{
+	"frame": {"x":202,"y":642,"w":1,"h":1},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":100,"y":100,"w":960,"h":640},
 	"sourceSize": {"w":960,"h":640}
 }},
 "meta": {

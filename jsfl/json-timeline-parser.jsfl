@@ -414,17 +414,17 @@
 			// this.addProperty( object, "elementType", element.elementType );
 			this.addProperty( object, "type", Helper.getExportType( element ) );
 			this.addProperty( object, "name", element.name, "" );
-			this.addProperty( object, "x", element.x, null );
-			this.addProperty( object, "y", element.y, null );
 			this.addProperty( object, "alpha", alpha, 1 );
 			this.addProperty( object, "visible", element.visible, true );
 			// this.addProperty( object, "width", element.width, 0 );
-			// this.addProperty( object, "height", element.height, 0 );
-			this.addProperty( object, "rotation", element.rotation, function(value){ return isNaN(value) } );
-			this.addProperty( object, "scaleX", scale.x, null, 4 );
-			this.addProperty( object, "scaleY", scale.y, null, 4 );
+			// // this.addProperty( object, "height", element.height, 0 );
+			// this.addProperty( object, "x", element.x, null );
+			// this.addProperty( object, "y", element.y, null );
+			// this.addProperty( object, "rotation", element.rotation, function(value){ return isNaN(value) } );
+			// this.addProperty( object, "scaleX", scale.x, null, 4 );
+			// this.addProperty( object, "scaleY", scale.y, null, 4 );
 			// this.addProperty( object, "pivot", pivot, null );
-			// this.add
+			this.addProperty( object, "matrix", element.matrix );
 		}
 
 		return object;

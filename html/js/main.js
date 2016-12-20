@@ -117,26 +117,9 @@
 			timeScale: timeScale
 		});
 
-		var content = timeline.getChildByName( "content" );
-		content.gotoAndStop( content.totalFrames - 1);
+		var rectangle = timeline.getChildByName( "rectangle" );
 
-		var stopDisplayObject = function(displayOject)
-		{
-			displayOject.stop();
-		};
-
-		this.sunContainer = timeline.getChildByName( "sunContainer" );
-
-		console.log( this.sunContainer );
-
-		var medals = timeline.getChildrenByName( "medal" );
-
-		var buttons = timeline.getChildrenByName( "button" );
-
-		var dicipline = timeline.getChildByName( "dicipline" );
-		var list = medals.concat( dicipline ).concat( buttons );
-
-		list.forEach( stopDisplayObject );
+		timeline.gotoAndStop( 10 );
 
 		// dicipline.gotoAndStop( dicipline.totalFrames - 1 );
 		// dicipline.y += 50;

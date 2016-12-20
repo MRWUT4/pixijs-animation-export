@@ -12,6 +12,8 @@
 	Timeline.SPRITE = "sprite";
 	Timeline.TEXTFIELD = "textfield";
 
+	Timeline.matrix = new PIXI.Matrix();
+
 
 	function Timeline(setup)
 	{
@@ -363,9 +365,10 @@
 		var percent = this.getPercent( layerVO.previousIndex, layerVO.nextIndex, this.currentFrame );
 
 		var transform = this.getTransform( layerVO.previousKeyframe, layerVO.nextKeyframe, id, percent );
-		transform = this.translateRotation( transform );
+		transform = this.translateMatrix( transform, displayObject );
+		// transform = this.translateRotation( transform );
 		transform = this.translateVisible( transform );
-		transform = this.translateScale( transform );
+		// transform = this.translateScale( transform );
 
 		aape.Parse( transform ).reduce( function( property, value, result ) 
 		{
@@ -561,13 +564,6 @@
 			var orig = undefined;
 			var trim = new PIXI.Rectangle( itemSpriteSourceSize.x, itemSpriteSourceSize.y, itemFrame.w, itemFrame.h );
 
-			// var orig = new PIXI.Rectangle( itemSpriteSourceSize.x, itemSpriteSourceSize.y, itemSpriteSourceSize.w, itemSpriteSourceSize.h );
-			// var trim = new PIXI.Rectangle( 0, 0, itemSourceSize.w, itemSourceSize.h );
-			// var trim = undefined;
-			//the rectanle frame of the texture to show
-			//the area of the original texture
-			//trimmed rectangle of original texture
-
 			var texture = new PIXI.Texture( baseTexture, frame, orig, trim );
 
 			return texture;
@@ -718,17 +714,19 @@
 
 		next = next !== undefined ? next : previous;
 
-		var parse = function(object)
+		var parse = function(object, objectNext)
 		{
 			var transform = {};
 
 			aape.Parse( object ).reduce( function(property, value)
 			{
 				if( typeof value == "number" )
-					transform[ property ] = floatBetweenAandB( value, next[ property ], progress );
+				{
+					transform[ property ] = floatBetweenAandB( value, objectNext[ property ], progress );
+				}
 				else
 				if( typeof value == "object" )
-					transform[ property ] = parse( value );
+					transform[ property ] = parse( value, objectNext[ property ] );
 				else
 					transform[ property ] = value;
 			});
@@ -736,7 +734,7 @@
 			return transform;
 		};
 
-		var transform = parse( previous );
+		var transform = parse( previous, next );
 		
 		return transform;
 	};
@@ -783,25 +781,47 @@
 		return result;
 	};
 
-	prototype.translateScale = function(object)
-	{
-		this.propertyToObjectValue( object, "scaleX", "scale", "x" );
-		this.propertyToObjectValue( object, "scaleY", "scale", "y" );
+	// prototype.translateScale = function(object)
+	// {
+	// 	this.propertyToObjectValue( object, "scaleX", "scale", "x" );
+	// 	this.propertyToObjectValue( object, "scaleY", "scale", "y" );
 
-		return object;
-	};
+	// 	return object;
+	// };
 
 	prototype.translateVisible = function(object)
 	{
 		object.visible = object.visible !== undefined ? object.visible : true;
-
 		return object;
 	};
 
-	prototype.translateRotation = function(object)
+	// prototype.translateRotation = function(object)
+	// {
+	// 	object.rotation = object.rotation * ( Math.PI / 180 );
+	// 	return object;
+	// };
+
+	prototype.translateMatrix = function(transform, displayObject)
 	{
-		object.rotation = object.rotation * ( Math.PI / 180 );
-		return object;
+		var matrix = Timeline.matrix;
+
+		var transformMatrix = transform.matrix;
+
+		console.log( "\n", displayObject.name );
+		aape.Parse( transformMatrix ).forEach( function(property, value)
+		{
+			console.log( property, value );
+			matrix[ property ] = transformMatrix[ property ];
+		});
+
+
+		// matrix.c *= -1;
+		// matrix.c = -matrix.d;
+		// matrix.d *= -1;
+		console.log( matrix );
+		displayObject.transform.setFromMatrix( matrix );
+
+		return transform;
 	};
 
 	prototype.translateAlpha = function(object)
