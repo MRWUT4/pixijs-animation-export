@@ -117,9 +117,10 @@
 			timeScale: timeScale
 		});
 
-		var rectangle = timeline.getChildByName( "rectangle" );
+		var container = timeline.getChildByName( "container" );
+		timeline.stop();
 
-		timeline.gotoAndStop( 10 );
+		// timeline.gotoAndStop( 10 );
 
 		// dicipline.gotoAndStop( dicipline.totalFrames - 1 );
 		// dicipline.y += 50;

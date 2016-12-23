@@ -4,8 +4,76 @@
 		"selected_items":
 		[
 			[
+				"cu",
+				"currentFrame"
+			],
+			[
+				"lbal",
+				"labelChanged"
+			],
+			[
+				"label",
+				"labelChanged"
+			],
+			[
+				"lab",
+				"labelChanged"
+			],
+			[
+				"fr",
+				"frame"
+			],
+			[
+				"obj",
+				"object"
+			],
+			[
+				"be",
+				"beginEndObject"
+			],
+			[
+				"begin",
+				"beginEnd"
+			],
+			[
+				"curre",
+				"currentFrame"
+			],
+			[
+				"last",
+				"lastFrame"
+			],
+			[
+				"las",
+				"lastFrame"
+			],
+			[
+				"getO",
+				"getBeginEndObject"
+			],
+			[
+				"tran",
+				"transformMatrix"
+			],
+			[
 				"ma",
 				"matrix"
+			],
+			[
+				"displ",
+				"displayObject"
+			],
+			[
+				"dis",
+				"displayObject"
+			],
+			[
+				"tm",
+				"timeline"
+			],
+			[
+				"elem",
+				"element"
 			],
 			[
 				"getChil",
@@ -120,16 +188,8 @@
 				"_layer"
 			],
 			[
-				"elem",
-				"elements"
-			],
-			[
 				"eleme",
 				"elements"
-			],
-			[
-				"cu",
-				"currentFrame"
 			],
 			[
 				"fram",
@@ -150,10 +210,6 @@
 			[
 				"prev",
 				"previousKeyframe"
-			],
-			[
-				"curre",
-				"currentIndex"
 			],
 			[
 				"pase",
@@ -276,10 +332,6 @@
 				"commmentObject"
 			],
 			[
-				"label",
-				"labelObject"
-			],
-			[
 				"commentO",
 				"commmentObject"
 			],
@@ -289,10 +341,6 @@
 			],
 			[
 				"labe",
-				"labelObject"
-			],
-			[
-				"lab",
 				"labelObject"
 			],
 			[
@@ -338,10 +386,6 @@
 			[
 				"par",
 				"parseSprite"
-			],
-			[
-				"obj",
-				"object"
 			],
 			[
 				"T",
@@ -470,95 +514,91 @@
 			[
 				"wi",
 				"width"
-			],
-			[
-				"inpu",
-				"inputUsername"
-			],
-			[
-				"call",
-				"callback"
-			],
-			[
-				"__g",
-				"__getter-setter\tGetterSetter"
-			],
-			[
-				"__mo",
-				"__module_state\tModuleState"
-			],
-			[
-				"Di",
-				"DIFFICULTY_EASY"
-			],
-			[
-				"ha",
-				"hard"
-			],
-			[
-				"changeSP",
-				"changeSpriteFrame"
-			],
-			[
-				"ani",
-				"animateChangeSprite"
-			],
-			[
-				"mes",
-				"messenger"
-			],
-			[
-				"ID_",
-				"ID_STATE_HELP"
-			],
-			[
-				"__module",
-				"__module_state\tModuleState"
 			]
 		]
 	},
 	"buffers":
 	[
 		{
-			"file": "/Users/david.ochmann/Documents/application/project/html/JS-Library/davidochmann/pixijs-animation-export/html/js/main.js",
+			"file": "/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/html/debug.html",
 			"settings":
 			{
-				"buffer_size": 2891,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/Users/david.ochmann/Documents/application/project/html/JS-Library/davidochmann/pixijs-animation-export/html/debug.html",
-			"settings":
-			{
-				"buffer_size": 1235,
+				"buffer_size": 1229,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "/Users/david.ochmann/Documents/application/project/html/JS-Library/davidochmann/pixijs-animation-export/html/js/aape/textfield.js",
+			"file": "/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/jsfl/json-timeline-parser.jsfl",
 			"settings":
 			{
-				"buffer_size": 2419,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/Users/david.ochmann/Documents/application/project/html/JS-Library/davidochmann/pixijs-animation-export/html/js/aape/timeline.js",
-			"settings":
-			{
-				"buffer_size": 18673,
+				"buffer_size": 11051,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "/Users/david.ochmann/Documents/application/project/html/JS-Library/davidochmann/pixijs-animation-export/jsfl/json-timeline-parser.jsfl",
+			"file": "/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/jsfl/json-exporter.jsfl",
 			"settings":
 			{
-				"buffer_size": 11051,
+				"buffer_size": 731,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/jsfl/json-object.jsfl",
+			"settings":
+			{
+				"buffer_size": 7874,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/html/img/toggo-winter.json",
+			"settings":
+			{
+				"buffer_size": 18777,
+				"encoding": "UTF-8 with BOM",
+				"line_ending": "CR"
+			}
+		},
+		{
+			"file": "/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/html/js/main.js",
+			"settings":
+			{
+				"buffer_size": 2949,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/html/img/assets.json",
+			"settings":
+			{
+				"buffer_size": 1730,
+				"encoding": "UTF-8 with BOM",
+				"line_ending": "CR"
+			}
+		},
+		{
+			"file": "aape.sublime-project",
+			"settings":
+			{
+				"buffer_size": 796,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "(function(window){\n\n\twindow.aape = window.aape || {};\n\twindow.aape.Timeline = Timeline;\n\n\tvar prototype = Timeline.prototype = Object.create( aape.DisplayObjectContainer.prototype );\n\tprototype.constructor = Timeline;\n\n\n\tTimeline.TIMELINE = \"timeline\";\n\tTimeline.MOVIECLIP = \"movieclip\";\n\tTimeline.SPRITE = \"sprite\";\n\tTimeline.TEXTFIELD = \"textfield\";\n\n\tTimeline.matrix = new PIXI.Matrix();\n\n\n\tfunction Timeline(setup)\n\t{\n\t\tPIXI.Container.call( this );\n\n\t\tthis.library = setup.library;\n\t\tthis.elements = setup.elements;\n\t\tthis.id = setup.id || \"root\";\n\t\tthis.loop = setup.loop || true;\n\t\tthis.timeScale = setup.timeScale !== undefined ? setup.timeScale : 1;\n\t\tthis.onAnimationEnd = setup.onAnimationEnd || null;\n\n\t\tthis.isPlaying = true;\n\t\tthis.currentFrame = null;\n\t\tthis.currentLabel = null;\n\t\tthis.beginEndObject = {};\n\n\t\tthis.setFrame( 0 );\n\t}\n\n\n\t/**\n\t * Getter / Setter\n\t */\n\n\tObject.defineProperty( prototype, \"totalFrames\", \n\t{\n\t\tget: function() \n\t\t{\t\n\t\t\treturn this.template.totalFrames;\n\t\t}\n\t});\n\n\tObject.defineProperty( prototype, \"template\", \n\t{\n\t\tget: function() \n\t\t{\t\n\t\t\tthis._tempalte = this._tempalte !== undefined ? this._tempalte : this.getTemplate( this.id );\n\t\t\treturn this._tempalte;\n\t\t}\n\t});\n\n\tObject.defineProperty( prototype, \"labels\", \n\t{\n\t\tget: function() \n\t\t{\t\n\t\t\treturn this.template.labels;\n\t\t}\n\t});\n\n\tprototype.getTemplate = function(id)\n\t{\n\t\treturn this.library[ id ];\n\t};\n\n\tObject.defineProperty( prototype, \"timeScale\", \n\t{\n\t\tget: function() \n\t\t{\t\n\t\t\treturn this._timeScale;\n\t\t},\n\t\tset: function(value) \n\t\t{\t\n\t\t\tthis._timeScale = value;\n\n\t\t\tvar that = this;\n\n\t\t\taape.Parse( this.layers ).forEach( function(property, vo)\n\t\t\t{\t\n\t\t\t\tvar elements = vo.elements;\n\n\t\t\t\telements.forEach( function(child)\n\t\t\t\t{\n\t\t\t\t\tchild.timeScale = that._timeScale;\n\t\t\t\t});\n\t\t\t});\n\t\t}\n\t});\n\n\n\n\t/**\n\t * Overwrite interface.\n\t */\n\n\t/** Updated transform override function. */\n\t//*\n\tprototype.updateTransformContainer = prototype.\tupdateTransform;\n\tprototype.updateTransform = function()\n\t{\n\t\tthis.updatePlayback();\n\t\tthis.updateTransformContainer();\n\t};\n\t//*/\n\n\n\t/**\n\t * Public interface.\n\t */\n\n\tprototype.parse = function(id)\n\t{\n\t\tvar object = null;\n\t\tvar template = this.getTemplate( id );\n\n\t\tswitch( template.type )\n\t\t{\n\t\t\tcase Timeline.TIMELINE:\n\t\t\t\tobject = this.getTimeline( id );\n\t\t\t\tbreak;\n\n\t\t\tcase Timeline.MOVIECLIP:\n\t\t\t\tobject = this.getMovieClip( id, template, this.elements );\n\t\t\t\tbreak;\n\n\t\t\tcase Timeline.SPRITE:\n\t\t\t\tobject = this.getSprite( id, template, this.elements );\n\t\t\t\tbreak;\n\n\t\t\tcase Timeline.TEXTFIELD:\n\t\t\t\tobject = this.getTextField( id, template );\n\t\t\t\tbreak;\n\t\t}\n\n\t\treturn object;\n\t};\n\n\n\n\tprototype.updatePlayback = function()\n\t{\n\t\t// if( this.isPlaying )\n\t\tvar add = this.isPlaying ? this.timeScale : 0;\n\t\tthis.setFrame( this.currentIndex + add );\n\t};\n\n\tprototype.gotoAndStop = function(frame)\n\t{\n\t\tframe = this.inputToFrame( frame );\n\n\t\tthis.setFrame( frame );\n\t\tthis.stop();\n\t};\n\n\tprototype.gotoAndPlay = function(frame)\n\t{\n\t\tframe = this.inputToFrame( frame );\n\n\t\tthis.setFrame( frame );\n\t\tthis.play();\n\t};\n\n\tprototype.play = function()\n\t{\n\t\tthis.isPlaying = true;\n\t};\n\n\tprototype.stop = function()\n\t{\n\t\tthis.isPlaying = false;\n\t};\n\n\tprototype.clone = function()\n\t{\n\t\treturn this.getTimeline( this.id );\n\t};\n\n\n\tprototype.inputToFrame = function(frame)\n\t{\n\t\tif( typeof frame == \"number\" )\n\t\t\treturn frame;\n\t\telse\n\t\t{\n\t\t\tthis.currentLabel = frame;\n\t\t\tthis.labelChanged = true;\n\n\t\t\tvar index = this.labels[ this.currentLabel ];\n\n\t\t\treturn index;\n\t\t\t// return 0;\n\t\t}\n\t};\n\n\n\tObject.defineProperty( prototype, \"layers\", \n\t{\n\t\tget: function() \n\t\t{\t\n\t\t\tthis._layers = this._layers !== undefined ? this._layers : {};\n\t\t\treturn this._layers;\n\t\t}\n\t});\n\n\tprototype.setLayer = function(id, vo)\n\t{\n\t\treturn this.layers[ id ] = vo;\n\t};\n\n\tprototype.getLayer = function(id)\n\t{\n\t\tif( this.layers[ id ] == undefined ) \n\t\t{\n\t\t\tthis.layers[ id ] = \n\t\t\t{\n\t\t\t\telements: [],\n\t\t\t\tpreviousIndex: null,\n\t\t\t\tnextIndex: null,\n\t\t\t\tpreviousKeyframe: null,\n\t\t\t\tnextKeyframe: null\n\t\t\t}\n\t\t}\n\n\t\treturn this.layers[ id ];\n\t};\n\n\n\t/**\n\t * Private interface.\n\t */\n\n\tprototype.getLayerID = function(name, depth)\n\t{\n\t\tvar suffix = depth !== null ? \"#\" + depth : \"\";\n\t\tvar id = name + suffix;\n\n\t\treturn id;\n\t};\n\n\n\t/** Timeline functions. */\n\tprototype.getTimeline = function(id)\n\t{\n\t\t// timeline creates its own DisplayObjects to simplify object constuction.\n\t\tvar timeline = new aape.Timeline(\n\t\t{\n\t\t\tlibrary: this.library,\n\t\t\telements: this.elements,\n\t\t\ttimeScale: this.timeScale,\n\t\t\tid: id\n\t\t});\n\n\t\treturn timeline;\n\t};\n\n\tprototype.setFrame = function(currentIndex)\n\t{\n\t\tthis.currentIndex = currentIndex;\n\t\tthis.nextFrame = this.getValidIndex( this.template, this.currentIndex );\n\n\t\tthis.frameChanged = this.currentFrame === null || this.labelChanged || this.currentFrame.toFixed( 8 ) !== this.nextFrame.toFixed( 8 );\n\t\tthis.currentFrame = this.nextFrame;\n\n\t\tthis.resolveLayers( this.template.layers );\n\t\tthis.triggerLabelCallback( this.template, this.currentFrame );\n\n\t\tthis.labelChanged = false;\n\t};\n\n\n\n\tprototype.resolveLayers = function(layers)\n\t{\n\t\tlayers.forEach( function(layer, depth)\n\t\t{\n\t\t\tvar vo = this.resolveFrames( layer, depth );\n\t\t\tvar id = this.getLayerID( layer.name, depth );\n\n\t\t\tthis.setLayer( id, vo );\n\n\t\t}.bind(this) );\n\t};\n\n\tprototype.resolveFrames = function(layer, depth)\n\t{\n\t\tvar layerID = this.getLayerID( layer.name, depth );\n\n\n\t\tvar frames = layer.frames;\n\n\t\tvar previousIndex = this.getPreviousIndex( frames, this.currentFrame );\n\t\tvar previousKeyframe = frames[ previousIndex ];\n\n\t\tvar hasAnimation = previousKeyframe.animation;\n\n\t\tvar nextIndex = this.getNextIndex( frames, this.currentFrame );\n\t\tvar nextKeyframe = hasAnimation ? frames[ nextIndex ] : previousKeyframe;\t\t\t\t\n\n\t\tvar previousElements = previousKeyframe.elements;\n\t\t\n\n\t\tvar vo = this.getLayer( layerID );\n\n\t\tvo.previousIndex = previousIndex;\n\t\tvo.nextIndex = nextIndex;\n\t\tvo.previousKeyframe = previousKeyframe;\n\t\tvo.nextKeyframe = nextKeyframe;\n\n\n\t\tvar elements = previousElements.map( function( element )\n\t\t{\n\t\t\treturn this.resolveElement( layerID, element );\n\n\t\t}.bind(this) )\n\n\t\tthis.removeMissing( layerID, elements );\n\t\tvo.elements = elements;\n\n\t\treturn vo;\n\t};\n\n\tprototype.resolveElement = function(layerID, element)\n\t{\n\t\tvar id = element.id;\n\t\t\n\t\tvar layerVO = this.getLayer( layerID );\n\t\tvar displayObject = this.getDisplayObject( layerVO, id );\n\n\t\tif( displayObject )\n\t\t{\n\t\t\tif( this.frameChanged || this.frameChanged === undefined )\n\t\t\t{\n\t\t\t\tthis.addTransform( id, displayObject, layerVO );\n\t\t\t\tthis.add( displayObject );\n\t\t\t}\n\n\t\t\tthis.sync( displayObject, element, layerVO.previousIndex );\n\t\t}\n\n\t\treturn displayObject;\n\t};\n\n\n\tprototype.getDisplayObject = function(layerVO, id)\n\t{\n\t\tvar displayObject = null;\n\n\t\t\n\t\t// if( !layer )\n\t\t// \tlayer = this.setLayer( layerID, [] );\n\n\t\tdisplayObject = layerVO.elements.find( function(element)\n\t\t{\n\t\t\treturn element && element.id == id;\n\t\t});\n\n\t\tif( !displayObject )\n\t\t{\n\t\t\tdisplayObject = this.parse( id );\n\t\t\tlayerVO.elements.push( displayObject );\n\t\t}\n\t\t\n\t\treturn displayObject;\n\t};\n\n\n\tprototype.addTransform = function(id, displayObject, layerVO /*previousIndex, nextIndex, previousKeyframe, nextKeyframe*/)\n\t{\n\t\tvar percent = this.getPercent( layerVO.previousIndex, layerVO.nextIndex, this.currentFrame );\n\n\t\tvar transform = this.getTransform( layerVO.previousKeyframe, layerVO.nextKeyframe, id, percent );\n\t\ttransform = this.translateMatrix( transform, displayObject );\n\t\t// transform = this.translateRotation( transform );\n\t\ttransform = this.translateVisible( transform );\n\t\t// transform = this.translateScale( transform );\n\n\t\taape.Parse( transform ).reduce( function( property, value, result ) \n\t\t{\n\t\t\tif( value !== undefined )\n\t\t\t\tresult[ property ] = value;\n\n\t\t\treturn result;\n\n\t\t}, displayObject );\n\t\t\n\t\tdisplayObject.name = displayObject.name ? displayObject.name : displayObject.id;\n\t},\n\n\n\t/** Sync child frames. */\n\tprototype.sync = function(displayObject, element, previousIndex)\n\t{\n\t\tvar list = \n\t\t[\n\t\t\taape.MovieClip,\n\t\t\taape.Timeline\n\t\t];\n\n\n\t\tif( this.getIsInstanceOf( displayObject, list ) )\n\t\t{\n\t\t\tvar frame = null;\n\n\t\t\tif( element.loop !== undefined && element.firstFrame !== undefined )\n\t\t\t{\n\t\t\t\tif( element.loop == \"single frame\" )\n\t\t\t\t\tframe = element.firstFrame;\n\t\t\t\telse\n\t\t\t\tif( element.loop == \"play once\" )\n\t\t\t\t{\n\t\t\t\t\tvar template = this.getTemplate( element.id );\n\t\t\t\t\tframe = Math.min( this.currentIndex - previousIndex, template.totalFrames - 1 );\n\t\t\t\t}\n\t\t\t\telse\n\t\t\t\t{\n\t\t\t\t\t// var previousIndex = this.getPreviousIndex( frames, currentFrame );\n\t\t\t\t\tvar firstFrame = element.firstFrame || 0;\t\t\t\t\n\t\t\t\t\tframe = firstFrame + ( currentFrame - previousIndex );\n\t\t\t\t}\n\n\t\t\t\tif( displayObject.isPlaying )\n\t\t\t\t\tdisplayObject.setFrame( frame );\n\n\t\t\t}\n\t\t}\n\t},\n\n\n\t/** Trigger callback when animation hits last frame. */\n\tprototype.triggerLabelCallback = function(template, currentFrame)\n\t{\n\t\tif( this.frameChanged && this.currentLabel != null )\n\t\t{\n\t\t\tvar beginEndObject = this.getBeginEndObject( template, \"labels\", this.beginEndObject );\n\t\t\tvar object = beginEndObject[ this.currentLabel ];\n\n\t\t\tconsole.log( object.end - 1, Number( currentFrame.toFixed( 2 ) ) );\n\t\t\tif( object.end - 1 == currentFrame )\n\t\t\t\tconsole.log( \"jo\" );\n\t\t}\n\n\t};\n\n\n\t/** Add child to display list. */\n\tprototype.add = function(displayObject)\n\t{\n\t\t// if( !displayObject.parent )\n\t\t\tthis.addChild( displayObject );\n\t},\n\n\tprototype.removeMissing = function(layerID, elements)\n\t{\n\t\tvar layerElements = this.getLayer( layerID ).elements;\n\n\t\tif( layerElements )\n\t\t{\n\t\t\tlayerElements.forEach( function(child)\n\t\t\t{\n\t\t\t\telement = elements.find( function(element)\n\t\t\t\t{\n\t\t\t\t\treturn element.id == child.id;\n\t\t\t\t});\n\n\t\t\t\tif( element == undefined )\n\t\t\t\t\tthis.removeChild( child );\n\n\t\t\t}.bind(this) );\n\t\t}\n\t}\n\n\n\t/** Getter */\n\tprototype.getValidIndex = function(template, currentIndex)\n\t{\n\t\tvar frame = null;\n\n\t\tif( this.currentLabel === null )\n\t\t{\t\n\t\t\tvar totalFrames = template.totalFrames;\n\n\t\t\tif( totalFrames > 1 )\n\t\t\t\tframe = this.loop ? ( currentIndex % totalFrames ) : ( currentIndex >= totalFrames - 1 ? totalFrames - 1 : currentIndex )\n\t\t\telse\n\t\t\t\tframe = 0;\n\n\t\t\treturn frame;\n\t\t}\n\t\telse\n\t\t{\n\t\t\tvar beginEnd = this.getBeginEndObject( template, \"labels\" );\n\t\t\tvar range = beginEnd[ this.currentLabel ];\n\t\t\tvar lastFrame = range.end - range.begin;\n\n\t\t\tframe = !this.loop && currentIndex >= lastFrame ? ( range.end - 1 ) : ( range.begin + ( currentIndex % lastFrame ) );\n\n\t\t\treturn frame;\n\t\t}\n\t};\n\n\tprototype.getIsInstanceOf = function(displayObject, list)\n\t{\n\t\tvar result = list.find( function(type)\n\t\t{\n\t\t\treturn displayObject instanceof type;\n\t\t});\n\n\t\treturn result;\n\t};\n\n\n\t/** MovieClip functions. */\n\tprototype.getMovieClip = function(id, template, elements)\n\t{\n\t\tvar json = this.getAtlasJSONWithID( elements, id );\n\t\tvar textures = this.getTextures( elements, json, id );\n\n\t\tvar animations = this.getBeginEndObject( template, \"labels\" );\n\t\tvar comments = this.getBeginEndObject( template, \"comments\" );\n\n\t\tvar movieClip = new aape.MovieClip( textures, animations, comments );\n\t\tmovieClip.pivot = this.getDisplayObjectPivot( id, json );\n\t\tmovieClip.play();\n\n\t\treturn movieClip;\n\t};\n\n\tprototype.getBeginEndObject = function(template, name, modObject)\n\t{\n\t\tvar object = template[ name ];\n\n\t\tif( object )\n\t\t{\n\t\t\tvar totalFrames = template.totalFrames;\n\n\t\t\tvar item = aape.Parse( object ).reduce( function(property, begin, result)\n\t\t\t{\n\t\t\t\tresult[ property ] = result[ property ] || { begin:begin, end:totalFrames };\n\n\t\t\t\tvar compare = result[ property ];\n\n\t\t\t\taape.Parse( object ).forEach( function(property, value)\n\t\t\t\t{\n\t\t\t\t\tcompare.end = value < compare.end && value > compare.begin ? value : compare.end; \n\t\t\t\t});\n\n\t\t\t\treturn result;\n\n\t\t\t}, modObject || {} );\n\t\t\t\n\t\t\treturn item;\n\t\t}\n\t\telse\n\t\t\treturn null;\n\t};\n\n\tprototype.getFrames = function(frames, id)\n\t{\n\t\tvar list = aape.Parse( frames ).filter( this.nameIsID( id ).bind(this) );\n\t\treturn list;\n\t};\n\n\tprototype.getFilteredFrames = function(frames, id)\n\t{\n\t\tvar list = this.getFrames( frames, id );\n\t\tlist.pop();\n\n\t\treturn list;\n\t};\n\n\tprototype.getTextures = function(elements, json, id)\n\t{\n\t\tvar frames = this.getFilteredFrames( json.frames, id );\n\t\tvar baseTexture = this.getBaseTexture( elements, json.meta.image );\n\n\t\tvar list = frames.map( function(item, index)\n\t\t{\n\t\t\tvar itemFrame = item.frame;\n\t\t\tvar itemSpriteSourceSize = item.spriteSourceSize;\n\t\t\tvar itemSourceSize = item.sourceSize;\n\t\t\t\n\t\t\tvar frame = new PIXI.Rectangle( itemFrame.x, itemFrame.y, itemFrame.w, itemFrame.h );\n\t\t\tvar orig = undefined;\n\t\t\tvar trim = new PIXI.Rectangle( itemSpriteSourceSize.x, itemSpriteSourceSize.y, itemFrame.w, itemFrame.h );\n\n\t\t\tvar texture = new PIXI.Texture( baseTexture, frame, orig, trim );\n\n\t\t\treturn texture;\n\t\t});\n\n\t\treturn list;\n\t};\n\n\tprototype.getBaseTexture = function(elements, image)\n\t{\n\t\tvar source = elements.find( function(element)\n\t\t{\n\t\t\tvar isImage = element instanceof Image;\n\n\t\t\tif( isImage )\n\t\t\t{\n\t\t\t\tvar path = element.src.split( \"/\" ).slice( -1 )[ 0 ].split( \"?\" )[ 0 ];\n\t\t\t\tvar hasURL = path == image;\n\n\t\t\t\treturn hasURL;\n\t\t\t}\n\t\t});\n\n\t\tvar baseTexture = new PIXI.BaseTexture( source );\n\n\t\treturn baseTexture;\n\t};\n\n\tprototype.getAtlasJSONWithID = function(elements, id)\n\t{\n\t\tvar json = elements.find( function(element)\n\t\t{\n\t\t\tif( this.getIsValidAtlas( element ) )\n\t\t\t{\n\t\t\t\tvar frames = element.frames;\n\t\t\t\tvar hasID = aape.Parse( frames ).every( this.nameIsID( id ).bind(this) );\n\n\t\t\t\treturn hasID;\n\t\t\t}\n\t\t\telse\n\t\t\t\treturn false;\n\n\t\t}.bind(this) );\n\n\t\treturn json;\n\t};\n\n\n\tprototype.getIsValidAtlas = function(element)\n\t{\n\t\treturn element.frames && element.meta;\n\t};\n\n\tprototype.nameIsID = function(id)\n\t{\n\t\treturn function( property, value )\n\t\t{\n\t\t\tvar name = this.getFrameIDWithoutIndex( property );\n\t\t\treturn name == id;\n\t\t};\n\t};\n\n\tprototype.getFrameIDWithoutIndex = function(id)\n\t{\n\t\treturn id.slice( 0, -4 );\n\t};\n\n\n\n\t/** Sprite functions. */\n\tprototype.getSprite = function(id, template, elements)\n\t{\n\t\tvar json = this.getAtlasJSONWithID( elements, id );\n\t\tvar texture = this.getTextures( elements, json, id )[ 0 ];\n\n\t\tvar sprite = new aape.Sprite( texture );\n\t\tsprite.pivot = this.getDisplayObjectPivot( id, json );\n\n\t\treturn sprite;\t\n\t};\n\n\n\tprototype.getDisplayObjectPivot = function(id, json)\n\t{\n\t\tvar frames = this.getFrames( json.frames, id );\n\n\t\tvar result = frames.reduce( function( result, frame )\n\t\t{\n\t\t\tvar size = frame.spriteSourceSize;\n\n\t\t\tresult.x = size.x > result.x || result.x == null ? size.x : result.x;\n\t\t\tresult.y = size.y > result.y || result.y == null ? size.y : result.y;\n\n\t\t\treturn result;\n\n\t\t}, { x:null, y:null } );\n\n\t\treturn result;\n\t};\n\n\n\t/** TextFieled functions. */\n\tprototype.getTextField = function(item, template)\n\t{\n\t\tvar style = new PIXI.TextStyle();\n\n\t\taape.Parse( template.style ).forEach( function(property, value)\n\t\t{\n\t\t\tstyle[ property ] = value;\n\n\t\t}.bind(this) );\n\n\t\treturn new aape.TextField( template.text, style, template.margin );\n\t};\n\n\n\n\t/** TransformData functions. */\n\tprototype.getPercent = function(previous, next, currentFrame )\n\t{\n\t\tvar n0 = ( currentFrame - previous );\n\t\tvar n1 = ( next - previous );\n\t\tvar result = n1 !== 0 ? ( n0 / n1 ) : 0;\n\n\t\treturn result;\n\t};\n\n\tprototype.getTransform = function(previous, next, id, percent)\n\t{\n\t\tvar animation = previous.animation;\n\n\t\tvar previousItem = this.translateAlpha( this.getFrameTransform( previous, id ) );\n\t\tvar nextItem = this.translateAlpha( this.getFrameTransform( next, id ) );\n\n\n\t\tvar p = this.getBezierPoints( animation );\n\t\t// var p = this.getBezierPointsSubset( bezierPoints, percent );\n\n\t\tvar progress = aape.Bezier.getY( percent, p[ 0 ], p[ 1 ], p[ 2 ], p[ 3 ] );\n\t\tvar transform = this.getTransformBetweenItems( previousItem, nextItem, progress );\n\n\t\treturn transform;\n\t};\n\n\tprototype.getTransformBetweenItems = function(previous, next, progress)\n\t{\n\t\tvar floatBetweenAandB = this.floatBetweenAandBAt;\n\n\t\tnext = next !== undefined ? next : previous;\n\n\t\tvar parse = function(object, objectNext)\n\t\t{\n\t\t\tvar transform = {};\n\n\t\t\taape.Parse( object ).reduce( function(property, value)\n\t\t\t{\n\t\t\t\tif( typeof value == \"number\" )\n\t\t\t\t{\n\t\t\t\t\ttransform[ property ] = floatBetweenAandB( value, objectNext[ property ], progress );\n\t\t\t\t}\n\t\t\t\telse\n\t\t\t\tif( typeof value == \"object\" )\n\t\t\t\t\ttransform[ property ] = parse( value, objectNext[ property ] );\n\t\t\t\telse\n\t\t\t\t\ttransform[ property ] = value;\n\t\t\t});\n\n\t\t\treturn transform;\n\t\t};\n\n\t\tvar transform = parse( previous, next );\n\t\t\n\t\treturn transform;\n\t};\n\n\tprototype.floatBetweenAandBAt = function(a, b, position)\n\t{\n\t\treturn a + position * ( b - a );\n\t};\n\n\tprototype.quadraticBezier = function(t, p0, p1, p2, p3)\n\t{\n\t\treturn Math.pow( 1 - t, 3 ) * p0 + \n\t\t3 * Math.pow( 1 - t, 2 ) * t * p1 + \n\t\t3 * ( 1 - t ) * Math.pow( t, 2 ) * p2 + \n\t\tMath.pow( t, 3 ) * p3;\n\t};\n\n\tprototype.getBezierPoints = function(animation)\n\t{\n\t\tvar points = null;\n\n\t\tif( animation && animation.length > 0 )\n\t\t{\n\t\t\tpoints = animation.concat();\n\n\t\t\tpoints.unshift( aape.Bezier.p00 );\n\t\t\tpoints.push( aape.Bezier.p11 );\n\t\t}\n\t\telse\n\t\t\tpoints = aape.Bezier.linearTransition;\n\t\t\n\t\treturn points;\n\t};\n\n\tprototype.getFrameTransform = function(keyframe, id)\n\t{\n\t\tvar elements = keyframe.elements;\n\n\t\tvar result = elements.find( function(element)\n\t\t{\n\t\t\treturn element.id == id;\n\t\t});\n\n\t\treturn result;\n\t};\n\n\t// prototype.translateScale = function(object)\n\t// {\n\t// \tthis.propertyToObjectValue( object, \"scaleX\", \"scale\", \"x\" );\n\t// \tthis.propertyToObjectValue( object, \"scaleY\", \"scale\", \"y\" );\n\n\t// \treturn object;\n\t// };\n\n\tprototype.translateVisible = function(object)\n\t{\n\t\tobject.visible = object.visible !== undefined ? object.visible : true;\n\t\treturn object;\n\t};\n\n\t// prototype.translateRotation = function(object)\n\t// {\n\t// \tobject.rotation = object.rotation * ( Math.PI / 180 );\n\t// \treturn object;\n\t// };\n\n\tprototype.translateMatrix = function(transform, displayObject)\n\t{\n\t\tvar matrix = Timeline.matrix;\n\t\tvar transformMatrix = transform.matrix;\n\n\t\taape.Parse( transformMatrix ).forEach( function(property, value)\n\t\t{\n\t\t\tmatrix[ property ] = transformMatrix[ property ];\n\t\t});\n\n\t\tmatrix.c *= -1;\n\t\t// matrix.c = -matrix.d;\n\t\t// matrix.d *= -1;\n\t\tdisplayObject.transform.setFromMatrix( matrix );\n\n\t\treturn transform;\n\t};\n\n\tprototype.translateAlpha = function(object)\n\t{\n\t\tif( object )\n\t\t\tobject.alpha = object.alpha !== undefined ? object.alpha : 1;\n\n\t\treturn object;\n\t};\n\n\tprototype.propertyToObjectValue = function(object, property, name, value)\n\t{\n\t\tif( object[ property ] )\n\t\t{\n\t\t\tvar item = object[ name ] = object[ name ] || {};\n\t\t\titem[ value ] = object[ property ];\n\n\t\t\tdelete object[ property ];\n\t\t}\n\t};\n\n\n\tprototype.getPreviousIndex = function(object, currentFrame)\n\t{\n\t\tvar result = aape.Parse( object ).reduce( function(property, value, item)\n\t\t{\n\t\t\tvar frameIndex = Number( property );\n\t\t\titem = frameIndex >= item && frameIndex <= currentFrame ? frameIndex : item;\n\n\t\t\treturn item;\n\n\t\t}.bind(this), 0 );\n\n\n\t\treturn result;\n\t};\n\n\tprototype.getNextIndex = function(object, currentFrame)\n\t{\n\t\tvar biggestValue = aape.Parse( object ).reduce( function( property, value, item )\n\t\t{\n\t\t\tvar frameIndex = Number( property );\n\t\t\treturn frameIndex > item ? frameIndex : item;\n\n\t\t}, 0 );\n\n\n\t\tvar result = aape.Parse( object ).reduce( function(property, value, item)\n\t\t{\n\t\t\tvar frameIndex = Number( property );\n\t\t\titem = frameIndex <= item && frameIndex >= currentFrame ? frameIndex : item;\n\n\t\t\treturn item;\n\n\t\t}.bind(this), biggestValue );\n\n\n\t\treturn result;\n\t};\n\n}(window));",
+			"file": "/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/html/js/aape/timeline.js",
+			"file_size": 19400,
+			"file_write_time": 131269619570000000,
+			"settings":
+			{
+				"buffer_size": 19418,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -572,7 +612,7 @@
 	"command_palette":
 	{
 		"height": 392.0,
-		"last_filter": "",
+		"last_filter": "edi",
 		"selected_items":
 		[
 			[
@@ -741,34 +781,28 @@
 	],
 	"file_history":
 	[
-		"/Users/david.ochmann/Documents/application/project/html/JS-Library/davidochmann/pixijs-animation-export/html/js/aape/textfield.js",
-		"/Users/david.ochmann/Documents/application/project/html/JS-Library/davidochmann/pixijs-animation-export/jsfl/json-object.jsfl",
-		"/Users/david.ochmann/Documents/application/project/html/JS-Library/davidochmann/pixijs-animation-export/tools/project/aape.sublime-project",
-		"/Users/david.ochmann/Documents/application/project/html/JS-Library/davidochmann/pixijs-animation-export/jsfl/json-timeline-parser.jsfl",
-		"/Users/david.ochmann/Documents/application/project/html/JS-Library/davidochmann/pixijs-animation-export/html/js/aape/parse.js",
-		"/Users/david.ochmann/Documents/application/project/html/JS-Library/davidochmann/pixijs-animation-export/html/debug.html",
-		"/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/html/debug.html",
-		"/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/html/js/main.js",
+		"/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/jsfl/atlas-exporter.jsfl",
+		"/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/html/img/toggo-winter-0.json",
+		"/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/html/img/assets.json",
+		"/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/tools/project/aape.sublime-project",
+		"/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/jsfl/json-exporter.jsfl",
+		"/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/html/js/aape/timeline.js",
 		"/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/html/img/toggo-winter-2.json",
 		"/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/jsfl/json-timeline-parser.jsfl",
-		"/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/tools/project/aape.sublime-project",
 		"/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/tools/commands/uglify-aape.command",
 		"/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/tools/commands/uglify-jsfl.command",
 		"/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/jsfl/json-object.jsfl",
-		"/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/jsfl/atlas-exporter.jsfl",
 		"/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/html/js/aape/movieclip.js",
 		"/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/html/js/aape/textfield.js",
-		"/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/html/js/aape/timeline.js",
+		"/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/html/js/main.js",
 		"/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/html/img/toggo-winter-1.json",
-		"/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/html/img/toggo-winter-0.json",
 		"/Users/user/Library/Application Support/Sublime Text 3/Packages/User/TimeTracker/TimeTracker.py",
-		"/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/jsfl/json-exporter.jsfl",
 		"/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/html/img/toggo-winter.json",
 		"/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/html/css/fonts.css",
-		"/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/html/img/assets.json",
 		"/Users/user/Downloads/pixi.js-dev/src/extras/AnimatedSprite.js",
 		"/Users/user/Downloads/SampleCreateJSPlatform/Plugin/SampleCreateJSPlugin/src/DocType.cpp",
 		"/Users/user/Downloads/extensionbuilder_p3_080113/site.xml",
+		"/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/html/debug.html",
 		"/Users/user/Library/Application Support/Adobe/Animate CC 2017/de_DE/Configuration/Commands/tools/aape.jsfl",
 		"/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/html/img/toggo-winter.eas",
 		"/Users/user/Library/Application Support/Adobe/Animate CC 2017/de_DE/Configuration/Commands/tools/Export PixiJS Assets.jsfl",
@@ -797,6 +831,7 @@
 		"/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/tools/commands/uglify-js.command",
 		"/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/index.html",
 		"/Users/david.ochmann/Documents/application/project/html/JS-Library/davidochmann/pixijs-animation-export/js/game/timeline.js",
+		"/Users/david.ochmann/Documents/application/project/html/JS-Library/davidochmann/pixijs-animation-export/jsfl/json-timeline-parser.jsfl",
 		"/Users/david.ochmann/Documents/application/project/html/JS-Library/toggo/Pokemon-Wimmelbild/img/content-1.json",
 		"/Users/david.ochmann/Documents/application/project/html/JS-Library/davidochmann/pixijs-animation-export/tools/commands/uglify-jsfl.command",
 		"/Users/david.ochmann/Documents/application/project/html/JS-Library/davidochmann/pixijs-animation-export/tools/project/DavidOchmann-PixiJSAnimationExport.sublime-project",
@@ -868,7 +903,12 @@
 		"/Users/user/Documents/application/project/html/europapark/App-GameCollection/www/start.html",
 		"/Users/user/Documents/application/project/html/europapark/App-GameCollection/www/club.html",
 		"/Users/user/Documents/application/project/html/europapark/App-GameCollection/www/game.html",
-		"/Users/user/Documents/application/project/html/europapark/App-GameCollection/www/index.html"
+		"/Users/user/Documents/application/project/html/europapark/App-GameCollection/www/index.html",
+		"/Users/user/Documents/application/project/html/europapark/App-GameCollection/tools/project/Europapark-Spielbox.sublime-project",
+		"/Users/david.ochmann/Documents/application/project/html/JS-Library/europapark/App-GameCollection/www/game.html",
+		"/Users/david.ochmann/Documents/application/project/html/JS-Library/europapark/App-GameCollection/www/start.html",
+		"/Users/david.ochmann/Documents/application/project/html/JS-Library/common/js/europapark/shared/generic/gamedatascoremodule.js",
+		"/Users/david.ochmann/Documents/application/project/html/JS-Library/common/js/europapark/shared/generic/ep.js"
 	],
 	"find":
 	{
@@ -888,10 +928,102 @@
 		"case_sensitive": true,
 		"find_history":
 		[
-			"x",
+			"idle",
+			"triggerLabelCallback",
+			"labelChanged",
+			"triggerLabelCallback",
+			"labelChanged",
+			"frame",
+			"inputToFrame",
+			"currentLabel",
+			"currentIndex",
+			"beginEndObject",
+			"getBeginEndObject",
+			"move",
+			"getBeginEndObject",
+			"beginEndObject",
+			"beginEnd",
+			"triggerLabelCallback",
+			"currentIndex",
+			"consol",
+			"frame",
+			"consol",
+			"beginEndObject",
+			"getBeginEndObject",
+			"consol",
+			"getValidIndex",
+			"frameChanged",
+			"trigger",
+			"idle",
+			"currentLabel",
+			"rectangle",
+			"idle",
+			"template",
+			"content",
+			"resolveLayers",
+			"getValidIndex",
+			"label",
+			"inputToFrame",
+			"label",
+			"copyOriginPixelFrame",
+			"removeLastFrameFromSymbols",
+			"pasteFrames",
+			"( ",
+			"symbolVOs",
+			"vo =",
+			"vo = ",
+			"vo.",
+			"addLayer",
+			"timeline",
+			"pasteFrames",
+			"1",
+			"exportResources",
+			"copyOriginPixelFrame",
+			"addEmptyKeyframeToTimeline",
+			"deleteLayer",
+			"index",
+			"reduce",
+			"index",
+			"removeFrame",
+			"removeLastFrame",
+			"addEmptyKeyframeToTimeline",
+			"drawRect",
+			"setFillColorIfBlank",
+			"layer",
+			"value",
+			"translate",
+			"getFrameTransform",
+			"getBezierPointsSubset",
+			"getFrameTransform",
+			"getTransform",
 			"transform",
-			"console",
-			"lineSpacing",
+			"matrix",
+			"transformMatrix",
+			"10",
+			"floatBetweenAandBAt",
+			"getTransform",
+			"getFrameTransform",
+			"mat",
+			"translateMatrix",
+			"matrix",
+			"translateRotation",
+			"translateMatrix",
+			"translate",
+			"translateAlpha",
+			"false",
+			"objectNext",
+			"getTransform",
+			"transf",
+			"next",
+			"property",
+			"transform",
+			"getTransform",
+			"rectangle",
+			"getTransform",
+			"rectanlge",
+			"false",
+			"true",
+			"rectangle",
 			"itemSpriteSourceSize",
 			");\n",
 			"trim",
@@ -923,99 +1055,7 @@
 			"Gibson Bold",
 			"fontWeight",
 			"Gibson",
-			"Gibson_Bold",
-			"margin",
-			"object",
-			"TextField",
-			"alignment",
-			"align",
-			"Text",
-			"style",
-			"fontVariant",
-			"fontStyle",
-			"string",
-			"getTextElementStyle",
-			"transform",
-			"AnimatedSprite",
-			"MovieClip",
-			"bitmap",
-			"slection",
-			"selectItem",
-			"bitmap",
-			"selectItem",
-			"__aape__bitmap",
-			"prototype",
-			"flash",
-			");\n",
-			"flash",
-			"\"__aape__bitmap\"",
-			"trace",
-			"__aape__bitmap",
-			"name",
-			"__aape__bitmap",
-			"x",
-			"content",
-			"conso",
-			"loop",
-			"hasOriginPixel",
-			"addOriginPixelToSymbols",
-			"exitDocumentEditMode",
-			"addEmptyKeyframeToTimeline",
-			"alert",
-			"addOriginPixelToSymbols",
-			"addEmptyKeyframeToTimeline",
-			"drawRect",
-			"addNullingRectangleToLastFrame",
-			"drawRect",
-			"setFillColorIfBlank",
-			"addNullingRectangleToLastFrame",
-			"addOriginPixelToLibrary",
-			"timeline",
-			"addOriginPixelToSymbols",
-			"removeLastFrameFromSymbols",
-			"symbol",
-			"addNullingRectangleToLastFrame",
-			"addOriginPixelToSymbols",
-			"totalFrames",
-			"initDocumentRoot",
-			"initRemoveOriginKeyframeFromSymbols",
-			"initResourceExport",
-			"initParsingByMode",
-			"initAddOriginKeyframeToSymbols",
-			"addNullingRectangleToLastFrame",
-			"itemDoesNotExist",
-			"initRemoveOriginKeyframeFromSymbols",
-			"appendOriginKeyframeToSymbols",
-			"initAddOriginKeyframeToSymbols",
-			"1024",
-			"initDocumentRoot",
-			"addSymbolToExporter",
-			"item",
-			"addNullingRectangleToLastFrame",
-			"addEmptyKeyframeToTimeline",
-			"beginFrame",
-			"addNullingRectangleToLastFrame",
-			"document",
-			"insertBlankKeyframe",
-			"library",
-			"addNullingRectangleToLastFrame",
-			"appendOriginKeyframeToSymbols",
-			"splice",
-			"slice",
-			"106",
-			"spriteSheetExporter",
-			"enter",
-			"document",
-			"exitEditMode",
-			"//",
-			"initParsingByMode",
-			"alert",
-			"splice",
-			"slice",
-			"splice",
-			"removeMissing",
-			"getDisplayObject",
-			"getTransform"
+			"Gibson_Bold"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1034,16 +1074,45 @@
 	"groups":
 	[
 		{
-			"selected": 3,
+			"selected": 8,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "/Users/david.ochmann/Documents/application/project/html/JS-Library/davidochmann/pixijs-animation-export/html/js/main.js",
+					"file": "/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/html/debug.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2891,
+						"buffer_size": 1229,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1170,
+								1170
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/jsfl/json-timeline-parser.jsfl",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 11051,
 						"regions":
 						{
 						},
@@ -1060,32 +1129,176 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 5631.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 4,
 					"type": "text"
 				},
 				{
-					"buffer": 1,
-					"file": "/Users/david.ochmann/Documents/application/project/html/JS-Library/davidochmann/pixijs-animation-export/html/debug.html",
+					"buffer": 2,
+					"file": "/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/jsfl/json-exporter.jsfl",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1235,
+						"buffer_size": 731,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1176,
-								1176
+								510,
+								510
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/jsfl/json-object.jsfl",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 7874,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 132.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/html/img/toggo-winter.json",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 18777,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/html/js/main.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2949,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2414,
+								2414
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1450.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/html/img/assets.json",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1730,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								82,
+								84
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "aape.sublime-project",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 796,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								335,
+								335
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.sublime-syntax",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
@@ -1096,20 +1309,20 @@
 					"type": "text"
 				},
 				{
-					"buffer": 2,
-					"file": "/Users/david.ochmann/Documents/application/project/html/JS-Library/davidochmann/pixijs-animation-export/html/js/aape/textfield.js",
+					"buffer": 8,
+					"file": "/Users/user/Documents/application/project/html/davidochmann/pixijs-animation-export/html/js/aape/timeline.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2419,
+						"buffer_size": 19418,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								731,
-								731
+								9098,
+								9098
 							]
 						],
 						"settings":
@@ -1118,75 +1331,12 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "/Users/david.ochmann/Documents/application/project/html/JS-Library/davidochmann/pixijs-animation-export/html/js/aape/timeline.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 18673,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								17075,
-								17081
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 10794.0,
+						"translation.y": 5753.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
 					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "/Users/david.ochmann/Documents/application/project/html/JS-Library/davidochmann/pixijs-animation-export/jsfl/json-timeline-parser.jsfl",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 11051,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								4952,
-								4952
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 3584.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
 				}
-			]
-		},
-		{
-			"sheets":
-			[
 			]
 		}
 	],
@@ -1207,18 +1357,11 @@
 				0,
 				1,
 				1
-			],
-			[
-				1,
-				0,
-				2,
-				1
 			]
 		],
 		"cols":
 		[
 			0.0,
-			0.5,
 			1.0
 		],
 		"rows":
@@ -1250,36 +1393,56 @@
 		"selected_items":
 		[
 			[
-				"timelin",
+				"main",
+				"html/js/main.js"
+			],
+			[
+				"tim",
 				"html/js/aape/timeline.js"
 			],
 			[
-				"text",
-				"html/js/aape/textfield.js"
-			],
-			[
-				"json",
-				"jsfl/json-timeline-parser.jsfl"
+				"ass",
+				"html/img/assets.json"
 			],
 			[
 				"debu",
 				"html/debug.html"
 			],
 			[
+				"timelin",
+				"html/js/aape/timeline.js"
+			],
+			[
+				"toggo",
+				"html/img/toggo-winter-0.json"
+			],
+			[
+				"atlas",
+				"jsfl/atlas-exporter.jsfl"
+			],
+			[
 				"time",
 				"html/js/aape/timeline.js"
+			],
+			[
+				"json",
+				"jsfl/json-timeline-parser.jsfl"
+			],
+			[
+				"obj",
+				"jsfl/json-object.jsfl"
+			],
+			[
+				"jsob",
+				"jsfl/json-object.jsfl"
 			],
 			[
 				"json-tim",
 				"jsfl/json-timeline-parser.jsfl"
 			],
 			[
-				"main",
-				"html/js/main.js"
-			],
-			[
-				"par",
-				"html/js/aape/parse.js"
+				"toggo-",
+				"html/img/toggo-winter.json"
 			],
 			[
 				"comman",
@@ -1294,10 +1457,6 @@
 				"commands/uglify-aape.command"
 			],
 			[
-				"toggo",
-				"html/img/toggo-winter-2.json"
-			],
-			[
 				"togg",
 				"html/img/toggo-winter-1.json"
 			],
@@ -1306,24 +1465,16 @@
 				"html/img/toggo-winter-0.json"
 			],
 			[
+				"text",
+				"html/js/aape/textfield.js"
+			],
+			[
 				"atals",
 				"jsfl/atlas-exporter.jsfl"
 			],
 			[
 				"fon",
 				"html/css/fonts.css"
-			],
-			[
-				"tim",
-				"html/js/aape/timeline.js"
-			],
-			[
-				"toggo-",
-				"html/img/toggo-winter.json"
-			],
-			[
-				"ass",
-				"html/img/assets.json"
 			],
 			[
 				"timeiln",
@@ -1348,10 +1499,6 @@
 			[
 				"jon",
 				"jsfl/json-exporter.jsfl"
-			],
-			[
-				"atlas",
-				"jsfl/atlas-exporter.jsfl"
 			],
 			[
 				"pixi",
@@ -1756,10 +1903,6 @@
 			[
 				"proxy",
 				"Skyboard/js/game/proxy.js"
-			],
-			[
-				"uite",
-				"davidochmann/ui/pixijs-3/inputtext.js"
 			]
 		],
 		"width": 0.0
@@ -1767,39 +1910,31 @@
 	"select_project":
 	{
 		"height": 500.0,
-		"last_filter": "winter",
+		"last_filter": "le",
 		"selected_items":
 		[
 			[
-				"winter",
-				"~/Documents/application/project/html/JS-Library/toggo/Toggo-WinterGames/tools/project/Toggo-WinterGames.sublime-project"
+				"le",
+				"~/Documents/application/project/html/toggo/LegoNexoKnights-MonstroxWolke/tools/project/LegoNexoKnights-MonstroxWolke.sublime-project"
 			],
 			[
-				"togo",
-				"~/Documents/application/project/html/JS-Library/toggo/Toggo-WinterGames/tools/project/Toggo-WinterGames.sublime-project"
-			],
-			[
-				"wot",
-				"~/Documents/application/project/html/JS-Library/toggo/Toggo-WinterGames/tools/project/Toggo-WinterGames.sublime-project"
-			],
-			[
-				"toggo",
-				"~/Documents/application/project/html/JS-Library/toggo/Toggo-WinterGames/tools/project/Toggo-WinterGames.sublime-project"
-			],
-			[
-				"win",
-				"~/Documents/application/project/html/JS-Library/toggo/Toggo-WinterGames/tools/project/Toggo-WinterGames.sublime-project"
+				"zei",
+				"~/Documents/application/project/html/internetabc/Flizzys-Zeichenchaos/tools/project/InternetABC-FlizzysZeichenchaos.sublime-project"
 			],
 			[
 				"togg",
-				"~/Documents/application/project/html/JS-Library/toggo/Toggo-WinterGames/tools/project/Toggo-WinterGames.sublime-project"
-			],
-			[
-				"aap",
-				"~/Documents/application/project/html/JS-Library/davidochmann/pixijs-animation-export/tools/project/aape.sublime-project"
+				"~/Documents/application/project/html/toggo/Toggo-WinterGames/tools/project/Toggo-WinterGames.sublime-project"
 			],
 			[
 				"",
+				"~/Documents/application/project/html/toggo/Toggo-WinterGames/tools/project/Toggo-WinterGames.sublime-project"
+			],
+			[
+				"winter",
+				"~/Documents/application/project/html/toggo/Toggo-WinterGames/tools/project/Toggo-WinterGames.sublime-project"
+			],
+			[
+				"toggo",
 				"~/Documents/application/project/html/toggo/Toggo-WinterGames/tools/project/Toggo-WinterGames.sublime-project"
 			],
 			[
@@ -2005,6 +2140,10 @@
 			[
 				"bild",
 				"/Users/david.ochmann/Documents/application/space/sublimetext/Projects/toggo-winterspass-suchbild.sublime-project"
+			],
+			[
+				"win",
+				"/Users/david.ochmann/Documents/application/space/sublimetext/Projects/toggo-winterspass-quiz.sublime-project"
 			],
 			[
 				"flash",

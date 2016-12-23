@@ -6,7 +6,7 @@
 			// "shell_cmd": "open /Applications/Google\\ Chrome.app --args -disable-web-security --user-data-dir"
 			
 			// "shell_cmd": "${project_path}/../commands/uglify-js.command"
-			"shell_cmd": "${project_path}/../commands/uglify-jsfl.command && open ${project_path}/../../jsfl/aape-1.0.1.jsfl"
+			"shell_cmd": "${project_path}/../commands/uglify-jsfl.command && open ${project_path}/../../jsfl/aape-1.0.1.jsfl && ${project_path}/../commands/uglify-js.command"
 			// "shell_cmd": "open ${project_path}/../../jsfl/pixi-export.jsfl"
 			// "shell_cmd": "open ${project_path}/../../debug.html"
 			// "shell_cmd": "open ${project_path}/../../jsfl/pixi-export.jsfl"

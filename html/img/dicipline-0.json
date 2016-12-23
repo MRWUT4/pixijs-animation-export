@@ -1,0 +1,27 @@
+﻿{"frames": {
+
+"dicipline0000":
+{
+	"frame": {"x":0,"y":0,"w":279,"h":351},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":279,"h":351},
+	"sourceSize": {"w":279,"h":351}
+},
+"dicipline0001":
+{
+	"frame": {"x":0,"y":0,"w":0,"h":0},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":0,"w":279,"h":351},
+	"sourceSize": {"w":279,"h":351}
+}},
+"meta": {
+	"app": "Adobe Animate",
+	"version": "16.0.0.112",
+	"image": "dicipline-0.png",
+	"format": "RGBA8888",
+	"size": {"w":512,"h":512},
+	"scale": "1"
+}
+}

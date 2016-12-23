@@ -10,7 +10,7 @@
 },
 "gameCrossBackground0001":
 {
-	"frame": {"x":0,"y":2002,"w":1,"h":1},
+	"frame": {"x":0,"y":0,"w":0,"h":0},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":0,"y":0,"w":1000,"h":2000},

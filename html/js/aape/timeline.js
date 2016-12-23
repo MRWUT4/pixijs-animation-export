@@ -24,10 +24,12 @@
 		this.id = setup.id || "root";
 		this.loop = setup.loop || true;
 		this.timeScale = setup.timeScale !== undefined ? setup.timeScale : 1;
-		
+		this.onAnimationEnd = setup.onAnimationEnd || null;
+
 		this.isPlaying = true;
 		this.currentFrame = null;
 		this.currentLabel = null;
+		this.beginEndObject = {};
 
 		this.setFrame( 0 );
 	}
@@ -187,9 +189,12 @@
 		else
 		{
 			this.currentLabel = frame;
+			this.labelChanged = true;
 
-			// var index = this.labels[ this.currentLabel ];
-			return 0;
+			var index = this.labels[ this.currentLabel ];
+
+			return index;
+			// return 0;
 		}
 	};
 
@@ -258,11 +263,16 @@
 	{
 		this.currentIndex = currentIndex;
 		this.nextFrame = this.getValidIndex( this.template, this.currentIndex );
-		this.frameChanged = this.currentFrame === null || this.currentFrame.toFixed( 8 ) !== this.nextFrame.toFixed( 8 );
+
+		this.frameChanged = this.currentFrame === null || this.labelChanged || this.currentFrame.toFixed( 8 ) !== this.nextFrame.toFixed( 8 );
 		this.currentFrame = this.nextFrame;
 
 		this.resolveLayers( this.template.layers );
+		this.triggerLabelCallback( this.template, this.currentFrame );
+
+		this.labelChanged = false;
 	};
+
 
 
 	prototype.resolveLayers = function(layers)
@@ -410,8 +420,7 @@
 				else
 				{
 					// var previousIndex = this.getPreviousIndex( frames, currentFrame );
-					var firstFrame = element.firstFrame || 0;
-					
+					var firstFrame = element.firstFrame || 0;				
 					frame = firstFrame + ( currentFrame - previousIndex );
 				}
 
@@ -421,6 +430,20 @@
 			}
 		}
 	},
+
+
+	/** Trigger callback when animation hits last frame. */
+	prototype.triggerLabelCallback = function(template, currentFrame)
+	{
+		if( this.frameChanged && this.currentLabel !== null && this.onAnimationEnd !== null )
+		{
+			var beginEndObject = this.getBeginEndObject( template, "labels", this.beginEndObject );
+			var object = beginEndObject[ this.currentLabel ];
+
+			if( object.end - 1 == Number( currentFrame.toFixed( 2 ) ) )
+				this.onAnimationEnd();
+		}
+	};
 
 
 	/** Add child to display list. */
@@ -506,7 +529,7 @@
 		return movieClip;
 	};
 
-	prototype.getBeginEndObject = function(template, name)
+	prototype.getBeginEndObject = function(template, name, modObject)
 	{
 		var object = template[ name ];
 
@@ -527,7 +550,7 @@
 
 				return result;
 
-			}, {} );
+			}, modObject || {} );
 			
 			return item;
 		}

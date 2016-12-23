@@ -177,12 +177,16 @@
 	{
 		var that = this;
 	
-		this.symbols.forEach( function(symbol)
+		this.symbolVOs = this.symbols.map( function(symbol)
 		{
 			var timeline = symbol.timeline;
+			var layerIndex = timeline.addNewLayer( "aape" );
 
 			that.addEmptyKeyframeToTimeline( timeline );
-			timeline.pasteFrames( timeline.frameCount - 1 );
+			// timeline.pasteFrames( timeline.frameCount - 1 );
+			timeline.pasteFrames( 0 );
+
+			return { symbol:symbol, layerIndex:layerIndex };
 		});
 	};
 
@@ -190,11 +194,29 @@
 	{
 		var that = this;
 	
-		this.symbols.forEach( function(symbol)
+		this.symbolVOs.forEach( function(vo)
 		{
-			var timeline = symbol.timeline;
-			timeline.removeFrames( timeline.frameCount - 1 );
+			var timeline = vo.symbol.timeline;
+
+			timeline.deleteLayer( vo.layerIndex );
+			// timeline.removeFrames( timeline.frameCount - 1 );
 		});
+
+		// this.symbols.forEach( function(symbol)
+		// {
+		// 	var timeline = symbol.timeline;
+		// 	// timeline.deleteLayer( [ index ] );
+		// 	// timeline.removeFrames( timeline.frameCount - 1 );
+		// });
+	};
+
+	prototype.addEmptyKeyframeToTimeline = function(timeline)
+	{
+		var frameCount = timeline.frameCount;
+		// document.library.editItem( timeline.name );
+
+		timeline.insertBlankKeyframe( frameCount );
+		// timeline.insertFrames( 0, false, frameCount - 1 );
 	};
 
 
@@ -268,25 +290,14 @@
 	// 	this.drawRect();
 	// };
 
-	prototype.addEmptyKeyframeToTimeline = function(timeline)
-	{
-		var frameCount = timeline.frameCount;
-		// document.library.editItem( timeline.name );
-
-		timeline.insertBlankKeyframe( frameCount );
-	};
-
 	prototype.setFillColorIfBlank = function()
 	{
 		var fill = document.getCustomFill( "toolbar" );
 		
-		if( fill.color === undefined )
-		{
-			fill.color = "#000000";
-			fill.style = "solid";
+		fill.color = "#ff0000ff";
+		fill.style = "solid";
 
-			document.setCustomFill( fill );
-		}
+		document.setCustomFill( fill );
 	};
 
 	prototype.drawRect = function(timeline)
@@ -299,8 +310,8 @@
 		drawingLayer.beginFrame()
 		var path = drawingLayer.newPath();
 		path.addPoint( 0, 0 );
-		path.addPoint( 1, 0 );
-		path.addPoint( 0, 1 );
+		path.addPoint( 50, 0 );
+		path.addPoint( 0, 50 );
 		path.addPoint( 0, 0 );
 		drawingLayer.endFrame()
 
@@ -308,11 +319,11 @@
 	};
 
 
-	prototype.removeLastFrame = function(timeline)
-	{
-		var frameCount = timeline.frameCount;
-		timeline.removeFrames( frameCount - 1 );
-	};
+	// prototype.removeLastFrame = function(timeline)
+	// {
+	// 	var frameCount = timeline.frameCount;
+	// 	timeline.removeFrames( frameCount - 1 );
+	// };
 
 
 	prototype.exportResources = function()
