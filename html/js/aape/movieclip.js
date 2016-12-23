@@ -26,7 +26,7 @@
 
 		this.animationDictionary = animations || {};
 		this.comments = comments || null;
-		this.onAnimationComplete = null;
+		this.onAnimationEnd = null;
 		this.isPlaying = true;
 
 		this.setAnimation( 0 );
@@ -194,8 +194,8 @@
 	        this._texture = this._textures[ index ];
 
 			// animation complete handler.
-			if( this.onAnimationComplete && index == this.endFrame - 1 )
-	    		this.onAnimationComplete( this );
+			if( this.onAnimationEnd && index == this.endFrame - 1 )
+	    		this.onAnimationEnd( this );
 	    }
 	    else 
 	    if( floor >= this.endFrame )
