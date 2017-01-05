@@ -18,19 +18,19 @@
 },
 "rectangle0000":
 {
-	"frame": {"x":0,"y":642,"w":200,"h":200},
+	"frame": {"x":0,"y":642,"w":140,"h":140},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":200,"h":200},
-	"sourceSize": {"w":200,"h":200}
+	"spriteSourceSize": {"x":0,"y":0,"w":140,"h":140},
+	"sourceSize": {"w":140,"h":140}
 },
 "rectangle0001":
 {
 	"frame": {"x":0,"y":0,"w":0,"h":0},
 	"rotated": false,
 	"trimmed": true,
-	"spriteSourceSize": {"x":100,"y":100,"w":200,"h":200},
-	"sourceSize": {"w":200,"h":200}
+	"spriteSourceSize": {"x":70,"y":70,"w":140,"h":140},
+	"sourceSize": {"w":140,"h":140}
 }},
 "meta": {
 	"app": "Adobe Animate",

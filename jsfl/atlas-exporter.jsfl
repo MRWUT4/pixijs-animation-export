@@ -294,7 +294,7 @@
 	{
 		var fill = document.getCustomFill( "toolbar" );
 		
-		fill.color = "#ff0000ff";
+		fill.color = "#00000000";
 		fill.style = "solid";
 
 		document.setCustomFill( fill );
@@ -310,8 +310,8 @@
 		drawingLayer.beginFrame()
 		var path = drawingLayer.newPath();
 		path.addPoint( 0, 0 );
-		path.addPoint( 50, 0 );
-		path.addPoint( 0, 50 );
+		path.addPoint( 1, 0 );
+		path.addPoint( 0, 1 );
 		path.addPoint( 0, 0 );
 		drawingLayer.endFrame()
 

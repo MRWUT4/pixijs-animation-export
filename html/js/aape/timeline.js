@@ -145,7 +145,6 @@
 
 	prototype.updatePlayback = function()
 	{
-		// if( this.isPlaying )
 		var add = this.isPlaying ? this.timeScale : 0;
 		this.setFrame( this.currentIndex + add );
 	};
@@ -191,10 +190,7 @@
 			this.currentLabel = frame;
 			this.labelChanged = true;
 
-			var index = this.labels[ this.currentLabel ];
-
-			return index;
-			// return 0;
+			return 0;
 		}
 	};
 
@@ -259,21 +255,22 @@
 		return timeline;
 	};
 
-	prototype.setFrame = function(currentIndex)
+	prototype.setFrame = function(currentIndex, forceRender)
 	{
-		this.currentIndex = currentIndex;
-		this.nextFrame = this.getValidIndex( this.template, this.currentIndex );
+		if( this.graphicLoop === undefined || forceRender )
+		{
+			this.currentIndex = currentIndex;
+			this.nextFrame = this.getValidIndex( this.template, this.currentIndex );
 
-		this.frameChanged = this.currentFrame === null || this.labelChanged || this.currentFrame.toFixed( 8 ) !== this.nextFrame.toFixed( 8 );
-		this.currentFrame = this.nextFrame;
+			this.frameChanged = this.currentFrame === null || this.labelChanged || this.currentFrame.toFixed( 8 ) !== this.nextFrame.toFixed( 8 );
+			this.currentFrame = this.nextFrame;
 
-		this.resolveLayers( this.template.layers );
-		this.triggerLabelCallback( this.template, this.currentFrame );
-
-		this.labelChanged = false;
+			this.resolveLayers( this.template.layers );
+			this.triggerLabelCallback( this.template, this.currentFrame );
+	
+			this.labelChanged = false;
+		}
 	};
-
-
 
 	prototype.resolveLayers = function(layers)
 	{
@@ -339,6 +336,9 @@
 				this.addTransform( id, displayObject, layerVO );
 				this.add( displayObject );
 			}
+
+			// console.log( "\n>" + this.id );
+			// console.log( this.loop, displayObject.id );
 
 			this.sync( displayObject, element, layerVO.previousIndex );
 		}
@@ -407,26 +407,23 @@
 		{
 			var frame = null;
 
-			if( element.loop !== undefined && element.firstFrame !== undefined )
+			if( element.graphicLoop !== undefined && element.firstFrame !== undefined )
 			{
-				if( element.loop == "single frame" )
+				if( element.graphicLoop == "single frame" )
 					frame = element.firstFrame;
 				else
-				if( element.loop == "play once" )
+				if( element.graphicLoop == "play once" )
 				{
 					var template = this.getTemplate( element.id );
-					frame = Math.min( this.currentIndex - previousIndex, template.totalFrames - 1 );
+					frame = Math.min( element.firstFrame + this.currentFrame, template.totalFrames - 1 );
 				}
 				else
 				{
-					// var previousIndex = this.getPreviousIndex( frames, currentFrame );
-					var firstFrame = element.firstFrame || 0;				
-					frame = firstFrame + ( currentFrame - previousIndex );
+					frame = element.firstFrame + this.currentFrame;
 				}
 
 				if( displayObject.isPlaying )
-					displayObject.setFrame( frame );
-
+					displayObject.setFrame( frame, true );
 			}
 		}
 	},
@@ -484,7 +481,7 @@
 			var totalFrames = template.totalFrames;
 
 			if( totalFrames > 1 )
-				frame = this.loop ? ( currentIndex % totalFrames ) : ( currentIndex >= totalFrames - 1 ? totalFrames - 1 : currentIndex )
+				frame = this.loop ? ( currentIndex % totalFrames ) : ( currentIndex >= totalFrames - 1 ? totalFrames - 1 : currentIndex );
 			else
 				frame = 0;
 
@@ -767,14 +764,6 @@
 		return a + position * ( b - a );
 	};
 
-	prototype.quadraticBezier = function(t, p0, p1, p2, p3)
-	{
-		return Math.pow( 1 - t, 3 ) * p0 + 
-		3 * Math.pow( 1 - t, 2 ) * t * p1 + 
-		3 * ( 1 - t ) * Math.pow( t, 2 ) * p2 + 
-		Math.pow( t, 3 ) * p3;
-	};
-
 	prototype.getBezierPoints = function(animation)
 	{
 		var points = null;
@@ -804,25 +793,12 @@
 		return result;
 	};
 
-	// prototype.translateScale = function(object)
-	// {
-	// 	this.propertyToObjectValue( object, "scaleX", "scale", "x" );
-	// 	this.propertyToObjectValue( object, "scaleY", "scale", "y" );
-
-	// 	return object;
-	// };
 
 	prototype.translateVisible = function(object)
 	{
 		object.visible = object.visible !== undefined ? object.visible : true;
 		return object;
 	};
-
-	// prototype.translateRotation = function(object)
-	// {
-	// 	object.rotation = object.rotation * ( Math.PI / 180 );
-	// 	return object;
-	// };
 
 	prototype.translateMatrix = function(transform, displayObject)
 	{
@@ -835,8 +811,6 @@
 		});
 
 		matrix.c *= -1;
-		// matrix.c = -matrix.d;
-		// matrix.d *= -1;
 		displayObject.transform.setFromMatrix( matrix );
 
 		return transform;
@@ -848,17 +822,6 @@
 			object.alpha = object.alpha !== undefined ? object.alpha : 1;
 
 		return object;
-	};
-
-	prototype.propertyToObjectValue = function(object, property, name, value)
-	{
-		if( object[ property ] )
-		{
-			var item = object[ name ] = object[ name ] || {};
-			item[ value ] = object[ property ];
-
-			delete object[ property ];
-		}
 	};
 
 

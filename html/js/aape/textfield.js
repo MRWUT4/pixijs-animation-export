@@ -36,7 +36,8 @@
 		set: function(value) 
 		{	
 			this.position.x = value;
-			this.cuePositionUpdate = true;
+			this.positionText();
+			// this.cuePositionUpdate = true;
 		}
 	});
 
@@ -48,10 +49,23 @@
 		},
 		set: function(value) 
 		{	
-			this._id = value;
-			this.cuePositionUpdate = true;
+			if( this._id !== value )
+			{
+				this._id = value;
+				this.positionText();
+				// this.cuePositionUpdate = true;
+			}
 		}
 	});
+
+	// Object.defineProperty( prototype, "position", 
+	// {
+	// 	get: function() 
+	// 	{	
+	// 		// this._position = this._position !== undefined ? this._position : null;
+	// 		return this.transform.position;;
+	// 	}
+	// });
 
 
 	/**
@@ -67,7 +81,8 @@
 		set: function(value) 
 		{	
 			this.__text = value;
-			this.cuePositionUpdate = true;
+					this.positionText();
+			// this.cuePositionUpdate = true;
 		}
 	});
 
@@ -76,27 +91,29 @@
 		this.text = text;
 		this.setupComplete = true;
 
-		this.cuePositionUpdate = true;
+		this.positionText();
+		// this.cuePositionUpdate = true;
 	};
 
 
-	prototype.updateTransformText = prototype.updateTransform;
-	prototype.updateTransform = function()
-	{
-		this.updateTransformText();
-		this.updateTextPosition();
-		// this.updatePlayback();
-	};
+	// prototype.updateTransformText = prototype.updateTransform;
+	// prototype.updateTransform = function()
+	// {
+	// 	this.updateTransformText();
+	// 	// this.updateTextPosition();
+	// 	this.positionText();
+	// 	// this.updatePlayback();
+	// };
 
 
-	prototype.updateTextPosition = function()
-	{
-		if( this.cuePositionUpdate === true )
-		{
-			this.cuePositionUpdate = false;
-			this.positionText();
-		}
-	};
+	// prototype.updateTextPosition = function()
+	// {
+	// 	if( this.cuePositionUpdate === true )
+	// 	{
+	// 		this.cuePositionUpdate = false;
+	// 		this.positionText();
+	// 	}
+	// };
 
 
 	/**

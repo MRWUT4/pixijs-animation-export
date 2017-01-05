@@ -445,7 +445,7 @@
 		// var firstFrame = firstFrame !== undefined ? element.firstFrame : 0;
 		// var loop = loop !== undefined ? element.loop : "loop";
 
-		this.addProperty( object, "loop", element.loop || "loop", "loop" );
+		this.addProperty( object, "graphicLoop", element.loop, undefined );
 		this.addProperty( object, "firstFrame", element.firstFrame || 0, function(value){ return isNaN(value) } );
 		
 		return object;
