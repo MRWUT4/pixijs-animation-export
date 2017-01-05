@@ -18,102 +18,28 @@
 
 		PIXI.Text.call( this, text, style );
 
-		this.setupText( text );
+		this.positionText();
+		this.setupObservation();
 	}
 
-
-
-	/**
-	 * Getter / Setter
-	 */
-
-	Object.defineProperty( prototype, "x", 
-	{
-		get: function() 
-		{	
-			return this.position.x;
-		},
-		set: function(value) 
-		{	
-			this.position.x = value;
-			this.positionText();
-			// this.cuePositionUpdate = true;
-		}
-	});
-
-	Object.defineProperty( prototype, "id", 
-	{
-		get: function() 
-		{	
-			return this._id;
-		},
-		set: function(value) 
-		{	
-			if( this._id !== value )
-			{
-				this._id = value;
-				this.positionText();
-				// this.cuePositionUpdate = true;
-			}
-		}
-	});
-
-	// Object.defineProperty( prototype, "position", 
-	// {
-	// 	get: function() 
-	// 	{	
-	// 		// this._position = this._position !== undefined ? this._position : null;
-	// 		return this.transform.position;;
-	// 	}
-	// });
 
 
 	/**
 	 * Public interface
 	 */
 
-	Object.defineProperty( prototype, "_text", 
+	prototype.setupObservation = function()
 	{
-		get: function() 
-		{	
-			return this.__text;
-		},
-		set: function(value) 
-		{	
-			this.__text = value;
-					this.positionText();
-			// this.cuePositionUpdate = true;
-		}
-	});
+		var defaultCallback = this.position.cb;
 
-	prototype.setupText = function(text)
-	{
-		this.text = text;
-		this.setupComplete = true;
+		var that = this;
 
-		this.positionText();
-		// this.cuePositionUpdate = true;
+		this.position.cb = function()
+		{
+			defaultCallback.bind(that)();
+			that.positionText();
+		};
 	};
-
-
-	// prototype.updateTransformText = prototype.updateTransform;
-	// prototype.updateTransform = function()
-	// {
-	// 	this.updateTransformText();
-	// 	// this.updateTextPosition();
-	// 	this.positionText();
-	// 	// this.updatePlayback();
-	// };
-
-
-	// prototype.updateTextPosition = function()
-	// {
-	// 	if( this.cuePositionUpdate === true )
-	// 	{
-	// 		this.cuePositionUpdate = false;
-	// 		this.positionText();
-	// 	}
-	// };
 
 
 	/**
@@ -123,24 +49,21 @@
 	/** Position functions. */
 	prototype.positionText = function()
 	{
-		if( this.setupComplete )
+		var bounds = this.getBounds();
+
+		switch( this.textStyle.align )
 		{
-			var bounds = this.getBounds();
+			case TextField.CENTER:
+				this.alignTextToCenter( bounds );
+				break;
 
-			switch( this.textStyle.align )
-			{
-				case TextField.CENTER:
-					this.alignTextToCenter( bounds );
-					break;
+			case TextField.RIGHT:
+				this.alignTextToRight( bounds );
+				break;
 
-				case TextField.RIGHT:
-					this.alignTextToRight( bounds );
-					break;
-
-				default:
-					this.alignTextToLeft( bounds );
-					break;
-			}
+			default:
+				this.alignTextToLeft( bounds );
+				break;
 		}
 	};
 
