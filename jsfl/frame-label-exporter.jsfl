@@ -41,7 +41,7 @@
 				hasAnimations = hasAnimations || object.name;
 
 				if( object.name )
-					durationObject[ object.name ] = i;			    
+					durationObject[ i ] = object.name;
 			}
 		}
 

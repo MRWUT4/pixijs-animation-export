@@ -337,9 +337,6 @@
 				this.add( displayObject );
 			}
 
-			// console.log( "\n>" + this.id );
-			// console.log( this.loop, displayObject.id );
-
 			this.sync( displayObject, element, layerVO.previousIndex );
 		}
 
@@ -490,6 +487,7 @@
 		else
 		{
 			var beginEnd = this.getBeginEndObject( template, "labels" );
+
 			var range = beginEnd[ this.currentLabel ];
 			var lastFrame = range.end - range.begin;
 
@@ -527,7 +525,36 @@
 	};
 
 	prototype.getBeginEndObject = function(template, name, modObject)
-	{
+	{	
+		var object = template[ name ];
+
+		if( object )
+		{
+			var that = this;
+			var totalFrames = template.totalFrames;
+
+			var item = aape.Parse( object ).reduce( function(property, value, result)
+			{
+				result[ value ] = result[ value ] || { begin:0, end:0 };
+				
+				var beginEnd = result[ value ];
+
+				beginEnd.begin = that.smallestWith( value, object );
+				beginEnd.end = that.biggestValueAfter( value, object, beginEnd.begin, totalFrames );
+
+				return result;
+
+			}, modObject || {} );
+		}
+
+		// aape.Parse( item ).forEach( function(property, value)
+		// {
+		// 	console.log( property, value );
+		// });
+
+		return item;
+
+		/*
 		var object = template[ name ];
 
 		if( object )
@@ -553,7 +580,37 @@
 		}
 		else
 			return null;
+		*/
 	};
+
+	prototype.smallestWith = function(compare, object)
+	{
+		var result = null;
+
+		aape.Parse( object ).forEach( function(property, value)
+		{
+			if( compare == value && ( result === null || property < result ) )
+				result = Number( property );
+		});
+
+		return result;
+	};
+
+	prototype.biggestValueAfter = function(compare, object, begin, totalFrames)
+	{
+		var result = totalFrames;
+
+		aape.Parse( object ).forEach( function(property, value)
+		{
+			var frame = Number( property );
+
+			if( frame < result && frame > begin )
+				result = frame;
+		});
+
+		return result;
+	};
+
 
 	prototype.getFrames = function(frames, id)
 	{

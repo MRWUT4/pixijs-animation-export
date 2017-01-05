@@ -240,6 +240,7 @@
 		this.beginFrame = this.animation ? this.animation.begin : 0;
 		this.endFrame = this.animation ? this.animation.end + 1 : this.textures.length;
 	};
+	
 
 	/** Returns the frameIndex for the current animation. */
 	prototype.getAnimationFrameIndex = function(index)
