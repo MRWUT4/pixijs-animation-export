@@ -550,7 +550,7 @@
 			"file": "/Users/david.ochmann/Documents/application/project/html/JS-Library/davidochmann/pixijs-animation-export/html/js/aape/timeline.js",
 			"settings":
 			{
-				"buffer_size": 18517,
+				"buffer_size": 19638,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -1043,7 +1043,7 @@
 	"groups":
 	[
 		{
-			"selected": 5,
+			"selected": 3,
 			"sheets":
 			[
 				{
@@ -1069,7 +1069,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 5766.0,
+						"translation.y": 5717.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 5,
@@ -1139,15 +1139,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 18517,
+						"buffer_size": 19638,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								11319,
-								11319
+								19576,
+								19576
 							]
 						],
 						"settings":
@@ -1156,10 +1156,10 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 7091.0,
+						"translation.y": 11905.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
@@ -1185,10 +1185,10 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 705.0,
+						"translation.y": 691.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
@@ -1217,7 +1217,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				}
 			]
@@ -1275,6 +1275,10 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"timeline",
+				"html/js/aape/timeline.js"
+			],
 			[
 				"parse",
 				"html/js/aape/parse.js"
@@ -1782,10 +1786,6 @@
 			[
 				"highscorecli",
 				"generic/highscoreclickmodule.js"
-			],
-			[
-				"highscoretabl",
-				"generic/highscoretablemodule.js"
 			]
 		],
 		"width": 0.0
