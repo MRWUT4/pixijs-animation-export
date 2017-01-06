@@ -19,9 +19,10 @@
 	{
 		PIXI.Container.call( this );
 
-		this.library = setup.library;
+		this.json = setup.json;
+		this.library = this.json.library;
 		this.elements = setup.elements;
-		this.id = setup.id || "root";
+		this.id = setup.id || this.json.meta.root;
 		this.loop = setup.loop || true;
 		this.timeScale = setup.timeScale !== undefined ? setup.timeScale : 1;
 		this.onAnimationEnd = setup.onAnimationEnd || null;
@@ -100,7 +101,7 @@
 	 */
 
 	/** Updated transform override function. */
-	//*
+	/*
 	prototype.updateTransformContainer = prototype.	updateTransform;
 	prototype.updateTransform = function()
 	{
@@ -246,7 +247,7 @@
 		// timeline creates its own DisplayObjects to simplify object constuction.
 		var timeline = new aape.Timeline(
 		{
-			library: this.library,
+			json: this.json,
 			elements: this.elements,
 			timeScale: this.timeScale,
 			id: id

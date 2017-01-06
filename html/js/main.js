@@ -112,7 +112,7 @@
 
 		var timeline = new aape.Timeline(
 		{
-			library: json.library,
+			json: json,
 			elements: elements,
 			timeScale: timeScale
 		});

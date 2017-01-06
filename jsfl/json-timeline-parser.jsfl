@@ -42,7 +42,7 @@
 	{
 		this.data = 
 		{
-			meta: {},
+			meta: { root:this.timeline.name },
 			library: {},
 			resources: []
 		};
@@ -98,7 +98,7 @@
 	/** Timeline parsing. */
 	prototype.parseTimeline = function(timeline, id)
 	{
-		var libraryItem = timeline.libraryItem || { name:"root" };
+		var libraryItem = timeline.libraryItem || { name:this.timeline.name };
 		
 		var object = 
 		{ 
