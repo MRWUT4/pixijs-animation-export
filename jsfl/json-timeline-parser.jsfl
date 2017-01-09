@@ -42,7 +42,7 @@
 	{
 		this.data = 
 		{
-			meta: {},
+			meta: { root:this.timeline.name },
 			library: {},
 			resources: []
 		};
@@ -98,7 +98,7 @@
 	/** Timeline parsing. */
 	prototype.parseTimeline = function(timeline, id)
 	{
-		var libraryItem = timeline.libraryItem || { name:"root" };
+		var libraryItem = timeline.libraryItem || { name:this.timeline.name };
 		
 		var object = 
 		{ 
@@ -290,6 +290,8 @@
 		
 		var margin =
 		{
+			x: element.x,
+			y: element.y,
 			width: element.width,
 			height: element.height
 		};
@@ -403,28 +405,28 @@
 
 		var scewMultiplier = { x:element.skewY == 180 ? -1 : 1 };
 
-		var scale = 
-		{ 
-			x: element.scaleX /** scewMultiplier.x*/, 
-			y: element.scaleY 
-		};
+		// var scale = 
+		// { 
+		// 	x: element.scaleX * scewMultiplier.x, 
+		// 	y: element.scaleY 
+		// };
 
 		if( inputIsValid && elementHasPropertys )
 		{
 			// this.addProperty( object, "elementType", element.elementType );
 			this.addProperty( object, "type", Helper.getExportType( element ) );
 			this.addProperty( object, "name", element.name, "" );
-			this.addProperty( object, "x", element.x, null );
-			this.addProperty( object, "y", element.y, null );
 			this.addProperty( object, "alpha", alpha, 1 );
 			this.addProperty( object, "visible", element.visible, true );
 			// this.addProperty( object, "width", element.width, 0 );
-			// this.addProperty( object, "height", element.height, 0 );
-			this.addProperty( object, "rotation", element.rotation, function(value){ return isNaN(value) } );
-			this.addProperty( object, "scaleX", scale.x, null, 4 );
-			this.addProperty( object, "scaleY", scale.y, null, 4 );
+			// // this.addProperty( object, "height", element.height, 0 );
+			// this.addProperty( object, "x", element.x, null );
+			// this.addProperty( object, "y", element.y, null );
+			// this.addProperty( object, "rotation", element.rotation, function(value){ return isNaN(value) } );
+			// this.addProperty( object, "scaleX", scale.x, null, 4 );
+			// this.addProperty( object, "scaleY", scale.y, null, 4 );
 			// this.addProperty( object, "pivot", pivot, null );
-			// this.add
+			this.addProperty( object, "matrix", element.matrix );
 		}
 
 		return object;
@@ -433,7 +435,7 @@
 	prototype.addTextFieldsLineSpacingDisplacement = function(object, element)
 	{
 		if( element.getTextAttr )
-			object.y += element.getTextAttr( "lineSpacing" );
+			object.matrix.ty += element.getTextAttr( "lineSpacing" );
 
 		return object;
 	};
@@ -443,7 +445,7 @@
 		// var firstFrame = firstFrame !== undefined ? element.firstFrame : 0;
 		// var loop = loop !== undefined ? element.loop : "loop";
 
-		this.addProperty( object, "loop", element.loop || "loop", "loop" );
+		this.addProperty( object, "graphicLoop", element.loop, undefined );
 		this.addProperty( object, "firstFrame", element.firstFrame || 0, function(value){ return isNaN(value) } );
 		
 		return object;

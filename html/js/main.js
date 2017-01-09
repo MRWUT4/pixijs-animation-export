@@ -1,3 +1,4 @@
+
 (function(window){
 
 	window.Main = Main;
@@ -10,7 +11,7 @@
 	{
 		Object.call( this );
 
-		this.fps = object.fps || 60;
+		this.fps = object.fps || 30;
 		this.inFocus = true;
 
 		this.url = object.url;
@@ -26,7 +27,6 @@
 	prototype.init = function()
 	{
 		this.initLoader();
-		// this.initPixiJS();
 		this.initWindowEvents();
 		this.initTick();
 	};
@@ -112,48 +112,10 @@
 
 		var timeline = new aape.Timeline(
 		{
-			library: json.library,
+			json: json,
 			elements: elements,
 			timeScale: timeScale
 		});
-
-		var content = timeline.getChildByName( "content" );
-		content.gotoAndStop( content.totalFrames - 1);
-
-		var stopDisplayObject = function(displayOject)
-		{
-			displayOject.stop();
-		};
-
-		this.sunContainer = timeline.getChildByName( "sunContainer" );
-
-		console.log( this.sunContainer );
-
-		var medals = timeline.getChildrenByName( "medal" );
-
-		var buttons = timeline.getChildrenByName( "button" );
-
-		var dicipline = timeline.getChildByName( "dicipline" );
-		var list = medals.concat( dicipline ).concat( buttons );
-
-		list.forEach( stopDisplayObject );
-
-		// dicipline.gotoAndStop( dicipline.totalFrames - 1 );
-		// dicipline.y += 50;
-		// dicipline.scale.x = dicipline.scale.y = 10;
-
-		// var uiTimeout = timeline.getChildByName( "uiTimeout" );
-		// uiTimeout.loop = false;
-
-		// timeline.loop = false;
-
-		// var content = timeline.getChildByName( "content" );
-		// content.loop = false;
-
-		// var content = timeline.getChildByName( "content" );
-		// content.loop = false;
-
-		// timeline.stop();
 
 		this.stage.addChild( timeline );
 	};

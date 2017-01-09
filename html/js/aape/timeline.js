@@ -12,20 +12,25 @@
 	Timeline.SPRITE = "sprite";
 	Timeline.TEXTFIELD = "textfield";
 
+	Timeline.matrix = new PIXI.Matrix();
+
 
 	function Timeline(setup)
 	{
 		PIXI.Container.call( this );
 
-		this.library = setup.library;
+		this.json = setup.json;
+		this.library = this.json.library;
 		this.elements = setup.elements;
-		this.id = setup.id || "root";
+		this.id = setup.id || this.json.meta.root;
 		this.loop = setup.loop || true;
 		this.timeScale = setup.timeScale !== undefined ? setup.timeScale : 1;
-		
+		this.onAnimationEnd = setup.onAnimationEnd || null;
+
 		this.isPlaying = true;
 		this.currentFrame = null;
 		this.currentLabel = null;
+		this.beginEndObject = {};
 
 		this.setFrame( 0 );
 	}
@@ -141,7 +146,6 @@
 
 	prototype.updatePlayback = function()
 	{
-		// if( this.isPlaying )
 		var add = this.isPlaying ? this.timeScale : 0;
 		this.setFrame( this.currentIndex + add );
 	};
@@ -185,8 +189,8 @@
 		else
 		{
 			this.currentLabel = frame;
+			this.labelChanged = true;
 
-			// var index = this.labels[ this.currentLabel ];
 			return 0;
 		}
 	};
@@ -243,7 +247,7 @@
 		// timeline creates its own DisplayObjects to simplify object constuction.
 		var timeline = new aape.Timeline(
 		{
-			library: this.library,
+			json: this.json,
 			elements: this.elements,
 			timeScale: this.timeScale,
 			id: id
@@ -252,16 +256,22 @@
 		return timeline;
 	};
 
-	prototype.setFrame = function(currentIndex)
+	prototype.setFrame = function(currentIndex, forceRender)
 	{
-		this.currentIndex = currentIndex;
-		this.nextFrame = this.getValidIndex( this.template, this.currentIndex );
-		this.frameChanged = this.currentFrame === null || this.currentFrame.toFixed( 8 ) !== this.nextFrame.toFixed( 8 );
-		this.currentFrame = this.nextFrame;
+		if( this.graphicLoop === undefined || forceRender )
+		{
+			this.currentIndex = currentIndex;
+			this.nextFrame = this.getValidIndex( this.template, this.currentIndex );
 
-		this.resolveLayers( this.template.layers );
+			this.frameChanged = this.currentFrame === null || this.labelChanged || this.currentFrame.toFixed( 8 ) !== this.nextFrame.toFixed( 8 );
+			this.currentFrame = this.nextFrame;
+
+			this.resolveLayers( this.template.layers );
+			this.triggerLabelCallback( this.template, this.currentFrame );
+	
+			this.labelChanged = false;
+		}
 	};
-
 
 	prototype.resolveLayers = function(layers)
 	{
@@ -363,9 +373,10 @@
 		var percent = this.getPercent( layerVO.previousIndex, layerVO.nextIndex, this.currentFrame );
 
 		var transform = this.getTransform( layerVO.previousKeyframe, layerVO.nextKeyframe, id, percent );
-		transform = this.translateRotation( transform );
+		transform = this.translateMatrix( transform, displayObject );
+		// transform = this.translateRotation( transform );
 		transform = this.translateVisible( transform );
-		transform = this.translateScale( transform );
+		// transform = this.translateScale( transform );
 
 		aape.Parse( transform ).reduce( function( property, value, result ) 
 		{
@@ -394,30 +405,41 @@
 		{
 			var frame = null;
 
-			if( element.loop !== undefined && element.firstFrame !== undefined )
+			if( element.graphicLoop !== undefined && element.firstFrame !== undefined )
 			{
-				if( element.loop == "single frame" )
+				if( element.graphicLoop == "single frame" )
 					frame = element.firstFrame;
 				else
-				if( element.loop == "play once" )
+				if( element.graphicLoop == "play once" )
 				{
 					var template = this.getTemplate( element.id );
-					frame = Math.min( this.currentIndex - previousIndex, template.totalFrames - 1 );
+					// frame = Math.min( element.firstFrame + this.currentFrame, template.totalFrames - 1 );
+					frame = Math.min( this.currentFrame, template.totalFrames - 1 );
 				}
 				else
 				{
-					// var previousIndex = this.getPreviousIndex( frames, currentFrame );
-					var firstFrame = element.firstFrame || 0;
-					
-					frame = firstFrame + ( currentFrame - previousIndex );
+					frame = element.firstFrame + this.currentFrame;
 				}
 
 				if( displayObject.isPlaying )
-					displayObject.setFrame( frame );
-
+					displayObject.setFrame( frame, true );
 			}
 		}
 	},
+
+
+	/** Trigger callback when animation hits last frame. */
+	prototype.triggerLabelCallback = function(template, currentFrame)
+	{
+		if( this.frameChanged && this.currentLabel !== null && this.onAnimationEnd !== null )
+		{
+			var beginEndObject = this.getBeginEndObject( template, "labels", this.beginEndObject );
+			var object = beginEndObject[ this.currentLabel ];
+
+			if( object.end - 1 == Number( currentFrame.toFixed( 2 ) ) )
+				this.onAnimationEnd();
+		}
+	};
 
 
 	/** Add child to display list. */
@@ -458,7 +480,7 @@
 			var totalFrames = template.totalFrames;
 
 			if( totalFrames > 1 )
-				frame = this.loop ? ( currentIndex % totalFrames ) : ( currentIndex >= totalFrames - 1 ? totalFrames - 1 : currentIndex )
+				frame = this.loop ? ( currentIndex % totalFrames ) : ( currentIndex >= totalFrames - 1 ? totalFrames - 1 : currentIndex );
 			else
 				frame = 0;
 
@@ -467,6 +489,7 @@
 		else
 		{
 			var beginEnd = this.getBeginEndObject( template, "labels" );
+
 			var range = beginEnd[ this.currentLabel ];
 			var lastFrame = range.end - range.begin;
 
@@ -503,8 +526,37 @@
 		return movieClip;
 	};
 
-	prototype.getBeginEndObject = function(template, name)
-	{
+	prototype.getBeginEndObject = function(template, name, modObject)
+	{	
+		var object = template[ name ];
+
+		if( object )
+		{
+			var that = this;
+			var totalFrames = template.totalFrames;
+
+			var item = aape.Parse( object ).reduce( function(property, value, result)
+			{
+				result[ value ] = result[ value ] || { begin:0, end:0 };
+				
+				var beginEnd = result[ value ];
+
+				beginEnd.begin = that.smallestWith( value, object );
+				beginEnd.end = that.biggestValueAfter( value, object, beginEnd.begin, totalFrames );
+
+				return result;
+
+			}, modObject || {} );
+		}
+
+		// aape.Parse( item ).forEach( function(property, value)
+		// {
+		// 	console.log( property, value );
+		// });
+
+		return item;
+
+		/*
 		var object = template[ name ];
 
 		if( object )
@@ -524,13 +576,43 @@
 
 				return result;
 
-			}, {} );
+			}, modObject || {} );
 			
 			return item;
 		}
 		else
 			return null;
+		*/
 	};
+
+	prototype.smallestWith = function(compare, object)
+	{
+		var result = null;
+
+		aape.Parse( object ).forEach( function(property, value)
+		{
+			if( compare == value && ( result === null || property < result ) )
+				result = Number( property );
+		});
+
+		return result;
+	};
+
+	prototype.biggestValueAfter = function(compare, object, begin, totalFrames)
+	{
+		var result = totalFrames;
+
+		aape.Parse( object ).forEach( function(property, value)
+		{
+			var frame = Number( property );
+
+			if( frame < result && frame > begin )
+				result = frame;
+		});
+
+		return result;
+	};
+
 
 	prototype.getFrames = function(frames, id)
 	{
@@ -560,13 +642,6 @@
 			var frame = new PIXI.Rectangle( itemFrame.x, itemFrame.y, itemFrame.w, itemFrame.h );
 			var orig = undefined;
 			var trim = new PIXI.Rectangle( itemSpriteSourceSize.x, itemSpriteSourceSize.y, itemFrame.w, itemFrame.h );
-
-			// var orig = new PIXI.Rectangle( itemSpriteSourceSize.x, itemSpriteSourceSize.y, itemSpriteSourceSize.w, itemSpriteSourceSize.h );
-			// var trim = new PIXI.Rectangle( 0, 0, itemSourceSize.w, itemSourceSize.h );
-			// var trim = undefined;
-			//the rectanle frame of the texture to show
-			//the area of the original texture
-			//trimmed rectangle of original texture
 
 			var texture = new PIXI.Texture( baseTexture, frame, orig, trim );
 
@@ -680,7 +755,7 @@
 
 		}.bind(this) );
 
-		return new aape.TextField( template.text, style, template.margin );;
+		return new aape.TextField( template.text, style, template.margin );
 	};
 
 
@@ -718,17 +793,19 @@
 
 		next = next !== undefined ? next : previous;
 
-		var parse = function(object)
+		var parse = function(object, objectNext)
 		{
 			var transform = {};
 
 			aape.Parse( object ).reduce( function(property, value)
 			{
 				if( typeof value == "number" )
-					transform[ property ] = floatBetweenAandB( value, next[ property ], progress );
+				{
+					transform[ property ] = floatBetweenAandB( value, objectNext[ property ], progress );
+				}
 				else
 				if( typeof value == "object" )
-					transform[ property ] = parse( value );
+					transform[ property ] = parse( value, objectNext[ property ] );
 				else
 					transform[ property ] = value;
 			});
@@ -736,7 +813,7 @@
 			return transform;
 		};
 
-		var transform = parse( previous );
+		var transform = parse( previous, next );
 		
 		return transform;
 	};
@@ -744,14 +821,6 @@
 	prototype.floatBetweenAandBAt = function(a, b, position)
 	{
 		return a + position * ( b - a );
-	};
-
-	prototype.quadraticBezier = function(t, p0, p1, p2, p3)
-	{
-		return Math.pow( 1 - t, 3 ) * p0 + 
-		3 * Math.pow( 1 - t, 2 ) * t * p1 + 
-		3 * ( 1 - t ) * Math.pow( t, 2 ) * p2 + 
-		Math.pow( t, 3 ) * p3;
 	};
 
 	prototype.getBezierPoints = function(animation)
@@ -783,25 +852,27 @@
 		return result;
 	};
 
-	prototype.translateScale = function(object)
-	{
-		this.propertyToObjectValue( object, "scaleX", "scale", "x" );
-		this.propertyToObjectValue( object, "scaleY", "scale", "y" );
-
-		return object;
-	};
 
 	prototype.translateVisible = function(object)
 	{
 		object.visible = object.visible !== undefined ? object.visible : true;
-
 		return object;
 	};
 
-	prototype.translateRotation = function(object)
+	prototype.translateMatrix = function(transform, displayObject)
 	{
-		object.rotation = object.rotation * ( Math.PI / 180 );
-		return object;
+		var matrix = Timeline.matrix;
+		var transformMatrix = transform.matrix;
+
+		aape.Parse( transformMatrix ).forEach( function(property, value)
+		{
+			matrix[ property ] = transformMatrix[ property ];
+		});
+
+		matrix.c *= -1;
+		displayObject.transform.setFromMatrix( matrix );
+
+		return transform;
 	};
 
 	prototype.translateAlpha = function(object)
@@ -810,17 +881,6 @@
 			object.alpha = object.alpha !== undefined ? object.alpha : 1;
 
 		return object;
-	};
-
-	prototype.propertyToObjectValue = function(object, property, name, value)
-	{
-		if( object[ property ] )
-		{
-			var item = object[ name ] = object[ name ] || {};
-			item[ value ] = object[ property ];
-
-			delete object[ property ];
-		}
 	};
 
 

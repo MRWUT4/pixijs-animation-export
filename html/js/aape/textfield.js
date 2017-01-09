@@ -18,55 +18,27 @@
 
 		PIXI.Text.call( this, text, style );
 
-		this.setupText( text );
+		this.positionText();
+		this.setupObservation();
 	}
 
-
-
-	/**
-	 * Getter / Setter
-	 */
-
-	Object.defineProperty( prototype, "x", 
-	{
-		get: function() 
-		{	
-			return this.position.x;
-		},
-		set: function(value) 
-		{	
-			this.position.x = value;
-			
-			this.changeBasePosition();
-			this.positionText();
-		}
-	});
 
 
 	/**
 	 * Public interface
 	 */
 
-	Object.defineProperty( prototype, "_text", 
+	prototype.setupObservation = function()
 	{
-		get: function() 
-		{	
-			return this.__text;
-		},
-		set: function(value) 
-		{	
-			this.__text = value;
-			this.positionText();
-		}
-	});
+		var defaultCallback = this.position.cb;
 
-	prototype.setupText = function(text)
-	{
-		this.text = text;
-		this.setupComplete = true;
+		var that = this;
 
-		this.changeBasePosition();
-		this.positionText();
+		this.position.cb = function()
+		{
+			defaultCallback.bind(that)();
+			that.positionText();
+		};
 	};
 
 
@@ -74,43 +46,42 @@
 	 * Private interface.
 	 */
 
-	prototype.changeBasePosition = function()
-	{
-		this.margin.x = this.position.x;
-		this.margin.y = this.position.y;
-	};
-
-
 	/** Position functions. */
 	prototype.positionText = function()
 	{
-		if( this.setupComplete )
+		var bounds = this.getBounds();
+
+		switch( this.textStyle.align )
 		{
-			var bounds = this.getBounds();
+			case TextField.CENTER:
+				this.alignTextToCenter( bounds );
+				break;
 
-			switch( this.textStyle.align )
-			{
-				case TextField.CENTER:
-					this.alignTextToCenter( bounds );
-					break;
+			case TextField.RIGHT:
+				this.alignTextToRight( bounds );
+				break;
 
-				case TextField.RIGHT:
-					this.alignTextToRight( bounds );
-					break;
-			}
+			default:
+				this.alignTextToLeft( bounds );
+				break;
 		}
 	};
 
 	prototype.alignTextToCenter = function(bounds)
 	{
-		var position = this.margin.x + ( this.margin.width - bounds.width ) * .5;
-		this.position.x = position;
+		var x = this.margin.x + ( this.margin.width - bounds.width ) * .5;
+		this.position.x = x;
 	};
 
 	prototype.alignTextToRight = function(bounds)
 	{	
-		var position = this.margin.x + this.margin.width - bounds.width;
-		this.position.x = position;
+		var x = this.margin.x + this.margin.width - bounds.width;
+		this.position.x = x;
+	};
+
+	prototype.alignTextToLeft = function(bounds)
+	{
+		this.position.x = this.margin.x;
 	};
 
 }(window));
