@@ -101,7 +101,7 @@
 	 */
 
 	/** Updated transform override function. */
-	/*
+	//*
 	prototype.updateTransformContainer = prototype.	updateTransform;
 	prototype.updateTransform = function()
 	{
@@ -413,7 +413,8 @@
 				if( element.graphicLoop == "play once" )
 				{
 					var template = this.getTemplate( element.id );
-					frame = Math.min( element.firstFrame + this.currentFrame, template.totalFrames - 1 );
+					// frame = Math.min( element.firstFrame + this.currentFrame, template.totalFrames - 1 );
+					frame = Math.min( this.currentFrame, template.totalFrames - 1 );
 				}
 				else
 				{
