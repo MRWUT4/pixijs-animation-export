@@ -61,31 +61,31 @@
 
 
 	/** Parse timeline recursively */
-	prototype.parse = function(item)
+	prototype.parse = function(element)
 	{
-		var type = Helper.getItemType( item );
+		var type = Helper.getItemType( element );
 		var object = null;
 
 		switch( type )
 		{
 			case Helper.TIMELINE:
-				object = this.parseTimeline( item );
+				object = this.parseTimeline( element );
 				break;
 
 			case Helper.LIBRARY_ITEM:
-				object = this.parseTimeline( item.timeline );
+				object = this.parseTimeline( element.timeline );
 				break;
 
 			case Helper.INSTANCE:
-				object = this.parseTimeline( item.libraryItem.timeline );
+				object = this.parseTimeline( element.libraryItem.timeline );
 				break;
 
 			case Helper.GRAPHIC:
-				object = this.parseGraphic( item );
+				object = this.parseGraphic( element );
 				break;
 
 			case Helper.TEXT:
-				object = this.parseText( item );
+				object = this.parseText( element );
 				break;
 		}
 
@@ -96,7 +96,7 @@
 
 
 	/** Timeline parsing. */
-	prototype.parseTimeline = function(timeline, id)
+	prototype.parseTimeline = function(timeline, depth)
 	{
 		var libraryItem = timeline.libraryItem || { name:this.timeline.name };
 		
@@ -177,16 +177,16 @@
 		for(var i = 0; i < elements.length; ++i)
 		{
 		    var element = elements[ i ];
-			var item = this.parse( element );
+			var item = this.parse( element, i );
 
 			if( item != null )
 			{								
 				var itemIsInLibrary = this.getLibraryObject( item.id );
 
 				if( itemIsInLibrary )
-					item = { id:item.id };
+					item = { id: item.id };
 				
-				item = this.addItemTransformData( item, element );
+				item = this.addItemTransformData( item, element, i );
 
 			    object.elements.push( item );
 		    }
@@ -220,7 +220,7 @@
 
 
 	/** Graphic parsing. */
-	prototype.parseGraphic = function(item)
+	prototype.parseGraphic = function(item, depth)
 	{
 		var libraryItem = item.libraryItem;
 		var timeline = libraryItem.timeline;
@@ -231,7 +231,7 @@
 		var object = 
 		{ 
 			type: type, 
-			id: libraryItem.name
+			id: libraryItem.name,
 			/*,name:item.name*/
 		};
 		
@@ -244,7 +244,6 @@
 
 		if( !isInLibrary )
 		{
-
 			this.symbols.push( libraryItem );
 			this.timelines.push( timeline );
 		}
@@ -255,29 +254,14 @@
 
 
 	/** Text parsing. */
-	prototype.parseText = function(element)
+	prototype.parseText = function(element, depth)
 	{
-		var id = "text" + /*( !element.name ?*/ this.numTextFields++ /*: this.numTextFields )*/;
+		var id = "text" + this.numTextFields++;
 		var object = { type:Helper.TEXTFIELD, id:/*element.name || */id };
 
 		var text = this.getTextFieldText( element );
 
-		// var style = 
-		// {
-		// 	// font: this.getTextElementStyle( element ),
-		// 	fill: element.getTextAttr( "fillColor" ),
-		// 	align: element.getTextAttr( "alignment" )
-		// };
-
-		// this.addProperty( style, "fontStyle", element.getTextAttr( "size" ), "" );
-		// this.addProperty( style, "fontVariant", element.getTextAttr( "size" ), "" );
-		// this.addProperty( style, "fontWeight", element.getTextAttr( "size" ), "" );
-
-
-		// this.addProperty( object, "name", object.name, null );
 		this.addProperty( object, "text", text, "" );
-		// this.addProperty( object, "lineSpacing", element.getTextAttr( "lineSpacing" ), 0 );
-		// this.addProperty( object, "style", style, null );
 
 		var style = {};
 
@@ -341,6 +325,8 @@
 	{
 		if( object )
 		{
+			// flash.trace( object.uid );
+
 			var isInLibrary = this.getLibraryObject( object.id );
 
 			if( !isInLibrary )
@@ -380,12 +366,22 @@
 
 
 	/** Transform data function. Parse item and add values to object. */
-	prototype.addItemTransformData = function(object, element)
+	prototype.addItemTransformData = function(object, element, depth)
 	{
+
 		var object = this.addAnimationTransformData( object, element );
+		object = this.addUID( object, depth );
+		flash.trace( JSON.encode( object ) );
 		object = this.addTextFieldsLineSpacingDisplacement( object, element );
 		object = this.addGraphicLoopFrames( object, element );
 
+		return object;
+	};
+
+	prototype.addUID = function(object, depth)
+	{
+		// depth = depth === 0 ? "" : "-" + depth;
+		object.uid = object.id + "-" + depth;
 		return object;
 	};
 
@@ -393,39 +389,14 @@
 	{
 		var inputIsValid = element !== null && object !== null;
 		var elementHasPropertys = typeof element == "object";
-
-		var transform = element.getTransformationPoint();
-		var pivot = transform.x || transform.y ? { x:transform.x, y: transform.y } : null;
-		var alpha = isNaN( element.colorAlphaPercent) ? 1 : element.colorAlphaPercent / 100;
-
-		// if( element.name == "circle" )
-			// alert( element.scaleX )
-
-		// alert( element.name )
-
-		var scewMultiplier = { x:element.skewY == 180 ? -1 : 1 };
-
-		// var scale = 
-		// { 
-		// 	x: element.scaleX * scewMultiplier.x, 
-		// 	y: element.scaleY 
-		// };
+		var alpha = isNaN( element.colorAlphaPercent ) ? 1 : element.colorAlphaPercent / 100;
 
 		if( inputIsValid && elementHasPropertys )
 		{
-			// this.addProperty( object, "elementType", element.elementType );
 			this.addProperty( object, "type", Helper.getExportType( element ) );
 			this.addProperty( object, "name", element.name, "" );
 			this.addProperty( object, "alpha", alpha, 1 );
 			this.addProperty( object, "visible", element.visible, true );
-			// this.addProperty( object, "width", element.width, 0 );
-			// // this.addProperty( object, "height", element.height, 0 );
-			// this.addProperty( object, "x", element.x, null );
-			// this.addProperty( object, "y", element.y, null );
-			// this.addProperty( object, "rotation", element.rotation, function(value){ return isNaN(value) } );
-			// this.addProperty( object, "scaleX", scale.x, null, 4 );
-			// this.addProperty( object, "scaleY", scale.y, null, 4 );
-			// this.addProperty( object, "pivot", pivot, null );
 			this.addProperty( object, "matrix", element.matrix );
 		}
 
