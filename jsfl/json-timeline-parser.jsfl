@@ -112,8 +112,6 @@
 
 		var objectLayers = [];
 
-		// for(var i = 0; i < layers.length; ++i)
-		// {
 		for(var i = layers.length - 1; i >= 0; --i)
 		{
 		    var layer = layers[ i ];
@@ -197,8 +195,6 @@
 
 	prototype.parseAnimation = function(object, frame)
 	{
-		// var tweenEasing = frame.tweenEasing;
-
 		if( frame.tweenType != "none" )
 		{
 			var ease = frame.getCustomEase( "all" );
@@ -306,27 +302,12 @@
 		return text;
 	};
 
-	// prototype.getTextElementStyle = function(element)
-	// {
-	// 	var object = {};
-		// var string = "";
-		// var bold = element.getTextAttr( "bold" );
-
-		// string += bold ? "bold " : "";
-		// string += element.getTextAttr( "size" ) + "px ";
-		// string += JSONTimelineParser.JOIN_FONTFACE ? element.getTextAttr( "face" ).split( " " ).join( "_" ) : element.getTextAttr( "face" ).split( " " )[ 0 ];
-
-	// 	return object;
-	// };
-
 
 	/** Add object to data library. */
 	prototype.addToLibrary = function(object)
 	{
 		if( object )
 		{
-			// flash.trace( object.uid );
-
 			var isInLibrary = this.getLibraryObject( object.id );
 
 			if( !isInLibrary )
@@ -413,9 +394,6 @@
 
 	prototype.addGraphicLoopFrames = function(object, element)
 	{
-		// var firstFrame = firstFrame !== undefined ? element.firstFrame : 0;
-		// var loop = loop !== undefined ? element.loop : "loop";
-
 		this.addProperty( object, "graphicLoop", element.loop, undefined );
 		this.addProperty( object, "firstFrame", element.firstFrame || 0, function(value){ return isNaN(value) } );
 		
@@ -432,7 +410,7 @@
 			bool = value !== ignore
 
 		if( bool )
-			object[ name ] = /*fixed === undefined ?*/ value/* : this.getFixedValue( value, fixed )*/;
+			object[ name ] = value;
 
 		return object;
 	};
