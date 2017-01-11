@@ -130,7 +130,7 @@
 },
 "footLeft0000":
 {
-	"frame": {"x":893,"y":642,"w":80,"h":63},
+	"frame": {"x":603,"y":699,"w":80,"h":63},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":80,"h":63},
@@ -146,7 +146,7 @@
 },
 "footRight0000":
 {
-	"frame": {"x":603,"y":699,"w":80,"h":63},
+	"frame": {"x":893,"y":642,"w":80,"h":63},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":80,"h":63},

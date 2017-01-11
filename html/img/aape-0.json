@@ -2,7 +2,7 @@
 
 "a0000":
 {
-	"frame": {"x":367,"y":1371,"w":172,"h":172},
+	"frame": {"x":812,"y":1432,"w":172,"h":172},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":172,"h":172},
@@ -290,7 +290,7 @@
 },
 "e0000":
 {
-	"frame": {"x":812,"y":1432,"w":172,"h":172},
+	"frame": {"x":367,"y":1371,"w":172,"h":172},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":172,"h":172},

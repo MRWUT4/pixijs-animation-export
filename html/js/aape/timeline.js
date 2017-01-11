@@ -328,13 +328,13 @@
 		var id = element.id;
 		
 		var layerVO = this.getLayer( layerID );
-		var displayObject = this.getDisplayObject( layerVO, id );
+		var displayObject = this.getDisplayObject( layerVO, id, element.uid );
 
 		if( displayObject )
 		{
 			if( this.frameChanged || this.frameChanged === undefined )
 			{
-				this.addTransform( id, displayObject, layerVO );
+				this.addTransform( element.uid, displayObject, layerVO );
 				this.add( displayObject );
 			}
 
@@ -345,17 +345,14 @@
 	};
 
 
-	prototype.getDisplayObject = function(layerVO, id)
+	prototype.getDisplayObject = function(layerVO, id, uid)
 	{
 		var displayObject = null;
 
 		
-		// if( !layer )
-		// 	layer = this.setLayer( layerID, [] );
-
 		displayObject = layerVO.elements.find( function(element)
 		{
-			return element && element.id == id;
+			return element && element.uid == uid;
 		});
 
 		if( !displayObject )
@@ -368,15 +365,14 @@
 	};
 
 
-	prototype.addTransform = function(id, displayObject, layerVO /*previousIndex, nextIndex, previousKeyframe, nextKeyframe*/)
+	prototype.addTransform = function(uid, displayObject, layerVO)
 	{
 		var percent = this.getPercent( layerVO.previousIndex, layerVO.nextIndex, this.currentFrame );
 
-		var transform = this.getTransform( layerVO.previousKeyframe, layerVO.nextKeyframe, id, percent );
+		var transform = this.getTransform( layerVO.previousKeyframe, layerVO.nextKeyframe, uid, percent );
 		transform = this.translateMatrix( transform, displayObject );
-		// transform = this.translateRotation( transform );
 		transform = this.translateVisible( transform );
-		// transform = this.translateScale( transform );
+
 
 		aape.Parse( transform ).reduce( function( property, value, result ) 
 		{
@@ -459,7 +455,7 @@
 			{
 				element = elements.find( function(element)
 				{
-					return element.id == child.id;
+					return element.uid == child.uid;
 				});
 
 				if( element == undefined )
@@ -549,40 +545,7 @@
 			}, modObject || {} );
 		}
 
-		// aape.Parse( item ).forEach( function(property, value)
-		// {
-		// 	console.log( property, value );
-		// });
-
 		return item;
-
-		/*
-		var object = template[ name ];
-
-		if( object )
-		{
-			var totalFrames = template.totalFrames;
-
-			var item = aape.Parse( object ).reduce( function(property, begin, result)
-			{
-				result[ property ] = result[ property ] || { begin:begin, end:totalFrames };
-
-				var compare = result[ property ];
-
-				aape.Parse( object ).forEach( function(property, value)
-				{
-					compare.end = value < compare.end && value > compare.begin ? value : compare.end; 
-				});
-
-				return result;
-
-			}, modObject || {} );
-			
-			return item;
-		}
-		else
-			return null;
-		*/
 	};
 
 	prototype.smallestWith = function(compare, object)
@@ -770,12 +733,12 @@
 		return result;
 	};
 
-	prototype.getTransform = function(previous, next, id, percent)
+	prototype.getTransform = function(previous, next, uid, percent)
 	{
 		var animation = previous.animation;
 
-		var previousItem = this.translateAlpha( this.getFrameTransform( previous, id ) );
-		var nextItem = this.translateAlpha( this.getFrameTransform( next, id ) );
+		var previousItem = this.translateAlpha( this.getFrameTransform( previous, uid ) );
+		var nextItem = this.translateAlpha( this.getFrameTransform( next, uid ) );
 
 
 		var p = this.getBezierPoints( animation );
@@ -840,13 +803,13 @@
 		return points;
 	};
 
-	prototype.getFrameTransform = function(keyframe, id)
+	prototype.getFrameTransform = function(keyframe, uid)
 	{
 		var elements = keyframe.elements;
 
 		var result = elements.find( function(element)
 		{
-			return element.id == id;
+			return element.uid == uid;
 		});
 
 		return result;
