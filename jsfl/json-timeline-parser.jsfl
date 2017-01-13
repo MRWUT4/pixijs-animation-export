@@ -349,10 +349,9 @@
 	/** Transform data function. Parse item and add values to object. */
 	prototype.addItemTransformData = function(object, element, depth)
 	{
-
 		var object = this.addAnimationTransformData( object, element );
 		object = this.addUID( object, depth );
-		flash.trace( JSON.encode( object ) );
+		// flash.trace( JSON.encode( object ) );
 		object = this.addTextFieldsLineSpacingDisplacement( object, element );
 		object = this.addGraphicLoopFrames( object, element );
 
