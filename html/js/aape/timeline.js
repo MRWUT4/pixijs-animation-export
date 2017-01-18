@@ -258,7 +258,7 @@
 
 	prototype.setFrame = function(currentIndex, forceRender)
 	{
-		if( this.graphicLoop === undefined || forceRender )
+		if( !this.graphicLoop || forceRender )
 		{
 			this.currentIndex = currentIndex;
 			this.nextFrame = this.getValidIndex( this.template, this.currentIndex );
@@ -370,6 +370,7 @@
 		var percent = this.getPercent( layerVO.previousIndex, layerVO.nextIndex, this.currentFrame );
 
 		var transform = this.getTransform( layerVO.previousKeyframe, layerVO.nextKeyframe, uid, percent );
+		transform = this.translateGraphicLoop( transform, displayObject );
 		transform = this.translateMatrix( transform, displayObject );
 		transform = this.translateVisible( transform );
 
@@ -401,7 +402,7 @@
 		{
 			var frame = null;
 
-			if( element.graphicLoop !== undefined && element.firstFrame !== undefined )
+			if( element.graphicLoop && element.firstFrame !== undefined )
 			{
 				if( element.graphicLoop == "single frame" )
 					frame = element.firstFrame;
@@ -818,6 +819,17 @@
 	prototype.translateVisible = function(object)
 	{
 		object.visible = object.visible !== undefined ? object.visible : true;
+		return object;
+	};
+
+	prototype.translateGraphicLoop = function(object, displayObject)
+	{
+		if( displayObject instanceof aape.Timeline )
+		{
+			if( object.graphicLoop == undefined )
+				object.graphicLoop = null;
+		}
+
 		return object;
 	};
 

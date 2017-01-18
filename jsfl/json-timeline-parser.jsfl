@@ -328,6 +328,9 @@
 			{
 				var value = object[ property ];
 
+				if( value === null )
+					item[ property ] = value;
+				else
 				if( value instanceof Array )
 					item[ property ] = parse( value, [] );
 				else

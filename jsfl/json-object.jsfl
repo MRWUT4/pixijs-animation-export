@@ -174,6 +174,10 @@
 				case JSON.BOOLEAN:
 					string += JSON.propertyPair( property, value, end );
 					break;
+
+				case null:
+					string += JSON.propertyPair( property, null, end );
+					break;
 			}
 		}
 
@@ -362,6 +366,9 @@
 		else
 		if( typeof object == "boolean" )
 			return JSON.BOOLEAN;
+		else
+		if( object === null )
+			return null;
 		else
 			return typeof object;
 	};
