@@ -274,12 +274,8 @@
 			this.frameChanged = this.currentFrame === null || this.labelChanged || this.currentFrame.toFixed( 8 ) !== this.nextFrame.toFixed( 8 );
 			this.currentFrame = this.nextFrame;
 
-			if( this.frameChanged )
-			{
-
-				this.resolveLayers( this.template.layers );
-				this.triggerLabelCallback( this.template, this.currentFrame );
-			}
+			this.resolveLayers( this.template.layers );
+			this.triggerLabelCallback( this.template, this.currentFrame );
 	
 			this.labelChanged = false;
 		}
