@@ -12,7 +12,11 @@
 	Timeline.SPRITE = "sprite";
 	Timeline.TEXTFIELD = "textfield";
 
+	Timeline.CACHE_ID_BASETEXTURE = "baseTexture";
+	// Timeline.CACHE_ID_TEXTURE = "texture";
+
 	Timeline.matrix = new PIXI.Matrix();
+	Timeline.cache = new aape.Cache();
 
 
 	function Timeline(setup)
@@ -32,7 +36,11 @@
 		this.currentLabel = null;
 		this.beginEndObject = {};
 
+		this.visible = false;
+
 		this.setFrame( 0 );
+		
+		this.visible = true;
 	}
 
 
@@ -266,8 +274,12 @@
 			this.frameChanged = this.currentFrame === null || this.labelChanged || this.currentFrame.toFixed( 8 ) !== this.nextFrame.toFixed( 8 );
 			this.currentFrame = this.nextFrame;
 
-			this.resolveLayers( this.template.layers );
-			this.triggerLabelCallback( this.template, this.currentFrame );
+			if( this.frameChanged )
+			{
+
+				this.resolveLayers( this.template.layers );
+				this.triggerLabelCallback( this.template, this.currentFrame );
+			}
 	
 			this.labelChanged = false;
 		}
@@ -316,6 +328,7 @@
 			return this.resolveElement( layerID, element );
 
 		}.bind(this) )
+
 
 		this.removeMissing( layerID, elements );
 		vo.elements = elements;
@@ -427,13 +440,21 @@
 	/** Trigger callback when animation hits last frame. */
 	prototype.triggerLabelCallback = function(template, currentFrame)
 	{
-		if( this.frameChanged && this.currentLabel !== null && this.onAnimationEnd !== null )
+		if( this.frameChanged && this.onAnimationEnd !== null )
 		{
-			var beginEndObject = this.getBeginEndObject( template, "labels", this.beginEndObject );
-			var object = beginEndObject[ this.currentLabel ];
+			if( this.currentLabel !== null )
+			{
+				var beginEndObject = this.getBeginEndObject( template, "labels", this.beginEndObject );
+				var object = beginEndObject[ this.currentLabel ];
 
-			if( object.end - 1 == Number( currentFrame.toFixed( 2 ) ) )
-				this.onAnimationEnd();
+				if( Number( currentFrame.toFixed( 2 ) == object.end - 1 ) )
+					this.onAnimationEnd();
+			}
+			else
+			{
+				if( Number( currentFrame.toFixed( 2 ) == this.totalFrames - 1 ) )
+					this.onAnimationEnd();
+			}
 		}
 	};
 
@@ -606,7 +627,17 @@
 			var orig = undefined;
 			var trim = new PIXI.Rectangle( itemSpriteSourceSize.x, itemSpriteSourceSize.y, itemFrame.w, itemFrame.h );
 
+			/*
+			var texture = Timeline.cache.getObject( Timeline.CACHE_ID_TEXTURE, id );
+
+			if( !texture )
+			{
+				texture = new PIXI.Texture( baseTexture, frame, orig, trim );
+				Timeline.cache.setObject( Timeline.CACHE_ID_TEXTURE, id, texture );
+			}
+			/*/
 			var texture = new PIXI.Texture( baseTexture, frame, orig, trim );
+			//*/
 
 			return texture;
 		});
@@ -616,20 +647,27 @@
 
 	prototype.getBaseTexture = function(elements, image)
 	{
-		var source = elements.find( function(element)
+		var baseTexture = Timeline.cache.getObject( Timeline.CACHE_ID_BASETEXTURE, image );
+
+		if( !baseTexture )
 		{
-			var isImage = element instanceof Image;
-
-			if( isImage )
+			var source = elements.find( function(element)
 			{
-				var path = element.src.split( "/" ).slice( -1 )[ 0 ].split( "?" )[ 0 ];
-				var hasURL = path == image;
+				var isImage = element instanceof Image;
 
-				return hasURL;
-			}
-		});
+				if( isImage )
+				{
+					var path = element.src.split( "/" ).slice( -1 )[ 0 ].split( "?" )[ 0 ];
+					var hasURL = path == image;
 
-		var baseTexture = new PIXI.BaseTexture( source );
+					return hasURL;
+				}
+			});
+
+
+			baseTexture = new PIXI.BaseTexture( source );
+			Timeline.cache.setObject( Timeline.CACHE_ID_BASETEXTURE, image, baseTexture );
+		}
 
 		return baseTexture;
 	};
@@ -836,6 +874,8 @@
 	prototype.translateMatrix = function(transform, displayObject)
 	{
 		var matrix = Timeline.matrix;
+		matrix.identity();
+
 		var transformMatrix = transform.matrix;
 
 		aape.Parse( transformMatrix ).forEach( function(property, value)

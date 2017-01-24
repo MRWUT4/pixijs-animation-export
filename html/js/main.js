@@ -1,4 +1,3 @@
-
 (function(window){
 
 	window.Main = Main;
@@ -11,7 +10,7 @@
 	{
 		Object.call( this );
 
-		this.fps = object.fps || 30;
+		this.fps = object.fps || 60;
 		this.inFocus = true;
 
 		this.url = object.url;
