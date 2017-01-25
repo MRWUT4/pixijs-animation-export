@@ -7,7 +7,6 @@ cd ..
 
 uglifyjs \
 html/js/aape/movieclip.js \
-html/js/aape/sprite.js \
 html/js/aape/displayobjectcontainer.js \
 html/js/aape/textfield.js \
 html/js/aape/parse.js \

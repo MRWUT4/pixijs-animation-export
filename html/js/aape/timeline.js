@@ -13,7 +13,7 @@
 	Timeline.TEXTFIELD = "textfield";
 
 	Timeline.CACHE_ID_BASETEXTURE = "baseTexture";
-	// Timeline.CACHE_ID_TEXTURE = "texture";
+	Timeline.CACHE_ID_TEXTURE = "texture";
 
 	Timeline.matrix = new PIXI.Matrix();
 	Timeline.cache = new aape.Cache();
@@ -613,15 +613,23 @@
 
 		var list = frames.map( function(item, index)
 		{
-			var itemFrame = item.frame;
-			var itemSpriteSourceSize = item.spriteSourceSize;
-			// var itemSourceSize = item.sourceSize;
-			
-			var frame = new PIXI.Rectangle( itemFrame.x, itemFrame.y, itemFrame.w, itemFrame.h );
-			var orig = undefined;
-			var trim = new PIXI.Rectangle( itemSpriteSourceSize.x, itemSpriteSourceSize.y, itemFrame.w, itemFrame.h );
+			var id = JSON.stringify( item );
+			var texture = Timeline.cache.getObject( Timeline.CACHE_ID_TEXTURE, id );
 
-			var texture = new PIXI.Texture( baseTexture, frame, orig, trim );
+			if( texture === null )
+			{
+				var itemFrame = item.frame;
+				var itemSpriteSourceSize = item.spriteSourceSize;
+				// var itemSourceSize = item.sourceSize;
+				
+				var frame = new PIXI.Rectangle( itemFrame.x, itemFrame.y, itemFrame.w, itemFrame.h );
+				var orig = undefined;
+				var trim = new PIXI.Rectangle( itemSpriteSourceSize.x, itemSpriteSourceSize.y, itemFrame.w, itemFrame.h );
+
+				texture = new PIXI.Texture( baseTexture, frame, orig, trim );
+
+				Timeline.cache.setObject( Timeline.CACHE_ID_TEXTURE, texture, id );
+			}
 
 			return texture;
 		});
@@ -633,7 +641,7 @@
 	{
 		var baseTexture = Timeline.cache.getObject( Timeline.CACHE_ID_BASETEXTURE, image );
 
-		if( !baseTexture )
+		if( baseTexture === null )
 		{
 			var source = elements.find( function(element)
 			{
