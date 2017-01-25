@@ -109,14 +109,12 @@
 	 */
 
 	/** Updated transform override function. */
-	//*
 	prototype.updateTransformContainer = prototype.	updateTransform;
 	prototype.updateTransform = function()
 	{
 		this.updatePlayback();
 		this.updateTransformContainer();
 	};
-	//*/
 
 
 	/**
@@ -617,23 +615,13 @@
 		{
 			var itemFrame = item.frame;
 			var itemSpriteSourceSize = item.spriteSourceSize;
-			var itemSourceSize = item.sourceSize;
+			// var itemSourceSize = item.sourceSize;
 			
 			var frame = new PIXI.Rectangle( itemFrame.x, itemFrame.y, itemFrame.w, itemFrame.h );
 			var orig = undefined;
 			var trim = new PIXI.Rectangle( itemSpriteSourceSize.x, itemSpriteSourceSize.y, itemFrame.w, itemFrame.h );
 
-			/*
-			var texture = Timeline.cache.getObject( Timeline.CACHE_ID_TEXTURE, id );
-
-			if( !texture )
-			{
-				texture = new PIXI.Texture( baseTexture, frame, orig, trim );
-				Timeline.cache.setObject( Timeline.CACHE_ID_TEXTURE, id, texture );
-			}
-			/*/
 			var texture = new PIXI.Texture( baseTexture, frame, orig, trim );
-			//*/
 
 			return texture;
 		});
@@ -715,7 +703,8 @@
 		var json = this.getAtlasJSONWithID( elements, id );
 		var texture = this.getTextures( elements, json, id )[ 0 ];
 
-		var sprite = new aape.Sprite( texture );
+		// var sprite = new aape.Sprite( texture );
+		var sprite = new PIXI.Sprite( texture );
 		sprite.pivot = this.getDisplayObjectPivot( id, json );
 
 		return sprite;	

@@ -362,7 +362,6 @@
 
 	prototype.loadItemProgressHandler = function(event)
 	{
-		var loadItem = event.target;
 		this.send( new Event( Event.PROGRESS, this.progress ) );
 	};
 
