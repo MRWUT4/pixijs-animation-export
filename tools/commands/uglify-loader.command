@@ -5,7 +5,7 @@ cd $DIR
 cd ..
 cd ..
 
-uglifyjs \
+uglifyjs --keep-fnames \
 html/js/aape/eventdispatcher.js \
 html/js/aape/loader.js \
 html/js/aape/urlrequest.js \

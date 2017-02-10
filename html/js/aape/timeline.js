@@ -60,8 +60,8 @@
 	{
 		get: function() 
 		{	
-			this._tempalte = this._tempalte !== undefined ? this._tempalte : this.getTemplate( this.id );
-			return this._tempalte;
+			this._template = this._template !== undefined ? this._template : this.getTemplate( this.id );
+			return this._template;
 		}
 	});
 
@@ -191,7 +191,9 @@
 	prototype.inputToFrame = function(frame)
 	{
 		if( typeof frame == "number" )
+		{
 			return frame;
+		}
 		else
 		{
 			this.currentLabel = frame;
@@ -227,7 +229,7 @@
 				nextIndex: null,
 				previousKeyframe: null,
 				nextKeyframe: null
-			}
+			};
 		}
 
 		return this.layers[ id ];
@@ -321,7 +323,7 @@
 		{
 			return this.resolveElement( layerID, element );
 
-		}.bind(this) )
+		}.bind(this) );
 
 
 		this.removeMissing( layerID, elements );
@@ -385,14 +387,16 @@
 		aape.Parse( transform ).reduce( function( property, value, result ) 
 		{
 			if( value !== undefined )
+			{
 				result[ property ] = value;
+			}
 
 			return result;
 
 		}, displayObject );
 		
 		displayObject.name = displayObject.name ? displayObject.name : displayObject.id;
-	},
+	};
 
 
 	/** Sync child frames. */
@@ -412,7 +416,9 @@
 			if( element.graphicLoop && element.firstFrame !== undefined )
 			{
 				if( element.graphicLoop == "single frame" )
+				{
 					frame = element.firstFrame;
+				}
 				else
 				if( element.graphicLoop == "play once" )
 				{
@@ -420,15 +426,19 @@
 					frame =  Math.min( element.firstFrame + this.currentFrame - previousIndex, template.totalFrames - 1 );
 				}
 				else
+				{
 					frame = element.firstFrame + this.currentFrame;
+				}
 				
 				
 
 				if( displayObject.isPlaying )
+				{
 					displayObject.setFrame( frame, true );
+				}
 			}
 		}
-	},
+	};
 
 
 	/** Trigger callback when animation hits last frame. */
@@ -442,12 +452,16 @@
 				var object = beginEndObject[ this.currentLabel ];
 
 				if( Number( currentFrame.toFixed( 2 ) == object.end - 1 ) )
+				{
 					this.onAnimationEnd();
+				}
 			}
 			else
 			{
 				if( Number( currentFrame.toFixed( 2 ) == this.totalFrames - 1 ) )
+				{
 					this.onAnimationEnd();
+				}
 			}
 		}
 	};
@@ -458,7 +472,7 @@
 	{
 		// if( !displayObject.parent )
 			this.addChild( displayObject );
-	},
+	};
 
 	prototype.removeMissing = function(layerID, elements)
 	{
@@ -474,11 +488,13 @@
 				});
 
 				if( element == undefined )
+				{
 					this.removeChild( child );
+				}
 
 			}.bind(this) );
 		}
-	}
+	};
 
 
 	/** Getter */

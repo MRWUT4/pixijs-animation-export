@@ -5,7 +5,7 @@ cd $DIR
 cd ..
 cd ..
 
-uglifyjs \
+uglifyjs --keep-fnames \
 html/js/aape/movieclip.js \
 html/js/aape/displayobjectcontainer.js \
 html/js/aape/textfield.js \
