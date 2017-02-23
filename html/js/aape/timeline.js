@@ -1,4 +1,4 @@
-(function(window){
+﻿(function(window){
 
 	window.aape = window.aape || {};
 	window.aape.Timeline = Timeline;
@@ -21,7 +21,7 @@
 
 	function Timeline(setup)
 	{
-		PIXI.Container.call( this );
+		aape.DisplayObjectContainer.call( this );
 
 		this.json = setup.json;
 		this.library = this.json.library;
@@ -36,11 +36,7 @@
 		this.currentLabel = null;
 		this.beginEndObject = {};
 
-		this.visible = false;
-
 		this.setFrame( 0 );
-		
-		this.visible = true;
 	}
 
 
@@ -109,7 +105,7 @@
 	 */
 
 	/** Updated transform override function. */
-	prototype.updateTransformContainer = prototype.	updateTransform;
+	prototype.updateTransformContainer = prototype.updateTransform;
 	prototype.updateTransform = function()
 	{
 		this.updatePlayback();
@@ -215,12 +211,13 @@
 
 	prototype.setLayer = function(id, vo)
 	{
-		return this.layers[ id ] = vo;
+		this.layers[ id ] = vo;
+		return this.layers[ id ];
 	};
 
 	prototype.getLayer = function(id)
 	{
-		if( this.layers[ id ] == undefined ) 
+		if( this.layers[ id ] === undefined ) 
 		{
 			this.layers[ id ] = 
 			{
@@ -394,7 +391,8 @@
 			return result;
 
 		}, displayObject );
-		
+	
+
 		displayObject.name = displayObject.name ? displayObject.name : displayObject.id;
 	};
 
@@ -482,15 +480,13 @@
 		{
 			layerElements.forEach( function(child)
 			{
-				element = elements.find( function(element)
+				var element = elements.find( function(element)
 				{
 					return element.uid == child.uid;
 				});
 
-				if( element == undefined )
-				{
+				if( element === undefined )
 					this.removeChild( child );
-				}
 
 			}.bind(this) );
 		}
@@ -556,13 +552,14 @@
 	prototype.getBeginEndObject = function(template, name, modObject)
 	{	
 		var object = template[ name ];
+		var item = null;
 
 		if( object )
 		{
 			var that = this;
 			var totalFrames = template.totalFrames;
 
-			var item = aape.Parse( object ).reduce( function(property, value, result)
+			item = aape.Parse( object ).reduce( function(property, value, result)
 			{
 				result[ value ] = result[ value ] || { begin:0, end:0 };
 				
@@ -573,7 +570,7 @@
 
 				return result;
 
-			}, modObject || {} );
+			}, modObject || {} );
 		}
 
 		return item;
@@ -639,10 +636,10 @@
 				// var itemSourceSize = item.sourceSize;
 				
 				var frame = new PIXI.Rectangle( itemFrame.x, itemFrame.y, itemFrame.w, itemFrame.h );
-				var orig = undefined;
+				// var orig = undefined;
 				var trim = new PIXI.Rectangle( itemSpriteSourceSize.x, itemSpriteSourceSize.y, itemFrame.w, itemFrame.h );
 
-				texture = new PIXI.Texture( baseTexture, frame, orig, trim );
+				texture = new PIXI.Texture( baseTexture, frame, undefined, trim );
 
 				Timeline.cache.setObject( Timeline.CACHE_ID_TEXTURE, texture, id );
 			}
@@ -743,8 +740,8 @@
 		{
 			var size = frame.spriteSourceSize;
 
-			result.x = size.x > result.x || result.x == null ? size.x : result.x;
-			result.y = size.y > result.y || result.y == null ? size.y : result.y;
+			result.x = size.x > result.x || result.x === null ? size.x : result.x;
+			result.y = size.y > result.y || result.y === null ? size.y : result.y;
 
 			return result;
 
@@ -791,7 +788,7 @@
 		var p = this.getBezierPoints( animation );
 		// var p = this.getBezierPointsSubset( bezierPoints, percent );
 
-		var progress = aape.Bezier.getY( percent, p[ 0 ], p[ 1 ], p[ 2 ], p[ 3 ] );
+		var progress = aape.Bezier.getY( percent, p[ 0 ], p[ 1 ], p[ 2 ], p[ 3 ] );
 		var transform = this.getTransformBetweenItems( previousItem, nextItem, progress );
 
 		return transform;
@@ -873,7 +870,7 @@
 	{
 		if( displayObject instanceof aape.Timeline )
 		{
-			if( object.graphicLoop == undefined )
+			if( object.graphicLoop === undefined )
 				object.graphicLoop = null;
 		}
 
@@ -892,8 +889,11 @@
 			matrix[ property ] = transformMatrix[ property ];
 		});
 
-		matrix.c *= -1;
+
 		displayObject.transform.setFromMatrix( matrix );
+
+		if( displayObject.parent  )
+			displayObject.updateTransform();
 
 		return transform;
 	};

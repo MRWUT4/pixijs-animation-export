@@ -13,10 +13,10 @@
 
 	function TextField(text, style, margin)
 	{
+		PIXI.Text.call( this, text, style );
+
 		this.textStyle = style;
 		this.margin = margin;
-
-		PIXI.Text.call( this, text, style );
 
 		this.positionText();
 		this.setupObservation();

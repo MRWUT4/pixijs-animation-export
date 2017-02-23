@@ -3,7 +3,7 @@
 	window.aape = window.aape || {};
 	window.aape.DisplayObjectContainer = DisplayObjectContainer;
 	
-	window.DisplayObjectContainer = DisplayObjectContainer;
+	// window.DisplayObjectContainer = DisplayObjectContainer;
 
 	var prototype = DisplayObjectContainer.prototype = Object.create( PIXI.Container.prototype );
 	prototype.constructor = DisplayObjectContainer;

@@ -10,23 +10,17 @@
 	Bezier.p00 = {x:0,y:0};
 	Bezier.p11 = {x:1,y:1};
 
-	Bezier.linearTransition = [Bezier.p00,Bezier.p00,Bezier.p11,Bezier.p11];
+	Bezier.linearTransition = [ Bezier.p00, Bezier.p00, Bezier.p11, Bezier.p11 ];
 
 	function Bezier(){}
 
 
-	/**
-	*Privateinterface.
-	*/
-
-	Bezier.getY = function(x,p0,p1,p2,p3)
+	Bezier.getY = function(x, p0, p1, p2, p3)
 	{
-		//Determinet
 		var t;
 
 		if(x == p0.x)
 		{
-		//Handlecornercasesexplicitlytopreventroundingerrors
 			t = 0;
 		}
 		else
@@ -36,7 +30,6 @@
 		}
 		else
 		{
-			//Calculatet
 			var a = -p0.x+3*p1.x-3*p2.x+p3.x;
 			var b = 3*p0.x-6*p1.x+3*p2.x;
 			var c = -3*p0.x+3*p1.x;
@@ -49,17 +42,10 @@
 			t = tTemp;
 		}
 
+		return Bezier.cubed(1-t) * p0.y + 3 * t * Bezier.squared(1-t)*p1.y +3 * Bezier.squared(t)*(1-t)*p2.y + Bezier.cubed(t)*p3.y;
+	};
 
-		//Calculateyfromt
-		return Bezier.cubed(1-t)*p0.y
-		+3*t*Bezier.squared(1-t)*p1.y
-		+3*Bezier.squared(t)*(1-t)*p2.y
-		+Bezier.cubed(t)*p3.y;
-	}
-
-	//Solvestheequationax³+bx²+cx+d = 0forxϵℝ
-	//andreturn sthefirstresultin[0,1]ornull.
-	Bezier.solveCubic = function(a,b,c,d)
+	Bezier.solveCubic = function(a, b, c, d)
 	{
 		if(a == 0)return Bezier.solveQuadratic(b,c,d);
 		if(d == 0)return 0;
@@ -73,6 +59,9 @@
 		var disc = Bezier.cubed(q)+Bezier.squared(r);
 		var term1 = b/3.0;
 
+		var result = null;
+		var r13 = null;
+
 		if(disc>0)
 		{
 			var s = r+Math.sqrt(disc);
@@ -81,7 +70,7 @@
 			var t = r-Math.sqrt(disc);
 			t = (t<0)?-Bezier.cubicRoot(-t):Bezier.cubicRoot(t);
 
-			var result = -term1+s+t;
+			result = -term1+s+t;
 
 			if(result >= 0&&result <= 1)
 				return result;
@@ -89,9 +78,9 @@
 		else
 		if(disc == 0)
 		{
-			var r13 = (r<0)?-Bezier.cubicRoot(-r):Bezier.cubicRoot(r);
+			r13 = (r<0)?-Bezier.cubicRoot(-r):Bezier.cubicRoot(r);
 
-			var result = -term1+2.0*r13;
+			result = -term1+2.0*r13;
 
 			if(result >= 0&&result <= 1)
 				return result;
@@ -109,8 +98,8 @@
 			dum1 = Math.acos(r/Math.sqrt(dum1));
 
 
-			var r13 = 2.0*Math.sqrt(q);
-			var result = -term1+r13*Math.cos(dum1/3.0);
+			r13 = 2.0*Math.sqrt(q);
+			result = -term1+r13*Math.cos(dum1/3.0);
 
 			if(result >= 0&&result <= 1)
 				return result;
@@ -127,11 +116,9 @@
 		}
 
 		return null;
-	}
+	};
 
-	//Solvestheequationax²+bx+c = 0forxϵℝ
-	//andreturn sthefirstresultin[0,1]ornull.
-	Bezier.solveQuadratic = function(a,b,c)
+	Bezier.solveQuadratic = function(a, b, c)
 	{
 		var result = (-b+Math.sqrt(Bezier.squared(b)-4*a*c))/(2*a);
 
@@ -144,12 +131,12 @@
 			return result;
 
 		return null;
-	}
+	};
 
-	Bezier.squared = function(f){return f*f;}
+	Bezier.squared = function(f){return f*f;};
 
-	Bezier.cubed = function(f){return f*f*f;}
+	Bezier.cubed = function(f){return f*f*f;};
 
-	Bezier.cubicRoot = function(f){return Math.pow(f,1.0/3.0);}
+	Bezier.cubicRoot = function(f){return Math.pow(f,1.0/3.0);};
 
 }(window));
