@@ -107,7 +107,7 @@
 	/** Updated transform override function. */
 	prototype.updateTransformContainer = prototype.updateTransform;
 	prototype.updateTransform = function()
-	{
+	{		
 		this.updatePlayback();
 		this.updateTransformContainer();
 	};
@@ -485,9 +485,6 @@
 					return element.uid == child.uid;
 				});
 
-				if( element === undefined )
-					this.removeChild( child );
-
 			}.bind(this) );
 		}
 	};
@@ -724,8 +721,8 @@
 		var json = this.getAtlasJSONWithID( elements, id );
 		var texture = this.getTextures( elements, json, id )[ 0 ];
 
-		// var sprite = new aape.Sprite( texture );
-		var sprite = new PIXI.Sprite( texture );
+		var sprite = new aape.Sprite( texture );
+		// var sprite = new PIXI.Sprite( texture );
 		sprite.pivot = this.getDisplayObjectPivot( id, json );
 
 		return sprite;	
@@ -889,11 +886,13 @@
 			matrix[ property ] = transformMatrix[ property ];
 		});
 
+		matrix.c *= -1;
 
-		displayObject.transform.setFromMatrix( matrix );
 
-		if( displayObject.parent  )
-			displayObject.updateTransform();
+		// if( !( displayObject instanceof aape.TextField ) )
+			displayObject.transform.setFromMatrix( matrix );
+		// else
+		// 	console.log( transform );
 
 		return transform;
 	};

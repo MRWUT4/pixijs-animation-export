@@ -18,8 +18,7 @@
 		this.textStyle = style;
 		this.margin = margin;
 
-		this.positionText();
-		this.setupObservation();
+		// this.positionText();
 	}
 
 
@@ -28,18 +27,18 @@
 	 * Public interface
 	 */
 
-	prototype.setupObservation = function()
+	Object.defineProperty( prototype, "_text", 
 	{
-		var defaultCallback = this.position.cb;
-
-		var that = this;
-
-		this.position.cb = function()
-		{
-			defaultCallback.bind(that)();
-			that.positionText();
-		};
-	};
+		get: function() 
+		{	
+			return this.__text;
+		},
+		set: function(value) 
+		{	
+			this.__text = value;
+			this.positionText();
+		}
+	});
 
 
 	/**
@@ -49,21 +48,24 @@
 	/** Position functions. */
 	prototype.positionText = function()
 	{
-		var bounds = this.getBounds();
-
-		switch( this.textStyle.align )
+		if( this.textStyle )
 		{
-			case TextField.CENTER:
-				this.alignTextToCenter( bounds );
-				break;
+			var bounds = this.getBounds();
 
-			case TextField.RIGHT:
-				this.alignTextToRight( bounds );
-				break;
+			switch( this.textStyle.align )
+			{
+				case TextField.CENTER:
+					this.alignTextToCenter( bounds );
+					break;
 
-			default:
-				this.alignTextToLeft( bounds );
-				break;
+				case TextField.RIGHT:
+					this.alignTextToRight( bounds );
+					break;
+
+				default:
+					this.alignTextToLeft( bounds );
+					break;
+			}
 		}
 	};
 
@@ -71,6 +73,8 @@
 	{
 		var x = this.margin.x + ( this.margin.width - bounds.width ) * .5;
 		this.position.x = x;
+
+		this.updateTransform();
 	};
 
 	prototype.alignTextToRight = function(bounds)

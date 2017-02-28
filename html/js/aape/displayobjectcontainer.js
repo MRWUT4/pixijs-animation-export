@@ -30,7 +30,7 @@
 	};
 
 	/** Recursively Returns all children with id. */
-	prototype.getChildrenByID = function(id)
+	prototype.getChildrenByID = function(id, match)
 	{
 		match = match !== undefined ? match : true;
 		return this.getChildrenByPropertyAndValue( "id", id, match );
@@ -52,6 +52,8 @@
 	/** Recursively Returns all children with property and value. */
 	prototype.getChildrenByPropertyAndValue = function(property, value, match, recursive)
 	{
+		// alert( "getChildrenByPropertyAndValue" )
+
 		match = match !== undefined ? match : false;
 		recursive = recursive !== undefined ? recursive : true;
 
