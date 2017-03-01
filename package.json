@@ -1,0 +1,13 @@
+{
+  "name": "aape",
+  "version": "1.0.1",
+  "description": "Adobe Animate PixiJS exporter.",
+  "author": "David Ochmann",
+  "scripts": 
+  {
+    "build": "npm run uglify-loader && npm run uglify-aape && npm run uglify-jsfl",
+    "uglify-loader": "uglifyjs html/js/aape/eventdispatcher.js html/js/aape/loader.js html/js/aape/urlrequest.js html/js/aape/loaditem.js -o html/js/loader-1.0.0.min.js",
+    "uglify-aape": "uglifyjs html/js/aape/displayobjectcontainer.js html/js/aape/movieclip.js html/js/aape/sprite.js html/js/aape/textfield.js html/js/aape/parse.js html/js/aape/bezier.js html/js/aape/cache.js html/js/aape/timeline.js -o html/js/aape-1.0.1.min.js",
+    "uglify-jsfl": "uglifyjs jsfl/helper.jsfl jsfl/monitor.jsfl jsfl/json-object.jsfl jsfl/json-timeline-parser.jsfl jsfl/atlas-exporter.jsfl jsfl/frame-label-exporter.jsfl jsfl/json-exporter.jsfl jsfl/metadata-exporter.jsfl jsfl/pixijs-animation-export.jsfl -o jsfl/aape-1.0.1.jsfl"
+  }
+}

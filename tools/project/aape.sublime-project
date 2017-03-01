@@ -1,12 +1,4 @@
 {
-	"build_systems":
-	[
-		{
-			"name": "Execute",
-			"shell_cmd": "${project_path}/../commands/uglify-jsfl.command && open ${project_path}/../../jsfl/aape-1.0.1.jsfl && ${project_path}/../commands/uglify-aape.command && ${project_path}/../commands/uglify-loader.command",
-			// "shell_cmd": "${project_path}/../commands/uglify-aape.command && ${project_path}/../commands/uglify-loader.command"
-		}
-	],
 	"folders":
 	[
 		{
@@ -21,5 +13,25 @@
 		{
 			"path": "/Users/david.ochmann/Library/Application Support/Adobe/Animate CC 2017/de_DE/Configuration/Commands/tools"
 		}
-	]
+	],
+	"build_systems":
+	[
+		{
+			"name": "build",
+			"shell_cmd": "cd ${project_path}/../../ && npm run build",
+			"windows" : 
+			{
+            	"shell": true
+        	}   
+		},
+
+		{
+			"name": "run aape",
+			"shell_cmd": "open ${project_path}/../../jsfl/aape-1.0.1.jsfl",
+			"windows" : 
+			{
+            	"shell": true
+        	}   
+		}
+	],
 }
