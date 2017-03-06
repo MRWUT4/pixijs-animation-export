@@ -52,8 +52,6 @@
 	/** Recursively Returns all children with property and value. */
 	prototype.getChildrenByPropertyAndValue = function(property, value, match, recursive)
 	{
-		// alert( "getChildrenByPropertyAndValue" )
-
 		match = match !== undefined ? match : false;
 		recursive = recursive !== undefined ? recursive : true;
 

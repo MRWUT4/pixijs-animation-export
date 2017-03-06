@@ -485,6 +485,9 @@
 					return element.uid == child.uid;
 				});
 
+				if( element === undefined )
+					this.removeChild( child );
+
 			}.bind(this) );
 		}
 	};
