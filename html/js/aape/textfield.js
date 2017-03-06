@@ -18,7 +18,7 @@
 		this.textStyle = style;
 		this.margin = margin;
 
-		// this.positionText();
+		this.positionText();
 	}
 
 
@@ -26,6 +26,19 @@
 	/**
 	 * Public interface
 	 */
+
+	Object.defineProperty( prototype, "id", 
+	{
+		get: function() 
+		{	
+			return this._id;
+		},
+		set: function(value) 
+		{	
+			this._id = value;
+			this.positionText();
+		}
+	});
 
 	Object.defineProperty( prototype, "_text", 
 	{
@@ -73,8 +86,6 @@
 	{
 		var x = this.margin.x + ( this.margin.width - bounds.width ) * .5;
 		this.position.x = x;
-
-		this.updateTransform();
 	};
 
 	prototype.alignTextToRight = function(bounds)
