@@ -1,0 +1,19 @@
+{
+  "name": "aape",
+  "version": "1.0.1",
+  "description": "Adobe Animate PixiJS exporter.",
+  "author": "David Ochmann",
+  "scripts": 
+  {
+    "build": "npm run minify-js && npm run pngcompress",
+    "minify-js": "npm run minify-pixijs && npm run minify-debug",
+    "minify-pixijs": "npm run minify -- debug.html -name pixijs -filter pixijs-4",
+    "minify-debug": "npm run minify -- debug.html -name index -exclude pixijs-4",
+    
+    "minify": "node ../../common/js/davidochmann/nodejs/tools/minify.js",
+    "pngcompress": "node ../../common/js/davidochmann/nodejs/tools/pngcompress.js"
+  },
+  "dependencies": {
+    "pngquant-bin": "^3.1.1"
+  }
+}

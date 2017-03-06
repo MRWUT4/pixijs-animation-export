@@ -886,7 +886,7 @@
 			matrix[ property ] = transformMatrix[ property ];
 		});
 
-		matrix.c *= -1;
+		// matrix.c *= -1;
 
 
 		// if( !( displayObject instanceof aape.TextField ) )
@@ -945,3 +945,42 @@
 	};
 
 }(window));
+
+
+
+/** PIXI Matrix decompose override. */
+PIXI.Matrix.prototype.decompose = function decompose(transform) {
+    // sort out rotation / skew..
+    var a = this.a;
+    var b = this.b;
+    var c = this.c * -1;
+    var d = this.d;
+
+    var skewX = Math.atan2(-c, d);
+    var skewY = Math.atan2(b, a);
+
+    var delta = Math.abs(1 - skewX / skewY);
+
+    if (delta < 0.00001) {
+        transform.rotation = skewY;
+
+        if (a < 0 && d >= 0) {
+            transform.rotation += transform.rotation <= 0 ? Math.PI : -Math.PI;
+        }
+
+        transform.skew.x = transform.skew.y = 0;
+    } else {
+        transform.skew.x = skewX;
+        transform.skew.y = skewY;
+    }
+
+    // next set scale
+    transform.scale.x = Math.sqrt(a * a + b * b);
+    transform.scale.y = Math.sqrt(c * c + d * d);
+
+    // next set position
+    transform.position.x = this.tx;
+    transform.position.y = this.ty;
+
+    return transform;
+};
