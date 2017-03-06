@@ -27,6 +27,14 @@
 	 * Public interface
 	 */
 
+	Object.defineProperty( prototype, "measuredWidth", 
+	{
+		get: function() 
+		{	
+			return this.context.measureText( this._text ).width;
+		}
+	});
+
 	Object.defineProperty( prototype, "id", 
 	{
 		get: function() 
@@ -63,6 +71,8 @@
 	{
 		if( this.textStyle )
 		{
+			
+
 			var bounds = this.getBounds();
 
 			switch( this.textStyle.align )
@@ -84,13 +94,13 @@
 
 	prototype.alignTextToCenter = function(bounds)
 	{
-		var x = this.margin.x + ( this.margin.width - bounds.width ) * .5;
+		var x = this.margin.x + ( this.margin.width - this.measuredWidth ) * .5;
 		this.position.x = x;
 	};
 
 	prototype.alignTextToRight = function(bounds)
 	{	
-		var x = this.margin.x + this.margin.width - bounds.width;
+		var x = this.margin.x + this.margin.width - this.measuredWidth;
 		this.position.x = x;
 	};
 
