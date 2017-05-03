@@ -24,7 +24,6 @@
             	"shell": true
         	}   
 		},
-
 		{
 			"name": "run aape",
 			"shell_cmd": "open ${project_path}/../../jsfl/aape-1.0.1.jsfl",
