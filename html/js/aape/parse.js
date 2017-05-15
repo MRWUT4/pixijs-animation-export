@@ -81,7 +81,7 @@
 				{
 					var value = object[ property ];
 
-					if( callback( property, value, result ) == true )
+					if( callback( property, value, result ) == true );
 						result = property;
 				}
 
@@ -112,7 +112,7 @@
 
 				return item;
 			}
-		}
+		};
 
 		return Parse.core;
 	}

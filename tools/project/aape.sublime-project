@@ -26,7 +26,7 @@
 		},
 		{
 			"name": "run aape",
-			"shell_cmd": "open ${project_path}/../../jsfl/aape-1.0.1.jsfl",
+			"shell_cmd": "cd ${project_path}/../../ && npm run build && open ${project_path}/../../jsfl/aape-1.0.1.jsfl",
 			"windows" : 
 			{
             	"shell": true

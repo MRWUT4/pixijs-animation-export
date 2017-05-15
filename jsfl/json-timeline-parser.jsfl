@@ -233,7 +233,7 @@
 		
 
 		if( isMovieClip )
-			object.totalFrames = timeline.frameCount
+			object.totalFrames = timeline.frameCount;
 		
 
 		var isInLibrary = this.getLibraryObject( object.id );
@@ -259,9 +259,12 @@
 
 		this.addProperty( object, "text", text, "" );
 
+		var faceAttribute = element.getTextAttr( "face" );
+		var face = JSONTimelineParser.JOIN_FONTFACE ? faceAttribute.split( " " ).join( "_" ) : faceAttribute;
+
 		var style = {};
 
-		this.addProperty( style, "fontFamily", element.getTextAttr( "face" ), "" );
+		this.addProperty( style, "fontFamily", face, "" );
 		this.addProperty( style, "fontSize", element.getTextAttr( "size" ), "" );
 		this.addProperty( style, "fontWeight", element.getTextAttr( "bold" ) ? "bold" : "", "" );
 		this.addProperty( style, "fill", element.getTextAttr( "fillColor" ), "" );

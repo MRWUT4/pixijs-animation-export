@@ -11,15 +11,18 @@
 	AtlasExporter.shapePadding = 2;
 	AtlasExporter.allowTrimming = true;
 	AtlasExporter.autoSize = true;
-	AtlasExporter.maxSheetWidth = 1024;
-	AtlasExporter.maxSheetHeight = 2048;
+	AtlasExporter.maxSheetWidth = 2048;
+	AtlasExporter.maxSheetHeight = 1024;
 	AtlasExporter.stackDuplicateFrames = true;
 	AtlasExporter.layoutFormat = "JSON";
 	AtlasExporter.algorithm = "maxRects";
 
 	AtlasExporter.exportFormat = { format:"png", bitDepth:32, backgroundColor:"#00000000" };
-	AtlasExporter.imageFolder = "img/";
+	AtlasExporter.imageFolder =  "img/";
 
+
+	AtlasExporter.MODE_SINGLE = 'single';
+	AtlasExporter.MODE = AtlasExporter.MODE_SINGLE;
 
 	function AtlasExporter(setup)
 	{
@@ -124,7 +127,7 @@
 		this.addOriginPixelToLibrary();
 		this.copyOriginPixelFrame();
 		this.addOriginPixelToSymbols();
-		this.paseByMode();
+		this.parseByMode( AtlasExporter.MODE );
 		this.exportResources();
 		this.removeLastFrameFromSymbols();
 	};
@@ -221,17 +224,37 @@
 
 
 	/** Construct SpriteSheetObjects according to mode. */
-	prototype.paseByMode = function(mode)
+	prototype.parseByMode = function(mode)
 	{
 		this.symbols = this.getSortedList( this.symbols );
 		this.spriteSheetExporters = null;
 
 		switch( mode )
 		{
+			case AtlasExporter.MODE_SINGLE:
+				this.spriteSheetExporters = this.parseAssetsSingle( this.symbols );
+				break;
+
 			default:
 				this.spriteSheetExporters = this.parseAssetsCombined( this.symbols );
 				break;
 		}
+	};
+
+	prototype.parseAssetsSingle = function(symbols)
+	{
+		var that = this;
+		var list = [];
+
+		symbols.forEach( function(symbol)
+		{
+			var spriteSheetExporter = that.getSpriteSheetExporter();
+			that.addSymbolToExporter( spriteSheetExporter, symbol );
+
+			list.push( spriteSheetExporter );
+		});
+
+		return list;
 	};
 
 	prototype.parseAssetsCombined = function(symbols)

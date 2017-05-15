@@ -34,18 +34,51 @@
 	/** Load files. */
 	prototype.initLoader = function()
 	{
-		this.loader = new doutils.Loader( { static:false } );
+		this.loader = new doutils.Loader( { static:false, recursion:-1 } );
 
-		this.loader.addEventListener( Event.COMPLETE, this.loaderCompleteHandler, this );
+		this.loader.on( Event.COMPLETE, this.loaderCompleteHandler, this );
 		this.loader.load( this.url );
 	};
 
 	prototype.loaderCompleteHandler = function(event)
-	{
-		var meta = this.loader.getObjectWithID( this.url ).result.meta;
+	{	
+		this.results = this.loader.results;
 
-		this.initPixiJS( meta.size.width, meta.size.height );
-		this.createTimeline();
+		var manifest = this.getResourceManifest( this.url, this.loader );
+
+		var loader = new doutils.Loader( { static:false, recursion:-1 } );
+		loader.on( Event.COMPLETE, function(event)
+		{
+			var meta = this.loader.getObjectWithID( this.url ).result.meta;
+
+			this.results = this.results.concat( loader.results );
+			this.initPixiJS( meta.size.width, meta.size.height );
+			this.createTimeline();
+
+		}.bind(this) );
+
+
+		loader.load( manifest );
+	};
+
+	prototype.getResourceManifest = function(url, loader)
+	{
+		var folder = url.split( "/" ).slice( 0, -1 ).join( "/" ) + "/";
+
+		var json = loader.getObjectWithID( url ).result;
+		var resources = json.resources;
+		var manifest = [];
+
+		resources.forEach( function(resource)
+		{
+			aape.Parse( resource ).forEach( function(property, value)
+			{
+				var path = folder + value.split( "/" ).pop();
+				manifest.push( path );
+			});
+		});
+
+		return manifest;
 	};
 
 
@@ -106,13 +139,12 @@
 	prototype.createTimeline = function()
 	{
 		var json = this.loader.getObjectWithID( this.url ).result;
-		var elements = this.loader.results;
 		var timeScale = json.meta.frameRate / this.fps;
 
 		var timeline = new aape.Timeline(
 		{
 			json: json,
-			elements: elements,
+			elements: this.results,
 			timeScale: timeScale
 		});
 
