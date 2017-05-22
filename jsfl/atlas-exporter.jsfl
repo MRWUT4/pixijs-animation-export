@@ -22,7 +22,7 @@
 
 
 	AtlasExporter.MODE_SINGLE = 'single';
-	AtlasExporter.MODE = AtlasExporter.MODE_SINGLE;
+	AtlasExporter.MODE = null;
 
 	function AtlasExporter(setup)
 	{
