@@ -259,8 +259,15 @@
 
 		this.addProperty( object, "text", text, "" );
 
-		var faceAttribute = element.getTextAttr( "face" );
-		var face = JSONTimelineParser.JOIN_FONTFACE ? faceAttribute.split( " " ).join( "_" ) : faceAttribute;
+
+		var face = element.getTextAttr( "face" );
+
+		if( JSONTimelineParser.JOIN_FONTFACE )
+		{
+		 	face = face.split( " " ).join( "_" );
+			face = face.split( "-" ).join( "_" );
+		}
+
 
 		var style = {};
 

@@ -547,15 +547,6 @@
 			}
 		},
 		{
-			"file": "/Users/david.ochmann/Documents/application/project/html/JS-Library/davidochmann/pixijs-animation-export/html/js/aape/timeline.js",
-			"settings":
-			{
-				"buffer_size": 21042,
-				"encoding": "UTF-8 with BOM",
-				"line_ending": "Unix"
-			}
-		},
-		{
 			"file": "/Users/david.ochmann/Documents/application/project/html/JS-Library/davidochmann/pixijs-animation-export/html/js/aape/parse.js",
 			"settings":
 			{
@@ -567,7 +558,7 @@
 			"file": "/Users/david.ochmann/Documents/application/project/html/JS-Library/davidochmann/pixijs-animation-export/jsfl/json-timeline-parser.jsfl",
 			"settings":
 			{
-				"buffer_size": 9184,
+				"buffer_size": 9206,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -585,6 +576,24 @@
 			"settings":
 			{
 				"buffer_size": 634,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/david.ochmann/Documents/application/project/html/JS-Library/davidochmann/pixijs-animation-export/jsfl/aape-1.0.1.jsfl",
+			"settings":
+			{
+				"buffer_size": 24691,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/david.ochmann/Library/Application Support/Sublime Text 3/Packages/SublimeLinter/SublimeLinter.sublime-settings",
+			"settings":
+			{
+				"buffer_size": 1320,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -622,10 +631,14 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 392.0,
-		"last_filter": "edi",
+		"height": 67.0,
+		"last_filter": "lint settin",
 		"selected_items":
 		[
+			[
+				"lint settin",
+				"Preferences: SublimeLinter Settings – Default"
+			],
 			[
 				"edi",
 				"Project: Edit Project"
@@ -787,7 +800,7 @@
 				"Package Control: Install Package"
 			]
 		],
-		"width": 485.0
+		"width": 467.0
 	},
 	"console":
 	{
@@ -960,6 +973,10 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"false",
+			"font",
+			"setFromMatrix",
+			"matrix",
 			"currentIndex",
 			"currentFrame",
 			"getValidIndex",
@@ -1083,11 +1100,7 @@
 			"stringToObject",
 			"null",
 			"element",
-			"false",
-			"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
-			"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
-			"bbbbbbbbbbbb",
-			"bbbbbb"
+			"false"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1106,7 +1119,7 @@
 	"groups":
 	[
 		{
-			"selected": 3,
+			"selected": 4,
 			"sheets":
 			[
 				{
@@ -1136,7 +1149,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 6,
 					"type": "text"
 				},
 				{
@@ -1166,7 +1179,7 @@
 						"translation.y": 1124.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 7,
+					"stack_index": 9,
 					"type": "text"
 				},
 				{
@@ -1182,59 +1195,26 @@
 						"selection":
 						[
 							[
-								722,
-								722
-							]
-						],
-						"settings":
-						{
-							"history_list_is_closing": true,
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 527.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "/Users/david.ochmann/Documents/application/project/html/JS-Library/davidochmann/pixijs-animation-export/html/js/aape/timeline.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 21042,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								10496,
-								10496
-							],
-							[
-								10562,
-								10562
+								1912,
+								1914
 							]
 						],
 						"settings":
 						{
 							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai (SL).tmTheme",
+							"history_list_is_closing": true,
 							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
 							"translate_tabs_to_spaces": false
 						},
-						"translation.x": 37.0,
-						"translation.y": 6450.0,
+						"translation.x": 0.0,
+						"translation.y": 490.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 5,
 					"type": "text"
 				},
 				{
-					"buffer": 4,
+					"buffer": 3,
 					"file": "/Users/david.ochmann/Documents/application/project/html/JS-Library/davidochmann/pixijs-animation-export/html/js/aape/parse.js",
 					"semi_transient": false,
 					"settings":
@@ -1261,40 +1241,41 @@
 						"translation.y": 926.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
+					"stack_index": 8,
 					"type": "text"
 				},
 				{
-					"buffer": 5,
+					"buffer": 4,
 					"file": "/Users/david.ochmann/Documents/application/project/html/JS-Library/davidochmann/pixijs-animation-export/jsfl/json-timeline-parser.jsfl",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 9184,
+						"buffer_size": 9206,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								4350,
-								4350
+								4761,
+								4761
 							]
 						],
 						"settings":
 						{
+							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai (SL).tmTheme",
 							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 3272.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
-					"buffer": 6,
+					"buffer": 5,
 					"file": "/Users/david.ochmann/Documents/application/project/html/JS-Library/davidochmann/pixijs-animation-export/jsfl/pixijs-animation-export.jsfl",
 					"semi_transient": false,
 					"settings":
@@ -1306,59 +1287,62 @@
 						"selection":
 						[
 							[
-								3427,
-								3443
+								0,
+								0
 							]
 						],
 						"settings":
 						{
+							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai (SL).tmTheme",
+							"history_list_is_closing": true,
 							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 1207.0,
+						"translation.y": 263.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 8,
+					"stack_index": 4,
 					"type": "text"
 				}
 			]
 		},
 		{
-			"selected": 2,
+			"selected": 3,
 			"sheets":
 			[
 				{
-					"buffer": 5,
+					"buffer": 4,
 					"file": "/Users/david.ochmann/Documents/application/project/html/JS-Library/davidochmann/pixijs-animation-export/jsfl/json-timeline-parser.jsfl",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 9184,
+						"buffer_size": 9206,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								8421,
-								8421
+								8443,
+								8443
 							]
 						],
 						"settings":
 						{
+							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai (SL).tmTheme",
 							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 5000.0,
+						"translation.y": 5098.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 9,
+					"stack_index": 10,
 					"type": "text"
 				},
 				{
-					"buffer": 7,
+					"buffer": 6,
 					"file": "aape.sublime-project",
 					"semi_transient": false,
 					"settings":
@@ -1376,6 +1360,7 @@
 						],
 						"settings":
 						{
+							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai (SL).tmTheme",
 							"syntax": "Packages/JavaScriptNext - ES6 Syntax/JSON (JavaScriptNext).tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
@@ -1383,7 +1368,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 7,
 					"type": "text"
 				},
 				{
@@ -1399,12 +1384,13 @@
 						"selection":
 						[
 							[
-								7358,
-								7358
+								7998,
+								7998
 							]
 						],
 						"settings":
 						{
+							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai (SL).tmTheme",
 							"history_list_is_closing": true,
 							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
 							"translate_tabs_to_spaces": false
@@ -1413,11 +1399,70 @@
 						"translation.y": 4361.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "/Users/david.ochmann/Documents/application/project/html/JS-Library/davidochmann/pixijs-animation-export/jsfl/aape-1.0.1.jsfl",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 24691,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								681,
+								682
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
+						},
+						"translation.x": 3796.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
 					"buffer": 8,
+					"file": "/Users/david.ochmann/Library/Application Support/Sublime Text 3/Packages/SublimeLinter/SublimeLinter.sublime-settings",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1320,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1249,
+								1249
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai (SL).tmTheme",
+							"syntax": "Packages/JavaScriptNext - ES6 Syntax/JSON (JavaScriptNext).tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
 					"file": "/Users/david.ochmann/Documents/application/project/html/JS-Library/davidochmann/pixijs-animation-export/html/js/aape/loader.js",
 					"semi_transient": false,
 					"settings":
@@ -1443,7 +1488,7 @@
 						"translation.y": 5018.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 10,
+					"stack_index": 11,
 					"type": "text"
 				}
 			]
@@ -1513,16 +1558,24 @@
 		"selected_items":
 		[
 			[
+				"aape-",
+				"jsfl/aape-1.0.1.jsfl"
+			],
+			[
+				"pixi",
+				"jsfl/pixijs-animation-export.jsfl"
+			],
+			[
+				"timeline",
+				"jsfl/json-timeline-parser.jsfl"
+			],
+			[
 				"time",
 				"html/js/aape/timeline.js"
 			],
 			[
 				"debu",
 				"html/debug.html"
-			],
-			[
-				"timeline",
-				"html/js/aape/timeline.js"
 			],
 			[
 				"atlas",
@@ -1555,10 +1608,6 @@
 			[
 				"aap",
 				"html/aape.html"
-			],
-			[
-				"pixi",
-				"jsfl/pixijs-animation-export.jsfl"
 			],
 			[
 				"main",
@@ -2019,10 +2068,6 @@
 			[
 				"club",
 				"App-GameCollection/www/club.html"
-			],
-			[
-				"styl",
-				"App-GameCollection/www/css/style.css"
 			]
 		],
 		"width": 0.0
@@ -2035,6 +2080,14 @@
 		[
 			[
 				"",
+				"~/Documents/application/project/html/JS-Library/toggo/Trolls-Party/tools/project/Toggo-TrollsParty.sublime-project"
+			],
+			[
+				"trol",
+				"~/Documents/application/project/html/JS-Library/toggo/Trolls-Party/tools/project/Toggo-TrollsParty.sublime-project"
+			],
+			[
+				"tro",
 				"~/Documents/application/project/html/JS-Library/toggo/Trolls-Party/tools/project/Toggo-TrollsParty.sublime-project"
 			],
 			[
@@ -2196,10 +2249,6 @@
 			[
 				"template",
 				"~/Documents/application/project/html/europapark/HappyFamily-Achterbahn/tools/project/Europapark-HappyFamilyAchterbahn.sublime-project"
-			],
-			[
-				"tro",
-				"~/Documents/application/project/html/toggo/Trolls-Fotodesigner/tools/project/Trolls-Fotodesigner.sublime-project"
 			],
 			[
 				"ep",
@@ -2373,7 +2422,7 @@
 		],
 		"width": 0.0
 	},
-	"selected_group": 1,
+	"selected_group": 0,
 	"settings":
 	{
 	},
