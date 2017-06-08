@@ -31,7 +31,17 @@
 	{
 		get: function() 
 		{	
-			return this.context.measureText( this._text ).width;
+			var context = this.context;
+			var split = this._text.split( "\n" );
+
+			var result = split.reduce( function(result, string)
+			{
+				var value = context.measureText( string ).width;
+				return value > result ? value : result;
+
+			}, 0 );
+
+			return result;
 		}
 	});
 
@@ -71,8 +81,6 @@
 	{
 		if( this.textStyle )
 		{
-			
-
 			var bounds = this.getBounds();
 
 			switch( this.textStyle.align )
@@ -94,7 +102,7 @@
 
 	prototype.alignTextToCenter = function(bounds)
 	{
-		var x = this.margin.x + ( this.margin.width - this.measuredWidth ) * .5;
+		var x = this.margin.x + ( this.margin.width - this.measuredWidth ) * 0.5;
 		this.position.x = x;
 	};
 
